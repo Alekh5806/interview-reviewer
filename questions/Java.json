@@ -1,0 +1,921 @@
+[
+  {
+    "id": 1,
+    "question": "What is Object-Oriented Programming in Java?",
+    "keywords": ["OOP", "Java"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object-Oriented Programming in Java is a programming style based on objects that contain data and methods."
+  },
+  {
+    "id": 2,
+    "question": "Why do we use OOP in Java?",
+    "keywords": ["OOP", "Java", "importance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "OOP provides code reusability, security, easy maintenance, and better problem modeling."
+  },
+  {
+    "id": 3,
+    "question": "What is a class in Java?",
+    "keywords": ["class", "Java"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A class is a blueprint used to create objects in Java."
+  },
+  {
+    "id": 4,
+    "question": "What is an object in Java?",
+    "keywords": ["object", "Java"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An object is an instance of a class that represents a real-world entity."
+  },
+  {
+    "id": 5,
+    "question": "What are the four pillars of OOP in Java?",
+    "keywords": ["OOP principles"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Encapsulation, Inheritance, Polymorphism, and Abstraction."
+  },
+
+  {
+    "id": 6,
+    "question": "What is encapsulation in Java?",
+    "keywords": ["encapsulation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Encapsulation is wrapping data and methods into a single unit and restricting direct access."
+  },
+  {
+    "id": 7,
+    "question": "What is inheritance in Java?",
+    "keywords": ["inheritance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Inheritance allows one class to acquire properties and methods of another class."
+  },
+  {
+    "id": 8,
+    "question": "What is polymorphism in Java?",
+    "keywords": ["polymorphism"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Polymorphism means one method behaving differently in different situations."
+  },
+  {
+    "id": 9,
+    "question": "What is abstraction in Java?",
+    "keywords": ["abstraction"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Abstraction hides implementation details and shows only essential features."
+  },
+  {
+    "id": 10,
+    "question": "How is abstraction achieved in Java?",
+    "keywords": ["abstraction", "Java"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Abstraction is achieved using abstract classes and interfaces."
+  },
+
+  {
+    "id": 11,
+    "question": "What is an abstract class in Java?",
+    "keywords": ["abstract class"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An abstract class cannot be instantiated and may contain abstract methods."
+  },
+  {
+    "id": 12,
+    "question": "What is an interface in Java?",
+    "keywords": ["interface"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An interface contains method declarations without implementation."
+  },
+  {
+    "id": 13,
+    "question": "Difference between abstract class and interface in Java?",
+    "keywords": ["abstract vs interface"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Abstract class can have method bodies, interface cannot (before Java 8)."
+  },
+  {
+    "id": 14,
+    "question": "What is method overloading in Java?",
+    "keywords": ["method overloading"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Multiple methods with same name but different parameters."
+  },
+  {
+    "id": 15,
+    "question": "What is method overriding in Java?",
+    "keywords": ["method overriding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Redefining a parent class method in child class."
+  },
+
+  {
+    "id": 16,
+    "question": "What is compile-time polymorphism in Java?",
+    "keywords": ["compile time polymorphism"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Polymorphism achieved using method overloading."
+  },
+  {
+    "id": 17,
+    "question": "What is runtime polymorphism in Java?",
+    "keywords": ["runtime polymorphism"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Polymorphism achieved using method overriding."
+  },
+  {
+    "id": 18,
+    "question": "What is constructor in Java?",
+    "keywords": ["constructor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A constructor is a special method used to initialize objects."
+  },
+  {
+    "id": 19,
+    "question": "What is default constructor?",
+    "keywords": ["default constructor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A constructor with no parameters."
+  },
+  {
+    "id": 20,
+    "question": "What is parameterized constructor?",
+    "keywords": ["parameterized constructor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A constructor that takes arguments."
+  },
+
+  {
+    "id": 21,
+    "question": "Can we overload constructors in Java?",
+    "keywords": ["constructor overloading"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Yes, constructors can be overloaded."
+  },
+  {
+    "id": 22,
+    "question": "What is this keyword in Java?",
+    "keywords": ["this keyword"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "this refers to the current object."
+  },
+  {
+    "id": 23,
+    "question": "What is super keyword in Java?",
+    "keywords": ["super keyword"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "super refers to the parent class object."
+  },
+  {
+    "id": 24,
+    "question": "What are access modifiers in Java?",
+    "keywords": ["access modifiers"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "They control the visibility of classes, methods, and variables."
+  },
+  {
+    "id": 25,
+    "question": "What are types of access modifiers in Java?",
+    "keywords": ["public", "private", "protected"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "public, private, protected, and default."
+  },
+
+  {
+    "id": 26,
+    "question": "What is private access modifier?",
+    "keywords": ["private"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Accessible only within the same class."
+  },
+  {
+    "id": 27,
+    "question": "What is protected access modifier?",
+    "keywords": ["protected"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Accessible within package and subclasses."
+  },
+  {
+    "id": 28,
+    "question": "What is public access modifier?",
+    "keywords": ["public"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Accessible from anywhere."
+  },
+  {
+    "id": 29,
+    "question": "What is default access modifier?",
+    "keywords": ["default access"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Accessible within the same package."
+  },
+  {
+    "id": 30,
+    "question": "Does Java support multiple inheritance?",
+    "keywords": ["multiple inheritance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Java does not support multiple inheritance using classes."
+  },
+
+  {
+    "id": 31,
+    "question": "How does Java support multiple inheritance?",
+    "keywords": ["multiple inheritance", "interface"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Java supports multiple inheritance using interfaces."
+  },
+  {
+    "id": 32,
+    "question": "What is final keyword in Java?",
+    "keywords": ["final keyword"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "final prevents modification."
+  },
+  {
+    "id": 33,
+    "question": "What is final class?",
+    "keywords": ["final class"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A class that cannot be inherited."
+  },
+  {
+    "id": 34,
+    "question": "What is final method?",
+    "keywords": ["final method"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A method that cannot be overridden."
+  },
+  {
+    "id": 35,
+    "question": "What is static keyword in Java?",
+    "keywords": ["static keyword"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "static members belong to class, not object."
+  },
+
+  {
+    "id": 36,
+    "question": "What is static method?",
+    "keywords": ["static method"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Method that can be called without creating object."
+  },
+  {
+    "id": 37,
+    "question": "Can we override static method in Java?",
+    "keywords": ["static method"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "No, static methods cannot be overridden."
+  },
+  {
+    "id": 38,
+    "question": "What is object cloning in Java?",
+    "keywords": ["object cloning"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Creating exact copy of an object."
+  },
+  {
+    "id": 39,
+    "question": "What is shallow copy?",
+    "keywords": ["shallow copy"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Copies object references."
+  },
+  {
+    "id": 40,
+    "question": "What is deep copy?",
+    "keywords": ["deep copy"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Copies actual object values."
+  },
+
+  {
+    "id": 41,
+    "question": "What is garbage collection in Java?",
+    "keywords": ["garbage collection"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Automatic removal of unused objects from memory."
+  },
+  {
+    "id": 42,
+    "question": "What is JVM?",
+    "keywords": ["JVM"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Java Virtual Machine executes Java bytecode."
+  },
+  {
+    "id": 43,
+    "question": "What is JRE?",
+    "keywords": ["JRE"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Java Runtime Environment provides libraries and JVM."
+  },
+  {
+    "id": 44,
+    "question": "What is JDK?",
+    "keywords": ["JDK"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Java Development Kit used for Java development."
+  },
+  {
+    "id": 45,
+    "question": "What is exception handling in Java?",
+    "keywords": ["exception handling"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Handling runtime errors using try-catch."
+  },
+
+  {
+    "id": 46,
+    "question": "What is checked exception?",
+    "keywords": ["checked exception"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Exception checked at compile time."
+  },
+  {
+    "id": 47,
+    "question": "What is unchecked exception?",
+    "keywords": ["unchecked exception"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Exception checked at runtime."
+  },
+  {
+    "id": 48,
+    "question": "What is throw keyword?",
+    "keywords": ["throw"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Used to explicitly throw exception."
+  },
+  {
+    "id": 49,
+    "question": "What is throws keyword?",
+    "keywords": ["throws"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Declares exceptions."
+  },
+  {
+    "id": 50,
+    "question": "What is finally block?",
+    "keywords": ["finally"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Always executes whether exception occurs or not."
+  },
+
+  {
+    "id": 51,
+    "question": "What is package in Java?",
+    "keywords": ["package"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Package is a collection of related classes."
+  },
+  {
+    "id": 52,
+    "question": "What is encapsulation benefit?",
+    "keywords": ["encapsulation benefit"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Improves security and maintainability."
+  },
+  {
+    "id": 53,
+    "question": "What is tight coupling?",
+    "keywords": ["tight coupling"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Classes are highly dependent."
+  },
+  {
+    "id": 54,
+    "question": "What is loose coupling?",
+    "keywords": ["loose coupling"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Classes are independent."
+  },
+  {
+    "id": 55,
+    "question": "What is cohesion?",
+    "keywords": ["cohesion"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Degree to which class responsibilities are related."
+  },
+
+  {
+    "id": 56,
+    "question": "What is association?",
+    "keywords": ["association"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Relationship between two classes."
+  },
+  {
+    "id": 57,
+    "question": "What is aggregation?",
+    "keywords": ["aggregation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Weak relationship where child can exist independently."
+  },
+  {
+    "id": 58,
+    "question": "What is composition?",
+    "keywords": ["composition"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Strong relationship where child cannot exist without parent."
+  },
+  {
+    "id": 59,
+    "question": "What is SOLID principle?",
+    "keywords": ["SOLID"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Principles for writing maintainable OOP code."
+  },
+  {
+    "id": 60,
+    "question": "What is single responsibility principle?",
+    "keywords": ["SRP"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Class should have one responsibility."
+  },
+
+  {
+    "id": 61,
+    "question": "What is open closed principle?",
+    "keywords": ["OCP"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Open for extension, closed for modification."
+  },
+  {
+    "id": 62,
+    "question": "What is Liskov substitution principle?",
+    "keywords": ["LSP"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Subclasses should replace base classes."
+  },
+  {
+    "id": 63,
+    "question": "What is interface segregation principle?",
+    "keywords": ["ISP"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Many specific interfaces are better."
+  },
+  {
+    "id": 64,
+    "question": "What is dependency inversion principle?",
+    "keywords": ["DIP"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Depend on abstractions not concretions."
+  },
+  {
+    "id": 65,
+    "question": "What is design pattern?",
+    "keywords": ["design pattern"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reusable solution to common problems."
+  },
+
+  {
+    "id": 66,
+    "question": "What is Singleton design pattern?",
+    "keywords": ["singleton"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ensures only one instance of a class."
+  },
+  {
+    "id": 67,
+    "question": "What is Factory design pattern?",
+    "keywords": ["factory pattern"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Creates objects without exposing creation logic."
+  },
+  {
+    "id": 68,
+    "question": "What is Observer design pattern?",
+    "keywords": ["observer pattern"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Notifies dependent objects of state change."
+  },
+  {
+    "id": 69,
+    "question": "What is MVC architecture?",
+    "keywords": ["MVC"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Model View Controller design pattern."
+  },
+  {
+    "id": 70,
+    "question": "What is object immutability?",
+    "keywords": ["immutability"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object state cannot be changed after creation."
+  },
+
+  {
+    "id": 71,
+    "question": "What is String immutable in Java?",
+    "keywords": ["String", "immutability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "String objects cannot be modified once created."
+  },
+  {
+    "id": 72,
+    "question": "What is equals() method?",
+    "keywords": ["equals"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Used to compare object values."
+  },
+  {
+    "id": 73,
+    "question": "What is hashCode() method?",
+    "keywords": ["hashCode"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Returns hash value of object."
+  },
+  {
+    "id": 74,
+    "question": "Why override equals and hashCode?",
+    "keywords": ["equals", "hashCode"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "To compare objects correctly in collections."
+  },
+  {
+    "id": 75,
+    "question": "What is instanceof operator?",
+    "keywords": ["instanceof"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Checks object type."
+  },
+
+  {
+    "id": 76,
+    "question": "What is upcasting?",
+    "keywords": ["upcasting"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Converting child object to parent reference."
+  },
+  {
+    "id": 77,
+    "question": "What is downcasting?",
+    "keywords": ["downcasting"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Converting parent reference to child object."
+  },
+  {
+    "id": 78,
+    "question": "What is runtime binding?",
+    "keywords": ["runtime binding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Method call resolved at runtime."
+  },
+  {
+    "id": 79,
+    "question": "What is compile time binding?",
+    "keywords": ["compile time binding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Method call resolved at compile time."
+  },
+  {
+    "id": 80,
+    "question": "What is object lifecycle in Java?",
+    "keywords": ["object lifecycle"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Creation, use, and destruction of object."
+  },
+
+  {
+    "id": 81,
+    "question": "What is reflection in Java?",
+    "keywords": ["reflection"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ability to inspect classes at runtime."
+  },
+  {
+    "id": 82,
+    "question": "What is marker interface?",
+    "keywords": ["marker interface"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Interface without methods."
+  },
+  {
+    "id": 83,
+    "question": "What is Serializable interface?",
+    "keywords": ["Serializable"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Marks object for serialization."
+  },
+  {
+    "id": 84,
+    "question": "What is transient keyword?",
+    "keywords": ["transient"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Prevents variable from serialization."
+  },
+  {
+    "id": 85,
+    "question": "What is volatile keyword?",
+    "keywords": ["volatile"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ensures visibility of variable across threads."
+  },
+
+  {
+    "id": 86,
+    "question": "What is multithreading in Java?",
+    "keywords": ["multithreading"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Executing multiple threads simultaneously."
+  },
+  {
+    "id": 87,
+    "question": "What is thread-safe class?",
+    "keywords": ["thread safety"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Class that works correctly in multithreading."
+  },
+  {
+    "id": 88,
+    "question": "What is synchronization?",
+    "keywords": ["synchronization"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Controls access of shared resources."
+  },
+  {
+    "id": 89,
+    "question": "What is deadlock in Java?",
+    "keywords": ["deadlock"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Threads waiting forever for resources."
+  },
+  {
+    "id": 90,
+    "question": "What is immutable class?",
+    "keywords": ["immutable class"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Class whose objects cannot be modified."
+  },
+
+  {
+    "id": 91,
+    "question": "What is lambda expression?",
+    "keywords": ["lambda"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Anonymous function in Java."
+  },
+  {
+    "id": 92,
+    "question": "What is functional interface?",
+    "keywords": ["functional interface"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Interface with single abstract method."
+  },
+  {
+    "id": 93,
+    "question": "What is default method in interface?",
+    "keywords": ["default method"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Method with implementation in interface."
+  },
+  {
+    "id": 94,
+    "question": "What is static method in interface?",
+    "keywords": ["static interface method"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Static method defined inside interface."
+  },
+  {
+    "id": 95,
+    "question": "What is Java Bean?",
+    "keywords": ["Java Bean"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reusable software component in Java."
+  },
+
+  {
+    "id": 96,
+    "question": "What is POJO?",
+    "keywords": ["POJO"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Plain Old Java Object."
+  },
+  {
+    "id": 97,
+    "question": "Difference between POJO and Java Bean?",
+    "keywords": ["POJO vs Java Bean"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Java Bean follows strict conventions."
+  },
+  {
+    "id": 98,
+    "question": "What is object equality?",
+    "keywords": ["object equality"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Comparing objects using equals method."
+  },
+  {
+    "id": 99,
+    "question": "What is object identity?",
+    "keywords": ["object identity"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Comparing object references using ==."
+  },
+  {
+    "id": 100,
+    "question": "What is Java OOP best practice?",
+    "keywords": ["Java OOP best practice"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Use encapsulation, abstraction, and low coupling."
+  }
+]
