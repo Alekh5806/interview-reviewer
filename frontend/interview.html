@@ -24,7 +24,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-body); color: var(--text-main); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
 
-        /* --- HEADER --- */
         header {
             height: 70px; background: var(--bg-card); border-bottom: 1px solid var(--border);
             display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;
@@ -36,7 +35,6 @@
         .progress-container { width: 40%; height: 8px; background: #0f172a; border-radius: 10px; }
         #progressBar { width: 0%; height: 100%; background: var(--primary); border-radius: 10px; transition: 0.5s ease; }
 
-        /* --- CONTENT --- */
         main { display: grid; grid-template-columns: 450px 1fr; flex: 1; overflow: hidden; }
 
         .question-panel { background: var(--bg-card); border-right: 1px solid var(--border); padding: 2.5rem; overflow-y: auto; }
@@ -53,11 +51,17 @@
             flex: 1; background: rgba(30, 41, 59, 0.4); border-radius: 16px; border: 1px solid var(--border);
             display: flex; flex-direction: column; overflow: hidden; backdrop-filter: blur(10px);
         }
-        .editor-header { background: #1e293b; padding: 12px 20px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+        .editor-header { background: #1e293b; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
 
         textarea { flex: 1; background: transparent; border: none; color: #e2e8f0; padding: 25px; font-size: 1.1rem; resize: none; outline: none; line-height: 1.6; }
 
-        /* --- PERSONA AVATAR --- */
+        .mic-controls { display: none; gap: 10px; align-items: center; }
+        .btn-mic { padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.75rem; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 5px; }
+        .btn-mic.start { background: var(--accent); color: white; }
+        .btn-mic.stop { background: var(--danger); color: white; }
+        .mic-status { width: 8px; height: 8px; border-radius: 50%; background: #334155; }
+        .mic-status.active { background: var(--danger); animation: pulse 1s infinite; }
+
         .avatar-box {
             position: absolute; bottom: 100px; right: 40px; width: 180px; height: 130px;
             background: #000; border-radius: 16px; border: 2px solid var(--primary);
@@ -65,7 +69,6 @@
         }
         .avatar-label { position: absolute; top: 10px; left: 10px; font-size: 0.6rem; background: var(--primary); padding: 2px 6px; border-radius: 4px; font-weight: 800; }
 
-        /* --- FOOTER --- */
         .action-bar { height: 85px; background: var(--bg-card); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
         .btn { padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s; border: none; font-size: 0.95rem; }
         .btn-secondary { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
@@ -98,6 +101,11 @@
             <div class="editor-container">
                 <div class="editor-header">
                     <span id="workspaceLabel">Response Editor</span>
+                    <div class="mic-controls" id="micControls">
+                        <div id="micIndicator" class="mic-status"></div>
+                        <button class="btn-mic start" onclick="startMic()">Start Mic</button>
+                        <button class="btn-mic stop" onclick="stopMic()">Stop Mic</button>
+                    </div>
                     <span id="maxScoreDisplay" style="color: var(--text-dim)">Max Score: 10</span>
                 </div>
                 <textarea id="answerArea" placeholder="Begin typing your answer here..."></textarea>
@@ -119,7 +127,6 @@
     </footer>
 
     <script>
-        // --- Configuration (Folder logic included) ---
         const FOLDER_PATH = 'questions/'; 
         const SUBJECT_MAP = {
             'python': FOLDER_PATH + 'python.json',
@@ -134,10 +141,27 @@
             responses: [],
             timer: 600,
             subject: localStorage.getItem('session_subject'),
-            persona: localStorage.getItem('session_persona') || 'Lady'
+            persona: localStorage.getItem('session_persona') || 'Lady',
+            isRecording: false
         };
 
-        // --- Init ---
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition = null;
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+            recognition.onresult = (event) => {
+                let transcript = '';
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    transcript += event.results[i][0].transcript;
+                }
+                document.getElementById('answerArea').value = transcript;
+            };
+        }
+
+        const synth = window.speechSynthesis;
+
         document.addEventListener('DOMContentLoaded', () => {
             if (!state.subject) { window.location.href = 'selections.html'; return; }
             initSession();
@@ -145,29 +169,47 @@
             updatePersonaUI();
         });
 
+        // --- 🧠 Balanced Question Picker Logic ---
+        
         async function initSession() {
             const file = SUBJECT_MAP[state.subject.toLowerCase()];
             try {
                 const res = await fetch(file);
-                if (!res.ok) throw new Error("File not found at " + file);
-                const data = await res.json();
-                state.questions = data.sort(() => 0.5 - Math.random()).slice(0, 10);
+                if (!res.ok) throw new Error("File not found");
+                const allData = await res.json();
+                
+                // Filter by type (case-insensitive for safety)
+                const theoryQs = allData.filter(q => q.type.toLowerCase() === 'theory');
+                const codingQs = allData.filter(q => q.type.toLowerCase() === 'coding');
+
+                // Shuffle both pools
+                const shuffledTheory = theoryQs.sort(() => 0.5 - Math.random());
+                const shuffledCoding = codingQs.sort(() => 0.5 - Math.random());
+
+                // Take up to 5 of each to make a balanced set of 10
+                state.questions = [
+                    ...shuffledTheory.slice(0, 5),
+                    ...shuffledCoding.slice(0, 5)
+                ].sort(() => 0.5 - Math.random()); // Final shuffle of the combined set
+
+                if (state.questions.length === 0) throw new Error("No questions found");
+
                 renderQuestion();
             } catch (err) {
                 document.getElementById('qTitle').innerText = "Load Error";
-                document.getElementById('qDesc').innerText = `Ensure '${file}' exists in the '${FOLDER_PATH}' folder.`;
+                document.getElementById('qDesc').innerText = `Ensure folder '${FOLDER_PATH}' contains '${state.subject.toLowerCase()}.json' with both 'theory' and 'coding' types.`;
             }
         }
 
         function updatePersonaUI() {
-            const emoji = document.getElementById('avatarEmoji');
-            emoji.innerText = state.persona === 'Lady' ? '👩‍💼' : '👨‍💼';
+            document.getElementById('avatarEmoji').innerText = state.persona === 'Lady' ? '👩‍💼' : '👨‍💼';
         }
 
         function renderQuestion() {
             const q = state.questions[state.currentIndex];
             const area = document.getElementById('answerArea');
             
+            stopMic(); 
             document.getElementById('qNum').innerText = `Question ${state.currentIndex + 1}`;
             document.getElementById('qTitle').innerText = q.question;
             document.getElementById('qType').innerText = q.type;
@@ -176,17 +218,53 @@
             document.getElementById('progressBar').style.width = `${((state.currentIndex + 1) / state.questions.length) * 100}%`;
             
             area.value = "";
-            area.style.fontFamily = q.type === 'coding' ? "'Fira Code', monospace" : "'Inter', sans-serif";
-            
-            // Hide avatar for coding questions to focus on editor
-            document.getElementById('avatarDisplay').style.display = q.type === 'coding' ? 'none' : 'flex';
+
+            // --- 🚀 Dynamic UI Switching ---
+            if (q.type.toLowerCase() === 'coding') {
+                document.getElementById('micControls').style.display = 'none';
+                document.getElementById('avatarDisplay').style.display = 'none';
+                document.getElementById('workspaceLabel').innerText = "Code Editor";
+                area.style.fontFamily = "'Fira Code', monospace";
+                area.placeholder = "// Write your code solution here...";
+            } else {
+                document.getElementById('micControls').style.display = 'flex';
+                document.getElementById('avatarDisplay').style.display = 'flex';
+                document.getElementById('workspaceLabel').innerText = "Response Editor";
+                area.style.fontFamily = "'Inter', sans-serif";
+                area.placeholder = "Click 'Start Mic' to answer verbally or type here...";
+                speakQuestion(q.question);
+            }
+        }
+
+        function speakQuestion(text) {
+            synth.cancel(); 
+            const msg = new SpeechSynthesisUtterance(text);
+            msg.pitch = state.persona === 'Sir' ? 0.85 : 1.1;
+            msg.onstart = () => stopMic(); 
+            synth.speak(msg);
+        }
+
+        function startMic() {
+            if (recognition && !state.isRecording) {
+                recognition.start();
+                state.isRecording = true;
+                document.getElementById('micIndicator').classList.add('active');
+            }
+        }
+
+        function stopMic() {
+            if (recognition && state.isRecording) {
+                recognition.stop();
+                state.isRecording = false;
+                document.getElementById('micIndicator').classList.remove('active');
+            }
         }
 
         function handleSubmit() {
             const q = state.questions[state.currentIndex];
             const ans = document.getElementById('answerArea').value;
-            
-            // Keyword scoring logic
+            stopMic();
+
             let matches = 0;
             q.keywords.forEach(word => { if (ans.toLowerCase().includes(word.toLowerCase())) matches++; });
             const score = Math.round((matches / q.keywords.length) * q.max_score);
@@ -196,13 +274,15 @@
                 userAnswer: ans,
                 earned_score: score,
                 max_score: q.max_score,
-                expected: q.answer
+                expected: q.answer,
+                type: q.type
             });
 
             moveNext();
         }
 
         function handleSkip() {
+            stopMic();
             state.responses.push({ userAnswer: "SKIPPED", earned_score: 0 });
             moveNext();
         }
@@ -212,7 +292,8 @@
                 state.currentIndex++;
                 renderQuestion();
             } else {
-                complete();
+                sessionStorage.setItem('interview_results', JSON.stringify(state.responses));
+                window.location.href = 'result.html';
             }
         }
 
@@ -223,13 +304,8 @@
                 let m = Math.floor(state.timer / 60);
                 let s = state.timer % 60;
                 el.innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
-                if (state.timer <= 0) { clearInterval(itv); complete(); }
+                if (state.timer <= 0) { clearInterval(itv); window.location.href = 'result.html'; }
             }, 1000);
-        }
-
-        function complete() {
-            sessionStorage.setItem('interview_results', JSON.stringify(state.responses));
-            window.location.href = 'result.html';
         }
 
         function confirmExit() { if(confirm("Are you sure? Progress will be lost.")) window.location.href = 'main.html'; }
