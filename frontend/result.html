@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Analysis | MockPrep AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Interview Results | MockPrep AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0f172a;
             --card-bg: #1e293b;
             --primary: #6366f1;
-            --secondary: #0ea5e9;
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
@@ -20,226 +19,167 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 100px; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding: 40px 20px; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; }
 
-        /* --- HERO SUMMARY --- */
-        .hero-summary {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(14, 165, 233, 0.1));
+        /* --- SCORE SECTION --- */
+        .hero-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 3rem;
             text-align: center;
             margin-bottom: 2rem;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .score-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 8px solid var(--primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            background: rgba(15, 23, 42, 0.5);
-        }
-
-        .score-val { font-size: 3rem; font-weight: 800; color: white; line-height: 1; }
-        .score-total { font-size: 1rem; color: var(--text-dim); }
-        .perf-label { font-size: 1.5rem; font-weight: 700; color: var(--success); letter-spacing: 1px; }
-
-        /* --- CATEGORY GRID --- */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 16px;
-        }
-
-        .stat-header { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; }
-        .progress-bar { height: 6px; background: #334155; border-radius: 10px; overflow: hidden; }
-        .progress-fill { height: 100%; background: var(--primary); border-radius: 10px; }
-
-        /* --- FEEDBACK SECTION --- */
-        .feedback-box {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border-left: 4px solid var(--primary);
-        }
-
-        .feedback-box h2 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary); }
-        .insight-tag { display: inline-block; padding: 4px 12px; background: rgba(99, 102, 241, 0.1); border-radius: 6px; font-size: 0.8rem; margin-right: 8px; margin-top: 10px; }
-
-        /* --- ACCORDIONS --- */
-        .review-section h3 { margin-bottom: 1.5rem; font-size: 1.5rem; }
-        .accordion { margin-bottom: 1rem; background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-        .accordion-header {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.3s;
-        }
-        .accordion-header:hover { background: rgba(255,255,255,0.02); }
-        .accordion-content { padding: 0 1.5rem 1.5rem; display: none; border-top: 1px solid var(--border); padding-top: 1.5rem; }
-        .accordion-content.active { display: block; }
-        
-        .ans-label { color: var(--text-dim); font-size: 0.8rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block; }
-        .user-ans { background: #0f172a; padding: 1rem; border-radius: 8px; color: #e2e8f0; font-size: 0.95rem; border: 1px solid var(--border); }
-
-        /* --- PLACEHOLDERS --- */
-        .analytics-placeholder {
-            height: 200px;
-            border: 2px dashed var(--border);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-dim);
-            margin-top: 2rem;
-        }
-
-        /* --- ACTION BAR --- */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
             backdrop-filter: blur(10px);
         }
 
-        .btn { padding: 12px 24px; border-radius: 10px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { background: transparent; color: white; border: 1px solid var(--border); }
+        .score-circle {
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            border: 10px solid var(--primary);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem;
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .score-num { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+        .score-total { font-size: 1rem; color: var(--text-dim); }
+        .performance-tag { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- BREAKDOWN --- */
+        .review-title { margin-bottom: 1.5rem; font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        
+        .q-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .q-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 15px; }
+        .q-title { font-weight: 600; font-size: 1.1rem; flex: 1; }
+        .q-score-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+
+        .answer-box { margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .ans-block { background: rgba(15, 23, 42, 0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--border); font-size: 0.9rem; }
+        .ans-block h4 { font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1px; }
+        .ans-text { color: #e2e8f0; white-space: pre-wrap; }
+
+        /* --- FOOTER --- */
+        .actions { margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; }
+        .btn { padding: 14px 30px; border-radius: 12px; font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: white; border: none; }
+        .btn-outline { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
         .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 600px) {
+            .answer-box { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <section class="hero-summary">
+        <section class="hero-card">
             <div class="score-circle">
-                <span class="score-val" id="totalScore">82</span>
-                <span class="score-total">/ 100</span>
+                <span class="score-num" id="finalScore">0</span>
+                <span class="score-total" id="maxPossible">/ 0</span>
             </div>
-            <div class="perf-label">EXCELLENT PERFORMANCE</div>
-            <p style="color: var(--text-dim); margin-top: 1rem;">You are in the top 15% of candidates for the Frontend Developer role.</p>
+            <div id="perfTag" class="performance-tag">Analyzing...</div>
+            <p id="perfDesc" style="color: var(--text-dim); margin-top: 10px;"></p>
         </section>
 
-        <section class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-header"><span>Technical</span><span>85%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header"><span>Communication</span><span>92%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 92%; background: var(--success);"></div></div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header"><span>Problem Solving</span><span>70%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 70%; background: var(--warning);"></div></div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header"><span>Time Mgmt</span><span>60%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 60%; background: var(--danger);"></div></div>
-            </div>
-        </section>
-
-        <section class="feedback-box">
-            <h2>🧠 AI Executive Summary</h2>
-            <p>Your technical foundations are rock solid, especially regarding DOM manipulation and React state management. However, you tend to rush through problem-solving explanations before fully defining your approach. </p>
-            <div>
-                <span class="insight-tag">Strong Vocabulary</span>
-                <span class="insight-tag">Logical Structuring</span>
-                <span class="insight-tag">Improve Conciseness</span>
-            </div>
-        </section>
-
-        <section class="review-section">
-            <h3>Detailed Question Review</h3>
-            
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>1. Difference between Virtual DOM and Real DOM</span>
-                    <span style="color: var(--success);">Score: 9/10 ▼</span>
-                </div>
-                <div class="accordion-content">
-                    <span class="ans-label">Your Response:</span>
-                    <div class="user-ans">The Virtual DOM is a lightweight copy of the Real DOM. React uses it to find differences via diffing and updates only what is needed...</div>
-                    <div style="margin-top: 1rem; font-size: 0.9rem;">
-                        <strong style="color: var(--secondary);">AI Feedback:</strong> Excellent explanation. You correctly identified the diffing process. To get 10/10, mention "Batching" of updates.
-                    </div>
-                </div>
+        <div class="review-title">Detailed Question Review</div>
+        <div id="resultsList">
             </div>
 
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>2. Two Sum Problem (Coding)</span>
-                    <span style="color: var(--warning);">Score: 6/10 ▼</span>
-                </div>
-                <div class="accordion-content">
-                    <span class="ans-label">Your Code Submission:</span>
-                    <pre class="user-ans">function twoSum(nums, target) { 
-  for(let i=0; i < nums.length; i++) { ... } 
-}</pre>
-                    <div style="margin-top: 1rem; font-size: 0.9rem;">
-                        <strong style="color: var(--secondary);">AI Feedback:</strong> Your solution is correct but uses O(n²) complexity. Consider using a Hash Map for an O(n) optimized solution.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="analytics-placeholder">
-            📊 Detailed Analytics (Time Progression & Peer Benchmarking) Coming Soon
+        <div class="actions">
+            <a href="main.html" class="btn btn-outline">Back to Home</a>
+            <a href="selection.html" class="btn btn-primary">Try New Interview</a>
         </div>
     </div>
 
-    <nav class="bottom-nav">
-        <a href="index.html" class="btn btn-outline">Back to Home</a>
-        <a href="selection.html" class="btn btn-outline">New Session</a>
-        <button class="btn btn-primary" onclick="window.print()">Download Report (PDF)</button>
-    </nav>
-
     <script>
-        function toggleAccordion(header) {
-            const content = header.nextElementSibling;
-            const isOpen = content.style.display === "block";
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawResults = sessionStorage.getItem('interview_results');
+            if (!rawResults) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const results = JSON.parse(rawResults);
+            displayResults(results);
+        });
+
+        function displayResults(results) {
+            const list = document.getElementById('resultsList');
+            let totalEarned = 0;
+            let totalMax = 0;
+
+            results.forEach((res, index) => {
+                totalEarned += res.earned_score || 0;
+                totalMax += res.max_score || 0;
+
+                const card = document.createElement('div');
+                card.className = 'q-card';
+
+                // Determine score color
+                const percent = (res.earned_score / res.max_score) * 100;
+                let colorClass = 'var(--danger)';
+                if (percent >= 70) colorClass = 'var(--success)';
+                else if (percent >= 40) colorClass = 'var(--warning)';
+
+                card.innerHTML = `
+                    <div class="q-header">
+                        <div class="q-title">${index + 1}. ${res.question}</div>
+                        <div class="q-score-badge" style="background: ${colorClass}22; color: ${colorClass}">
+                            Score: ${res.earned_score} / ${res.max_score}
+                        </div>
+                    </div>
+                    <div class="answer-box">
+                        <div class="ans-block">
+                            <h4>Your Answer</h4>
+                            <div class="ans-text">${res.userAnswer || 'No answer provided.'}</div>
+                        </div>
+                        <div class="ans-block">
+                            <h4>Expected Keywords</h4>
+                            <div class="ans-text" style="color: var(--primary)">${res.keywords ? res.keywords.join(', ') : 'N/A'}</div>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+
+            // Update Hero Stats
+            document.getElementById('finalScore').innerText = totalEarned;
+            document.getElementById('maxPossible').innerText = `/ ${totalMax}`;
             
-            // Close all others
-            document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
-            
-            // Toggle current
-            content.style.display = isOpen ? "none" : "block";
+            updatePerformanceTag(totalEarned, totalMax);
         }
 
-        // Logic to simulate dynamic score loading
-        window.onload = () => {
-            const finalRole = localStorage.getItem('selectedRole') || 'Candidate';
-            console.log("Generating report for: " + finalRole);
-            // In a real app, you would fetch the data from a DB here
-        };
+        function updatePerformanceTag(earned, max) {
+            const tag = document.getElementById('perfTag');
+            const desc = document.getElementById('perfDesc');
+            const ratio = earned / max;
+
+            if (ratio >= 0.8) {
+                tag.innerText = "Exceptional";
+                tag.style.color = "var(--success)";
+                desc.innerText = "You demonstrated strong mastery of the subject. Ready for the real thing!";
+            } else if (ratio >= 0.5) {
+                tag.innerText = "Good Effort";
+                tag.style.color = "var(--warning)";
+                desc.innerText = "Solid foundations, but focus on the key missing technical concepts.";
+            } else {
+                tag.innerText = "Needs Review";
+                tag.style.color = "var(--danger)";
+                desc.innerText = "We suggest reviewing the fundamentals and trying the session again.";
+            }
+        }
     </script>
 </body>
 </html>
