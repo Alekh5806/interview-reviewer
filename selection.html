@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure Session | MockPrep AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        /* Access Control Script */
+        <script>
+            if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html';
+            }
+        </script>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .orb-1 { background: var(--primary); top: -10%; left: -10%; }
+        .orb-2 { background: #0ea5e9; bottom: -10%; right: -10%; }
+
+        .config-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 32px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700; text-align: center; }
+        p.subtitle { color: var(--text-dim); text-align: center; margin-bottom: 2.5rem; font-size: 0.95rem; }
+
+        .form-group { margin-bottom: 2rem; }
+        label { display: block; color: var(--text-dim); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+        /* Custom Dropdown */
+        select {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='C19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 18px;
+        }
+
+        /* Custom Radio Buttons (Identity Cards) */
+        .radio-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .radio-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .radio-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-card:hover { background: rgba(255, 255, 255, 0.06); }
+
+        .radio-card.active {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .avatar-emoji { font-size: 2rem; display: block; margin-bottom: 5px; }
+
+        /* Start Button */
+        .btn-start {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+            margin-top: 1rem;
+        }
+
+        .btn-start:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -5px rgba(99, 102, 241, 0.5);
+        }
+        .clr{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <main class="config-card">
+        <h1>Set Up Your Interview</h1>
+        <p class="subtitle">Customize the simulation to match your target role.</p>
+
+        <div class="form-group">
+            <label for="subject">Select Interview Subject</label>
+            <select id="subject" onchange="checkCompletion()">
+                <option class ="clr" value="" disabled selected>Choose a topic...</option>
+                <option class ="clr" value="frontend">Frontend Development</option>
+                <option class ="clr" value="backend">Backend Engineering</option>
+                <option class ="clr" value="ds">Data Science & ML</option>
+                <option class ="clr" value="behavioral">HR & Behavioral</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Select Interviewer Persona</label>
+            <div class="radio-group">
+                <div class="radio-card" onclick="setPersona(this, 'Lady')">
+                    <input type="radio" name="persona" value="Lady">
+                    <span class="avatar-emoji">👩‍💼</span>
+                    <strong>Lady</strong>
+                    <div style="font-size: 0.75rem; color: var(--text-dim);">Formal & Direct</div>
+                </div>
+                <div class="radio-card" onclick="setPersona(this, 'Sir')">
+                    <input type="radio" name="persona" value="Sir">
+                    <span class="avatar-emoji">👨‍💼</span>
+                    <strong>Sir</strong>
+                    <div style="font-size: 0.75rem; color: var(--text-dim);">Analytical & Technical</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-start" id="startBtn" onclick="launchInterview()" style="opacity: 0.5; cursor: not-allowed;" disabled>
+            Start Interview
+        </button>
+    </main>
+
+    <script>
+        let selectedPersona = "";
+
+        function setPersona(element, value) {
+            // Remove active class from all
+            document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('active'));
+            // Add active to clicked
+            element.classList.add('active');
+            selectedPersona = value;
+            checkCompletion();
+        }
+
+        function checkCompletion() {
+            const subject = document.getElementById('subject').value;
+            const btn = document.getElementById('startBtn');
+
+            if (subject && selectedPersona) {
+                btn.style.opacity = "1";
+                btn.style.cursor = "pointer";
+                btn.disabled = false;
+            }
+        }
+
+        function launchInterview() {
+            const subject = document.getElementById('subject').value;
+            // Store choices for the interview page
+            localStorage.setItem('session_subject', subject);
+            localStorage.setItem('session_persona', selectedPersona);
+            
+            // Navigate to instructions
+            window.location.href = 'instruction.html';
+        }
+                // Add this to the top of index.html, selection.html, etc.
+(function() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn !== 'true') {
+        window.location.href = 'login.html';
+    }
+})();
+    </script>
+</body>
+</html>

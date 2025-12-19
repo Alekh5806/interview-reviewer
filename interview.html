@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Interview | MockPrep AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #6366f1;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-main); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+
+        /* --- HEADER --- */
+        header {
+            height: 70px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .status-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .progress-container { width: 40%; height: 8px; background: #0f172a; border-radius: 10px; }
+        #progressBar { width: 0%; height: 100%; background: var(--primary); border-radius: 10px; transition: 0.5s ease; }
+
+        /* --- MAIN LAYOUT --- */
+        main { display: grid; grid-template-columns: 450px 1fr; flex: 1; overflow: hidden; }
+
+        .question-panel {
+            background: var(--bg-card);
+            border-right: 1px solid var(--border);
+            padding: 2.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .q-meta { display: flex; gap: 10px; }
+        .badge { padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border: 1px solid var(--border); }
+        .badge-type { background: var(--primary); color: white; border: none; }
+
+        .question-text h2 { font-size: 1.6rem; margin-bottom: 1.5rem; line-height: 1.4; }
+        .question-description { color: var(--text-dim); line-height: 1.7; font-size: 1rem; }
+
+        .workspace-panel { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; position: relative; background: #0b1120; }
+        
+        .editor-container {
+            flex: 1;
+            background: #1e293b55;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .editor-header {
+            background: #1e293b;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #e2e8f0;
+            padding: 25px;
+            font-family: 'Fira Code', monospace;
+            font-size: 1.1rem;
+            resize: none;
+            outline: none;
+            line-height: 1.6;
+        }
+
+        /* --- AVATAR PREVIEW --- */
+        .avatar-box {
+            position: absolute;
+            bottom: 100px;
+            right: 40px;
+            width: 200px;
+            height: 140px;
+            background: #000;
+            border-radius: 16px;
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .avatar-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.65rem;
+            background: var(--primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 800;
+        }
+
+        /* --- ACTION BAR --- */
+        .action-bar {
+            height: 85px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3rem;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
+        .btn-secondary:hover:not(:disabled) { color: white; border-color: white; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            LIVE INTERVIEW SESSION
+        </div>
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+        <div id="qNumDisplay" style="font-weight: 700; color: var(--text-dim);">Q 1/10</div>
+    </header>
+
+    <main>
+        <section class="question-panel">
+            <div class="q-meta">
+                <span id="qNum" class="badge">Question 1</span>
+                <span id="qType" class="badge badge-type">Theory</span>
+                <span id="qDiff" class="badge">Medium</span>
+            </div>
+            <div class="question-text">
+                <h2 id="qTitle">Loading question...</h2>
+                <div id="qDesc" class="question-description">Please wait while the AI prepares your session.</div>
+            </div>
+        </section>
+
+        <section class="workspace-panel">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span id="workspaceLabel">Response Editor</span>
+                    <select id="langSelect" style="display: none; background: #0f172a; color: white; border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px;">
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>Java</option>
+                    </select>
+                </div>
+                <textarea id="answerArea" placeholder="Your answer will appear here..."></textarea>
+            </div>
+
+            <div class="avatar-box" id="avatarBox">
+                <div class="avatar-label">AI INTERVIEWER</div>
+                <span id="avatarEmoji" style="font-size: 4rem;">👩‍💼</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="action-bar">
+        <button class="btn btn-secondary" onclick="window.location.href='index.html'">Quit Session</button>
+        <div style="display: flex; gap: 1.5rem;">
+            <button id="skipBtn" class="btn btn-secondary" onclick="skipQuestion()">Skip Question</button>
+            <button id="nextBtn" class="btn btn-primary" onclick="nextQuestion()">Submit & Next</button>
+        </div>
+    </footer>
+
+    <script>
+        // --- State Management ---
+        let sessionQuestions = [];
+        let currentIdx = 0;
+        let userResponses = [];
+        let skipsUsed = 0;
+        const MAX_SKIPS = 2;
+
+        // Web Speech APIs
+        const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognizer = Recognition ? new Recognition() : null;
+        const synth = window.speechSynthesis;
+
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Guard: Check login
+            if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html';
+                return;
+            }
+            await loadQuestions();
+            setupSTT();
+        });
+
+        async function loadQuestions() {
+            try {
+                const res = await fetch('questions.json');
+                const data = await res.json();
+                // Randomly pick 12 questions
+                sessionQuestions = data.sort(() => 0.5 - Math.random()).slice(0, 12);
+                renderQuestion();
+            } catch (err) {
+                document.getElementById('qTitle').innerText = "Error loading questions.";
+            }
+        }
+
+        function setupSTT() {
+            if (!recognizer) return;
+            recognizer.continuous = true;
+            recognizer.interimResults = true;
+            recognizer.lang = 'en-US';
+
+            recognizer.onresult = (event) => {
+                let transcript = '';
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    transcript += event.results[i][0].transcript;
+                }
+                document.getElementById('answerArea').value = transcript;
+            };
+        }
+
+        // --- Core Flow ---
+        function renderQuestion() {
+            const q = sessionQuestions[currentIdx];
+            const interviewer = localStorage.getItem('session_persona') || 'Lady'; // From selections.html
+
+            // Reset UI
+            synth.cancel();
+            if (recognizer) recognizer.stop();
+            document.getElementById('answerArea').value = "";
+            
+            // Update Text
+            document.getElementById('qNum').innerText = `Question ${currentIdx + 1}`;
+            document.getElementById('qNumDisplay').innerText = `Q ${currentIdx + 1}/${sessionQuestions.length}`;
+            document.getElementById('qType').innerText = q.type;
+            document.getElementById('qDiff').innerText = q.difficulty;
+            document.getElementById('qTitle').innerText = q.question;
+            document.getElementById('progressBar').style.width = `${((currentIdx + 1) / sessionQuestions.length) * 100}%`;
+
+            // Setup Persona Avatar
+            const emojiEl = document.getElementById('avatarEmoji');
+            emojiEl.innerText = (interviewer.toLowerCase() === 'lady') ? '👩‍💼' : '👨‍💼';
+
+            // Theory vs Coding Logic
+            if (q.type === 'theory') {
+                document.getElementById('avatarBox').style.display = 'flex';
+                document.getElementById('langSelect').style.display = 'none';
+                document.getElementById('workspaceLabel').innerText = "Voice Transcript";
+                document.getElementById('qDesc').innerText = "Your interviewer is speaking. Please listen and respond verbally.";
+                
+                speak(q.question, interviewer);
+                if (recognizer) recognizer.start();
+            } else {
+                document.getElementById('avatarBox').style.display = 'none';
+                document.getElementById('langSelect').style.display = 'block';
+                document.getElementById('workspaceLabel').innerText = "Code Editor";
+                document.getElementById('qDesc').innerText = "Solve the coding challenge in the editor provided.";
+            }
+        }
+
+        function speak(text, persona) {
+            const msg = new SpeechSynthesisUtterance(text);
+            const voices = synth.getVoices();
+            
+            if (persona.toLowerCase() === 'sir') {
+                msg.pitch = 0.85; // Deeper voice
+                msg.rate = 0.9;
+            } else {
+                msg.pitch = 1.1; // Higher voice
+                msg.rate = 1.0;
+            }
+            synth.speak(msg);
+        }
+
+        // --- Interaction ---
+        function nextQuestion() {
+            saveResponse(false);
+            if (currentIdx < sessionQuestions.length - 1) {
+                currentIdx++;
+                renderQuestion();
+            } else {
+                finishInterview();
+            }
+        }
+
+        function skipQuestion() {
+            if (skipsUsed < MAX_SKIPS) {
+                skipsUsed++;
+                saveResponse(true);
+                if (skipsUsed === MAX_SKIPS) document.getElementById('skipBtn').disabled = true;
+                
+                if (currentIdx < sessionQuestions.length - 1) {
+                    currentIdx++;
+                    renderQuestion();
+                } else {
+                    finishInterview();
+                }
+            }
+        }
+
+        function saveResponse(isSkipped) {
+            const q = sessionQuestions[currentIdx];
+            userResponses.push({
+                questionId: q.id,
+                type: q.type,
+                userAnswer: isSkipped ? "" : document.getElementById('answerArea').value,
+                expectedAnswer: q.answer,
+                keywords: q.keywords,
+                difficulty: q.difficulty,
+                max_score: q.max_score,
+                skipped: isSkipped
+            });
+        }
+
+        function finishInterview() {
+            synth.cancel();
+            if (recognizer) recognizer.stop();
+            sessionStorage.setItem('interviewResults', JSON.stringify(userResponses));
+            window.location.href = 'result.html';
+        }
+    </script>
+</body>
+</html>

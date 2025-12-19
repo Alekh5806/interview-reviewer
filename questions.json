@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "question": "What is a Python decorator?",
+    "keywords": ["function", "wrapper", "decorator"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A Python decorator is a function that wraps another function to extend or modify its behavior without changing its source code."
+  },
+  {
+    "id": 2,
+    "question": "How do you reverse a string 's' using slicing?",
+    "keywords": ["slicing", "string", "reverse"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "You can reverse a string using the slice syntax: s[::-1]."
+  },
+  {
+    "id": 3,
+    "question": "Explain the difference between a list and a tuple.",
+    "keywords": ["list", "tuple", "mutability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Lists are mutable (can be edited), while tuples are immutable (cannot be changed after creation)."
+  },
+  {
+    "id": 4,
+    "question": "Write a one-liner to create a list of squares for numbers 1-10.",
+    "keywords": ["list comprehension", "squares", "one-liner"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "squares = [x**2 for x in range(1, 11)]"
+  },
+  {
+    "id": 5,
+    "question": "What is the Global Interpreter Lock (GIL)?",
+    "keywords": ["GIL", "threading", "concurrency"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "The GIL is a mutex that allows only one thread to execute Python bytecode at a time, limiting true parallel execution in multi-threaded CPU-bound programs."
+  },
+  {
+    "id": 6,
+    "question": "How do you check if a key 'name' exists in a dictionary 'd'?",
+    "keywords": ["dictionary", "membership", "key"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "Use the 'in' keyword: if 'name' in d:"
+  },
+  {
+    "id": 7,
+    "question": "What are *args and **kwargs in functions?",
+    "keywords": ["arguments", "parameters", "variable length"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "*args is used to pass a variable number of non-keyword arguments, while **kwargs passes a variable number of keyword arguments (dictionaries)."
+  },
+  {
+    "id": 8,
+    "question": "How can you remove duplicates from a list 'L'?",
+    "keywords": ["set", "duplicates", "list"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "The most efficient way is to convert the list to a set: list(set(L))."
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between 'is' and '=='?",
+    "keywords": ["identity", "equality", "operators"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "'==' compares the values of two objects, while 'is' compares their memory identities (whether they are the same object)."
+  },
+  {
+    "id": 10,
+    "question": "How do you merge two dictionaries 'd1' and 'd2' in Python 3.9+?",
+    "keywords": ["dictionary", "merge", "union"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "Use the merge operator: d3 = d1 | d2."
+  },
+  {
+    "id": 11,
+    "question": "What is a Python generator?",
+    "keywords": ["generator", "yield", "iterator"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A generator is a function that returns an iterator using the 'yield' keyword instead of 'return', generating values on the fly to save memory."
+  },
+  {
+    "id": 12,
+    "question": "Write code to open a file 'test.txt' safely ensuring it closes.",
+    "keywords": ["with", "file", "context manager"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "with open('test.txt', 'r') as f: data = f.read()"
+  },
+  {
+    "id": 13,
+    "question": "What is Monkey Patching in Python?",
+    "keywords": ["monkey patch", "runtime", "dynamic"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Monkey patching is the process of modifying or extending a module or class's behavior at runtime without changing the original source code."
+  },
+  {
+    "id": 14,
+    "question": "How do you define a lambda function that adds 10 to a number?",
+    "keywords": ["lambda", "anonymous", "math"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "add_ten = lambda x: x + 10"
+  },
+  {
+    "id": 15,
+    "question": "What is the Method Resolution Order (MRO)?",
+    "keywords": ["MRO", "inheritance", "oop"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "MRO is the order in which Python searches for a method in a class hierarchy, especially important in multiple inheritance (calculated using the C3 linearization algorithm)."
+  },
+  {
+    "id": 16,
+    "question": "Write a list comprehension that filters even numbers from range(20).",
+    "keywords": ["filter", "list comprehension", "modulo"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "evens = [x for x in range(20) if x % 2 == 0]"
+  },
+  {
+    "id": 17,
+    "question": "Explain 'shallow copy' vs 'deep copy'.",
+    "keywords": ["copy", "nested", "memory"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A shallow copy creates a new object but references nested objects; a deep copy recursively copies all objects, creating a completely independent clone."
+  },
+  {
+    "id": 18,
+    "question": "How do you convert a list of strings into a single comma-separated string?",
+    "keywords": ["join", "string", "formatting"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = ','.join(my_list)"
+  },
+  {
+    "id": 19,
+    "question": "What is the purpose of '__init__'?",
+    "keywords": ["constructor", "init", "oop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "__init__ is the constructor method in a class, used to initialize the object's state or attributes when it is created."
+  },
+  {
+    "id": 20,
+    "question": "Write a function that returns the maximum of three numbers without using max().",
+    "keywords": ["logic", "comparison", "function"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def find_max(a, b, c): if a >= b and a >= c: return a elif b >= a and b >= c: return b else: return c"
+  },
+  {
+    "id": 21,
+    "question": "What are Python namespaces?",
+    "keywords": ["namespace", "scope", "local-global"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Namespaces are containers (dictionaries) that map names to objects, ensuring names are unique across different scopes like local, global, and built-in."
+  },
+  {
+    "id": 22,
+    "question": "How do you catch multiple specific exceptions in one block?",
+    "keywords": ["try-except", "error handling", "tuple"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "except (ValueError, TypeError) as e: print(e)"
+  },
+  {
+    "id": 23,
+    "question": "What is the purpose of the 'pass' statement?",
+    "keywords": ["pass", "placeholder", "syntax"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "'pass' is a null operation used as a placeholder where syntax requires code but no action is needed."
+  },
+  {
+    "id": 24,
+    "question": "How do you iterate over both keys and values in a dictionary?",
+    "keywords": ["items", "dictionary", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "for key, value in d.items(): print(key, value)"
+  },
+  {
+    "id": 25,
+    "question": "What is pickling and unpickling?",
+    "keywords": ["pickle", "serialization", "bytes"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Pickling is serializing a Python object into a byte stream; unpickling is deserializing that byte stream back into a Python object."
+  },
+  {
+    "id": 26,
+    "question": "Show how to use 'map' to double all numbers in a list.",
+    "keywords": ["map", "lambda", "list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "doubled = list(map(lambda x: x * 2, [1, 2, 3]))"
+  },
+  {
+    "id": 27,
+    "question": "What are 'dunder' or magic methods?",
+    "keywords": ["dunder", "magic", "double underscore"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dunder methods (like __str__ or __add__) allow you to define how your custom classes interact with built-in Python operators and functions."
+  },
+  {
+    "id": 28,
+    "question": "Write a function to check if a string is a palindrome.",
+    "keywords": ["palindrome", "string", "logic"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def is_palindrome(s): return s == s[::-1]"
+  },
+  {
+    "id": 29,
+    "question": "What is the 'nonlocal' keyword used for?",
+    "keywords": ["nonlocal", "nested", "closure"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "'nonlocal' allows you to modify a variable in the nearest enclosing scope that is not global (used in nested functions)."
+  },
+  {
+    "id": 30,
+    "question": "How do you find the index of element '5' in list 'L'?",
+    "keywords": ["index", "list", "search"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "idx = L.index(5)"
+  },
+  {
+    "id": 31,
+    "question": "What is the difference between append() and extend()?",
+    "keywords": ["list", "append", "extend"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "append() adds a single object to the end; extend() unpacks an iterable and adds each of its elements to the list."
+  },
+  {
+    "id": 32,
+    "question": "Write a basic class 'Dog' with an attribute 'name' and method 'bark'.",
+    "keywords": ["class", "oop", "syntax"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "class Dog: def __init__(self, name): self.name = name; def bark(self): return 'Woof!'"
+  },
+  {
+    "id": 33,
+    "question": "What is an abstract base class (ABC)?",
+    "keywords": ["abc", "interface", "inheritance"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An ABC defines a blueprint for other classes, ensuring that subclasses implement specific methods before they can be instantiated."
+  },
+  {
+    "id": 34,
+    "question": "How do you swap two variables 'a' and 'b' without a temp variable?",
+    "keywords": ["swap", "tuple unpacking", "assignment"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "a, b = b, a"
+  },
+  {
+    "id": 35,
+    "question": "Explain the difference between __str__ and __repr__.",
+    "keywords": ["string", "representation", "dunder"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "__str__ is for a readable end-user display; __repr__ is for an unambiguous internal representation (useful for debugging)."
+  },
+  {
+    "id": 36,
+    "question": "How do you get a list of all keys in a dictionary?",
+    "keywords": ["keys", "dictionary", "list"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "key_list = list(d.keys())"
+  },
+  {
+    "id": 37,
+    "question": "What is a 'closure'?",
+    "keywords": ["closure", "scope", "nested"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A closure is a function object that remembers values in enclosing scopes even if those scopes are no longer in memory."
+  },
+  {
+    "id": 38,
+    "question": "How do you get the current directory in Python?",
+    "keywords": ["os", "path", "directory"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import os; current_dir = os.getcwd()"
+  },
+  {
+    "id": 39,
+    "question": "What is the difference between range() and list(range())?",
+    "keywords": ["range", "iterator", "memory"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "range() is a lazy iterator that produces numbers one by one to save memory; list(range()) creates an actual list of all numbers at once."
+  },
+  {
+    "id": 40,
+    "question": "Write code to find the intersection of two sets 's1' and 's2'.",
+    "keywords": ["set", "intersection", "logic"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "intersection = s1 & s2"
+  },
+  {
+    "id": 41,
+    "question": "What is the use of the 'finally' block?",
+    "keywords": ["finally", "try", "cleanup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "The 'finally' block is used for code that must execute regardless of whether an exception occurred (like closing a database connection)."
+  },
+  {
+    "id": 42,
+    "question": "How do you format a string to 2 decimal places?",
+    "keywords": ["formatting", "f-string", "decimal"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "f'{value:.2f}'"
+  },
+  {
+    "id": 43,
+    "question": "What are Python 'decorators' used for in real-world apps?",
+    "keywords": ["logging", "auth", "caching"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Decorators are commonly used for logging, enforcing authentication/authorization, and caching results for performance."
+  },
+  {
+    "id": 44,
+    "question": "Write a generator function that yields Fibonacci numbers.",
+    "keywords": ["generator", "fibonacci", "yield"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def fib(): a, b = 0, 1; while True: yield a; a, b = b, a + b"
+  },
+  {
+    "id": 45,
+    "question": "What is the difference between 'remove' and 'pop' in a list?",
+    "keywords": ["list", "remove", "pop"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "remove(x) deletes the first occurrence of value x; pop(i) deletes and returns the item at index i."
+  },
+  {
+    "id": 46,
+    "question": "How do you count the occurrences of an item in a list?",
+    "keywords": ["count", "list", "frequency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "count = my_list.count(item)"
+  },
+  {
+    "id": 47,
+    "question": "What are metaclasses in Python?",
+    "keywords": ["metaclass", "type", "class creation"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Metaclasses are the 'classes of classes'. They define how classes themselves are constructed (the default metaclass is 'type')."
+  },
+  {
+    "id": 48,
+    "question": "Write code to sort a list of dictionaries by a key 'age'.",
+    "keywords": ["sort", "lambda", "dictionary"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "sorted_list = sorted(data, key=lambda x: x['age'])"
+  },
+  {
+    "id": 49,
+    "question": "What does the 'enumerate' function do?",
+    "keywords": ["enumerate", "index", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Enumerate adds a counter to an iterable and returns it as an enumerate object (pairs of index and value)."
+  },
+  {
+    "id": 50,
+    "question": "How do you read environment variables in Python?",
+    "keywords": ["os", "environ", "config"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import os; val = os.environ.get('VAR_NAME')"
+  },
+  {
+    "id": 51,
+    "question": "What is the difference between local and global variables?",
+    "keywords": ["scope", "global", "local"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Local variables are defined inside a function and cannot be accessed outside; global variables are accessible throughout the module."
+  },
+  {
+    "id": 52,
+    "question": "Write a one-liner to check if all elements in a list are truthy.",
+    "keywords": ["all", "boolean", "logic"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = all(my_list)"
+  },
+  {
+    "id": 53,
+    "question": "What is a 'with' statement used for?",
+    "keywords": ["context manager", "resource", "cleanup"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "The 'with' statement simplifies resource management (like file I/O) by automatically handling setup and cleanup (closing) via context managers."
+  },
+  {
+    "id": 54,
+    "question": "How do you filter elements in a list 'L' that are greater than 5 using 'filter'?",
+    "keywords": ["filter", "lambda", "condition"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = list(filter(lambda x: x > 5, L))"
+  },
+  {
+    "id": 55,
+    "question": "Explain the use of 'self' in Python.",
+    "keywords": ["self", "oop", "instance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "'self' represents the specific instance of a class, allowing access to its attributes and methods within the class definition."
+  },
+  {
+    "id": 56,
+    "question": "Write code to find common elements between two lists.",
+    "keywords": ["intersection", "set", "list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "common = list(set(list1) & set(list2))"
+  },
+  {
+    "id": 57,
+    "question": "What is the purpose of 'sys.path'?",
+    "keywords": ["import", "sys", "path"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "sys.path is a list of strings that specifies the search path for modules when an 'import' statement is executed."
+  },
+  {
+    "id": 58,
+    "question": "How do you convert a string to lowercase?",
+    "keywords": ["string", "lower", "methods"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "lower_s = s.lower()"
+  },
+  {
+    "id": 59,
+    "question": "What are 'f-strings'?",
+    "keywords": ["f-string", "formatting", "python 3.6"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "F-strings (formatted string literals) provide a fast and concise way to embed expressions inside string literals using curly braces {}."
+  },
+  {
+    "id": 60,
+    "question": "Write code to flatten a list of lists [[1,2],[3,4]] using list comprehension.",
+    "keywords": ["flatten", "list comprehension", "nested"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "flat = [item for sublist in l for item in sublist]"
+  },
+  {
+    "id": 61,
+    "question": "What is the difference between a module and a package?",
+    "keywords": ["module", "package", "init"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A module is a single Python file; a package is a directory containing multiple modules and an __init__.py file."
+  },
+  {
+    "id": 62,
+    "question": "How do you add an element to the start of a list?",
+    "keywords": ["insert", "list", "prepend"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "my_list.insert(0, element)"
+  },
+  {
+    "id": 63,
+    "question": "What is a 'deadlock' in multithreading?",
+    "keywords": ["deadlock", "threads", "mutex"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A deadlock occurs when two or more threads are waiting for each other to release resources, causing the program to freeze."
+  },
+  {
+    "id": 64,
+    "question": "Write code to get the last 3 elements of a list.",
+    "keywords": ["slice", "list", "tail"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "last_three = my_list[-3:]"
+  },
+  {
+    "id": 65,
+    "question": "What is the 'super()' function?",
+    "keywords": ["super", "inheritance", "oop"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "super() is used to call methods from a parent class, most commonly used in __init__ to ensure parent initialization logic runs."
+  },
+  {
+    "id": 66,
+    "question": "How do you check if a string contains only digits?",
+    "keywords": ["isdigit", "string", "validation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "is_num = s.isdigit()"
+  },
+  {
+    "id": 67,
+    "question": "Explain 'lazy evaluation' in Python.",
+    "keywords": ["lazy", "evaluation", "generators"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Lazy evaluation is a strategy where an expression is not evaluated until its value is actually needed (e.g., generators or range())."
+  },
+  {
+    "id": 68,
+    "question": "How do you convert a list of integers into a single integer (e.g., [1,2,3] -> 123)?",
+    "keywords": ["join", "map", "casting"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "num = int(''.join(map(str, [1, 2, 3])))"
+  },
+  {
+    "id": 69,
+    "question": "What is the use of the 'dir()' function?",
+    "keywords": ["dir", "inspection", "attributes"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "dir() returns a list of valid attributes and methods for the specified object, useful for code inspection."
+  },
+  {
+    "id": 70,
+    "question": "Write a function that accepts variable arguments and returns their sum.",
+    "keywords": ["args", "sum", "function"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def sum_all(*args): return sum(args)"
+  },
+  {
+    "id": 71,
+    "question": "What are Python 'slots'?",
+    "keywords": ["slots", "memory", "optimization"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "__slots__ is used in classes to restrict attribute creation, saving memory by preventing the creation of an internal __dict__."
+  },
+  {
+    "id": 72,
+    "question": "How do you remove whitespace from both ends of a string?",
+    "keywords": ["strip", "string", "whitespace"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "clean_s = s.strip()"
+  },
+  {
+    "id": 73,
+    "question": "Explain 'multiple inheritance' in Python.",
+    "keywords": ["inheritance", "oop", "multiple"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Multiple inheritance is a feature where a class can inherit attributes and methods from more than one parent class."
+  },
+  {
+    "id": 74,
+    "question": "Write code to get the frequency of each character in a string.",
+    "keywords": ["counter", "collections", "frequency"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "from collections import Counter; freq = Counter(my_string)"
+  },
+  {
+    "id": 75,
+    "question": "What is a 'docstring'?",
+    "keywords": ["docstring", "documentation", "strings"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A docstring is a string literal placed as the first statement in a module, class, or function to document its behavior."
+  },
+  {
+    "id": 76,
+    "question": "How do you find the longest string in a list 'L'?",
+    "keywords": ["max", "key", "length"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "longest = max(L, key=len)"
+  },
+  {
+    "id": 77,
+    "question": "What are 'context managers'?",
+    "keywords": ["context manager", "enter-exit", "with"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Context managers are objects that define the runtime context when executing a 'with' statement using __enter__ and __exit__ methods."
+  },
+  {
+    "id": 78,
+    "question": "How do you trigger a manual exception?",
+    "keywords": ["raise", "exception", "error"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "raise ValueError('Custom error message')"
+  },
+  {
+    "id": 79,
+    "question": "What is the difference between 'del' and 'None'?",
+    "keywords": ["del", "none", "memory"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "'del' removes the reference to an object from the namespace; setting to 'None' keeps the name but points it to a null object."
+  },
+  {
+    "id": 80,
+    "question": "Write code to check if two strings are anagrams.",
+    "keywords": ["anagram", "sort", "string"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "is_anagram = sorted(s1) == sorted(s2)"
+  },
+  {
+    "id": 81,
+    "question": "What is an 'iterator'?",
+    "keywords": ["iterator", "iter", "next"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An iterator is an object that contains a countable number of values and implements the __next__ method to move through elements."
+  },
+  {
+    "id": 82,
+    "question": "How do you perform a floor division?",
+    "keywords": ["math", "division", "floor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = 10 // 3"
+  },
+  {
+    "id": 83,
+    "question": "What is 'ternary operator' in Python?",
+    "keywords": ["ternary", "conditional", "one-liner"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "It is a compact conditional expression: [value_if_true] if [condition] else [value_if_false]."
+  },
+  {
+    "id": 84,
+    "question": "Write code to zip two lists into a dictionary.",
+    "keywords": ["zip", "dictionary", "mapping"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "d = dict(zip(keys, values))"
+  },
+  {
+    "id": 85,
+    "question": "Explain 'pip' in Python.",
+    "keywords": ["pip", "packages", "installation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "pip is the standard package manager for Python used to install and manage software packages from the Python Package Index (PyPI)."
+  },
+  {
+    "id": 86,
+    "question": "How do you find the power of 2^3 in Python?",
+    "keywords": ["math", "power", "operators"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = 2 ** 3"
+  },
+  {
+    "id": 87,
+    "question": "What is a 'virtual environment'?",
+    "keywords": ["venv", "isolation", "dependency"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A virtual environment is a tool used to keep the dependencies required by different projects separate by creating isolated spaces."
+  },
+  {
+    "id": 88,
+    "question": "How do you sort a list in descending order?",
+    "keywords": ["sort", "reverse", "list"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "my_list.sort(reverse=True)"
+  },
+  {
+    "id": 89,
+    "question": "What is 'type hinting'?",
+    "keywords": ["typing", "annotation", "hints"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Type hinting allows you to specify the expected data types of variables and function parameters, improving code readability and enabling static analysis."
+  },
+  {
+    "id": 90,
+    "question": "Write a regex to find all numbers in a string.",
+    "keywords": ["regex", "re", "numbers"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import re; nums = re.findall(r'\\d+', s)"
+  },
+  {
+    "id": 91,
+    "question": "What is the difference between 'input()' and 'sys.stdin.read()'?",
+    "keywords": ["input", "stdin", "io"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "input() reads a single line; sys.stdin.read() reads all characters until EOF (useful for multi-line input)."
+  },
+  {
+    "id": 92,
+    "question": "How do you check if an object is an instance of a class?",
+    "keywords": ["isinstance", "type", "oop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "check = isinstance(obj, MyClass)"
+  },
+  {
+    "id": 93,
+    "question": "Explain 'string interning'.",
+    "keywords": ["interning", "memory", "optimization"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Interning is a method of storing only one copy of each distinct string value in memory to save space and speed up comparisons."
+  },
+  {
+    "id": 94,
+    "question": "Write code to get unique elements from a list while preserving order.",
+    "keywords": ["unique", "order", "dictionary"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = list(dict.fromkeys(my_list))"
+  },
+  {
+    "id": 95,
+    "question": "What is a 'namespace' conflict?",
+    "keywords": ["namespace", "collision", "import"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A namespace conflict occurs when two different modules have objects with the same name, and both are imported into the same scope."
+  },
+  {
+    "id": 96,
+    "question": "How do you calculate the square root of 16?",
+    "keywords": ["math", "sqrt", "module"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import math; res = math.sqrt(16)"
+  },
+  {
+    "id": 97,
+    "question": "Explain 'duck typing'.",
+    "keywords": ["duck typing", "dynamic", "oop"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Duck typing is a concept where an object's suitability is determined by the presence of certain methods/attributes rather than its actual type."
+  },
+  {
+    "id": 98,
+    "question": "How do you create a set with elements 1, 2, 3?",
+    "keywords": ["set", "literal", "syntax"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "my_set = {1, 2, 3}"
+  },
+  {
+    "id": 99,
+    "question": "What is 'Pythonic' code?",
+    "keywords": ["pythonic", "zen", "style"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Pythonic code follows the 'Zen of Python'—it is code that is clear, concise, and uses Python's unique features effectively for readability."
+  },
+  {
+    "id": 100,
+    "question": "Write code to clear all elements from a list 'L'.",
+    "keywords": ["clear", "list", "mutation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "L.clear()"
+  }
+]
