@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configure Session | MockPrep AI</title>
+    
+    <script>
+        (function() {
+            if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html';
+            }
+        })();
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,13 +24,6 @@
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
         }
-
-        /* Access Control Script */
-        <script>
-            if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-                window.location.href = 'login.html';
-            }
-        </script>
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
@@ -35,14 +37,11 @@
             overflow-x: hidden;
         }
 
+        /* Animated Background Orbs */
         .orb {
             position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            filter: blur(100px);
-            z-index: -1;
-            opacity: 0.2;
+            width: 500px; height: 500px; border-radius: 50%;
+            filter: blur(100px); z-index: -1; opacity: 0.2;
         }
         .orb-1 { background: var(--primary); top: -10%; left: -10%; }
         .orb-2 { background: #0ea5e9; bottom: -10%; right: -10%; }
@@ -66,12 +65,12 @@
         }
 
         h1 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700; text-align: center; }
-        p.subtitle { color: var(--text-dim); text-align: center; margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .subtitle { color: var(--text-dim); text-align: center; margin-bottom: 2.5rem; font-size: 0.95rem; }
 
         .form-group { margin-bottom: 2rem; }
         label { display: block; color: var(--text-dim); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
 
-        /* Custom Dropdown */
+        /* Custom Dropdown Styling */
         select {
             width: 100%;
             padding: 14px;
@@ -88,13 +87,10 @@
             background-position: right 15px center;
             background-size: 18px;
         }
+        option { background-color: #1e293b; color: white; }
 
-        /* Custom Radio Buttons (Identity Cards) */
-        .radio-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+        /* Persona Selection Cards */
+        .radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
         .radio-card {
             position: relative;
@@ -107,22 +103,19 @@
             transition: 0.3s;
         }
 
-        .radio-card input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
-
         .radio-card:hover { background: rgba(255, 255, 255, 0.06); }
 
         .radio-card.active {
             border-color: var(--primary);
             background: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
         }
 
-        .avatar-emoji { font-size: 2rem; display: block; margin-bottom: 5px; }
+        .avatar-emoji { font-size: 2.2rem; display: block; margin-bottom: 8px; }
+        .radio-card strong { display: block; margin-bottom: 4px; }
+        .radio-card small { font-size: 0.75rem; color: var(--text-dim); }
 
-        /* Start Button */
+        /* Launch Button */
         .btn-start {
             width: 100%;
             padding: 16px;
@@ -136,15 +129,18 @@
             transition: 0.3s;
             box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
             margin-top: 1rem;
+            opacity: 0.5;
+            pointer-events: none; /* Disabled by default */
         }
 
-        .btn-start:hover {
+        .btn-start.enabled {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .btn-start.enabled:hover {
             background: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 15px 25px -5px rgba(99, 102, 241, 0.5);
-        }
-        .clr{
-            color: black;
         }
     </style>
 </head>
@@ -154,82 +150,77 @@
     <div class="orb orb-2"></div>
 
     <main class="config-card">
-        <h1>Set Up Your Interview</h1>
-        <p class="subtitle">Customize the simulation to match your target role.</p>
+        <h1>Customize Session</h1>
+        <p class="subtitle">Select your subject and interviewer style.</p>
 
         <div class="form-group">
-            <label for="subject">Select Interview Subject</label>
-            <select id="subject" onchange="checkCompletion()">
-                <option class ="clr" value="" disabled selected>Choose a topic...</option>
-                <option class ="clr" value="frontend">Frontend Development</option>
-                <option class ="clr" value="backend">Backend Engineering</option>
-                <option class ="clr" value="ds">Data Science & ML</option>
-                <option class ="clr" value="behavioral">HR & Behavioral</option>
+            <label for="subject">Interview Topic</label>
+            <select id="subject" onchange="validateForm()">
+                <option value="" disabled selected>Choose a subject...</option>
+                <option value="python">Python Programming</option>
+                <option value="dbms">Database Management (DBMS)</option>
+                <option value="java">Java Development</option>
+                <option value="ds">Data Structures (DS)</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Select Interviewer Persona</label>
+            <label>Interviewer Persona</label>
             <div class="radio-group">
-                <div class="radio-card" onclick="setPersona(this, 'Lady')">
-                    <input type="radio" name="persona" value="Lady">
+                <div class="radio-card" id="ladyCard" onclick="selectPersona('Lady')">
                     <span class="avatar-emoji">👩‍💼</span>
                     <strong>Lady</strong>
-                    <div style="font-size: 0.75rem; color: var(--text-dim);">Formal & Direct</div>
+                    <small>Structured & Formal</small>
                 </div>
-                <div class="radio-card" onclick="setPersona(this, 'Sir')">
-                    <input type="radio" name="persona" value="Sir">
+                <div class="radio-card" id="sirCard" onclick="selectPersona('Sir')">
                     <span class="avatar-emoji">👨‍💼</span>
                     <strong>Sir</strong>
-                    <div style="font-size: 0.75rem; color: var(--text-dim);">Analytical & Technical</div>
+                    <small>Technical & In-depth</small>
                 </div>
             </div>
         </div>
 
-        <button class="btn-start" id="startBtn" onclick="launchInterview()" style="opacity: 0.5; cursor: not-allowed;" disabled>
-            Start Interview
+        <button class="btn-start" id="startBtn" onclick="launchSession()">
+            Proceed to Instructions
         </button>
     </main>
 
     <script>
         let selectedPersona = "";
 
-        function setPersona(element, value) {
-            // Remove active class from all
-            document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('active'));
-            // Add active to clicked
-            element.classList.add('active');
-            selectedPersona = value;
-            checkCompletion();
+        function selectPersona(persona) {
+            // UI Updates
+            document.getElementById('ladyCard').classList.remove('active');
+            document.getElementById('sirCard').classList.remove('active');
+            
+            if(persona === 'Lady') document.getElementById('ladyCard').classList.add('active');
+            else document.getElementById('sirCard').classList.add('active');
+
+            selectedPersona = persona;
+            validateForm();
         }
 
-        function checkCompletion() {
+        function validateForm() {
             const subject = document.getElementById('subject').value;
             const btn = document.getElementById('startBtn');
 
-            if (subject && selectedPersona) {
-                btn.style.opacity = "1";
-                btn.style.cursor = "pointer";
-                btn.disabled = false;
+            if (subject !== "" && selectedPersona !== "") {
+                btn.classList.add('enabled');
+            } else {
+                btn.classList.remove('enabled');
             }
         }
 
-        function launchInterview() {
+        function launchSession() {
             const subject = document.getElementById('subject').value;
-            // Store choices for the interview page
+            
+            // Persist choices for the actual interview page
             localStorage.setItem('session_subject', subject);
             localStorage.setItem('session_persona', selectedPersona);
             
-            // Navigate to instructions
+            // Move to instructions page
             window.location.href = 'instruction.html';
         }
-                // Add this to the top of index.html, selection.html, etc.
-(function() {
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (isLoggedIn !== 'true') {
-        window.location.href = 'login.html';
-    }
-})();
     </script>
 </body>
 </html>
