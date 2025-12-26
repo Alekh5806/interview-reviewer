@@ -917,5 +917,914 @@
     "max_score": 10,
     "type": "theory",
     "answer": "Analysis of time and space efficiency."
+  },
+  {
+    "id": 101,
+    "question": "What is asymptotic analysis?",
+    "keywords": ["asymptotic analysis"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Asymptotic analysis evaluates algorithm performance as input size grows."
+  },
+  {
+    "id": 102,
+    "question": "What is Big Omega notation?",
+    "keywords": ["Big Omega"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Big Omega represents the best-case time complexity."
+  },
+  {
+    "id": 103,
+    "question": "What is Big Theta notation?",
+    "keywords": ["Big Theta"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Big Theta represents the average-case complexity."
+  },
+  {
+    "id": 104,
+    "question": "What is a multi-dimensional array?",
+    "keywords": ["multi dimensional array"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An array with more than one dimension, like 2D or 3D arrays."
+  },
+  {
+    "id": 105,
+    "question": "What is jagged array?",
+    "keywords": ["jagged array"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An array of arrays with different sizes."
+  },
+  {
+    "id": 106,
+    "question": "What is self-referential structure?",
+    "keywords": ["self referential structure"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A structure that contains a pointer to itself."
+  },
+  {
+    "id": 107,
+    "question": "What is header linked list?",
+    "keywords": ["header linked list"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A linked list with a special header node."
+  },
+  {
+    "id": 108,
+    "question": "What is polynomial representation using linked list?",
+    "keywords": ["polynomial", "linked list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Polynomial terms are stored as nodes with coefficient and exponent."
+  },
+  {
+    "id": 109,
+    "question": "What is sparse matrix representation?",
+    "keywords": ["sparse matrix"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stores only non-zero elements to save memory."
+  },
+  {
+    "id": 110,
+    "question": "What is expression evaluation using stack?",
+    "keywords": ["expression evaluation", "stack"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stack is used to evaluate postfix or prefix expressions."
+  },
+
+  {
+    "id": 111,
+    "question": "What is recursion stack?",
+    "keywords": ["recursion stack"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stack memory used to store recursive function calls."
+  },
+  {
+    "id": 112,
+    "question": "What is call stack?",
+    "keywords": ["call stack"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stack that stores active function calls."
+  },
+  {
+    "id": 113,
+    "question": "What is overflow in queue?",
+    "keywords": ["queue overflow"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Occurs when inserting into a full queue."
+  },
+  {
+    "id": 114,
+    "question": "What is underflow in queue?",
+    "keywords": ["queue underflow"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Occurs when deleting from an empty queue."
+  },
+  {
+    "id": 115,
+    "question": "What is multiple queue?",
+    "keywords": ["multiple queue"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Multiple queues implemented in a single array."
+  },
+  {
+    "id": 116,
+    "question": "What is priority scheduling?",
+    "keywords": ["priority scheduling"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Processes executed based on priority."
+  },
+  {
+    "id": 117,
+    "question": "What is threaded binary tree?",
+    "keywords": ["threaded binary tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uses NULL pointers to store traversal links."
+  },
+  {
+    "id": 118,
+    "question": "What is complete graph?",
+    "keywords": ["complete graph"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Graph where every vertex is connected to all others."
+  },
+  {
+    "id": 119,
+    "question": "What is directed graph?",
+    "keywords": ["directed graph"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Graph with edges having direction."
+  },
+  {
+    "id": 120,
+    "question": "What is weighted graph?",
+    "keywords": ["weighted graph"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Graph whose edges have weights."
+  },
+
+  {
+    "id": 121,
+    "question": "What is topological sorting?",
+    "keywords": ["topological sort"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Linear ordering of vertices in a DAG."
+  },
+  {
+    "id": 122,
+    "question": "What is DAG?",
+    "keywords": ["DAG"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Directed Acyclic Graph."
+  },
+  {
+    "id": 123,
+    "question": "What is articulation point?",
+    "keywords": ["articulation point"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Vertex whose removal increases graph components."
+  },
+  {
+    "id": 124,
+    "question": "What is bridge in graph?",
+    "keywords": ["bridge"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Edge whose removal disconnects the graph."
+  },
+  {
+    "id": 125,
+    "question": "What is union-find data structure?",
+    "keywords": ["union find"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Used to manage disjoint sets."
+  },
+  {
+    "id": 126,
+    "question": "What is path compression?",
+    "keywords": ["path compression"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Optimization technique in union-find."
+  },
+  {
+    "id": 127,
+    "question": "What is heapify operation?",
+    "keywords": ["heapify"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Process of converting array into heap."
+  },
+  {
+    "id": 128,
+    "question": "What is external sorting?",
+    "keywords": ["external sorting"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Sorting data that does not fit in memory."
+  },
+  {
+    "id": 129,
+    "question": "What is internal sorting?",
+    "keywords": ["internal sorting"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Sorting data that fits in main memory."
+  },
+  {
+    "id": 130,
+    "question": "What is counting sort?",
+    "keywords": ["counting sort"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Sorting based on counting occurrences."
+  },
+
+  {
+    "id": 131,
+    "question": "What is radix sort?",
+    "keywords": ["radix sort"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Sorts numbers digit by digit."
+  },
+  {
+    "id": 132,
+    "question": "What is bucket sort?",
+    "keywords": ["bucket sort"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Distributes elements into buckets and sorts them."
+  },
+  {
+    "id": 133,
+    "question": "What is tail pointer in linked list?",
+    "keywords": ["tail pointer"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Pointer that stores address of last node."
+  },
+  {
+    "id": 134,
+    "question": "What is memory fragmentation?",
+    "keywords": ["fragmentation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Wastage of memory due to improper allocation."
+  },
+  {
+    "id": 135,
+    "question": "What is internal fragmentation?",
+    "keywords": ["internal fragmentation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Unused memory inside allocated block."
+  },
+  {
+    "id": 136,
+    "question": "What is external fragmentation?",
+    "keywords": ["external fragmentation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Unused memory between allocated blocks."
+  },
+  {
+    "id": 137,
+    "question": "What is sentinel node?",
+    "keywords": ["sentinel node"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dummy node used to simplify operations."
+  },
+  {
+    "id": 138,
+    "question": "What is circular buffer?",
+    "keywords": ["circular buffer"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Fixed-size buffer that wraps around."
+  },
+  {
+    "id": 139,
+    "question": "What is algorithm stability?",
+    "keywords": ["algorithm stability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Preserving order of equal elements."
+  },
+  {
+    "id": 140,
+    "question": "What is online algorithm?",
+    "keywords": ["online algorithm"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Processes input as it arrives."
+  },
+
+  {
+    "id": 141,
+    "question": "What is offline algorithm?",
+    "keywords": ["offline algorithm"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Requires all input before execution."
+  },
+  {
+    "id": 142,
+    "question": "What is cache-friendly algorithm?",
+    "keywords": ["cache friendly"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Algorithm optimized for cache usage."
+  },
+  {
+    "id": 143,
+    "question": "What is randomized algorithm?",
+    "keywords": ["randomized algorithm"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uses random input to improve performance."
+  },
+  {
+    "id": 144,
+    "question": "What is skip list?",
+    "keywords": ["skip list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Probabilistic alternative to balanced trees."
+  },
+  {
+    "id": 145,
+    "question": "What is bloom filter?",
+    "keywords": ["bloom filter"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Probabilistic data structure for membership testing."
+  },
+  {
+    "id": 146,
+    "question": "What is bit manipulation?",
+    "keywords": ["bit manipulation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Operations performed at bit level."
+  },
+  {
+    "id": 147,
+    "question": "What is XOR linked list?",
+    "keywords": ["XOR linked list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Linked list using XOR of addresses."
+  },
+  {
+    "id": 148,
+    "question": "What is implicit data structure?",
+    "keywords": ["implicit data structure"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Structure with no explicit pointers."
+  },
+  {
+    "id": 149,
+    "question": "What is explicit data structure?",
+    "keywords": ["explicit data structure"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uses pointers to represent relationships."
+  },
+  {
+    "id": 150,
+    "question": "What is amortized time complexity?",
+    "keywords": ["amortized complexity"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Average time per operation over sequence."
+  },
+
+  {
+    "id": 151,
+    "question": "What is cache oblivious algorithm?",
+    "keywords": ["cache oblivious"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Algorithm that performs well across cache sizes."
+  },
+  {
+    "id": 152,
+    "question": "What is persistent data structure?",
+    "keywords": ["persistent data structure"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Preserves previous versions after modification."
+  },
+  {
+    "id": 153,
+    "question": "What is ephemeral data structure?",
+    "keywords": ["ephemeral data structure"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Allows only one version at a time."
+  },
+  {
+    "id": 154,
+    "question": "What is memory hierarchy?",
+    "keywords": ["memory hierarchy"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Organization of memory levels by speed and size."
+  },
+  {
+    "id": 155,
+    "question": "What is algorithmic paradigm?",
+    "keywords": ["algorithmic paradigm"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "General approach to solving problems."
+  },
+  {
+    "id": 156,
+    "question": "What is heuristic algorithm?",
+    "keywords": ["heuristic algorithm"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uses approximation for faster solutions."
+  },
+  {
+    "id": 157,
+    "question": "What is load balancing?",
+    "keywords": ["load balancing"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Distributing workload evenly."
+  },
+  {
+    "id": 158,
+    "question": "What is memory pool?",
+    "keywords": ["memory pool"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Pre-allocated memory for faster allocation."
+  },
+  {
+    "id": 159,
+    "question": "What is freelist?",
+    "keywords": ["freelist"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "List of available memory blocks."
+  },
+  {
+    "id": 160,
+    "question": "What is data locality?",
+    "keywords": ["data locality"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Accessing nearby memory locations frequently."
+  },
+  {
+    "id": 161,
+    "question": "What is locality of reference?",
+    "keywords": ["locality of reference"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Programs tend to access the same memory locations repeatedly over time."
+  },
+  {
+    "id": 162,
+    "question": "What is temporal locality?",
+    "keywords": ["temporal locality"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Recently accessed memory locations are likely to be accessed again."
+  },
+  {
+    "id": 163,
+    "question": "What is spatial locality?",
+    "keywords": ["spatial locality"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Memory locations near recently accessed locations are likely to be accessed."
+  },
+  {
+    "id": 164,
+    "question": "What is pointer arithmetic?",
+    "keywords": ["pointer arithmetic"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Operations performed on pointers to access memory locations."
+  },
+  {
+    "id": 165,
+    "question": "What is shallow copy?",
+    "keywords": ["shallow copy"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Copies object references instead of actual data."
+  },
+  {
+    "id": 166,
+    "question": "What is deep copy?",
+    "keywords": ["deep copy"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Creates a complete copy of the object and its data."
+  },
+  {
+    "id": 167,
+    "question": "What is memory alignment?",
+    "keywords": ["memory alignment"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Arranging data in memory for faster access."
+  },
+  {
+    "id": 168,
+    "question": "What is padding in structures?",
+    "keywords": ["structure padding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Extra memory added to align structure members."
+  },
+  {
+    "id": 169,
+    "question": "What is cyclic graph?",
+    "keywords": ["cyclic graph"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A graph that contains at least one cycle."
+  },
+  {
+    "id": 170,
+    "question": "What is acyclic graph?",
+    "keywords": ["acyclic graph"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A graph that does not contain any cycle."
+  },
+
+  {
+    "id": 171,
+    "question": "What is degree of a vertex?",
+    "keywords": ["degree of vertex"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Number of edges connected to a vertex."
+  },
+  {
+    "id": 172,
+    "question": "What is indegree?",
+    "keywords": ["indegree"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Number of incoming edges to a vertex."
+  },
+  {
+    "id": 173,
+    "question": "What is outdegree?",
+    "keywords": ["outdegree"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Number of outgoing edges from a vertex."
+  },
+  {
+    "id": 174,
+    "question": "What is heap sort?",
+    "keywords": ["heap sort"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Sorting algorithm based on heap data structure."
+  },
+  {
+    "id": 175,
+    "question": "What is tournament tree?",
+    "keywords": ["tournament tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Binary tree used to find minimum or maximum element."
+  },
+  {
+    "id": 176,
+    "question": "What is height-balanced tree?",
+    "keywords": ["height balanced tree"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tree where height difference of subtrees is limited."
+  },
+  {
+    "id": 177,
+    "question": "What is splay tree?",
+    "keywords": ["splay tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Self-adjusting binary search tree."
+  },
+  {
+    "id": 178,
+    "question": "What is skip graph?",
+    "keywords": ["skip graph"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Distributed version of skip list."
+  },
+  {
+    "id": 179,
+    "question": "What is multiset?",
+    "keywords": ["multiset"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Collection that allows duplicate elements."
+  },
+  {
+    "id": 180,
+    "question": "What is deque application?",
+    "keywords": ["deque application"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Used in palindrome checking and sliding window problems."
+  },
+
+  {
+    "id": 181,
+    "question": "What is sliding window technique?",
+    "keywords": ["sliding window"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Technique to process a subset of elements efficiently."
+  },
+  {
+    "id": 182,
+    "question": "What is two-pointer technique?",
+    "keywords": ["two pointer"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uses two indices to solve array problems efficiently."
+  },
+  {
+    "id": 183,
+    "question": "What is monotonic stack?",
+    "keywords": ["monotonic stack"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stack that maintains elements in sorted order."
+  },
+  {
+    "id": 184,
+    "question": "What is monotonic queue?",
+    "keywords": ["monotonic queue"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Queue that maintains increasing or decreasing order."
+  },
+  {
+    "id": 185,
+    "question": "What is bitmasking?",
+    "keywords": ["bitmasking"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Technique using bits to represent states."
+  },
+  {
+    "id": 186,
+    "question": "What is Fenwick tree?",
+    "keywords": ["Fenwick tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tree used for range queries and updates."
+  },
+  {
+    "id": 187,
+    "question": "What is segment tree?",
+    "keywords": ["segment tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tree used to store information about intervals."
+  },
+  {
+    "id": 188,
+    "question": "What is lazy propagation?",
+    "keywords": ["lazy propagation"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Optimization technique in segment trees."
+  },
+  {
+    "id": 189,
+    "question": "What is Cartesian tree?",
+    "keywords": ["cartesian tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Binary tree derived from a sequence."
+  },
+  {
+    "id": 190,
+    "question": "What is rope data structure?",
+    "keywords": ["rope"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Efficient structure for string manipulation."
+  },
+
+  {
+    "id": 191,
+    "question": "What is treap?",
+    "keywords": ["treap"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Combination of binary search tree and heap."
+  },
+  {
+    "id": 192,
+    "question": "What is order statistics tree?",
+    "keywords": ["order statistics tree"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tree that supports rank-based queries."
+  },
+  {
+    "id": 193,
+    "question": "What is disjoint set?",
+    "keywords": ["disjoint set"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Collection of non-overlapping sets."
+  },
+  {
+    "id": 194,
+    "question": "What is Euler tour of tree?",
+    "keywords": ["Euler tour"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Traversal technique visiting nodes multiple times."
+  },
+  {
+    "id": 195,
+    "question": "What is Hamiltonian path?",
+    "keywords": ["Hamiltonian path"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Path visiting each vertex exactly once."
+  },
+  {
+    "id": 196,
+    "question": "What is Hamiltonian cycle?",
+    "keywords": ["Hamiltonian cycle"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Cycle visiting each vertex exactly once."
+  },
+  {
+    "id": 197,
+    "question": "What is adjacency set?",
+    "keywords": ["adjacency set"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Set-based representation of graph neighbors."
+  },
+  {
+    "id": 198,
+    "question": "What is dynamic array?",
+    "keywords": ["dynamic array"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Array that resizes automatically."
+  },
+  {
+    "id": 199,
+    "question": "What is vector data structure?",
+    "keywords": ["vector"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dynamic array implementation in C++."
+  },
+  {
+    "id": 200,
+    "question": "What is deque implementation using array?",
+    "keywords": ["deque array"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Deque implemented using circular array."
   }
 ]
+
