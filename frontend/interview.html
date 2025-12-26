@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Session | MockPrep Pro</title>
+    <title>Live Session | MockPrep Pro</title>
     
     <script>
         (function() {
@@ -16,112 +16,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-body: #0f172a; --bg-card: #1e293b; --primary: #6366f1;
-            --accent: #10b981; --danger: #ef4444; --text-main: #f8fafc;
-            --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.1);
+            --bg-body: #020617; --bg-card: #0f172a; --primary: #6366f1;
+            --accent: #10b981; --danger: #f43f5e; --text-main: #f8fafc;
+            --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.06);
+            --neon-glow: rgba(99, 102, 241, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-body); color: var(--text-main); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
 
+        /* --- SLEEK HEADER --- */
         header {
-            height: 70px; background: var(--bg-card); border-bottom: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;
+            height: 60px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem;
+            z-index: 100;
         }
-        .status-badge { color: var(--accent); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-        .status-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .status-badge { color: var(--accent); font-size: 0.75rem; font-weight: 800; display: flex; align-items: center; gap: 10px; letter-spacing: 1px; }
+        .status-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: blink 1.5s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-        .progress-container { width: 40%; height: 8px; background: #0f172a; border-radius: 10px; }
-        #progressBar { width: 0%; height: 100%; background: var(--primary); border-radius: 10px; transition: 0.5s ease; }
+        .progress-container { width: 45%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; }
+        #progressBar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--primary), #818cf8); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
 
-        main { display: grid; grid-template-columns: 480px 1fr; flex: 1; overflow: hidden; }
+        .timer-box { font-family: 'Fira Code', monospace; font-weight: 700; font-size: 1.1rem; color: var(--text-dim); transition: color 0.3s; }
+        .timer-low { color: var(--danger) !important; animation: pulse-red 1s infinite; }
+        @keyframes pulse-red { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
-        .question-panel { background: var(--bg-card); border-right: 1px solid var(--border); padding: 3rem; overflow-y: auto; }
-        .badge { padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; border: 1px solid var(--border); margin-right: 8px; }
+        /* --- LAYOUT GRID --- */
+        main { display: grid; grid-template-columns: 460px 1fr; flex: 1; overflow: hidden; }
 
-        .question-text h2 { font-size: 1.8rem; margin-bottom: 1.5rem; line-height: 1.3; font-weight: 800; }
-        .question-description { color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; }
+        .question-panel { background: var(--bg-card); border-right: 1px solid var(--border); padding: 3.5rem 3rem; overflow-y: auto; position: relative; }
+        .q-meta { display: flex; gap: 10px; margin-bottom: 1.5rem; }
+        .badge { padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; border: 1px solid var(--border); color: var(--text-dim); }
+        .badge-type { background: var(--primary); border: none; color: white; box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2); }
 
-        .workspace-panel { padding: 1.5rem; display: flex; flex-direction: column; background: #0b1120; position: relative; }
+        .question-text h2 { font-size: 1.7rem; margin-bottom: 1.5rem; line-height: 1.3; font-weight: 800; background: linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .question-description { color: var(--text-dim); line-height: 1.8; font-size: 1rem; }
+
+        .workspace-panel { padding: 1.5rem; display: flex; flex-direction: column; background: #070b14; position: relative; }
         
         .editor-container {
-            flex: 1; background: rgba(30, 41, 59, 0.3); border-radius: 24px; border: 1px solid var(--border);
+            flex: 1; background: rgba(30, 41, 59, 0.2); border-radius: 24px; border: 1px solid var(--border);
             display: flex; flex-direction: column; overflow: hidden; backdrop-filter: blur(20px);
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
         }
         .editor-header { 
-            background: #1e293b; padding: 15px 25px; display: flex; justify-content: space-between; 
+            background: rgba(30, 41, 59, 0.4); padding: 18px 28px; display: flex; justify-content: space-between; 
             align-items: center; border-bottom: 1px solid var(--border);
         }
 
-        /* --- MIC & VISUALIZER UI --- */
+        /* --- AUDIO UI --- */
         .audio-controls { display: none; align-items: center; gap: 20px; }
-        #visualizer { width: 120px; height: 30px; border-radius: 4px; background: rgba(0,0,0,0.2); }
-        .mic-btn-group { display: flex; gap: 8px; }
+        #visualizer { width: 140px; height: 35px; border-radius: 6px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); }
         
         .btn-mic { 
-            padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; 
-            font-size: 0.75rem; font-weight: 700; transition: 0.2s; 
+            padding: 8px 18px; border-radius: 10px; border: none; cursor: pointer; 
+            font-size: 0.75rem; font-weight: 800; transition: 0.3s; text-transform: uppercase;
         }
-        .btn-mic.start { background: var(--accent); color: white; }
-        .btn-mic.stop { background: var(--danger); color: white; }
-        .btn-mic.recording { animation: glow 1.5s infinite; }
-        @keyframes glow { 0% { box-shadow: 0 0 0 0px rgba(16, 185, 129, 0.4); } 100% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); } }
+        .btn-mic.start { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); }
+        .btn-mic.stop { background: var(--danger); color: white; box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2); }
 
         textarea { 
-            flex: 1; background: transparent; border: none; color: #e2e8f0; padding: 30px; 
+            flex: 1; background: transparent; border: none; color: #e2e8f0; padding: 35px; 
             font-size: 1.15rem; resize: none; outline: none; line-height: 1.7; 
         }
 
-        /* --- AVATAR & LIPS --- */
+        /* --- PERSONA & AVATAR --- */
         .avatar-container {
-            position: absolute; bottom: 100px; right: 40px; width: 260px; height: 260px;
-            border-radius: 50%; border: 4px solid var(--primary);
-            overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.8); background: #000;
+            position: absolute; bottom: 80px; right: 40px; width: 240px; height: 240px;
+            border-radius: 50%; border: 3px solid var(--primary);
+            overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 20px var(--neon-glow);
+            background: #000; transition: 0.5s;
         }
         .avatar-img { width: 100%; height: 100%; object-fit: cover; }
         
         .mouth-overlay {
             position: absolute; bottom: 33%; left: 50%; transform: translateX(-50%);
-            width: 36px; height: 6px; background: #2b1111; border-radius: 50%;
-            opacity: 0; border-bottom: 3px solid #ff7373;
+            width: 32px; height: 4px; background: #2b1111; border-radius: 50%;
+            opacity: 0; border-bottom: 2px solid #ff7373;
         }
         .speaking .mouth-overlay { opacity: 1; animation: speakMorph 0.1s infinite alternate; }
         @keyframes speakMorph {
-            0% { height: 4px; transform: translateX(-50%) scaleY(1); }
-            100% { height: 20px; border-radius: 20% 20% 50% 50%; transform: translateX(-50%) scaleY(1.2); }
+            0% { height: 4px; transform: translateX(-50%) scaleX(1); }
+            100% { height: 18px; border-radius: 20% 20% 50% 50%; transform: translateX(-50%) scaleX(1.1); }
         }
 
+        /* --- ACTION BAR --- */
         .action-bar { height: 90px; background: var(--bg-card); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; }
-        .btn { padding: 14px 32px; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; border: none; font-size: 1rem; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:disabled { opacity: 0.3; cursor: not-allowed; }
+        .btn { padding: 14px 35px; border-radius: 14px; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3); }
+        .btn-primary:disabled { opacity: 0.2; cursor: not-allowed; transform: none !important; }
+        .btn:hover:not(:disabled) { transform: translateY(-4px) scale(1.02); filter: brightness(1.1); }
+        .btn:active { transform: translateY(-1px); }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="status-badge"><div class="status-dot"></div> AI INTERVIEWER LIVE</div>
+        <div class="status-badge"><div class="status-dot"></div> NEURAL INTERFACE LIVE</div>
         <div class="progress-container"><div id="progressBar"></div></div>
-        <div id="timer" style="font-family: 'Fira Code'; font-weight: 800;">10:00</div>
+        <div id="timer" class="timer-box">08:00</div>
     </header>
 
     <main>
         <section class="question-panel">
             <div class="q-meta">
-                <span id="qNum" class="badge">Question</span>
-                <span id="qType" class="badge" style="background:var(--primary); border:none;">Theory</span>
+                <span id="qNum" class="badge">Challenge 01</span>
+                <span id="qType" class="badge badge-type">Neural Logic</span>
             </div>
             <div class="question-text">
-                <h2 id="qTitle">Synthesizing...</h2>
-                <div id="qDesc" class="question-description">The AI is preparing your next challenge.</div>
+                <h2 id="qTitle">Synthesizing Session...</h2>
+                <div id="qDesc" class="question-description">Please wait. Calibrating interviewer persona and track data.</div>
             </div>
         </section>
 
         <section class="workspace-panel">
             <div class="editor-container">
                 <div class="editor-header">
-                    <span id="workspaceLabel">Response Editor</span>
+                    <span id="workspaceLabel" style="font-size: 0.8rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Awaiting Input</span>
                     <div class="audio-controls" id="audioSection">
                         <canvas id="visualizer"></canvas>
                         <div class="mic-btn-group">
@@ -130,27 +143,28 @@
                         </div>
                     </div>
                 </div>
-                <textarea id="answerArea" oninput="validateAnswer()" placeholder="Interviewer is speaking..."></textarea>
+                <textarea id="answerArea" oninput="validateAnswer()" placeholder="The interviewer will begin speaking shortly..."></textarea>
             </div>
 
             <div class="avatar-container" id="avatarBox">
-                <img id="avatarImg" class="avatar-img" src="" alt="AI Avatar">
+                <img id="avatarImg" class="avatar-img" src="" alt="Interviewer">
                 <div class="mouth-overlay"></div>
             </div>
         </section>
     </main>
 
     <footer class="action-bar">
-        <button class="btn" style="background:transparent; color:var(--text-dim); border:1px solid var(--border)" onclick="confirmExit()">End Session</button>
+        <button class="btn" style="background:transparent; color:var(--text-dim); border:1px solid var(--border)" onclick="confirmExit()">Quit Session</button>
         <div style="display:flex; gap:1.5rem">
-            <button class="btn" style="background:transparent; color:white; border:1px solid var(--border)" onclick="handleSkip()">Skip</button>
-            <button class="btn btn-primary" id="submitBtn" onclick="handleSubmit()" disabled>Submit & Next</button>
+            <button class="btn" style="background:transparent; color:white; border:1px solid var(--border)" onclick="handleSkip()">Skip Step</button>
+            <button class="btn btn-primary" id="submitBtn" onclick="handleSubmit()" disabled>Submit Response</button>
         </div>
     </footer>
 
     <script>
         const state = {
-            questions: [], currentIndex: 0, responses: [], timer: 600,
+            questions: [], currentIndex: 0, responses: [], 
+            timer: 480, // 👈 REDUCED BY 120s (8 Minutes Total)
             subject: localStorage.getItem("session_subject"),
             persona: localStorage.getItem("session_persona") || "Lady",
             isRecording: false
@@ -175,7 +189,7 @@
                 const data = await res.json();
                 state.questions = data.sort(() => 0.5 - Math.random()).slice(0, 10);
                 renderQuestion();
-            } catch (e) { document.getElementById('qTitle').innerText = "API Offline"; }
+            } catch (e) { document.getElementById('qTitle').innerText = "System Connectivity Error"; }
         }
 
         function updateAvatar() {
@@ -191,10 +205,10 @@
             const submitBtn = document.getElementById('submitBtn');
             
             toggleMic(false); 
-            area.value = ""; // Isolated buffer clear
+            area.value = ""; 
             submitBtn.disabled = true;
             
-            document.getElementById('qNum').innerText = `Step ${state.currentIndex + 1}`;
+            document.getElementById('qNum').innerText = `Challenge ${state.currentIndex + 1}`;
             document.getElementById('qTitle').innerText = q.question;
             document.getElementById('progressBar').style.width = `${((state.currentIndex + 1)/state.questions.length)*100}%`;
             
@@ -202,36 +216,33 @@
             document.getElementById('avatarBox').style.display = isCoding ? 'none' : 'block';
             document.getElementById('audioSection').style.display = isCoding ? 'none' : 'flex';
             area.style.fontFamily = isCoding ? "'Fira Code', monospace" : "'Inter', sans-serif";
+            area.placeholder = isCoding ? "// Write high-performance code here..." : "Interviewer is dictating...";
 
             if(!isCoding) speakConfident(q.question);
         }
 
-        // --- 🗣️ CONFIDENT HEAVY VOICE ENGINE ---
         function speakConfident(text) {
             synth.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
             const voices = synth.getVoices();
-            
-            // Priority: Premium Google voices for natural feel
             utterance.voice = voices.find(v => v.name.includes(state.persona === 'Lady' ? 'Female' : 'Male') && v.name.includes("Google")) || voices[0];
-            
-            // Heavy/Confident settings
             utterance.pitch = (state.persona === 'Sir') ? 0.75 : 0.85; 
-            utterance.rate = 0.92; // Slightly slower for authority
+            utterance.rate = 0.92;
 
             const avatar = document.getElementById('avatarBox');
-
             utterance.onboundary = (e) => {
                 if(e.name === 'word') {
                     avatar.classList.add('speaking');
-                    setTimeout(() => avatar.classList.remove('speaking'), 80); 
+                    setTimeout(() => avatar.classList.remove('speaking'), 85); 
                 }
             };
-            utterance.onend = () => avatar.classList.remove('speaking');
+            utterance.onend = () => {
+                avatar.classList.remove('speaking');
+                document.getElementById('answerArea').placeholder = "Speak now or type your response...";
+            };
             synth.speak(utterance);
         }
 
-        // --- 🎙️ MIC & VISUALIZER ENGINE ---
         async function toggleMic(on) {
             if (on) {
                 try {
@@ -249,7 +260,7 @@
                     state.isRecording = true;
                     document.getElementById('startBtn').style.display = 'none';
                     document.getElementById('stopBtn').style.display = 'block';
-                } catch (err) { alert("Microphone blocked."); }
+                } catch (err) { alert("Mic Access Required."); }
             } else {
                 if (stream) stream.getTracks().forEach(t => t.stop());
                 if (recognition) recognition.stop();
@@ -278,34 +289,35 @@
             if (!state.isRecording) return;
             requestAnimationFrame(draw);
             analyser.getByteFrequencyData(dataArray);
-            canvasCtx.fillStyle = '#1e293b';
-            canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-            const barWidth = (canvas.width / dataArray.length) * 2.5;
+            canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+            const barWidth = (canvas.width / dataArray.length) * 2;
             let x = 0;
             for (let i = 0; i < dataArray.length; i++) {
                 const barHeight = dataArray[i] / 4;
-                canvasCtx.fillStyle = `rgb(99, 102, 241)`;
+                const gradient = canvasCtx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '#6366f1');
+                gradient.addColorStop(1, '#a5b4fc');
+                canvasCtx.fillStyle = gradient;
                 canvasCtx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-                x += barWidth + 1;
+                x += barWidth + 2;
             }
         }
 
         function validateAnswer() {
             const val = document.getElementById('answerArea').value.trim();
-            document.getElementById('submitBtn').disabled = val.length < 10;
+            document.getElementById('submitBtn').disabled = val.length < 8;
         }
 
         function handleSubmit() {
             const q = state.questions[state.currentIndex];
             state.responses.push({
                 question: q.question, userAnswer: document.getElementById('answerArea').value, 
-                earned_score: 1, max_score: q.max_score // Scoring logic happens in result.html
+                earned_score: 1, max_score: q.max_score
             });
             if (state.currentIndex < state.questions.length - 1) {
                 state.currentIndex++; renderQuestion();
             } else {
-                sessionStorage.setItem("interview_results", JSON.stringify(state.responses));
-                window.location.href = "result.html";
+                completeSession();
             }
         }
 
@@ -314,22 +326,32 @@
             if (state.currentIndex < state.questions.length - 1) {
                 state.currentIndex++; renderQuestion();
             } else {
-                sessionStorage.setItem("interview_results", JSON.stringify(state.responses));
-                window.location.href = "result.html";
+                completeSession();
             }
         }
 
         function startTimer() {
             const el = document.getElementById('timer');
-            setInterval(() => {
+            const interval = setInterval(() => {
                 state.timer--;
                 let m = Math.floor(state.timer/60), s = state.timer%60;
                 el.innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
-                if(state.timer <= 0) window.location.href = "result.html";
+                
+                if(state.timer <= 60) el.classList.add('timer-low');
+                
+                if(state.timer <= 0) {
+                    clearInterval(interval);
+                    completeSession();
+                }
             }, 1000);
         }
 
-        function confirmExit() { if(confirm("End Session?")) window.location.href = "main.html"; }
+        function completeSession() {
+            sessionStorage.setItem("interview_results", JSON.stringify(state.responses));
+            window.location.href = "result.html";
+        }
+
+        function confirmExit() { if(confirm("Terminate Neural Session? Data will be purged.")) window.location.href = "main.html"; }
     </script>
 </body>
 </html>
