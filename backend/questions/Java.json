@@ -917,5 +917,914 @@
     "max_score": 10,
     "type": "theory",
     "answer": "Use encapsulation, abstraction, and low coupling."
+  },
+  {
+    "id": 101,
+    "question": "What is object-oriented analysis?",
+    "keywords": ["OOA"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object-oriented analysis focuses on identifying objects and their relationships."
+  },
+  {
+    "id": 102,
+    "question": "What is object-oriented design?",
+    "keywords": ["OOD"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object-oriented design converts analysis into class-based design."
+  },
+  {
+    "id": 103,
+    "question": "What is method hiding in Java?",
+    "keywords": ["method hiding"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "When a static method in child class hides parent class method."
+  },
+  {
+    "id": 104,
+    "question": "What is covariant return type?",
+    "keywords": ["covariant return"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Overridden method can return subtype of original return type."
+  },
+  {
+    "id": 105,
+    "question": "What is composition over inheritance?",
+    "keywords": ["composition vs inheritance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Design principle preferring composition instead of inheritance."
+  },
+  {
+    "id": 106,
+    "question": "What is object serialization?",
+    "keywords": ["serialization"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Converting object into byte stream."
+  },
+  {
+    "id": 107,
+    "question": "What is deserialization?",
+    "keywords": ["deserialization"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Converting byte stream back to object."
+  },
+  {
+    "id": 108,
+    "question": "What is immutable object?",
+    "keywords": ["immutable object"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object whose state cannot be changed."
+  },
+  {
+    "id": 109,
+    "question": "What is object pooling?",
+    "keywords": ["object pool"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reusing objects instead of creating new ones."
+  },
+  {
+    "id": 110,
+    "question": "What is defensive copying?",
+    "keywords": ["defensive copy"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Protecting object state by copying mutable objects."
+  },
+
+  {
+    "id": 111,
+    "question": "What is tight encapsulation?",
+    "keywords": ["tight encapsulation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Restricting direct access to class data."
+  },
+  {
+    "id": 112,
+    "question": "What is constructor chaining?",
+    "keywords": ["constructor chaining"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Calling one constructor from another."
+  },
+  {
+    "id": 113,
+    "question": "What is class loading in Java?",
+    "keywords": ["class loading"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Process of loading class into JVM memory."
+  },
+  {
+    "id": 114,
+    "question": "What is dynamic binding?",
+    "keywords": ["dynamic binding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Binding method call at runtime."
+  },
+  {
+    "id": 115,
+    "question": "What is early binding?",
+    "keywords": ["early binding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Binding method call at compile time."
+  },
+  {
+    "id": 116,
+    "question": "What is object graph?",
+    "keywords": ["object graph"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Network of objects referencing each other."
+  },
+  {
+    "id": 117,
+    "question": "What is method signature?",
+    "keywords": ["method signature"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Method name with parameter list."
+  },
+  {
+    "id": 118,
+    "question": "What is constructor visibility?",
+    "keywords": ["constructor visibility"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Access level of constructor."
+  },
+  {
+    "id": 119,
+    "question": "What is object equality contract?",
+    "keywords": ["equals contract"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Rules governing equals method behavior."
+  },
+  {
+    "id": 120,
+    "question": "What is hash-based collection behavior?",
+    "keywords": ["hash behavior"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Depends on equals and hashCode methods."
+  },
+
+  {
+    "id": 121,
+    "question": "What is object mutability risk?",
+    "keywords": ["mutability risk"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uncontrolled changes to object state."
+  },
+  {
+    "id": 122,
+    "question": "What is shallow immutability?",
+    "keywords": ["shallow immutability"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Top-level object is immutable but references are mutable."
+  },
+  {
+    "id": 123,
+    "question": "What is deep immutability?",
+    "keywords": ["deep immutability"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object and all referenced objects are immutable."
+  },
+  {
+    "id": 124,
+    "question": "What is object responsibility?",
+    "keywords": ["object responsibility"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Role played by an object in system."
+  },
+  {
+    "id": 125,
+    "question": "What is message passing in OOP?",
+    "keywords": ["message passing"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Objects communicate by calling methods."
+  },
+  {
+    "id": 126,
+    "question": "What is object collaboration?",
+    "keywords": ["object collaboration"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Objects working together to achieve task."
+  },
+  {
+    "id": 127,
+    "question": "What is class responsibility collaborator (CRC)?",
+    "keywords": ["CRC card"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Design technique for identifying class roles."
+  },
+  {
+    "id": 128,
+    "question": "What is dependency injection?",
+    "keywords": ["dependency injection"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Providing dependencies from outside the class."
+  },
+  {
+    "id": 129,
+    "question": "What is inversion of control?",
+    "keywords": ["IoC"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Framework controls object creation."
+  },
+  {
+    "id": 130,
+    "question": "What is interface-driven design?",
+    "keywords": ["interface design"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Designing system using interfaces."
+  },
+
+  {
+    "id": 131,
+    "question": "What is marker annotation?",
+    "keywords": ["marker annotation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Annotation without elements."
+  },
+  {
+    "id": 132,
+    "question": "What is custom annotation?",
+    "keywords": ["custom annotation"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "User-defined annotation in Java."
+  },
+  {
+    "id": 133,
+    "question": "What is object cloning risk?",
+    "keywords": ["cloning risk"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Shallow copy causing shared references."
+  },
+  {
+    "id": 134,
+    "question": "What is copy constructor concept?",
+    "keywords": ["copy constructor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Constructor that copies another object."
+  },
+  {
+    "id": 135,
+    "question": "What is class cohesion?",
+    "keywords": ["class cohesion"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Measure of how related class methods are."
+  },
+  {
+    "id": 136,
+    "question": "What is inheritance misuse?",
+    "keywords": ["inheritance misuse"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Using inheritance where composition is better."
+  },
+  {
+    "id": 137,
+    "question": "What is polymorphic behavior?",
+    "keywords": ["polymorphic behavior"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Different behavior for same method call."
+  },
+  {
+    "id": 138,
+    "question": "What is late initialization?",
+    "keywords": ["late initialization"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Initializing object when needed."
+  },
+  {
+    "id": 139,
+    "question": "What is object validity?",
+    "keywords": ["object validity"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ensuring object is in correct state."
+  },
+  {
+    "id": 140,
+    "question": "What is invariant in OOP?",
+    "keywords": ["invariant"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Condition that must always remain true."
+  },
+
+  {
+    "id": 141,
+    "question": "What is object ownership?",
+    "keywords": ["object ownership"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Responsibility for object lifecycle."
+  },
+  {
+    "id": 142,
+    "question": "What is delegation in Java?",
+    "keywords": ["delegation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Passing responsibility to another object."
+  },
+  {
+    "id": 143,
+    "question": "What is double dispatch?",
+    "keywords": ["double dispatch"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Method call depends on two object types."
+  },
+  {
+    "id": 144,
+    "question": "What is object snapshot?",
+    "keywords": ["object snapshot"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Capturing object state at a time."
+  },
+  {
+    "id": 145,
+    "question": "What is value object?",
+    "keywords": ["value object"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Immutable object representing value."
+  },
+  {
+    "id": 146,
+    "question": "What is entity object?",
+    "keywords": ["entity object"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Object with unique identity."
+  },
+  {
+    "id": 147,
+    "question": "What is domain model?",
+    "keywords": ["domain model"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Conceptual model of business domain."
+  },
+  {
+    "id": 148,
+    "question": "What is anemic domain model?",
+    "keywords": ["anemic model"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Model with data but no behavior."
+  },
+  {
+    "id": 149,
+    "question": "What is rich domain model?",
+    "keywords": ["rich model"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Model with data and behavior."
+  },
+  {
+    "id": 150,
+    "question": "What is object responsibility principle?",
+    "keywords": ["object responsibility"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Each object should have clear responsibility."
+  },
+
+  {
+    "id": 151,
+    "question": "What is information hiding?",
+    "keywords": ["information hiding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Exposing only what is necessary."
+  },
+  {
+    "id": 152,
+    "question": "What is class invariance?",
+    "keywords": ["class invariance"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Rules that instances must follow."
+  },
+  {
+    "id": 153,
+    "question": "What is object reuse?",
+    "keywords": ["object reuse"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Using existing objects again."
+  },
+  {
+    "id": 154,
+    "question": "What is extensibility in OOP?",
+    "keywords": ["extensibility"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ability to extend system behavior."
+  },
+  {
+    "id": 155,
+    "question": "What is reusability in OOP?",
+    "keywords": ["reusability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Using existing code for new applications."
+  },
+  {
+    "id": 156,
+    "question": "What is abstraction leakage?",
+    "keywords": ["abstraction leakage"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "When abstraction details are exposed."
+  },
+  {
+    "id": 157,
+    "question": "What is class dependency?",
+    "keywords": ["class dependency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "One class relying on another."
+  },
+  {
+    "id": 158,
+    "question": "What is cyclic dependency?",
+    "keywords": ["cyclic dependency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Classes depending on each other."
+  },
+  {
+    "id": 159,
+    "question": "What is decoupling?",
+    "keywords": ["decoupling"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reducing dependency between classes."
+  },
+  {
+    "id": 160,
+    "question": "What is refactoring?",
+    "keywords": ["refactoring"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Improving code without changing behavior."
+  },
+
+  {
+    "id": 161,
+    "question": "What is code smell?",
+    "keywords": ["code smell"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Indicates potential design problem."
+  },
+  {
+    "id": 162,
+    "question": "What is God class?",
+    "keywords": ["god class"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Class that does too much."
+  },
+  {
+    "id": 163,
+    "question": "What is object lifecycle management?",
+    "keywords": ["lifecycle management"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Managing creation and destruction of objects."
+  },
+  {
+    "id": 164,
+    "question": "What is fail-fast principle?",
+    "keywords": ["fail fast"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Detect errors as early as possible."
+  },
+  {
+    "id": 165,
+    "question": "What is null object pattern?",
+    "keywords": ["null object"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Using default object instead of null."
+  },
+  {
+    "id": 166,
+    "question": "What is object proxy?",
+    "keywords": ["proxy pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Controls access to another object."
+  },
+  {
+    "id": 167,
+    "question": "What is decorator pattern?",
+    "keywords": ["decorator pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Adds behavior dynamically to objects."
+  },
+  {
+    "id": 168,
+    "question": "What is adapter pattern?",
+    "keywords": ["adapter pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Allows incompatible interfaces to work together."
+  },
+  {
+    "id": 169,
+    "question": "What is bridge pattern?",
+    "keywords": ["bridge pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Separates abstraction from implementation."
+  },
+  {
+    "id": 170,
+    "question": "What is command pattern?",
+    "keywords": ["command pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Encapsulates request as an object."
+  },
+
+  {
+    "id": 171,
+    "question": "What is template method pattern?",
+    "keywords": ["template method"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Defines skeleton of algorithm."
+  },
+  {
+    "id": 172,
+    "question": "What is strategy pattern?",
+    "keywords": ["strategy pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Encapsulates interchangeable behaviors."
+  },
+  {
+    "id": 173,
+    "question": "What is state pattern?",
+    "keywords": ["state pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Changes behavior based on state."
+  },
+  {
+    "id": 174,
+    "question": "What is flyweight pattern?",
+    "keywords": ["flyweight pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reduces memory by sharing objects."
+  },
+  {
+    "id": 175,
+    "question": "What is prototype pattern?",
+    "keywords": ["prototype pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Creates objects by cloning."
+  },
+  {
+    "id": 176,
+    "question": "What is builder pattern?",
+    "keywords": ["builder pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Builds complex objects step by step."
+  },
+  {
+    "id": 177,
+    "question": "What is facade pattern?",
+    "keywords": ["facade pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Provides simplified interface."
+  },
+  {
+    "id": 178,
+    "question": "What is chain of responsibility pattern?",
+    "keywords": ["chain of responsibility"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Passes request along chain of handlers."
+  },
+  {
+    "id": 179,
+    "question": "What is visitor pattern?",
+    "keywords": ["visitor pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Separates algorithm from object structure."
+  },
+  {
+    "id": 180,
+    "question": "What is memento pattern?",
+    "keywords": ["memento pattern"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Captures object state without violating encapsulation."
+  },
+
+  {
+    "id": 181,
+    "question": "What is cohesion vs coupling?",
+    "keywords": ["cohesion vs coupling"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "High cohesion and low coupling is preferred."
+  },
+  {
+    "id": 182,
+    "question": "What is package-private access?",
+    "keywords": ["package private"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Accessible only within same package."
+  },
+  {
+    "id": 183,
+    "question": "What is sealed class concept?",
+    "keywords": ["sealed class"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Restricts which classes can extend it."
+  },
+  {
+    "id": 184,
+    "question": "What is record class in Java?",
+    "keywords": ["record class"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Compact syntax for immutable data carriers."
+  },
+  {
+    "id": 185,
+    "question": "What is pattern matching in Java?",
+    "keywords": ["pattern matching"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Simplifies type checking and casting."
+  },
+  {
+    "id": 186,
+    "question": "What is object responsibility-driven design?",
+    "keywords": ["responsibility driven design"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Designing based on object responsibilities."
+  },
+  {
+    "id": 187,
+    "question": "What is domain-driven design?",
+    "keywords": ["DDD"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Design approach focused on business domain."
+  },
+  {
+    "id": 188,
+    "question": "What is ubiquitous language?",
+    "keywords": ["ubiquitous language"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Common language shared by developers and domain experts."
+  },
+  {
+    "id": 189,
+    "question": "What is bounded context?",
+    "keywords": ["bounded context"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Boundary within which a model applies."
+  },
+  {
+    "id": 190,
+    "question": "What is aggregate root?",
+    "keywords": ["aggregate root"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Main entity controlling aggregate."
+  },
+
+  {
+    "id": 191,
+    "question": "What is entity lifecycle?",
+    "keywords": ["entity lifecycle"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Creation, update, and deletion of entity."
+  },
+  {
+    "id": 192,
+    "question": "What is value equality?",
+    "keywords": ["value equality"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Equality based on value not identity."
+  },
+  {
+    "id": 193,
+    "question": "What is reference equality?",
+    "keywords": ["reference equality"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Equality based on memory reference."
+  },
+  {
+    "id": 194,
+    "question": "What is polymorphic reference?",
+    "keywords": ["polymorphic reference"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Parent reference pointing to child object."
+  },
+  {
+    "id": 195,
+    "question": "What is abstraction boundary?",
+    "keywords": ["abstraction boundary"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Limit of what abstraction exposes."
+  },
+  {
+    "id": 196,
+    "question": "What is code reuse principle?",
+    "keywords": ["code reuse"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Avoid rewriting existing logic."
+  },
+  {
+    "id": 197,
+    "question": "What is object state validation?",
+    "keywords": ["state validation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ensuring object remains valid."
+  },
+  {
+    "id": 198,
+    "question": "What is object graph traversal?",
+    "keywords": ["graph traversal"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Navigating through related objects."
+  },
+  {
+    "id": 199,
+    "question": "What is design for testability?",
+    "keywords": ["testability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Writing code easy to test."
+  },
+  {
+    "id": 200,
+    "question": "What is Java OOP best design practice?",
+    "keywords": ["best practice"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Prefer abstraction, composition, and clean design."
   }
 ]
