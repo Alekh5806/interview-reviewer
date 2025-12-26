@@ -900,8 +900,918 @@
     "max_score": 10,
     "type": "theory",
     "answer": "RDBMS stores data in tables with relations, DBMS may not."
+  },
+  {
+    "id": 101,
+    "question": "What is a data model in DBMS?",
+    "keywords": ["data model"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A data model defines how data is stored, organized, and related in a database."
+  },
+  {
+    "id": 102,
+    "question": "What are the types of data models?",
+    "keywords": ["data models", "types"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Hierarchical, Network, Relational, Object-oriented, and ER models."
+  },
+  {
+    "id": 103,
+    "question": "What is a hierarchical database model?",
+    "keywords": ["hierarchical model"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "It organizes data in a tree-like structure with parent-child relationships."
+  },
+  {
+    "id": 104,
+    "question": "What is a network database model?",
+    "keywords": ["network model"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "It allows many-to-many relationships between records using pointers."
+  },
+  {
+    "id": 105,
+    "question": "What is an object-oriented database?",
+    "keywords": ["object oriented database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "It stores data in the form of objects similar to object-oriented programming."
+  },
+  {
+    "id": 106,
+    "question": "What is a composite key?",
+    "keywords": ["composite key"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A key made up of two or more attributes to uniquely identify a record."
+  },
+  {
+    "id": 107,
+    "question": "What is an alternate key?",
+    "keywords": ["alternate key"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Candidate keys that are not chosen as the primary key."
+  },
+  {
+    "id": 108,
+    "question": "What is entity integrity?",
+    "keywords": ["entity integrity"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Entity integrity ensures that primary key values are not NULL."
+  },
+  {
+    "id": 109,
+    "question": "What is functional dependency?",
+    "keywords": ["functional dependency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "It describes the relationship between attributes in a table."
+  },
+  {
+    "id": 110,
+    "question": "What is full functional dependency?",
+    "keywords": ["full dependency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An attribute depends on the entire primary key."
+  },
+
+  {
+    "id": 111,
+    "question": "What is partial dependency?",
+    "keywords": ["partial dependency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "An attribute depends on part of a composite key."
+  },
+  {
+    "id": 112,
+    "question": "What is transitive dependency?",
+    "keywords": ["transitive dependency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A non-key attribute depends on another non-key attribute."
+  },
+  {
+    "id": 113,
+    "question": "What is lossless decomposition?",
+    "keywords": ["lossless decomposition"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Decomposition where no data is lost after splitting tables."
+  },
+  {
+    "id": 114,
+    "question": "What is lossy decomposition?",
+    "keywords": ["lossy decomposition"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Decomposition where some data is lost after splitting tables."
+  },
+  {
+    "id": 115,
+    "question": "What is database instance?",
+    "keywords": ["database instance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "The actual data stored in a database at a particular time."
+  },
+  {
+    "id": 116,
+    "question": "What is database schema change?",
+    "keywords": ["schema change"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Modification of database structure like tables or columns."
+  },
+  {
+    "id": 117,
+    "question": "What is vertical fragmentation?",
+    "keywords": ["vertical fragmentation"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dividing a table by columns."
+  },
+  {
+    "id": 118,
+    "question": "What is horizontal fragmentation?",
+    "keywords": ["horizontal fragmentation"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dividing a table by rows."
+  },
+  {
+    "id": 119,
+    "question": "What is distributed database?",
+    "keywords": ["distributed database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A database stored across multiple locations."
+  },
+  {
+    "id": 120,
+    "question": "What is data replication?",
+    "keywords": ["data replication"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Copying data to multiple databases for availability."
+  },
+
+  {
+    "id": 121,
+    "question": "What is query optimization?",
+    "keywords": ["query optimization"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Improving query performance by choosing efficient execution plans."
+  },
+  {
+    "id": 122,
+    "question": "What is cost-based optimization?",
+    "keywords": ["cost based optimization"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Query optimization based on resource usage cost."
+  },
+  {
+    "id": 123,
+    "question": "What is query execution plan?",
+    "keywords": ["execution plan"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Steps used by DBMS to execute a query."
+  },
+  {
+    "id": 124,
+    "question": "What is a database buffer?",
+    "keywords": ["buffer"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Temporary memory used to store data during processing."
+  },
+  {
+    "id": 125,
+    "question": "What is buffer replacement policy?",
+    "keywords": ["buffer replacement"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Decides which data page to remove from buffer memory."
+  },
+  {
+    "id": 126,
+    "question": "What is LRU policy?",
+    "keywords": ["LRU"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Least Recently Used page is removed first."
+  },
+  {
+    "id": 127,
+    "question": "What is a deadlock detection method?",
+    "keywords": ["deadlock detection"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Uses wait-for graph to detect deadlocks."
+  },
+  {
+    "id": 128,
+    "question": "What is timestamp ordering?",
+    "keywords": ["timestamp ordering"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Concurrency control technique using transaction timestamps."
+  },
+  {
+    "id": 129,
+    "question": "What is optimistic concurrency control?",
+    "keywords": ["optimistic concurrency"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Transactions execute without locking and validate later."
+  },
+  {
+    "id": 130,
+    "question": "What is pessimistic concurrency control?",
+    "keywords": ["pessimistic concurrency"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Locks data before access to prevent conflicts."
+  },
+
+  {
+    "id": 131,
+    "question": "What is a shadow paging technique?",
+    "keywords": ["shadow paging"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Recovery technique using shadow copies of pages."
+  },
+  {
+    "id": 132,
+    "question": "What is dirty read?",
+    "keywords": ["dirty read"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reading uncommitted data from another transaction."
+  },
+  {
+    "id": 133,
+    "question": "What is non-repeatable read?",
+    "keywords": ["non repeatable read"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Data changes between two reads in same transaction."
+  },
+  {
+    "id": 134,
+    "question": "What is phantom read?",
+    "keywords": ["phantom read"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "New rows appear in repeated query execution."
+  },
+  {
+    "id": 135,
+    "question": "What is isolation level?",
+    "keywords": ["isolation level"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Defines degree of visibility between transactions."
+  },
+  {
+    "id": 136,
+    "question": "What is READ COMMITTED isolation level?",
+    "keywords": ["read committed"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Allows reading only committed data."
+  },
+  {
+    "id": 137,
+    "question": "What is SERIALIZABLE isolation level?",
+    "keywords": ["serializable"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Highest isolation level ensuring full isolation."
+  },
+  {
+    "id": 138,
+    "question": "What is database auditing?",
+    "keywords": ["database auditing"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tracking database activities for security."
+  },
+  {
+    "id": 139,
+    "question": "What is data masking?",
+    "keywords": ["data masking"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Hiding sensitive data from users."
+  },
+  {
+    "id": 140,
+    "question": "What is role-based access control?",
+    "keywords": ["RBAC"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Access permissions assigned based on roles."
+  },
+
+  {
+    "id": 141,
+    "question": "What is data migration?",
+    "keywords": ["data migration"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Moving data from one database to another."
+  },
+  {
+    "id": 142,
+    "question": "What is schema migration?",
+    "keywords": ["schema migration"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Updating database structure over time."
+  },
+  {
+    "id": 143,
+    "question": "What is ETL process?",
+    "keywords": ["ETL"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Extract, Transform, Load process for data warehousing."
+  },
+  {
+    "id": 144,
+    "question": "What is data lake?",
+    "keywords": ["data lake"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Storage for raw structured and unstructured data."
+  },
+  {
+    "id": 145,
+    "question": "What is column-oriented database?",
+    "keywords": ["column database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stores data column-wise instead of row-wise."
+  },
+  {
+    "id": 146,
+    "question": "What is row-oriented database?",
+    "keywords": ["row database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stores data row-wise in tables."
+  },
+  {
+    "id": 147,
+    "question": "What is in-memory database?",
+    "keywords": ["in memory database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Database that stores data in main memory."
+  },
+  {
+    "id": 148,
+    "question": "What is database scalability?",
+    "keywords": ["scalability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ability to handle growing data and users."
+  },
+  {
+    "id": 149,
+    "question": "What is sharding?",
+    "keywords": ["sharding"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dividing database into smaller pieces for performance."
+  },
+  {
+    "id": 150,
+    "question": "What is CAP theorem?",
+    "keywords": ["CAP theorem"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Consistency, Availability, Partition tolerance trade-off."
+  },
+  {
+    "id": 151,
+    "question": "What is BASE property in DBMS?",
+    "keywords": ["BASE property"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "BASE stands for Basically Available, Soft state, Eventually consistent."
+  },
+  {
+    "id": 152,
+    "question": "What is eventual consistency?",
+    "keywords": ["eventual consistency"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Data becomes consistent after some time in distributed databases."
+  },
+  {
+    "id": 153,
+    "question": "What is write-ahead logging?",
+    "keywords": ["WAL"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Logs are written before actual data changes are made."
+  },
+  {
+    "id": 154,
+    "question": "What is redo operation in recovery?",
+    "keywords": ["redo"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Redo reapplies committed transactions after a crash."
+  },
+  {
+    "id": 155,
+    "question": "What is undo operation in recovery?",
+    "keywords": ["undo"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Undo reverses uncommitted transactions after a crash."
+  },
+  {
+    "id": 156,
+    "question": "What is cascading rollback?",
+    "keywords": ["cascading rollback"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Rollback of one transaction causes rollback of dependent transactions."
+  },
+  {
+    "id": 157,
+    "question": "What is strict two-phase locking?",
+    "keywords": ["strict 2PL"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Locks are released only after transaction commit or abort."
+  },
+  {
+    "id": 158,
+    "question": "What is starvation in DBMS?",
+    "keywords": ["starvation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A transaction waits indefinitely to get required resources."
+  },
+  {
+    "id": 159,
+    "question": "What is livelock?",
+    "keywords": ["livelock"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Transactions keep changing state but make no progress."
+  },
+  {
+    "id": 160,
+    "question": "What is a data dictionary?",
+    "keywords": ["data dictionary"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A repository that stores metadata information."
+  },
+
+  {
+    "id": 161,
+    "question": "What is database catalog?",
+    "keywords": ["database catalog"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Catalog stores details about database objects."
+  },
+  {
+    "id": 162,
+    "question": "What is implicit cursor?",
+    "keywords": ["implicit cursor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Cursor automatically created by DBMS for SQL queries."
+  },
+  {
+    "id": 163,
+    "question": "What is explicit cursor?",
+    "keywords": ["explicit cursor"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Cursor explicitly defined by the programmer."
+  },
+  {
+    "id": 164,
+    "question": "What is database trigger timing?",
+    "keywords": ["trigger timing"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Triggers can be fired BEFORE or AFTER an event."
+  },
+  {
+    "id": 165,
+    "question": "What is row-level trigger?",
+    "keywords": ["row trigger"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Trigger that fires for each affected row."
+  },
+  {
+    "id": 166,
+    "question": "What is statement-level trigger?",
+    "keywords": ["statement trigger"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Trigger that fires once per SQL statement."
+  },
+  {
+    "id": 167,
+    "question": "What is database portability?",
+    "keywords": ["portability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ability to move database across different systems."
+  },
+  {
+    "id": 168,
+    "question": "What is SQL injection?",
+    "keywords": ["SQL injection"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A security attack using malicious SQL queries."
+  },
+  {
+    "id": 169,
+    "question": "What is prepared statement?",
+    "keywords": ["prepared statement"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Precompiled SQL statement used for security and performance."
+  },
+  {
+    "id": 170,
+    "question": "What is database backup?",
+    "keywords": ["database backup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Copy of database used for recovery purposes."
+  },
+
+  {
+    "id": 171,
+    "question": "What is full backup?",
+    "keywords": ["full backup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Complete copy of entire database."
+  },
+  {
+    "id": 172,
+    "question": "What is incremental backup?",
+    "keywords": ["incremental backup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Backup of data changed since last backup."
+  },
+  {
+    "id": 173,
+    "question": "What is differential backup?",
+    "keywords": ["differential backup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Backup of data changed since last full backup."
+  },
+  {
+    "id": 174,
+    "question": "What is hot backup?",
+    "keywords": ["hot backup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Backup taken while database is running."
+  },
+  {
+    "id": 175,
+    "question": "What is cold backup?",
+    "keywords": ["cold backup"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Backup taken when database is shut down."
+  },
+  {
+    "id": 176,
+    "question": "What is database mirroring?",
+    "keywords": ["database mirroring"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Maintaining an exact copy of database on another server."
+  },
+  {
+    "id": 177,
+    "question": "What is failover?",
+    "keywords": ["failover"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Automatic switch to backup database when failure occurs."
+  },
+  {
+    "id": 178,
+    "question": "What is database availability?",
+    "keywords": ["availability"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ensuring database is accessible when required."
+  },
+  {
+    "id": 179,
+    "question": "What is database consistency checking?",
+    "keywords": ["consistency check"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Ensures database follows integrity rules."
+  },
+  {
+    "id": 180,
+    "question": "What is database tuning?",
+    "keywords": ["database tuning"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Optimizing database performance."
+  },
+
+  {
+    "id": 181,
+    "question": "What is query cache?",
+    "keywords": ["query cache"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stores query results for faster execution."
+  },
+  {
+    "id": 182,
+    "question": "What is index clustering?",
+    "keywords": ["clustered index"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Determines physical order of data in table."
+  },
+  {
+    "id": 183,
+    "question": "What is non-clustered index?",
+    "keywords": ["non clustered index"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Index stored separately from actual data."
+  },
+  {
+    "id": 184,
+    "question": "What is bitmap index?",
+    "keywords": ["bitmap index"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Index using bitmaps for low-cardinality columns."
+  },
+  {
+    "id": 185,
+    "question": "What is hash index?",
+    "keywords": ["hash index"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Index based on hash function."
+  },
+  {
+    "id": 186,
+    "question": "What is database compression?",
+    "keywords": ["compression"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Reducing storage space used by database."
+  },
+  {
+    "id": 187,
+    "question": "What is query rewriting?",
+    "keywords": ["query rewriting"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Transforming query into more efficient form."
+  },
+  {
+    "id": 188,
+    "question": "What is materialized query?",
+    "keywords": ["materialized query"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Precomputed query result stored physically."
+  },
+  {
+    "id": 189,
+    "question": "What is data lineage?",
+    "keywords": ["data lineage"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tracking data origin and transformations."
+  },
+  {
+    "id": 190,
+    "question": "What is data governance?",
+    "keywords": ["data governance"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Managing data quality, security, and policies."
+  },
+
+  {
+    "id": 191,
+    "question": "What is multi-version concurrency control?",
+    "keywords": ["MVCC"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Maintains multiple versions of data for concurrency."
+  },
+  {
+    "id": 192,
+    "question": "What is snapshot isolation?",
+    "keywords": ["snapshot isolation"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Transactions read a consistent snapshot of data."
+  },
+  {
+    "id": 193,
+    "question": "What is database federation?",
+    "keywords": ["database federation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Combining multiple databases into one logical unit."
+  },
+  {
+    "id": 194,
+    "question": "What is polyglot persistence?",
+    "keywords": ["polyglot persistence"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Using different databases for different needs."
+  },
+  {
+    "id": 195,
+    "question": "What is graph database?",
+    "keywords": ["graph database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Database designed to store graph data structures."
+  },
+  {
+    "id": 196,
+    "question": "What is document database?",
+    "keywords": ["document database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Database that stores data in document format like JSON."
+  },
+  {
+    "id": 197,
+    "question": "What is key-value store?",
+    "keywords": ["key value store"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stores data as key-value pairs."
+  },
+  {
+    "id": 198,
+    "question": "What is column-family store?",
+    "keywords": ["column family"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stores data in column families instead of tables."
+  },
+  {
+    "id": 199,
+    "question": "What is database elasticity?",
+    "keywords": ["elasticity"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Automatic scaling of database resources."
+  },
+  {
+    "id": 200,
+    "question": "What is serverless database?",
+    "keywords": ["serverless database"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Cloud database with automatic infrastructure management."
   }
 ]
+
+
   
 
 
