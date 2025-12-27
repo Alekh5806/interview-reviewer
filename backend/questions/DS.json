@@ -1,1802 +1,1802 @@
 [
   {
     "id": 1,
-    "question": "What is a Data Structure?",
-    "keywords": ["organization", "storage", "efficiency", "access"],
+    "question": "Which data structure follows the LIFO principle?",
+    "keywords": ["last-in-first-out", "push", "pop"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "A data structure is a specialized format for organizing, processing, retrieving, and storing data efficiently."
+    "answer": "A Stack operates on the Last In, First Out mechanism."
   },
   {
     "id": 2,
     "question": "What is the time complexity of accessing an element in an array by index?",
-    "keywords": ["time complexity", "array", "access", "constant", "O(1)"],
+    "keywords": ["constant", "o(1)", "indexing"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The time complexity is O(1) (Constant Time) because arrays use direct addressing based on the index."
+    "answer": "It takes O(1) or constant duration."
   },
   {
     "id": 3,
-    "question": "Write a function to check if a Linked List has a cycle.",
-    "keywords": ["linked list", "cycle", "detect", "pointer"],
+    "question": "Predict output: Stack s = new Stack(); s.push(1); s.push(2); System.out.print(s.pop());",
+    "keywords": ["execution", "removal", "top"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "bool hasCycle(Node* head) { Node *slow = head, *fast = head; while(fast && fast->next) { slow = slow->next; fast = fast->next->next; if(slow == fast) return true; } return false; }"
+    "answer": "2"
   },
   {
     "id": 4,
-    "question": "Difference between Stack and Queue?",
-    "keywords": ["LIFO", "FIFO", "stack", "queue", "order"],
+    "question": "What is a node in a linked list containing data and a reference to the next item called?",
+    "keywords": ["element", "pointer", "structure"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Stack follows LIFO (Last In First Out), whereas Queue follows FIFO (First In First Out)."
+    "answer": "It is a singly linked component."
   },
   {
     "id": 5,
-    "question": "What is a Binary Search Tree (BST)?",
-    "keywords": ["binary tree", "sorted", "left", "right", "nodes"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which structure uses FIFO order?",
+    "keywords": ["first-in-first-out", "enqueue", "dequeue"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A BST is a binary tree where the left child's value is less than the parent, and the right child's value is greater than the parent."
+    "answer": "Queue processes elements First In, First Out."
   },
   {
     "id": 6,
-    "question": "Code to reverse a string using a Stack.",
-    "keywords": ["reverse", "string", "stack", "push", "pop"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "string reverse(string s) { stack<char> st; for(char c : s) st.push(c); string res = \"\"; while(!st.empty()) { res += st.top(); st.pop(); } return res; }"
+    "question": "What is the maximum number of children a node in a binary tree can have?",
+    "keywords": ["limit", "branching", "degree"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "Two is the limit."
   },
   {
     "id": 7,
-    "question": "What is the worst-case time complexity of QuickSort?",
-    "keywords": ["quicksort", "worst case", "time complexity", "O(n^2)"],
+    "question": "Calculate the index of the left child of a node at index 'i' in a binary heap array.",
+    "keywords": ["formula", "position", "calculation"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "The worst-case time complexity of QuickSort is O(n^2), which happens when the pivot is the smallest or largest element."
+    "type": "code",
+    "answer": "2*i + 1"
   },
   {
     "id": 8,
-    "question": "What is a Hash Table?",
-    "keywords": ["hash table", "key-value", "mapping", "lookup"],
+    "question": "What is the condition for a circular queue to be full?",
+    "keywords": ["capacity", "modulo", "limit"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Hash Table is a data structure that implements an associative array abstract data type, a structure that can map keys to values."
+    "answer": "(Rear + 1) % Size == Front indicates no space."
   },
   {
     "id": 9,
-    "question": "Write a recursive function to calculate the height of a binary tree.",
-    "keywords": ["tree", "height", "recursion", "depth"],
+    "question": "What pointer is used to traverse a linked list?",
+    "keywords": ["reference", "iterator", "cursor"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int height(Node* node) { if (node == NULL) return 0; return 1 + max(height(node->left), height(node->right)); }"
+    "type": "theory",
+    "answer": "Head marks the starting point."
   },
   {
     "id": 10,
-    "question": "What is a Priority Queue?",
-    "keywords": ["priority", "queue", "heap", "order"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "In a BST, where are values smaller than the root placed?",
+    "keywords": ["position", "direction", "hierarchy"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A Priority Queue is a type of queue where each element has a priority, and elements with higher priority are served before lower priority ones."
+    "answer": "They go into the left subtree."
   },
   {
     "id": 11,
-    "question": "Difference between Array and Linked List?",
-    "keywords": ["array", "linked list", "memory", "contiguous", "dynamic"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the worst-case time complexity of searching in a Singly Linked List?",
+    "keywords": ["linear", "traversal", "performance"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Arrays have fixed size and contiguous memory. Linked Lists have dynamic size and non-contiguous memory using pointers."
+    "answer": "O(n) implies checking every node."
   },
   {
     "id": 12,
-    "question": "Code to insert a node at the beginning of a Linked List.",
-    "keywords": ["insert", "linked list", "head", "node"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Code check: int[] a = {10, 20}; int[] b = a; b[0] = 5; Print(a[0]);",
+    "keywords": ["reference", "memory", "alias"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "void push(Node** head_ref, int new_data) { Node* new_node = new Node(); new_node->data = new_data; new_node->next = (*head_ref); (*head_ref) = new_node; }"
+    "answer": "5"
   },
   {
     "id": 13,
-    "question": "What is an AVL Tree?",
-    "keywords": ["AVL", "balanced", "binary search tree", "height"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which traversal visits the root, then left subtree, then right subtree?",
+    "keywords": ["order", "sequence", "visitation"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "An AVL tree is a self-balancing Binary Search Tree where the difference between heights of left and right subtrees cannot be more than one."
+    "answer": "Pre-order follows that specific path."
   },
   {
     "id": 14,
-    "question": "What is a Graph?",
-    "keywords": ["graph", "vertices", "edges", "nodes", "connections"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What allows constant time access to elements using a key?",
+    "keywords": ["lookup", "mapping", "efficiency"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Graph is a non-linear data structure consisting of nodes (vertices) and edges that connect these nodes."
+    "answer": "Hash Table enables direct retrieval."
   },
   {
     "id": 15,
-    "question": "Code for Binary Search (Iterative).",
-    "keywords": ["binary search", "iterative", "sorted", "mid"],
+    "question": "Identify the data structure used for implementing recursion.",
+    "keywords": ["function-calls", "memory", "backtracking"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "int binarySearch(int arr[], int l, int r, int x) { while (l <= r) { int m = l + (r - l) / 2; if (arr[m] == x) return m; if (arr[m] < x) l = m + 1; else r = m - 1; } return -1; }"
+    "type": "theory",
+    "answer": "The Stack manages nested invocations."
   },
   {
     "id": 16,
-    "question": "What is BFS?",
-    "keywords": ["BFS", "breadth", "traversal", "graph", "queue"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the height of a balanced binary tree with N nodes?",
+    "keywords": ["depth", "logarithm", "levels"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "BFS (Breadth-First Search) is a graph traversal algorithm that explores neighbor nodes first, before moving to the next level neighbors."
+    "answer": "O(log N) represents the optimal depth."
   },
   {
     "id": 17,
-    "question": "What is DFS?",
-    "keywords": ["DFS", "depth", "traversal", "graph", "stack"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "DFS (Depth-First Search) is a graph traversal algorithm that explores as far as possible along each branch before backtracking."
+    "question": "Output check: Queue q = new Queue(); q.add(10); q.remove(); q.add(20); Print(q.peek());",
+    "keywords": ["fifo", "operations", "front"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "20"
   },
   {
     "id": 18,
-    "question": "Code to implement a Queue using Arrays.",
-    "keywords": ["queue", "array", "enqueue", "dequeue"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "class Queue { int front, rear, size; unsigned capacity; int* array; ... void enqueue(int item) { array[rear] = item; rear = (rear + 1) % capacity; size++; } }"
+    "question": "Which data structure connects nodes with edges?",
+    "keywords": ["vertices", "network", "connections"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "Graph consists of vertices and links."
   },
   {
     "id": 19,
-    "question": "What is a Doubly Linked List?",
-    "keywords": ["doubly", "linked list", "prev", "next", "pointers"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is used to detect cycles in a graph?",
+    "keywords": ["traversal", "algorithm", "visited"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Doubly Linked List is a linked list where each node contains a reference to both the next node and the previous node."
+    "answer": "Depth First Search (DFS) or Disjoint Set."
   },
   {
     "id": 20,
-    "question": "What is the time complexity of Merge Sort?",
-    "keywords": ["merge sort", "time complexity", "O(n log n)", "divide and conquer"],
+    "question": "Predict output: List L = [1, 2, 3]; L.insert(0, 4); Print(L[1]);",
+    "keywords": ["shifting", "indexing", "position"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "The time complexity of Merge Sort is O(n log n) in all cases (best, average, and worst)."
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 21,
-    "question": "Code to reverse an array.",
-    "keywords": ["reverse", "array", "swap", "loop"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "void reverseArray(int arr[], int start, int end) { while (start < end) { int temp = arr[start]; arr[start] = arr[end]; arr[end] = temp; start++; end--; } }"
+    "question": "Which sorting algorithm uses a divide and conquer strategy?",
+    "keywords": ["partition", "splitting", "recursive"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Merge Sort or Quick Sort."
   },
   {
     "id": 22,
-    "question": "What is Hashing?",
-    "keywords": ["hashing", "key", "index", "map", "function"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What happens when you push to a full stack?",
+    "keywords": ["error", "limit", "capacity"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Hashing is the process of mapping keys to specific values in a hash table using a hash function."
+    "answer": "Overflow occurs when capacity is exceeded."
   },
   {
     "id": 23,
-    "question": "What is a Heap?",
-    "keywords": ["heap", "tree", "complete", "min-heap", "max-heap"],
+    "question": "Calculate operations for inserting at the end of a dynamic array.",
+    "keywords": ["amortized", "complexity", "appending"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Heap is a special Tree-based data structure in which the tree is a complete binary tree. It can be a Max-Heap or Min-Heap."
+    "answer": "O(1) amortized time."
   },
   {
     "id": 24,
-    "question": "Code to find the factorial of a number using recursion.",
-    "keywords": ["factorial", "recursion", "math", "function"],
+    "question": "Code check: int val = 10 % 3;",
+    "keywords": ["hashing", "modulo", "remainder"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "int factorial(int n) { if (n == 0) return 1; return n * factorial(n - 1); }"
+    "answer": "1"
   },
   {
     "id": 25,
-    "question": "What is Dynamic Programming?",
-    "keywords": ["dynamic programming", "optimization", "subproblems", "memoization"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What structure is best for a priority queue?",
+    "keywords": ["ordering", "max-min", "tree"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems and storing their solutions."
+    "answer": "Heap (Binary or Fibonacci) is optimal."
   },
   {
     "id": 26,
-    "question": "What is the difference between Tree and Graph?",
-    "keywords": ["tree", "graph", "cycle", "root", "hierarchical"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which list type allows traversal in both directions?",
+    "keywords": ["pointers", "backward", "forward"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A Tree is a hierarchical structure without cycles. A Graph is a network structure that can contain cycles."
+    "answer": "Doubly Linked List has two references."
   },
   {
     "id": 27,
-    "question": "Code to implement Bubble Sort.",
-    "keywords": ["bubble sort", "sort", "swap", "loop"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the result of converting Infix 'A+B' to Postfix?",
+    "keywords": ["notation", "expression", "conversion"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "void bubbleSort(int arr[], int n) { for (int i = 0; i < n-1; i++) for (int j = 0; j < n-i-1; j++) if (arr[j] > arr[j+1]) swap(&arr[j], &arr[j+1]); }"
+    "answer": "AB+"
   },
   {
     "id": 28,
-    "question": "What is a Trie?",
-    "keywords": ["trie", "prefix", "tree", "search", "strings"],
+    "question": "What defines a complete binary tree?",
+    "keywords": ["levels", "filling", "structure"],
     "difficulty": "hard",
     "max_score": 15,
     "type": "theory",
-    "answer": "A Trie (Prefix Tree) is a tree-like data structure used to store a dynamic set of strings, where keys are usually strings."
+    "answer": "All levels are filled, except possibly the last, which is left-aligned."
   },
   {
     "id": 29,
-    "question": "What is the 'Top' operation in a Stack?",
-    "keywords": ["stack", "top", "peek", "element"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which term describes a graph with no cycles?",
+    "keywords": ["acyclic", "structure", "tree-like"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "The 'Top' (or Peek) operation returns the element currently at the top of the stack without removing it."
+    "answer": "Acyclic or DAG (Directed Acyclic Graph)."
   },
   {
     "id": 30,
-    "question": "Code to delete a node from a BST.",
-    "keywords": ["delete", "BST", "node", "tree"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Output: Set s = {1, 2}; s.add(1); Print(s.size());",
+    "keywords": ["uniqueness", "duplicates", "count"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "Node* deleteNode(Node* root, int key) { if (root == NULL) return root; if (key < root->key) root->left = deleteNode(root->left, key); else if (key > root->key) root->right = deleteNode(root->right, key); else { ... } return root; }"
+    "answer": "2"
   },
   {
     "id": 31,
-    "question": "What is a Circular Linked List?",
-    "keywords": ["circular", "linked list", "loop", "last", "first"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What complexity class does O(n^2) belong to?",
+    "keywords": ["quadratic", "growth", "performance"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Circular Linked List is a variation where the last node points back to the first node instead of null."
+    "answer": "Quadratic time."
   },
   {
     "id": 32,
-    "question": "What is Space Complexity?",
-    "keywords": ["space", "complexity", "memory", "storage"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which structure facilitates Breadth First Search?",
+    "keywords": ["traversal", "levels", "storage"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Space Complexity represents the amount of memory space required by an algorithm to execute as a function of the input size."
+    "answer": "Queue manages the frontier nodes."
   },
   {
     "id": 33,
-    "question": "Code for Inorder Traversal of a Tree.",
-    "keywords": ["inorder", "traversal", "tree", "left-root-right"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict output: Map m = {'a':1}; m['a'] = 2; Print(m['a']);",
+    "keywords": ["key-value", "update", "retrieval"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "void printInorder(struct Node* node) { if (node == NULL) return; printInorder(node->left); cout << node->data << \" \"; printInorder(node->right); }"
+    "answer": "2"
   },
   {
     "id": 34,
-    "question": "What is a Sparse Matrix?",
-    "keywords": ["sparse", "matrix", "zero", "elements"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What handles collisions by using a second hash function?",
+    "keywords": ["probing", "open-addressing", "resolution"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Sparse Matrix is a matrix in which most of the elements are zero."
+    "answer": "Double Hashing."
   },
   {
     "id": 35,
-    "question": "What is Linear Search?",
-    "keywords": ["linear", "search", "sequential", "scan"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which traversal yields sorted output from a BST?",
+    "keywords": ["order", "sequence", "ascending"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Linear Search is a simple search algorithm that checks every element in the list sequentially until a match is found."
+    "answer": "In-order traversal."
   },
   {
     "id": 36,
-    "question": "Code to enqueue in a Circular Queue.",
-    "keywords": ["circular queue", "enqueue", "modulo", "full"],
+    "question": "What is the minimum number of edges in a connected graph with N vertices?",
+    "keywords": ["spanning", "connections", "formula"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "void enqueue(int element) { if ((rear + 1) % SIZE == front) { cout << \"Queue is full\"; } else { rear = (rear + 1) % SIZE; items[rear] = element; } }"
+    "answer": "N - 1"
   },
   {
     "id": 37,
-    "question": "What is a Deque?",
-    "keywords": ["deque", "double-ended", "queue", "insertion", "deletion"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Identify the structure that uses LIFO for function calls.",
+    "keywords": ["memory", "execution", "frame"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A Deque (Double Ended Queue) is a queue where insertion and deletion can be performed from both the front and the rear."
+    "answer": "Call Stack."
   },
   {
     "id": 38,
-    "question": "What is Selection Sort?",
-    "keywords": ["selection sort", "minimum", "swap", "position"],
+    "question": "Code check: int[] a = new int[5]; Print(a.length);",
+    "keywords": ["property", "size", "capacity"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Selection Sort works by repeatedly finding the minimum element from the unsorted part and putting it at the beginning."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 39,
-    "question": "Code to find the length of a Linked List.",
-    "keywords": ["length", "linked list", "count", "iterate"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "int getCount(Node* head) { int count = 0; Node* current = head; while (current != NULL) { count++; current = current->next; } return count; }"
+    "question": "What technique optimizes Fibonacci calculation by storing results?",
+    "keywords": ["caching", "dynamic-programming", "speed"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Memoization or Dynamic Programming."
   },
   {
     "id": 40,
-    "question": "What is Recursion?",
-    "keywords": ["recursion", "function", "call", "self"],
+    "question": "Which node has no children?",
+    "keywords": ["terminal", "end", "tree"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Recursion is a programming technique where a function calls itself to solve a problem."
+    "answer": "Leaf."
   },
   {
     "id": 41,
-    "question": "What is a B-Tree?",
-    "keywords": ["B-tree", "self-balancing", "search", "disk"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "A B-Tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time."
+    "question": "Predict output: 5 ^ 5 (XOR operation)",
+    "keywords": ["bitwise", "logic", "binary"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 42,
-    "question": "Code to check if a string is a palindrome.",
-    "keywords": ["palindrome", "string", "check", "reverse"],
+    "question": "What data structure implements the Undo feature?",
+    "keywords": ["history", "reversal", "lifo"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "bool isPalindrome(string S) { string P = S; reverse(P.begin(), P.end()); return S == P; }"
+    "type": "theory",
+    "answer": "Stack."
   },
   {
     "id": 43,
-    "question": "What is Postorder Traversal?",
-    "keywords": ["postorder", "traversal", "tree", "left-right-root"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which search algorithm requires a sorted array?",
+    "keywords": ["efficiency", "halving", "requirements"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Postorder Traversal visits the Left subtree, then the Right subtree, and finally the Root node."
+    "answer": "Binary Search."
   },
   {
     "id": 44,
-    "question": "What is Preorder Traversal?",
-    "keywords": ["preorder", "traversal", "tree", "root-left-right"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "Preorder Traversal visits the Root node first, then the Left subtree, and finally the Right subtree."
+    "question": "Output: 'A' + 1 (ASCII calculation)",
+    "keywords": ["char", "math", "encoding"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "66 or 'B'"
   },
   {
     "id": 45,
-    "question": "Code to merge two sorted arrays.",
-    "keywords": ["merge", "sorted", "arrays", "combine"],
+    "question": "What links the last node to the first in a list?",
+    "keywords": ["loop", "ring", "structure"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "void mergeArrays(int arr1[], int arr2[], int n1, int n2, int arr3[]) { int i=0, j=0, k=0; while(i<n1 && j<n2) { if (arr1[i]<arr2[j]) arr3[k++] = arr1[i++]; else arr3[k++] = arr2[j++]; } ... }"
+    "type": "theory",
+    "answer": "Circular Linked List."
   },
   {
     "id": 46,
-    "question": "What is a Complete Binary Tree?",
-    "keywords": ["complete", "binary tree", "levels", "filled"],
+    "question": "What is the best case time for Bubble Sort?",
+    "keywords": ["optimization", "already-sorted", "performance"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Complete Binary Tree is a binary tree where all levels are completely filled except possibly the last, which is filled from the left."
+    "answer": "O(n) if already ordered."
   },
   {
     "id": 47,
-    "question": "What is a Full Binary Tree?",
-    "keywords": ["full", "binary tree", "children", "0 or 2"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A Full Binary Tree is a binary tree where every node has either 0 or 2 children."
+    "question": "Code: Tree t = null; Print(t == null);",
+    "keywords": ["check", "empty", "boolean"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 48,
-    "question": "Code to swap two numbers without a temp variable.",
-    "keywords": ["swap", "variable", "xor", "math"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "x = x + y; y = x - y; x = x - y;"
+    "question": "Which graph representation uses a 2D array?",
+    "keywords": ["matrix", "storage", "dense"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Adjacency Matrix."
   },
   {
     "id": 49,
-    "question": "What is Collision in Hashing?",
-    "keywords": ["collision", "hashing", "key", "same index"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What operation removes the front element of a queue?",
+    "keywords": ["removal", "action", "fifo"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Collision occurs when two different keys hash to the same index in a hash table."
+    "answer": "Dequeue."
   },
   {
     "id": 50,
-    "question": "How to resolve Hash Collisions?",
-    "keywords": ["resolve", "collision", "chaining", "open addressing"],
+    "question": "Predict output: 10 >> 1",
+    "keywords": ["shifting", "binary", "division"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Common methods are Separate Chaining (using linked lists) and Open Addressing (Linear Probing, Quadratic Probing)."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 51,
-    "question": "Code to implement a Stack using Array.",
-    "keywords": ["stack", "array", "push", "pop"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "class Stack { int top; int a[MAX]; ... bool push(int x) { if (top >= (MAX - 1)) return false; else { a[++top] = x; return true; } } }"
+    "question": "Which data structure is essential for a Depth First Search (DFS)?",
+    "keywords": ["backtracking", "recursion", "lifo"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stack handles the path memory."
   },
   {
     "id": 52,
-    "question": "What is the Fibonacci Series?",
-    "keywords": ["fibonacci", "series", "sequence", "sum"],
+    "question": "What is the result of accessing index 5 in an array of size 3?",
+    "keywords": ["error", "bounds", "exception"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The Fibonacci Series is a sequence where each number is the sum of the two preceding ones, usually starting with 0 and 1."
+    "answer": "IndexOutOfBoundsException occurs."
   },
   {
     "id": 53,
-    "question": "What is Dijkstra's Algorithm?",
-    "keywords": ["dijkstra", "shortest path", "graph", "weighted"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Dijkstra's Algorithm finds the shortest path from a source node to all other nodes in a weighted graph."
+    "question": "Predict output: 10 & 1 (Bitwise AND)",
+    "keywords": ["binary", "logic", "check-even"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 54,
-    "question": "Code to find the maximum element in an array.",
-    "keywords": ["max", "array", "element", "find"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "int max = arr[0]; for (int i = 1; i < n; i++) if (arr[i] > max) max = arr[i];"
+    "question": "Which sorting algorithm has the best average case time complexity?",
+    "keywords": ["mergesort", "quicksort", "heapsort"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Merge Sort or Quick Sort (O(n log n))."
   },
   {
     "id": 55,
-    "question": "What is a Red-Black Tree?",
-    "keywords": ["red-black", "tree", "balanced", "color"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What is the primary advantage of a Linked List over an Array?",
+    "keywords": ["dynamic", "sizing", "insertion"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Red-Black Tree is a self-balancing binary search tree where each node has an extra bit for color (red or black) to ensure balance."
+    "answer": "Dynamic memory allocation and efficient insertions."
   },
   {
     "id": 56,
-    "question": "What is Adjacency Matrix?",
-    "keywords": ["adjacency", "matrix", "graph", "representation"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "An Adjacency Matrix is a 2D array used to represent a graph, where arr[i][j] indicates an edge between vertex i and vertex j."
+    "question": "Code check: Stack s; s.pop(); (on empty stack)",
+    "keywords": ["error", "underflow", "crash"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "Underflow Exception"
   },
   {
     "id": 57,
-    "question": "Code to remove duplicates from a sorted array.",
-    "keywords": ["remove", "duplicates", "sorted", "array"],
+    "question": "What is a 'forest' in graph theory?",
+    "keywords": ["collection", "disjoint", "trees"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "int removeDuplicates(int arr[], int n) { if (n==0 || n==1) return n; int j = 0; for (int i=0; i < n-1; i++) if (arr[i] != arr[i+1]) arr[j++] = arr[i]; arr[j++] = arr[n-1]; return j; }"
+    "type": "theory",
+    "answer": "A collection of disjoint trees."
   },
   {
     "id": 58,
-    "question": "What is Adjacency List?",
-    "keywords": ["adjacency", "list", "graph", "linked list"],
+    "question": "Which traversal visits the left subtree, then root, then right subtree?",
+    "keywords": ["sorting", "sequence", "order"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "An Adjacency List represents a graph as an array of linked lists. The index represents a vertex and the linked list contains its neighbors."
+    "answer": "In-order traversal."
   },
   {
     "id": 59,
-    "question": "What is Shell Sort?",
-    "keywords": ["shell sort", "insertion", "gap", "sort"],
+    "question": "Predict output: 8 | 1 (Bitwise OR)",
+    "keywords": ["binary", "logic", "addition"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Shell Sort is a generalization of Insertion Sort that allows the exchange of items that are far apart."
+    "type": "code",
+    "answer": "9"
   },
   {
     "id": 60,
-    "question": "Code to calculate power (x^y) recursively.",
-    "keywords": ["power", "recursion", "math", "exponent"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "int power(int x, int y) { if (y == 0) return 1; return x * power(x, y - 1); }"
+    "question": "What is the load factor in a Hash Table?",
+    "keywords": ["ratio", "fullness", "performance"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "The ratio of stored elements to bucket capacity."
   },
   {
     "id": 61,
-    "question": "What is the time complexity of Bubble Sort?",
-    "keywords": ["bubble sort", "time complexity", "O(n^2)", "slow"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which node is the predecessor of a given node in a BST?",
+    "keywords": ["maximum", "left-subtree", "order"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "The average and worst-case time complexity of Bubble Sort is O(n^2)."
+    "answer": "The maximum value in the left child's hierarchy."
   },
   {
     "id": 62,
-    "question": "What is Memoization?",
-    "keywords": ["memoization", "caching", "dynamic programming", "store"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Memoization is an optimization technique used to speed up computer programs by storing the results of expensive function calls."
+    "question": "Code check: int[] a = {1}; System.out.print(a[0]);",
+    "keywords": ["access", "first", "element"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 63,
-    "question": "Code to find the middle of a Linked List.",
-    "keywords": ["middle", "linked list", "slow", "fast"],
+    "question": "What is the main characteristic of a Priority Queue?",
+    "keywords": ["ordering", "importance", "processing"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "void printMiddle(Node *head) { Node *slow_ptr = head; Node *fast_ptr = head; while (fast_ptr != NULL && fast_ptr->next != NULL) { fast_ptr = fast_ptr->next->next; slow_ptr = slow_ptr->next; } printf(\"%d\", slow_ptr->data); }"
+    "type": "theory",
+    "answer": "Elements are served based on their assigned weight/value."
   },
   {
     "id": 64,
-    "question": "What is a Spanning Tree?",
-    "keywords": ["spanning tree", "graph", "subgraph", "vertices"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which algorithm finds the shortest path in a weighted graph?",
+    "keywords": ["optimization", "routing", "distance"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Spanning Tree is a subgraph that is a tree and connects all the vertices together."
+    "answer": "Dijkstra's Algorithm."
   },
   {
     "id": 65,
-    "question": "What is Prim's Algorithm?",
-    "keywords": ["prim", "MST", "graph", "greedy"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Prim's Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) for a weighted undirected graph."
+    "question": "Predict output: 'b' - 'a' (Character arithmetic)",
+    "keywords": ["ascii", "difference", "integer"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 66,
-    "question": "Code to reverse a string iteratively.",
-    "keywords": ["reverse", "string", "loop", "swap"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "void reverseStr(string& str) { int n = str.length(); for (int i = 0; i < n / 2; i++) swap(str[i], str[n - i - 1]); }"
+    "question": "What is a sparse matrix?",
+    "keywords": ["zeros", "storage", "efficiency"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A matrix where the majority of elements are zero."
   },
   {
     "id": 67,
-    "question": "What is Kruskal's Algorithm?",
-    "keywords": ["kruskal", "MST", "edges", "sort"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which sorting algorithm works by repeatedly swapping adjacent elements?",
+    "keywords": ["simple", "slow", "swapping"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Kruskal's Algorithm finds the Minimum Spanning Tree by sorting edges by weight and adding them if they don't form a cycle."
+    "answer": "Bubble Sort."
   },
   {
     "id": 68,
-    "question": "What is Topological Sort?",
-    "keywords": ["topological", "sort", "DAG", "ordering"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Topological Sort is a linear ordering of vertices for a Directed Acyclic Graph (DAG) such that for every edge u-v, u comes before v."
+    "question": "Code check: Queue q; q.add(1); q.add(2); q.remove(); Print(q.peek());",
+    "keywords": ["fifo", "remaining", "head"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 69,
-    "question": "Code to find GCD of two numbers.",
-    "keywords": ["GCD", "math", "recursion", "modulo"],
+    "question": "What represents a hierarchical relationship between elements?",
+    "keywords": ["structure", "parent-child", "organization"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b); }"
+    "type": "theory",
+    "answer": "Tree."
   },
   {
     "id": 70,
-    "question": "What is an Inverted Index?",
-    "keywords": ["inverted", "index", "search", "mapping"],
+    "question": "What is the time complexity of Quick Sort in the worst case?",
+    "keywords": ["quadratic", "slow", "bad-pivot"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "An Inverted Index is an index data structure storing a mapping from content (like words) to its locations in a document."
+    "answer": "O(n^2)."
   },
   {
     "id": 71,
-    "question": "What is Heap Sort?",
-    "keywords": ["heap sort", "sort", "heap", "binary tree"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Heap Sort is a comparison-based sorting technique based on the Binary Heap data structure."
+    "question": "Predict output: ~0 (Bitwise NOT)",
+    "keywords": ["inversion", "bits", "negative"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "code",
+    "answer": "-1"
   },
   {
     "id": 72,
-    "question": "Code to check if two strings are Anagrams.",
-    "keywords": ["anagram", "string", "sort", "compare"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "bool areAnagram(string str1, string str2) { sort(str1.begin(), str1.end()); sort(str2.begin(), str2.end()); return str1 == str2; }"
+    "question": "Which structure guarantees O(log n) search, insert, and delete?",
+    "keywords": ["avl", "red-black", "balanced"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Balanced Binary Search Tree (AVL or Red-Black)."
   },
   {
     "id": 73,
-    "question": "What is Interpolation Search?",
-    "keywords": ["interpolation", "search", "sorted", "uniform"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the 'top' of a stack?",
+    "keywords": ["access", "pointer", "newest"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Interpolation Search is an improved variant of Binary Search for uniformly distributed sorted arrays, probing based on the value."
+    "answer": "The reference to the most recently added element."
   },
   {
     "id": 74,
-    "question": "What is a Suffix Tree?",
-    "keywords": ["suffix", "tree", "string", "substring"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "A Suffix Tree is a compressed trie containing all the suffixes of the given text as their keys and positions in the text as their values."
+    "question": "Code check: List l = []; l.append(5); Print(l.isEmpty());",
+    "keywords": ["boolean", "check", "content"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 75,
-    "question": "Code to print Fibonacci series using iteration.",
-    "keywords": ["fibonacci", "series", "loop", "print"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "void printFib(int n) { int t1 = 0, t2 = 1, nextTerm = 0; for (int i = 1; i <= n; ++i) { cout << t1 << \" \"; nextTerm = t1 + t2; t1 = t2; t2 = nextTerm; } }"
+    "question": "What technique avoids re-computing subproblems in recursion?",
+    "keywords": ["storage", "optimization", "reuse"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Memoization."
   },
   {
     "id": 76,
-    "question": "What is the degree of a vertex?",
-    "keywords": ["degree", "vertex", "graph", "edges"],
+    "question": "Which data structure is used for 'undo' operations in editors?",
+    "keywords": ["history", "reversal", "lifo"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The degree of a vertex in a graph is the number of edges connected to it."
+    "answer": "Stack."
   },
   {
     "id": 77,
-    "question": "What is a Path in a Graph?",
-    "keywords": ["path", "graph", "sequence", "vertices"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "A Path is a sequence of vertices where each adjacent pair is connected by an edge."
+    "question": "Predict output: 10 ^ 10",
+    "keywords": ["xor", "self", "identity"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 78,
-    "question": "Code to search in a BST.",
-    "keywords": ["search", "BST", "recursion", "node"],
+    "question": "What is a 'collision' in hashing?",
+    "keywords": ["conflict", "mapping", "buckets"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "Node* search(Node* root, int key) { if (root == NULL || root->key == key) return root; if (root->key < key) return search(root->right, key); return search(root->left, key); }"
+    "type": "theory",
+    "answer": "Two distinct keys mapping to the same index."
   },
   {
     "id": 79,
-    "question": "What is a Leaf Node?",
-    "keywords": ["leaf", "node", "tree", "child"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which traversal visits root, right, then left?",
+    "keywords": ["reverse", "order", "sequence"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Leaf Node is a node in a tree that has no children."
+    "answer": "Reverse Pre-order."
   },
   {
     "id": 80,
-    "question": "What is Level Order Traversal?",
-    "keywords": ["level order", "traversal", "BFS", "tree"],
+    "question": "Code check: int x = 5; Print(x++);",
+    "keywords": ["post-increment", "value", "variable"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Level Order Traversal is a tree traversal method where nodes are visited level by level from top to bottom, left to right."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 81,
-    "question": "Code to insert element in an Array.",
-    "keywords": ["insert", "array", "position", "shift"],
+    "question": "What is the degree of a leaf node?",
+    "keywords": ["connections", "children", "count"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "for (int i = n; i >= pos; i--) arr[i] = arr[i - 1]; arr[pos - 1] = x;"
+    "type": "theory",
+    "answer": "0 or 1 depending on graph vs tree definition (usually 1 in graphs, 0 children in trees)."
   },
   {
     "id": 82,
-    "question": "What is a Self-Balancing Tree?",
-    "keywords": ["self-balancing", "tree", "height", "AVL", "Red-Black"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which structure is efficient for prefix searches?",
+    "keywords": ["strings", "dictionary", "autocomplete"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Self-Balancing Tree is a BST that automatically keeps its height small (logarithmic) after insertions and deletions."
+    "answer": "Trie (Prefix Tree)."
   },
   {
     "id": 83,
-    "question": "What is Radix Sort?",
-    "keywords": ["radix", "sort", "digit", "integer"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Radix Sort is a non-comparative sorting algorithm that sorts integers by processing individual digits."
+    "question": "Predict output: 4 << 1",
+    "keywords": ["shift", "multiplication", "binary"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "8"
   },
   {
     "id": 84,
-    "question": "Code to delete an element from an Array.",
-    "keywords": ["delete", "array", "shift", "position"],
+    "question": "What defines a static array?",
+    "keywords": ["fixed", "size", "allocation"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "for (int i = pos; i < n - 1; i++) arr[i] = arr[i + 1]; n--;"
+    "type": "theory",
+    "answer": "The size is determined at compile time and cannot change."
   },
   {
     "id": 85,
-    "question": "What is a 2D Array?",
-    "keywords": ["2D", "array", "matrix", "rows", "columns"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which algorithm detects negative cycles in a graph?",
+    "keywords": ["relaxation", "shortest-path", "weights"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A 2D Array is an array of arrays, representing a matrix with rows and columns."
+    "answer": "Bellman-Ford."
   },
   {
     "id": 86,
-    "question": "What is Divide and Conquer?",
-    "keywords": ["divide", "conquer", "strategy", "algorithm"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Divide and Conquer is an algorithm design paradigm where a problem is broken into smaller subproblems, solved recursively, and combined."
+    "question": "Code check: String s = \"Hi\"; Print(s.length());",
+    "keywords": ["count", "chars", "size"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 87,
-    "question": "Code to find sum of array elements.",
-    "keywords": ["sum", "array", "loop", "add"],
+    "question": "What is the 'tail' of a linked list?",
+    "keywords": ["end", "last", "node"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int sum = 0; for (int i = 0; i < n; i++) sum += arr[i];"
+    "type": "theory",
+    "answer": "The final node pointing to null."
   },
   {
     "id": 88,
-    "question": "What is Greedy Algorithm?",
-    "keywords": ["greedy", "algorithm", "optimization", "local"],
+    "question": "Which sort is stable and uses O(n) memory?",
+    "keywords": ["merge", "divide-conquer", "order-preserving"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Greedy Algorithm builds up a solution piece by piece, always choosing the next piece that offers the most immediate benefit."
+    "answer": "Merge Sort."
   },
   {
     "id": 89,
-    "question": "What is Backtracking?",
-    "keywords": ["backtracking", "recursion", "undo", "solution"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Backtracking is an algorithmic-technique for solving problems recursively by trying to build a solution incrementally and removing those that fail."
+    "question": "Predict output: 7 % 2",
+    "keywords": ["remainder", "arithmetic", "modulo"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 90,
-    "question": "Code to transpose a matrix.",
-    "keywords": ["transpose", "matrix", "swap", "rows", "columns"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "for (int i = 0; i < N; i++) for (int j = i+1; j < N; j++) swap(A[i][j], A[j][i]);"
+    "question": "What data structure manages memory allocation (heap)?",
+    "keywords": ["priority", "blocks", "free-space"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Free List or Heap (Tree-based for Priority Queue, distinct from System Heap)."
   },
   {
     "id": 91,
-    "question": "What is Big O Notation?",
-    "keywords": ["Big O", "notation", "complexity", "upper bound"],
+    "question": "Code check: int[] a = {1,2,3}; a[1]=5; Print(a[1]);",
+    "keywords": ["modification", "index", "update"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Big O Notation describes the upper bound of an algorithm's complexity (time or space) in the worst-case scenario."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 92,
-    "question": "What is Amortized Analysis?",
-    "keywords": ["amortized", "analysis", "average", "sequence"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What is the height difference allowed in an AVL tree?",
+    "keywords": ["balance", "factor", "limit"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Amortized Analysis finds the average running time per operation over a worst-case sequence of operations."
+    "answer": "At most 1."
   },
   {
     "id": 93,
-    "question": "Code to count nodes in a Linked List recursively.",
-    "keywords": ["count", "linked list", "recursion", "nodes"],
+    "question": "Which operation inserts into a stack?",
+    "keywords": ["add", "top", "lifo"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int getCount(Node* head) { if (head == NULL) return 0; return 1 + getCount(head->next); }"
+    "type": "theory",
+    "answer": "Push."
   },
   {
     "id": 94,
-    "question": "What is the height of a tree?",
-    "keywords": ["height", "tree", "depth", "longest path"],
+    "question": "Predict output: 'A' > 'B' (Comparison)",
+    "keywords": ["boolean", "ascii", "logic"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "The height of a tree is the number of edges on the longest path from the root to a leaf."
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 95,
-    "question": "What is a Forest in Graph theory?",
-    "keywords": ["forest", "graph", "disjoint", "trees"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is a 'sink' vertex in a graph?",
+    "keywords": ["degree", "incoming", "outgoing"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Forest is a collection of disjoint trees."
+    "answer": "A node with incoming edges but no outgoing edges."
   },
   {
     "id": 96,
-    "question": "Code to check if a number is prime.",
-    "keywords": ["prime", "number", "check", "loop"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "bool isPrime(int n) { if (n <= 1) return false; for (int i = 2; i * i <= n; i++) if (n % i == 0) return false; return true; }"
+    "question": "Which search is used in AI for game states?",
+    "keywords": ["exploration", "dfs", "bfs"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Heuristic Search (A*) or Minimax."
   },
   {
     "id": 97,
-    "question": "What is a Multi-dimensional Array?",
-    "keywords": ["multi-dimensional", "array", "indices", "complex"],
+    "question": "Code check: int x=10; x/=2; Print(x);",
+    "keywords": ["division", "compound", "assignment"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "A Multi-dimensional Array is an array of arrays, accessed using multiple indices (e.g., 2D, 3D arrays)."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 98,
-    "question": "What is Bucket Sort?",
-    "keywords": ["bucket", "sort", "distribute", "gather"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What connects two nodes in a tree?",
+    "keywords": ["link", "path", "relationship"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Bucket Sort distributes elements into buckets, sorts each bucket individually, and then gathers them."
+    "answer": "Edge."
   },
   {
     "id": 99,
-    "question": "Code to find min element in BST.",
-    "keywords": ["min", "BST", "left", "node"],
+    "question": "Which structure supports LIFO?",
+    "keywords": ["reversal", "stack", "order"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int minValue(Node* root) { Node* current = root; while (current->left != NULL) current = current->left; return current->data; }"
+    "type": "theory",
+    "answer": "Stack."
   },
   {
     "id": 100,
-    "question": "What is Huffman Coding?",
-    "keywords": ["huffman", "coding", "compression", "greedy"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Huffman Coding is a lossless data compression algorithm that uses a greedy approach to build a prefix code tree."
+    "question": "Predict output: 12 | 12",
+    "keywords": ["identity", "logic", "or"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "12"
   },
   {
     "id": 101,
-    "question": "What is the advantage of Linked List over Array?",
-    "keywords": ["linked list", "array", "dynamic", "insertion"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the root node?",
+    "keywords": ["start", "origin", "top"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Linked Lists allow dynamic memory allocation and efficient insertion/deletion without shifting elements."
+    "answer": "The topmost element in a tree hierarchy."
   },
   {
     "id": 102,
-    "question": "Code to check balanced parentheses.",
-    "keywords": ["balanced", "parentheses", "stack", "check"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Code check: bool b = true; Print(!b);",
+    "keywords": ["negation", "logic", "flip"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "bool isBalanced(string expr) { stack<char> s; for (char x : expr) { if (x=='(') s.push(x); else if (!s.empty() && x==')') s.pop(); else return false; } return s.empty(); }"
+    "answer": "False"
   },
   {
     "id": 103,
-    "question": "What is a Sentinel Node?",
-    "keywords": ["sentinel", "node", "dummy", "guard"],
+    "question": "Which tree traversal uses a Queue?",
+    "keywords": ["level-order", "bfs", "width"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Sentinel Node is a dummy node used to simplify boundary conditions in linked lists and trees."
+    "answer": "Level-order traversal."
   },
   {
     "id": 104,
-    "question": "What is External Sorting?",
-    "keywords": ["external", "sorting", "disk", "memory"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What indicates the end of a linked list?",
+    "keywords": ["termination", "reference", "void"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "External Sorting is a class of sorting algorithms that can handle massive amounts of data that do not fit into main memory (RAM)."
+    "answer": "Null pointer."
   },
   {
     "id": 105,
-    "question": "Code to multiply two matrices.",
-    "keywords": ["multiply", "matrix", "loop", "product"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict output: 5 * 2 + 1",
+    "keywords": ["precedence", "math", "order"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "for(i=0;i<r;i++) for(j=0;j<c;j++) for(k=0;k<c;k++) mul[i][j]+=a[i][k]*b[k][j];"
+    "answer": "11"
   },
   {
     "id": 106,
-    "question": "What is a Hash Function?",
-    "keywords": ["hash", "function", "map", "key"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the worst case for Insertion Sort?",
+    "keywords": ["reverse", "order", "quadratic"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Hash Function is a function that converts a given key into an index in the hash table."
+    "answer": "When the input is in reverse sorted order."
   },
   {
     "id": 107,
-    "question": "What is Load Factor in Hashing?",
-    "keywords": ["load factor", "hashing", "ratio", "capacity"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which data structure implements a dictionary?",
+    "keywords": ["key-value", "map", "hashing"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Load Factor is the ratio of the number of stored elements to the size of the hash table."
+    "answer": "Hash Map."
   },
   {
     "id": 108,
-    "question": "Code to get nth Fibonacci number using recursion.",
-    "keywords": ["fibonacci", "nth", "recursion", "math"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Code check: int[] a = new int[3]; Print(a[2]);",
+    "keywords": ["default", "value", "initialization"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "int fib(int n) { if (n <= 1) return n; return fib(n-1) + fib(n-2); }"
+    "answer": "0"
   },
   {
     "id": 109,
-    "question": "What is a Skip List?",
-    "keywords": ["skip list", "probabilistic", "linked list", "layers"],
+    "question": "What is 'memoization'?",
+    "keywords": ["caching", "speed", "storing"],
     "difficulty": "hard",
     "max_score": 15,
     "type": "theory",
-    "answer": "A Skip List is a probabilistic data structure that allows fast search within an ordered sequence of elements using multiple layers of linked lists."
+    "answer": "Storing results of expensive function calls."
   },
   {
     "id": 110,
-    "question": "What is a Bit Array?",
-    "keywords": ["bit", "array", "bitmap", "compact"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A Bit Array (Bitmap) is an array data structure that compactly stores bits."
+    "question": "Predict output: 15 / 2 (Integer division)",
+    "keywords": ["truncation", "math", "floor"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "7"
   },
   {
     "id": 111,
-    "question": "Code to find intersection of two arrays.",
-    "keywords": ["intersection", "array", "common", "find"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "for(int i=0;i<n;i++) for(int j=0;j<m;j++) if(arr1[i]==arr2[j]) cout << arr1[i];"
+    "question": "What structure is used in router tables?",
+    "keywords": ["trie", "prefix", "network"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Trie or Patricia Trie."
   },
   {
     "id": 112,
-    "question": "What is a Bloom Filter?",
-    "keywords": ["bloom filter", "probabilistic", "set", "membership"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "A Bloom Filter is a space-efficient probabilistic data structure used to test whether an element is a member of a set."
+    "question": "Code check: Stack s; s.push(5); s.pop(); Print(s.isEmpty());",
+    "keywords": ["state", "check", "content"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 113,
-    "question": "What is Counting Sort?",
-    "keywords": ["counting", "sort", "keys", "frequency"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which algorithm finds the Minimum Spanning Tree?",
+    "keywords": ["kruskal", "prim", "connection"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Counting Sort is an integer sorting algorithm that operates by counting the number of objects that have each distinct key value."
+    "answer": "Prim's or Kruskal's Algorithm."
   },
   {
     "id": 114,
-    "question": "Code to reverse a Linked List.",
-    "keywords": ["reverse", "linked list", "prev", "next"],
+    "question": "Predict output: 1 << 3",
+    "keywords": ["binary", "shift", "power"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "Node* reverse(Node* head) { Node *prev = NULL, *current = head, *next = NULL; while (current != NULL) { next = current->next; current->next = prev; prev = current; current = next; } return prev; }"
+    "answer": "8"
   },
   {
     "id": 115,
-    "question": "What is a Splay Tree?",
-    "keywords": ["splay", "tree", "BST", "accessed"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What is the space complexity of an adjacency matrix?",
+    "keywords": ["vertices", "squared", "dense"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Splay Tree is a self-adjusting binary search tree where the recently accessed element is moved to the root."
+    "answer": "O(V^2)."
   },
   {
     "id": 116,
-    "question": "What is Depth of a Node?",
-    "keywords": ["depth", "node", "tree", "root"],
+    "question": "Code check: List l = [1,2]; l.clear(); Print(l.size());",
+    "keywords": ["empty", "removal", "count"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "The Depth of a node is the number of edges from the root to the node."
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 117,
-    "question": "Code to print array elements recursively.",
-    "keywords": ["print", "array", "recursion", "elements"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "void printArr(int arr[], int n) { if (n == 0) return; printArr(arr, n - 1); cout << arr[n - 1] << \" \"; }"
+    "question": "Which sorting algorithm is not stable?",
+    "keywords": ["quick", "selection", "heap"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Quick Sort or Heap Sort."
   },
   {
     "id": 118,
-    "question": "What is an Abstract Data Type (ADT)?",
-    "keywords": ["ADT", "abstract", "model", "operations"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "ADT is a logical description of data and operations that can be performed on it, without specifying implementation details."
+    "question": "Predict output: 3 + 2 * 4",
+    "keywords": ["order", "math", "precedence"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "11"
   },
   {
     "id": 119,
-    "question": "What is the complexity of Binary Search?",
-    "keywords": ["binary search", "complexity", "O(log n)", "time"],
+    "question": "What defines a doubly linked list?",
+    "keywords": ["pointers", "direction", "nodes"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The time complexity of Binary Search is O(log n)."
+    "answer": "Nodes point to both next and previous elements."
   },
   {
     "id": 120,
-    "question": "Code to check if Linked List is empty.",
-    "keywords": ["empty", "linked list", "check", "head"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Code check: int x = 10; Print(x--);",
+    "keywords": ["post-decrement", "value", "variable"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "bool isEmpty(Node* head) { return head == NULL; }"
+    "answer": "10"
   },
   {
     "id": 121,
-    "question": "What is Double Hashing?",
-    "keywords": ["double", "hashing", "collision", "probe"],
+    "question": "What is the diameter of a tree?",
+    "keywords": ["longest", "path", "nodes"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Double Hashing is a collision resolution technique where a second hash function is used to determine the probe sequence."
+    "answer": "The longest path between any two nodes."
   },
   {
     "id": 122,
-    "question": "What is Cycle Detection?",
-    "keywords": ["cycle", "detection", "graph", "loop"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Cycle detection is the algorithmic task of finding a cycle in a sequence of iterated function values or a graph."
+    "question": "Predict output: true && false",
+    "keywords": ["logic", "and", "boolean"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 123,
-    "question": "Code to convert string to integer.",
-    "keywords": ["convert", "string", "int", "stoi"],
+    "question": "Which data structure uses the 'enqueue' operation?",
+    "keywords": ["fifo", "addition", "queue"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int num = stoi(str);"
+    "type": "theory",
+    "answer": "Queue."
   },
   {
     "id": 124,
-    "question": "What is a Sparse Graph?",
-    "keywords": ["sparse", "graph", "edges", "vertices"],
+    "question": "Code check: int[] a = {5, 10}; Print(a.length);",
+    "keywords": ["size", "count", "property"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "A Sparse Graph is a graph where the number of edges is much less than the maximum possible number of edges."
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 125,
-    "question": "What is a Dense Graph?",
-    "keywords": ["dense", "graph", "edges", "vertices"],
+    "question": "What is the result of '1' + '1' in string context?",
+    "keywords": ["concatenation", "text", "joining"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "A Dense Graph is a graph where the number of edges is close to the maximum possible number of edges."
+    "type": "code",
+    "answer": "11"
   },
   {
     "id": 126,
-    "question": "Code to find second largest element.",
-    "keywords": ["second", "largest", "array", "find"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "sort(arr, arr + n); return arr[n-2];"
+    "question": "Which algorithm is used for cycle detection in a directed graph?",
+    "keywords": ["dfs", "recursion", "back-edge"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "DFS with a recursion stack check."
   },
   {
     "id": 127,
-    "question": "What is In-place Sorting?",
-    "keywords": ["in-place", "sorting", "memory", "extra"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "In-place sorting sorts the data within the original structure using only a constant amount of extra memory."
+    "question": "Predict output: 25 % 4",
+    "keywords": ["modulo", "remainder", "math"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 128,
-    "question": "What is Stable Sorting?",
-    "keywords": ["stable", "sorting", "order", "equal"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the time complexity of searching in a Hash Table (Average Case)?",
+    "keywords": ["constant", "fast", "lookup"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Stable Sorting maintains the relative order of records with equal keys."
+    "answer": "O(1)."
   },
   {
     "id": 129,
-    "question": "Code to check if array is sorted.",
-    "keywords": ["check", "sorted", "array", "loop"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Code check: int x = 0; if(x) Print('Yes'); else Print('No'); (in C++)",
+    "keywords": ["boolean", "coercion", "conditional"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "bool isSorted(int arr[], int n) { for(int i=0; i<n-1; i++) if(arr[i] > arr[i+1]) return false; return true; }"
+    "answer": "No"
   },
   {
     "id": 130,
-    "question": "What is Floyd-Warshall Algorithm?",
-    "keywords": ["floyd", "warshall", "shortest path", "all-pairs"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What structure is used to represent file systems?",
+    "keywords": ["hierarchy", "directories", "folders"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Floyd-Warshall is an algorithm for finding shortest paths in a weighted graph with positive or negative edge weights (but no negative cycles)."
+    "answer": "Tree."
   },
   {
     "id": 131,
-    "question": "What is Bellman-Ford Algorithm?",
-    "keywords": ["bellman", "ford", "shortest path", "negative"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Bellman-Ford computes shortest paths from a single source vertex to all other vertices, capable of handling negative weights."
+    "question": "Predict output: 10 & 2",
+    "keywords": ["bitwise", "and", "logic"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 132,
-    "question": "Code to implement Queue using Stack.",
-    "keywords": ["queue", "stack", "implement", "two"],
+    "question": "Which sort uses a pivot element?",
+    "keywords": ["partitioning", "divide", "recursive"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "class Queue { stack<int> s1, s2; void enQueue(int x) { s1.push(x); } int deQueue() { if (s1.empty() && s2.empty()) return -1; if (s2.empty()) { while (!s1.empty()) { s2.push(s1.top()); s1.pop(); } } int x = s2.top(); s2.pop(); return x; } }"
+    "type": "theory",
+    "answer": "Quick Sort."
   },
   {
     "id": 133,
-    "question": "What is a Threaded Binary Tree?",
-    "keywords": ["threaded", "binary tree", "traversal", "stack"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "A Threaded Binary Tree makes inorder traversal faster and feasible without stack/recursion by using null pointers to point to inorder successor/predecessor."
+    "question": "Code check: int[] a = {1, 2, 3}; Print(a[3]);",
+    "keywords": ["bounds", "error", "exception"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "Index Error"
   },
   {
     "id": 134,
-    "question": "What is a Disjoint Set (Union-Find)?",
-    "keywords": ["disjoint set", "union-find", "sets", "merge"],
+    "question": "What is a 'full' binary tree?",
+    "keywords": ["children", "structure", "zero-or-two"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Disjoint Set is a data structure that keeps track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets."
+    "answer": "Every node has either 0 or 2 children."
   },
   {
     "id": 135,
-    "question": "Code to count leaves in a tree.",
-    "keywords": ["count", "leaves", "tree", "recursion"],
+    "question": "Predict output: 'Hello' + ' ' + 'World'",
+    "keywords": ["concatenation", "string", "join"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "int countLeaves(Node* root) { if(root == NULL) return 0; if(root->left == NULL && root->right == NULL) return 1; return countLeaves(root->left) + countLeaves(root->right); }"
+    "answer": "Hello World"
   },
   {
     "id": 136,
-    "question": "What is Linear Probing?",
-    "keywords": ["linear", "probing", "collision", "hash"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What complexity is O(1)?",
+    "keywords": ["time", "constant", "performance"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Linear Probing is an open addressing scheme where, on collision, the algorithm checks the next available slot sequentially."
+    "answer": "Constant time."
   },
   {
     "id": 137,
-    "question": "What is Quadratic Probing?",
-    "keywords": ["quadratic", "probing", "collision", "hash"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Quadratic Probing searches for the next slot using a quadratic polynomial (e.g., i^2)."
+    "question": "Code check: int x=5; int y=x; y=10; Print(x); (Primitive type)",
+    "keywords": ["value", "copy", "assignment"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 138,
-    "question": "Code to find height of a BST.",
-    "keywords": ["height", "BST", "max", "recursion"],
+    "question": "Which structure operates on First In Last Out?",
+    "keywords": ["reversal", "stack", "order"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int height(Node* node) { if (node==NULL) return 0; return 1 + max(height(node->left), height(node->right)); }"
+    "type": "theory",
+    "answer": "Stack."
   },
   {
     "id": 139,
-    "question": "What is a Binary Heap?",
-    "keywords": ["binary", "heap", "complete", "tree"],
+    "question": "Predict output: 8 >> 2",
+    "keywords": ["shift", "division", "binary"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "A Binary Heap is a complete binary tree which satisfies the heap property."
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 140,
-    "question": "What is KMP Algorithm?",
-    "keywords": ["KMP", "pattern", "matching", "string"],
+    "question": "What is 'rehashing'?",
+    "keywords": ["expansion", "capacity", "table"],
     "difficulty": "hard",
     "max_score": 15,
     "type": "theory",
-    "answer": "Knuth-Morris-Pratt (KMP) is a string-searching algorithm that searches for occurrences of a pattern within a main text using a prefix table."
+    "answer": "Increasing the size of a hash table and re-mapping elements."
   },
   {
     "id": 141,
-    "question": "Code to convert infix to postfix.",
-    "keywords": ["infix", "postfix", "stack", "convert"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Code check: while(false) { Print('Hi'); }",
+    "keywords": ["loop", "condition", "execution"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "// Standard stack-based algorithm involving precedence checks"
+    "answer": "No Output"
   },
   {
     "id": 142,
-    "question": "What is Postfix Notation?",
-    "keywords": ["postfix", "notation", "RPN", "operator"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which algorithm is used for topological sorting?",
+    "keywords": ["dependencies", "dag", "ordering"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Postfix Notation (Reverse Polish Notation) places operators after their operands (e.g., AB+)."
+    "answer": "Kahn's Algorithm or DFS based approach."
   },
   {
     "id": 143,
-    "question": "What is Prefix Notation?",
-    "keywords": ["prefix", "notation", "polish", "operator"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "Prefix Notation places operators before their operands (e.g., +AB)."
+    "question": "Predict output: 9 | 9",
+    "keywords": ["or", "logic", "identity"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "9"
   },
   {
     "id": 144,
-    "question": "Code to evaluate postfix expression.",
-    "keywords": ["evaluate", "postfix", "stack", "math"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "// Stack based evaluation: push operands, pop two on operator, push result"
+    "question": "What is the degree of a graph vertex?",
+    "keywords": ["edges", "connection", "count"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "The number of connected edges."
   },
   {
     "id": 145,
-    "question": "What is Tree Traversal?",
-    "keywords": ["tree", "traversal", "visit", "nodes"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "Tree Traversal is the process of visiting each node in a tree data structure exactly once."
+    "question": "Code check: List l = new List(); Print(l.indexOf(10)); (Empty list)",
+    "keywords": ["search", "missing", "result"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "-1"
   },
   {
     "id": 146,
-    "question": "What is Graph Traversal?",
-    "keywords": ["graph", "traversal", "BFS", "DFS"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which traversal is BFS equivalent to on a tree?",
+    "keywords": ["layers", "width", "search"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Graph Traversal is the process of visiting all the nodes of a graph."
+    "answer": "Level Order Traversal."
   },
   {
     "id": 147,
-    "question": "Code to print reverse of Linked List using recursion.",
-    "keywords": ["reverse", "print", "linked list", "recursion"],
+    "question": "Predict output: !true",
+    "keywords": ["not", "logic", "boolean"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "void reversePrint(Node* head) { if (head == NULL) return; reversePrint(head->next); cout << head->data << \" \"; }"
+    "answer": "False"
   },
   {
     "id": 148,
-    "question": "What is the Time Complexity of Insertion Sort?",
-    "keywords": ["insertion sort", "time", "complexity", "O(n^2)"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What structure is used for Breadth First Search?",
+    "keywords": ["fifo", "frontier", "processing"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "The worst and average case time complexity is O(n^2)."
+    "answer": "Queue."
   },
   {
     "id": 149,
-    "question": "What is Tail Recursion?",
-    "keywords": ["tail", "recursion", "last", "call"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Tail Recursion is a special case of recursion where the recursive call is the last operation in the function."
+    "question": "Code check: int x = 10 % 11;",
+    "keywords": ["modulo", "small", "math"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "10"
   },
   {
     "id": 150,
-    "question": "Code to rotate array by k positions.",
-    "keywords": ["rotate", "array", "k", "shift"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "void rotate(int arr[], int d, int n) { reverse(arr, arr+d); reverse(arr+d, arr+n); reverse(arr, arr+n); }"
+    "question": "What is an 'articulation point'?",
+    "keywords": ["cut-vertex", "disconnection", "graph"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "A node whose removal increases the number of connected components."
   },
   {
     "id": 151,
-    "question": "What is Circular Queue?",
-    "keywords": ["circular", "queue", "ring", "buffer"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A Circular Queue is a linear data structure where the last position is connected back to the first to make a circle."
+    "question": "Predict output: 5 == 5",
+    "keywords": ["equality", "check", "boolean"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 152,
-    "question": "What is Dequeue Operation?",
-    "keywords": ["dequeue", "remove", "front", "queue"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which data structure is efficient for finding the median?",
+    "keywords": ["heaps", "min-max", "stream"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Dequeue is the operation of removing an element from the front of the queue."
+    "answer": "Two Heaps (Min-Heap and Max-Heap)."
   },
   {
     "id": 153,
-    "question": "Code to implement simple queue.",
-    "keywords": ["queue", "array", "simple", "linear"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Code check: String s = null; Print(s.length());",
+    "keywords": ["error", "crash", "reference"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "// Basic array implementation with front and rear indices"
+    "answer": "NullPointerException"
   },
   {
     "id": 154,
-    "question": "What is Static Array?",
-    "keywords": ["static", "array", "fixed", "compile-time"],
+    "question": "What does a leaf node point to?",
+    "keywords": ["termination", "null", "end"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "A Static Array has a fixed size determined at compile time."
+    "answer": "Null or None."
   },
   {
     "id": 155,
-    "question": "What is Dynamic Array?",
-    "keywords": ["dynamic", "array", "resize", "runtime"],
+    "question": "Predict output: 100 / 0",
+    "keywords": ["error", "math", "division"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "A Dynamic Array can resize itself during runtime (e.g., C++ Vector, Java ArrayList)."
+    "type": "code",
+    "answer": "Runtime Error"
   },
   {
     "id": 156,
-    "question": "Code to sort string.",
-    "keywords": ["sort", "string", "algorithm", "order"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "sort(str.begin(), str.end());"
+    "question": "Which sort is best for Linked Lists?",
+    "keywords": ["pointers", "merge", "stability"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Merge Sort."
   },
   {
     "id": 157,
-    "question": "What is Row-Major Order?",
-    "keywords": ["row-major", "array", "storage", "memory"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Row-Major Order stores multidimensional arrays in memory row by row."
+    "question": "Code check: int[] a = {1}; a[0]++; Print(a[0]);",
+    "keywords": ["increment", "access", "modify"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 158,
-    "question": "What is Column-Major Order?",
-    "keywords": ["column-major", "array", "storage", "memory"],
+    "question": "What is the worst case complexity of Bubble Sort?",
+    "keywords": ["slow", "quadratic", "n-squared"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Column-Major Order stores multidimensional arrays in memory column by column."
+    "answer": "O(n^2)."
   },
   {
     "id": 159,
-    "question": "Code to check if number is power of 2.",
-    "keywords": ["power", "2", "bitwise", "check"],
+    "question": "Predict output: 'A' + 0",
+    "keywords": ["ascii", "value", "integer"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "bool isPowerOfTwo(int n) { return n > 0 && (n & (n - 1)) == 0; }"
+    "answer": "65"
   },
   {
     "id": 160,
-    "question": "What is a Perfect Binary Tree?",
-    "keywords": ["perfect", "binary tree", "filled", "leaves"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is 'thrashing'?",
+    "keywords": ["memory", "swapping", "performance"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Perfect Binary Tree is one where all internal nodes have two children and all leaves are at the same level."
+    "answer": "Excessive paging operations causing performance degradation."
   },
   {
     "id": 161,
-    "question": "What is Path Compression?",
-    "keywords": ["path", "compression", "union-find", "optimization"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Path Compression is an optimization in Disjoint Set to flatten the tree structure whenever Find is called."
+    "question": "Code check: int x = 5; x *= 2; Print(x);",
+    "keywords": ["compound", "multiplication", "math"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "10"
   },
   {
     "id": 162,
-    "question": "Code to calculate sum of digits.",
-    "keywords": ["sum", "digits", "recursion", "math"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "int sumDigits(int n) { return n == 0 ? 0 : n % 10 + sumDigits(n / 10); }"
+    "question": "Which graph is used to model dependencies?",
+    "keywords": ["dag", "directed", "acyclic"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Directed Acyclic Graph."
   },
   {
     "id": 163,
-    "question": "What is Rabin-Karp Algorithm?",
-    "keywords": ["rabin-karp", "hashing", "string", "search"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Rabin-Karp is a string-searching algorithm that uses hashing to find patterns in text."
+    "question": "Predict output: 2 ^ 2",
+    "keywords": ["xor", "binary", "logic"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 164,
-    "question": "What is Euclidean Algorithm?",
-    "keywords": ["euclidean", "gcd", "algorithm", "math"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What represents infinity in graph algorithms?",
+    "keywords": ["distance", "unreachable", "max-value"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Euclidean Algorithm is an efficient method for computing the greatest common divisor (GCD) of two numbers."
+    "answer": "A value larger than any possible path sum."
   },
   {
     "id": 165,
-    "question": "Code to find LCM.",
-    "keywords": ["lcm", "gcd", "math", "formula"],
+    "question": "Code check: char c = 'a'; c++; Print(c);",
+    "keywords": ["increment", "next", "ascii"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "int lcm(int a, int b) { return (a * b) / gcd(a, b); }"
+    "answer": "b"
   },
   {
     "id": 166,
-    "question": "What is a Weighted Graph?",
-    "keywords": ["weighted", "graph", "edge", "cost"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which algorithm uses the 'divide and conquer' approach?",
+    "keywords": ["merge", "quick", "binary-search"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Weighted Graph is a graph where each edge is assigned a numerical value (weight/cost)."
+    "answer": "Merge Sort, Quick Sort, or Binary Search."
   },
   {
     "id": 167,
-    "question": "What is an Undirected Graph?",
-    "keywords": ["undirected", "graph", "edge", "direction"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "An Undirected Graph is a graph where edges have no direction (relationships are two-way)."
+    "question": "Predict output: 6 & 3",
+    "keywords": ["bitwise", "and", "calc"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 168,
-    "question": "Code to reverse a queue.",
-    "keywords": ["reverse", "queue", "recursion", "stack"],
+    "question": "What is the memory complexity of DFS (Recursive)?",
+    "keywords": ["stack", "depth", "height"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "void reverseQueue(queue<int>& q) { if (q.empty()) return; int x = q.front(); q.pop(); reverseQueue(q); q.push(x); }"
+    "type": "theory",
+    "answer": "O(h) where h is the tree height."
   },
   {
     "id": 169,
-    "question": "What is a Directed Graph (Digraph)?",
-    "keywords": ["directed", "graph", "arrow", "direction"],
+    "question": "Code check: int x=1; if(x==1) Print('A'); else Print('B');",
+    "keywords": ["conditional", "branch", "flow"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "A Directed Graph is a graph where edges have a direction (arrows)."
+    "type": "code",
+    "answer": "A"
   },
   {
     "id": 170,
-    "question": "What is Breadth-First Traversal?",
-    "keywords": ["BFS", "breadth", "level", "queue"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What describes a graph where edges have no direction?",
+    "keywords": ["connection", "bidirectional", "link"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Another name for BFS, traversing graph/tree layer by layer."
+    "answer": "Undirected Graph."
   },
   {
     "id": 171,
-    "question": "Code to count edges in undirected graph.",
-    "keywords": ["count", "edges", "graph", "degree"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict output: 10 + '5'",
+    "keywords": ["string", "concat", "type"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "Sum of degrees / 2"
+    "answer": "105"
   },
   {
     "id": 172,
-    "question": "What is Tree Diameter?",
-    "keywords": ["tree", "diameter", "longest", "path"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which data structure implements a FIFO buffer?",
+    "keywords": ["queue", "order", "stream"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "The Diameter of a tree is the number of nodes on the longest path between two end nodes."
+    "answer": "Queue."
   },
   {
     "id": 173,
-    "question": "What is Depth of Binary Tree?",
-    "keywords": ["depth", "tree", "height", "level"],
+    "question": "Code check: int[] a = {5}; Print(a.length);",
+    "keywords": ["size", "count", "property"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Same as height, usually max level of any leaf."
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 174,
-    "question": "Code to check if tree is BST.",
-    "keywords": ["check", "BST", "validate", "range"],
+    "question": "What is the best case complexity of Quick Sort?",
+    "keywords": ["partition", "balanced", "log-linear"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "bool isBST(Node* root, Node* l=NULL, Node* r=NULL) { if (!root) return true; if (l && root->val <= l->val) return false; if (r && root->val >= r->val) return false; return isBST(root->left, l, root) && isBST(root->right, root, r); }"
+    "type": "theory",
+    "answer": "O(n log n)."
   },
   {
     "id": 175,
-    "question": "What is Preorder Predecessor?",
-    "keywords": ["preorder", "predecessor", "tree", "previous"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "The node visited just before the given node in a Preorder traversal."
+    "question": "Predict output: 7 / 2.0",
+    "keywords": ["float", "division", "decimal"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "3.5"
   },
   {
     "id": 176,
-    "question": "What is Inorder Successor?",
-    "keywords": ["inorder", "successor", "tree", "next"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which structure supports efficient range queries?",
+    "keywords": ["segment", "fenwick", "tree"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "The node visited just after the given node in an Inorder traversal."
+    "answer": "Segment Tree or Fenwick Tree."
   },
   {
     "id": 177,
-    "question": "Code to find min in stack.",
-    "keywords": ["min", "stack", "auxiliary", "O(1)"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Code check: int x=0; for(int i=0;i<3;i++) x++; Print(x);",
+    "keywords": ["loop", "increment", "count"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "// Using auxiliary stack to track min values"
+    "answer": "3"
   },
   {
     "id": 178,
-    "question": "What is a Trie used for?",
-    "keywords": ["trie", "autocomplete", "spell", "dictionary"],
+    "question": "What is a 'multigraph'?",
+    "keywords": ["edges", "parallel", "duplicates"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Tries are commonly used for autocomplete, spell checking, and IP routing."
+    "answer": "A graph allowing multiple edges between the same vertices."
   },
   {
     "id": 179,
-    "question": "What is the worst case of BST search?",
-    "keywords": ["BST", "worst", "skewed", "O(n)"],
+    "question": "Predict output: 5 | 2",
+    "keywords": ["or", "bitwise", "logic"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "O(n) when the tree is skewed (essentially a linked list)."
+    "type": "code",
+    "answer": "7"
   },
   {
     "id": 180,
-    "question": "Code to copy a linked list.",
-    "keywords": ["copy", "linked list", "clone", "new"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "// Iterate and create new nodes"
+    "question": "Which data structure uses a 'head' and 'tail' pointer?",
+    "keywords": ["list", "queue", "linked"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "Linked List or Queue."
   },
   {
     "id": 181,
-    "question": "What is Heapify?",
-    "keywords": ["heapify", "process", "heap", "property"],
+    "question": "Code check: String s = \"123\"; int i = Int(s); Print(i+1);",
+    "keywords": ["parsing", "conversion", "math"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Heapify is the process of creating a heap data structure from a binary tree."
+    "type": "code",
+    "answer": "124"
   },
   {
     "id": 182,
-    "question": "What is Max-Heap?",
-    "keywords": ["max-heap", "root", "largest", "parent"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is 'amortized analysis'?",
+    "keywords": ["average", "sequence", "cost"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Max-Heap is a binary heap where the root is the largest element."
+    "answer": "Averaging the time complexity over a sequence of operations."
   },
   {
     "id": 183,
-    "question": "Code to implement stack using queues.",
-    "keywords": ["stack", "queue", "implement", "two"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict output: 10 % 2",
+    "keywords": ["remainder", "even", "math"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "// Use two queues, push to q2, move q1 to q2, swap"
+    "answer": "0"
   },
   {
     "id": 184,
-    "question": "What is Min-Heap?",
-    "keywords": ["min-heap", "root", "smallest", "parent"],
+    "question": "Which structure uses 'buckets'?",
+    "keywords": ["hashing", "storage", "table"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A Min-Heap is a binary heap where the root is the smallest element."
+    "answer": "Hash Table."
   },
   {
     "id": 185,
-    "question": "What is an Expression Tree?",
-    "keywords": ["expression", "tree", "leaves", "operators"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A binary tree used to represent expressions where leaves are operands and internal nodes are operators."
+    "question": "Code check: int x=5; Print(x > 3 && x < 10);",
+    "keywords": ["range", "logic", "check"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 186,
-    "question": "Code to remove nth node from end of list.",
-    "keywords": ["remove", "nth", "end", "linked list"],
+    "question": "What is 'dynamic programming'?",
+    "keywords": ["optimization", "subproblems", "overlapping"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "// Two pointer approach"
+    "type": "theory",
+    "answer": "Solving problems by combining solutions to subproblems."
   },
   {
     "id": 187,
-    "question": "What is Level of a Node?",
-    "keywords": ["level", "node", "tree", "depth"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "The level of a node is 1 + the number of edges between the node and the root."
+    "question": "Predict output: 3 << 2",
+    "keywords": ["shift", "multiply", "binary"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "12"
   },
   {
     "id": 188,
-    "question": "What is Sibling Node?",
-    "keywords": ["sibling", "node", "parent", "same"],
+    "question": "Which sort is comparison-based?",
+    "keywords": ["merge", "quick", "heap"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Nodes that share the same parent."
+    "answer": "Merge, Quick, Heap, Bubble, Insertion."
   },
   {
     "id": 189,
-    "question": "Code to swap nodes in Linked List.",
-    "keywords": ["swap", "nodes", "linked list", "links"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Code check: int x=10; Print(x % 3);",
+    "keywords": ["remainder", "math", "calc"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "// Adjust pointers to swap position"
+    "answer": "1"
   },
   {
     "id": 190,
-    "question": "What is Internal Node?",
-    "keywords": ["internal", "node", "tree", "child"],
+    "question": "What is the degree of the root in a binary tree?",
+    "keywords": ["children", "count", "edges"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Any node of a tree that has child nodes."
+    "answer": "0, 1, or 2."
   },
   {
     "id": 191,
-    "question": "What is Degree of a Tree?",
-    "keywords": ["degree", "tree", "max", "children"],
+    "question": "Predict output: !false",
+    "keywords": ["logic", "not", "boolean"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "The maximum degree of a node in the tree."
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 192,
-    "question": "Code to find intersection point of two linked lists.",
-    "keywords": ["intersection", "linked list", "point", "merge"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "// Difference in length approach"
+    "question": "Which data structure is recursive by definition?",
+    "keywords": ["tree", "self-similar", "structure"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "Tree or Linked List."
   },
   {
     "id": 193,
-    "question": "What is Ancestor Node?",
-    "keywords": ["ancestor", "node", "parent", "path"],
+    "question": "Code check: int[] a = {1, 2}; a[1] = 3; Print(a[1]);",
+    "keywords": ["update", "modify", "access"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Any node on the path from the root to that node."
+    "type": "code",
+    "answer": "3"
   },
   {
     "id": 194,
-    "question": "What is Descendant Node?",
-    "keywords": ["descendant", "node", "child", "subtree"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "Any node in the subtree rooted at that node."
-  },
-  {
-    "id": 195,
-    "question": "Code to clone a graph.",
-    "keywords": ["clone", "graph", "BFS", "DFS"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "code",
-    "answer": "// Use map to store copies of visited nodes"
-  },
-  {
-    "id": 196,
-    "question": "What is Subtree?",
-    "keywords": ["subtree", "tree", "child", "descendants"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "A tree consisting of a node and all its descendants."
-  },
-  {
-    "id": 197,
-    "question": "What is Connected Graph?",
-    "keywords": ["connected", "graph", "path", "vertices"],
+    "question": "What is 'linear probing'?",
+    "keywords": ["hashing", "collision", "search"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A graph where there is a path between every pair of vertices."
+    "answer": "Resolving hash collisions by checking the next available slot."
   },
   {
-    "id": 198,
-    "question": "Code to serialize a tree.",
-    "keywords": ["serialize", "tree", "string", "convert"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "id": 195,
+    "question": "Predict output: 5 ^ 0",
+    "keywords": ["xor", "identity", "logic"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "// Store traversal in string/file"
+    "answer": "5"
   },
   {
-    "id": 199,
-    "question": "What is Articulation Point?",
-    "keywords": ["articulation", "point", "cut", "vertex"],
+    "id": 196,
+    "question": "Which sort has O(n) complexity for small integers?",
+    "keywords": ["counting", "bucket", "radix"],
     "difficulty": "hard",
     "max_score": 15,
     "type": "theory",
-    "answer": "A vertex which, if removed, increases the number of connected components."
+    "answer": "Counting Sort or Radix Sort."
+  },
+  {
+    "id": 197,
+    "question": "Code check: int x=5; if(x>5) Print('Hi'); else Print('Lo');",
+    "keywords": ["condition", "boundary", "logic"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "Lo"
+  },
+  {
+    "id": 198,
+    "question": "What is the 'height' of a tree?",
+    "keywords": ["depth", "edges", "root-to-leaf"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "The number of edges on the longest path from root to leaf."
+  },
+  {
+    "id": 199,
+    "question": "Predict output: 4 & 4",
+    "keywords": ["bitwise", "logic", "match"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "4"
   },
   {
     "id": 200,
-    "question": "Code to deserialize a tree.",
-    "keywords": ["deserialize", "tree", "construct", "string"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "code",
-    "answer": "// Reconstruct tree from string"
+    "question": "Which structure is used to implement recursion?",
+    "keywords": ["call-stack", "memory", "frames"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stack."
   }
 ]
