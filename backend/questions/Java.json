@@ -1826,5 +1826,915 @@
     "max_score": 10,
     "type": "theory",
     "answer": "Prefer abstraction, composition, and clean design."
+  },
+  {
+    "id": 101,
+    "question": "What is Python bytecode?",
+    "keywords": ["bytecode", "interpreter", "execution"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Python bytecode is an intermediate representation of Python code that is executed by the Python Virtual Machine (PVM)."
+  },
+  {
+    "id": 102,
+    "question": "Write code to check whether a number is even or odd.",
+    "keywords": ["even", "odd", "modulo"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "num = int(input()); print('Even' if num % 2 == 0 else 'Odd')"
+  },
+  {
+    "id": 103,
+    "question": "What is the Python Virtual Machine (PVM)?",
+    "keywords": ["PVM", "execution", "bytecode"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "The Python Virtual Machine is the runtime engine that executes Python bytecode line by line."
+  },
+  {
+    "id": 104,
+    "question": "Write code to find the length of a string without using len().",
+    "keywords": ["string", "loop", "count"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "count = 0\nfor _ in s:\n    count += 1"
+  },
+  {
+    "id": 105,
+    "question": "What is immutability in Python?",
+    "keywords": ["immutable", "tuple", "string"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Immutability means an object’s value cannot be changed after it is created, such as strings and tuples."
+  },
+  {
+    "id": 106,
+    "question": "Write code to find the sum of elements in a list.",
+    "keywords": ["sum", "list", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "total = 0\nfor x in L:\n    total += x"
+  },
+  {
+    "id": 107,
+    "question": "What is recursion in Python?",
+    "keywords": ["recursion", "function", "base case"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Recursion is a technique where a function calls itself repeatedly until a base condition is met."
+  },
+  {
+    "id": 108,
+    "question": "Write a recursive function to calculate factorial of a number.",
+    "keywords": ["recursion", "factorial", "function"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def fact(n): return 1 if n == 0 else n * fact(n-1)"
+  },
+  {
+    "id": 109,
+    "question": "What is exception handling in Python?",
+    "keywords": ["exception", "try", "error"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Exception handling is used to handle runtime errors using try, except, else, and finally blocks."
+  },
+  {
+    "id": 110,
+    "question": "Write code to handle division by zero error.",
+    "keywords": ["try", "except", "ZeroDivisionError"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "try:\n    print(a/b)\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')"
+  },
+
+  {
+    "id": 111,
+    "question": "What is multithreading in Python?",
+    "keywords": ["multithreading", "threads", "concurrency"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Multithreading allows multiple threads to run concurrently within a single process to improve performance."
+  },
+  {
+    "id": 112,
+    "question": "Write code to create a thread using threading module.",
+    "keywords": ["threading", "Thread", "concurrency"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "from threading import Thread\nThread(target=func).start()"
+  },
+  {
+    "id": 113,
+    "question": "What is a mutable data type?",
+    "keywords": ["mutable", "list", "dictionary"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A mutable data type allows modification of its content after creation, such as lists and dictionaries."
+  },
+  {
+    "id": 114,
+    "question": "Write code to copy a list using slicing.",
+    "keywords": ["copy", "slicing", "list"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "new_list = old_list[:]"
+  },
+  {
+    "id": 115,
+    "question": "What is a lambda function?",
+    "keywords": ["lambda", "anonymous", "function"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A lambda function is a small anonymous function defined using the lambda keyword."
+  },
+  {
+    "id": 116,
+    "question": "Write code to find the largest number in a list.",
+    "keywords": ["max", "list", "comparison"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "largest = L[0]\nfor x in L:\n    if x > largest:\n        largest = x"
+  },
+  {
+    "id": 117,
+    "question": "What is list slicing?",
+    "keywords": ["slicing", "list", "index"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "List slicing is used to access a subset of elements from a list using start and end indices."
+  },
+  {
+    "id": 118,
+    "question": "Write code to reverse a list without using reverse().",
+    "keywords": ["reverse", "loop", "list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "rev = []\nfor x in L:\n    rev.insert(0, x)"
+  },
+  {
+    "id": 119,
+    "question": "What is file handling in Python?",
+    "keywords": ["file", "read", "write"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "File handling allows reading from and writing data to files using built-in file functions."
+  },
+  {
+    "id": 120,
+    "question": "Write code to write text into a file.",
+    "keywords": ["file", "write", "open"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "with open('a.txt','w') as f:\n    f.write('Hello')"
+  },
+
+  {
+    "id": 121,
+    "question": "What is a dictionary in Python?",
+    "keywords": ["dictionary", "key-value", "mapping"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A dictionary stores data in key-value pairs and provides fast lookup using keys."
+  },
+  {
+    "id": 122,
+    "question": "Write code to access a value from dictionary safely.",
+    "keywords": ["dictionary", "get", "safe access"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "value = d.get('key')"
+  },
+  {
+    "id": 123,
+    "question": "What is a set in Python?",
+    "keywords": ["set", "unique", "unordered"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A set is an unordered collection of unique elements."
+  },
+  {
+    "id": 124,
+    "question": "Write code to remove an element from a set.",
+    "keywords": ["set", "remove", "discard"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "my_set.discard(3)"
+  },
+  {
+    "id": 125,
+    "question": "What is object-oriented programming in Python?",
+    "keywords": ["oop", "class", "object"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "OOP is a programming paradigm based on objects and classes that contain data and methods."
+  },
+  {
+    "id": 126,
+    "question": "Write code to define a simple class.",
+    "keywords": ["class", "object", "oop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "class Test:\n    pass"
+  },
+  {
+    "id": 127,
+    "question": "What is inheritance?",
+    "keywords": ["inheritance", "reuse", "oop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Inheritance allows a class to acquire properties and methods of another class."
+  },
+  {
+    "id": 128,
+    "question": "Write code to demonstrate single inheritance.",
+    "keywords": ["inheritance", "class", "extends"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "class A: pass\nclass B(A): pass"
+  },
+  {
+    "id": 129,
+    "question": "What is polymorphism?",
+    "keywords": ["polymorphism", "methods", "oop"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Polymorphism allows the same function or method name to behave differently for different objects."
+  },
+  {
+    "id": 130,
+    "question": "Write code to check type of a variable.",
+    "keywords": ["type", "datatype", "variable"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "print(type(x))"
+  },
+
+  {
+    "id": 131,
+    "question": "What is encapsulation?",
+    "keywords": ["encapsulation", "data hiding", "oop"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Encapsulation binds data and methods together and restricts direct access to data."
+  },
+  {
+    "id": 132,
+    "question": "Write code to use a private variable in a class.",
+    "keywords": ["private", "class", "encapsulation"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "class A:\n    def __init__(self):\n        self.__x = 10"
+  },
+  {
+    "id": 133,
+    "question": "What is abstraction?",
+    "keywords": ["abstraction", "interface", "oop"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Abstraction hides implementation details and shows only essential features."
+  },
+  {
+    "id": 134,
+    "question": "Write code to import a module.",
+    "keywords": ["import", "module", "syntax"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import math"
+  },
+  {
+    "id": 135,
+    "question": "What is the use of __name__ == '__main__'?",
+    "keywords": ["main", "execution", "module"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "It ensures that code runs only when the file is executed directly, not when imported."
+  },
+  {
+    "id": 136,
+    "question": "Write code to generate random numbers.",
+    "keywords": ["random", "module", "number"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import random\nprint(random.randint(1,10))"
+  },
+  {
+    "id": 137,
+    "question": "What is the difference between break and continue?",
+    "keywords": ["break", "continue", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "break exits the loop completely, while continue skips the current iteration."
+  },
+  {
+    "id": 138,
+    "question": "Write code to use break in a loop.",
+    "keywords": ["break", "loop", "control"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "for i in range(5):\n    if i == 3:\n        break"
+  },
+  {
+    "id": 139,
+    "question": "What is the use of enumerate()?",
+    "keywords": ["enumerate", "index", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "enumerate() adds an index to each element while looping."
+  },
+  {
+    "id": 140,
+    "question": "Write code to use enumerate().",
+    "keywords": ["enumerate", "loop", "index"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "for i, v in enumerate(L): print(i, v)"
+  },
+
+  {
+    "id": 141,
+    "question": "What is time complexity?",
+    "keywords": ["time complexity", "performance", "algorithm"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Time complexity measures how execution time grows with input size."
+  },
+  {
+    "id": 142,
+    "question": "Write code to measure execution time of a block.",
+    "keywords": ["time", "performance", "measure"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import time\nstart = time.time()\n# code\nend = time.time()"
+  },
+  {
+    "id": 143,
+    "question": "What is space complexity?",
+    "keywords": ["space complexity", "memory", "algorithm"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Space complexity measures the memory used by an algorithm during execution."
+  },
+  {
+    "id": 144,
+    "question": "Write code to convert string to integer safely.",
+    "keywords": ["int", "conversion", "exception"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "try:\n    n = int(s)\nexcept ValueError:\n    n = 0"
+  },
+  {
+    "id": 145,
+    "question": "What is functional programming?",
+    "keywords": ["functional", "immutable", "functions"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Functional programming focuses on functions, immutability, and avoiding shared state."
+  },
+  {
+    "id": 146,
+    "question": "Write code using filter() to remove odd numbers.",
+    "keywords": ["filter", "lambda", "even"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "evens = list(filter(lambda x: x % 2 == 0, L))"
+  },
+  {
+    "id": 147,
+    "question": "What is a decorator?",
+    "keywords": ["decorator", "function", "wrapper"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A decorator modifies the behavior of a function without changing its code."
+  },
+  {
+    "id": 148,
+    "question": "Write a simple decorator example.",
+    "keywords": ["decorator", "wrapper", "function"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def deco(f):\n    def wrap(): print('Hi'); f()\n    return wrap"
+  },
+  {
+    "id": 149,
+    "question": "What is JSON?",
+    "keywords": ["json", "data", "format"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "JSON is a lightweight data-interchange format used to store and exchange data."
+  },
+  {
+    "id": 150,
+    "question": "Write code to read JSON data.",
+    "keywords": ["json", "load", "file"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import json\ndata = json.load(open('a.json'))"
+  },
+
+  {
+    "id": 151,
+    "question": "What is garbage collection?",
+    "keywords": ["garbage collection", "memory", "cleanup"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Garbage collection automatically frees memory occupied by unused objects."
+  },
+  {
+    "id": 152,
+    "question": "Write code to force garbage collection.",
+    "keywords": ["gc", "collect", "memory"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import gc\ngc.collect()"
+  },
+  {
+    "id": 153,
+    "question": "What is multiprocessing?",
+    "keywords": ["multiprocessing", "process", "parallel"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Multiprocessing uses multiple CPU cores to execute tasks in parallel."
+  },
+  {
+    "id": 154,
+    "question": "Write code to create a process.",
+    "keywords": ["process", "multiprocessing", "parallel"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "from multiprocessing import Process\nProcess(target=func).start()"
+  },
+  {
+    "id": 155,
+    "question": "What is the use of help()?",
+    "keywords": ["help", "documentation", "built-in"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "help() displays documentation of functions, modules, or classes."
+  },
+  {
+    "id": 156,
+    "question": "Write code to display help of print().",
+    "keywords": ["help", "print", "documentation"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "help(print)"
+  },
+  {
+    "id": 157,
+    "question": "What is slicing with negative index?",
+    "keywords": ["negative index", "slicing", "list"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Negative indexing accesses elements from the end of a sequence."
+  },
+  {
+    "id": 158,
+    "question": "Write code to access last character of a string.",
+    "keywords": ["string", "negative index", "access"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "last = s[-1]"
+  },
+  {
+    "id": 159,
+    "question": "What is map() function?",
+    "keywords": ["map", "function", "iterable"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "map() applies a function to every element of an iterable."
+  },
+  {
+    "id": 160,
+    "question": "Write code using map() to square numbers.",
+    "keywords": ["map", "square", "lambda"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "squares = list(map(lambda x: x*x, L))"
+  },
+
+  {
+    "id": 161,
+    "question": "What is reduce()?",
+    "keywords": ["reduce", "aggregation", "functools"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "reduce() applies a rolling computation to reduce an iterable to a single value."
+  },
+  {
+    "id": 162,
+    "question": "Write code to sum a list using reduce().",
+    "keywords": ["reduce", "sum", "functools"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "from functools import reduce\nreduce(lambda a,b: a+b, L)"
+  },
+  {
+    "id": 163,
+    "question": "What is the Zen of Python?",
+    "keywords": ["zen", "python", "principles"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "The Zen of Python is a collection of guiding principles for writing clean and readable Python code."
+  },
+  {
+    "id": 164,
+    "question": "Write code to display Zen of Python.",
+    "keywords": ["zen", "import", "this"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import this"
+  },
+  {
+    "id": 165,
+    "question": "What is list comprehension?",
+    "keywords": ["list comprehension", "one-liner", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "List comprehension provides a concise way to create lists using expressions."
+  },
+  {
+    "id": 166,
+    "question": "Write list comprehension for even numbers.",
+    "keywords": ["list comprehension", "even", "range"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "[x for x in range(10) if x % 2 == 0]"
+  },
+  {
+    "id": 167,
+    "question": "What is tuple unpacking?",
+    "keywords": ["tuple", "unpacking", "assignment"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Tuple unpacking assigns multiple values at once to variables."
+  },
+  {
+    "id": 168,
+    "question": "Write code to unpack a tuple.",
+    "keywords": ["tuple", "unpacking", "assignment"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "a, b = (1, 2)"
+  },
+  {
+    "id": 169,
+    "question": "What is shallow copy?",
+    "keywords": ["shallow copy", "reference", "copy"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Shallow copy duplicates references to nested objects instead of copying them."
+  },
+  {
+    "id": 170,
+    "question": "Write code to perform shallow copy.",
+    "keywords": ["copy", "shallow", "list"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import copy\nnew = copy.copy(old)"
+  },
+
+  {
+    "id": 171,
+    "question": "What is deep copy?",
+    "keywords": ["deep copy", "recursive", "copy"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Deep copy duplicates all objects recursively, creating independent copies."
+  },
+  {
+    "id": 172,
+    "question": "Write code to perform deep copy.",
+    "keywords": ["deep copy", "copy", "module"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import copy\nnew = copy.deepcopy(old)"
+  },
+  {
+    "id": 173,
+    "question": "What is None in Python?",
+    "keywords": ["None", "null", "object"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "None represents the absence of a value or a null object."
+  },
+  {
+    "id": 174,
+    "question": "Write code to check if a variable is None.",
+    "keywords": ["None", "comparison", "identity"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "if x is None: pass"
+  },
+  {
+    "id": 175,
+    "question": "What is slicing in strings?",
+    "keywords": ["string", "slicing", "index"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "String slicing extracts a portion of a string using index ranges."
+  },
+  {
+    "id": 176,
+    "question": "Write code to slice first 3 characters of a string.",
+    "keywords": ["string", "slice", "index"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "s[:3]"
+  },
+  {
+    "id": 177,
+    "question": "What is boolean type?",
+    "keywords": ["boolean", "true", "false"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Boolean type represents True or False values."
+  },
+  {
+    "id": 178,
+    "question": "Write code to convert integer to boolean.",
+    "keywords": ["bool", "conversion", "integer"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "b = bool(x)"
+  },
+  {
+    "id": 179,
+    "question": "What is operator overloading?",
+    "keywords": ["operator overloading", "dunder", "oop"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Operator overloading allows custom behavior for operators using special methods."
+  },
+  {
+    "id": 180,
+    "question": "Write code to overload + operator.",
+    "keywords": ["operator overloading", "__add__", "class"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "def __add__(self, other): return self.x + other.x"
+  },
+
+  {
+    "id": 181,
+    "question": "What is comprehension?",
+    "keywords": ["comprehension", "list", "set"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Comprehension is a compact syntax for creating collections."
+  },
+  {
+    "id": 182,
+    "question": "Write a set comprehension example.",
+    "keywords": ["set comprehension", "syntax", "loop"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "{x*x for x in range(5)}"
+  },
+  {
+    "id": 183,
+    "question": "What is dictionary comprehension?",
+    "keywords": ["dictionary", "comprehension", "mapping"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Dictionary comprehension creates dictionaries using expressions."
+  },
+  {
+    "id": 184,
+    "question": "Write a dictionary comprehension example.",
+    "keywords": ["dictionary comprehension", "mapping", "syntax"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "{x: x*x for x in range(5)}"
+  },
+  {
+    "id": 185,
+    "question": "What is sys module?",
+    "keywords": ["sys", "system", "module"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "sys module provides access to system-specific parameters and functions."
+  },
+  {
+    "id": 186,
+    "question": "Write code to access command-line arguments.",
+    "keywords": ["sys", "argv", "command-line"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "import sys\nprint(sys.argv)"
+  },
+  {
+    "id": 187,
+    "question": "What is eval()?",
+    "keywords": ["eval", "expression", "execution"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "eval() evaluates a Python expression dynamically."
+  },
+  {
+    "id": 188,
+    "question": "Write code using eval().",
+    "keywords": ["eval", "expression", "string"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "result = eval('2+3')"
+  },
+  {
+    "id": 189,
+    "question": "What is exec()?",
+    "keywords": ["exec", "dynamic", "code"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "exec() executes dynamically generated Python code."
+  },
+  {
+    "id": 190,
+    "question": "Write code using exec().",
+    "keywords": ["exec", "dynamic", "statement"],
+    "difficulty": "hard",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "exec('print(10)')"
+  },
+
+  {
+    "id": 191,
+    "question": "What is command-line input?",
+    "keywords": ["command-line", "input", "argv"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Command-line input allows passing values when running a Python script."
+  },
+  {
+    "id": 192,
+    "question": "Write code to read input from user.",
+    "keywords": ["input", "user", "console"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "x = input('Enter value: ')"
+  },
+  {
+    "id": 193,
+    "question": "What is a loop?",
+    "keywords": ["loop", "iteration", "control"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A loop repeats a block of code multiple times."
+  },
+  {
+    "id": 194,
+    "question": "Write a for loop example.",
+    "keywords": ["for loop", "iteration", "range"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "for i in range(5): print(i)"
+  },
+  {
+    "id": 195,
+    "question": "What is while loop?",
+    "keywords": ["while loop", "condition", "iteration"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "A while loop executes as long as a condition is true."
+  },
+  {
+    "id": 196,
+    "question": "Write a while loop example.",
+    "keywords": ["while loop", "condition", "iteration"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "i = 0\nwhile i < 5:\n    print(i)\n    i += 1"
+  },
+  {
+    "id": 197,
+    "question": "What is pass statement?",
+    "keywords": ["pass", "placeholder", "statement"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "pass is a placeholder statement that does nothing."
+  },
+  {
+    "id": 198,
+    "question": "Write code using pass.",
+    "keywords": ["pass", "loop", "placeholder"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "for i in range(3): pass"
+  },
+  {
+    "id": 199,
+    "question": "What is continue statement?",
+    "keywords": ["continue", "loop", "control"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "continue skips the current iteration and moves to the next one."
+  },
+  {
+    "id": 200,
+    "question": "Write code using continue.",
+    "keywords": ["continue", "loop", "control"],
+    "difficulty": "easy",
+    "max_score": 10,
+    "type": "coding",
+    "answer": "for i in range(5):\n    if i == 2: continue\n    print(i)"
   }
 ]
+
