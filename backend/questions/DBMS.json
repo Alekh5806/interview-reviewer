@@ -1,1820 +1,1802 @@
 [
   {
     "id": 1,
-    "question": "What is DBMS?",
-    "keywords": ["DBMS", "database", "definition"],
+    "question": "What is a DBMS?",
+    "keywords": ["database", "management", "system", "software"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "DBMS stands for Database Management System. It is software used to store, manage, and retrieve data efficiently."
+    "answer": "DBMS (Database Management System) is software used to store, manage, and retrieve data efficiently."
   },
   {
     "id": 2,
-    "question": "What is a database?",
-    "keywords": ["database", "data"],
+    "question": "Write an SQL query to select all columns from a table named 'Employees'.",
+    "keywords": ["SELECT", "all", "columns", "employees"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A database is an organized collection of related data stored electronically."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Employees;"
   },
   {
     "id": 3,
-    "question": "What are the advantages of DBMS?",
-    "keywords": ["DBMS", "advantages"],
-    "difficulty": "easy",
+    "question": "What are the ACID properties?",
+    "keywords": ["Atomicity", "Consistency", "Isolation", "Durability"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "DBMS reduces data redundancy, improves data security, provides data consistency, and allows easy data access."
+    "answer": "ACID stands for Atomicity, Consistency, Isolation, and Durability, which are properties that guarantee reliable processing of database transactions."
   },
   {
     "id": 4,
-    "question": "What is data redundancy?",
-    "keywords": ["data redundancy"],
+    "question": "What is a Primary Key?",
+    "keywords": ["primary key", "unique", "identifier", "null"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Data redundancy means storing the same data multiple times at different places."
+    "answer": "A Primary Key is a column or set of columns that uniquely identifies each row in a table. It cannot contain NULL values."
   },
   {
     "id": 5,
-    "question": "What is data inconsistency?",
-    "keywords": ["data inconsistency"],
-    "difficulty": "easy",
+    "question": "Write an SQL query to create a table 'Student' with ID and Name.",
+    "keywords": ["CREATE", "TABLE", "Student", "ID", "Name"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Data inconsistency occurs when the same data has different values in different places."
+    "type": "query",
+    "answer": "CREATE TABLE Student (ID INT PRIMARY KEY, Name VARCHAR(100));"
   },
   {
     "id": 6,
-    "question": "What is a table in DBMS?",
-    "keywords": ["table", "relation"],
-    "difficulty": "easy",
+    "question": "What is Normalization?",
+    "keywords": ["normalization", "redundancy", "dependency", "organize"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A table is a collection of rows and columns used to store data in a database."
+    "answer": "Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity."
   },
   {
     "id": 7,
-    "question": "What is a tuple?",
-    "keywords": ["tuple", "row"],
+    "question": "What is a Foreign Key?",
+    "keywords": ["foreign key", "reference", "relationship", "link"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "A tuple is a single row in a table."
+    "answer": "A Foreign Key is a field (or collection of fields) in one table that refers to the Primary Key in another table."
   },
   {
     "id": 8,
-    "question": "What is an attribute?",
-    "keywords": ["attribute", "column"],
+    "question": "Write a query to retrieve distinct names from the 'Customers' table.",
+    "keywords": ["SELECT", "DISTINCT", "name", "Customers"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "An attribute is a column in a table that represents a property of data."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT DISTINCT Name FROM Customers;"
   },
   {
     "id": 9,
-    "question": "What is a primary key?",
-    "keywords": ["primary key"],
-    "difficulty": "easy",
+    "question": "What is 1NF (First Normal Form)?",
+    "keywords": ["1NF", "atomic", "values", "single"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A primary key uniquely identifies each record in a table."
+    "answer": "1NF requires that table columns contain only atomic (indivisible) values and ensures there are no repeating groups."
   },
   {
     "id": 10,
-    "question": "What is a foreign key?",
-    "keywords": ["foreign key"],
-    "difficulty": "easy",
+    "question": "What is the difference between DELETE and TRUNCATE?",
+    "keywords": ["DELETE", "TRUNCATE", "DML", "DDL", "rollback"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A foreign key is a key that refers to the primary key of another table."
+    "answer": "DELETE is a DML command that removes rows based on a condition and can be rolled back. TRUNCATE is a DDL command that removes all rows and cannot be rolled back."
   },
   {
     "id": 11,
-    "question": "What is a candidate key?",
-    "keywords": ["candidate key"],
+    "question": "Write a query to find employees with a salary greater than 50000.",
+    "keywords": ["SELECT", "WHERE", "salary", "greater"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A candidate key is a set of attributes that can uniquely identify a record."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Employees WHERE Salary > 50000;"
   },
   {
     "id": 12,
-    "question": "What is a super key?",
-    "keywords": ["super key"],
-    "difficulty": "easy",
+    "question": "What is an Index in DBMS?",
+    "keywords": ["index", "search", "speed", "retrieval"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A super key is a set of one or more attributes that uniquely identifies a record."
+    "answer": "An Index is a data structure that improves the speed of data retrieval operations on a database table."
   },
   {
     "id": 13,
-    "question": "What is normalization?",
-    "keywords": ["normalization"],
+    "question": "What is a Join?",
+    "keywords": ["join", "combine", "rows", "tables"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Normalization is the process of organizing data to reduce redundancy and improve consistency."
+    "answer": "A Join is an SQL operation used to combine rows from two or more tables based on a related column between them."
   },
   {
     "id": 14,
-    "question": "What is 1NF?",
-    "keywords": ["1NF", "normalization"],
+    "question": "Write a query to count the number of employees.",
+    "keywords": ["COUNT", "aggregate", "employees", "total"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A table is in 1NF if it contains only atomic values and no repeating groups."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT COUNT(*) FROM Employees;"
   },
   {
     "id": 15,
-    "question": "What is 2NF?",
-    "keywords": ["2NF"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is BCNF?",
+    "keywords": ["BCNF", "Boyce-Codd", "Normal Form", "3NF"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A table is in 2NF if it is in 1NF and has no partial dependency."
+    "answer": "BCNF (Boyce-Codd Normal Form) is a stronger version of 3NF where every determinant must be a candidate key."
   },
   {
     "id": 16,
-    "question": "What is 3NF?",
-    "keywords": ["3NF"],
-    "difficulty": "easy",
+    "question": "What is a View?",
+    "keywords": ["view", "virtual", "table", "query"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A table is in 3NF if it is in 2NF and has no transitive dependency."
+    "answer": "A View is a virtual table based on the result-set of an SQL statement."
   },
   {
     "id": 17,
-    "question": "What is BCNF?",
-    "keywords": ["BCNF"],
+    "question": "Write a query to add a new column 'Email' to the 'Users' table.",
+    "keywords": ["ALTER", "TABLE", "ADD", "column"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "BCNF is a stronger form of 3NF where every determinant is a candidate key."
+    "type": "query",
+    "answer": "ALTER TABLE Users ADD Email VARCHAR(255);"
   },
   {
     "id": 18,
-    "question": "What is SQL?",
-    "keywords": ["SQL"],
-    "difficulty": "easy",
+    "question": "What is a Stored Procedure?",
+    "keywords": ["stored", "procedure", "SQL", "code", "reuse"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "SQL stands for Structured Query Language and is used to interact with databases."
+    "answer": "A Stored Procedure is a prepared SQL code that you can save, so the code can be reused over and over again."
   },
   {
     "id": 19,
-    "question": "What is DDL?",
-    "keywords": ["DDL"],
-    "difficulty": "easy",
+    "question": "What is a Trigger?",
+    "keywords": ["trigger", "automatic", "event", "action"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "DDL stands for Data Definition Language used to define database structure."
+    "answer": "A Trigger is a set of SQL statements that automatically executes when a specified event occurs on a particular table."
   },
   {
     "id": 20,
-    "question": "What is DML?",
-    "keywords": ["DML"],
+    "question": "Write a query to sort customers by Name in descending order.",
+    "keywords": ["ORDER BY", "DESC", "sort", "customers"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "DML stands for Data Manipulation Language used to insert, update, and delete data."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Customers ORDER BY Name DESC;"
   },
-
   {
     "id": 21,
-    "question": "What is SELECT command?",
-    "keywords": ["SELECT", "SQL"],
+    "question": "What is a Transaction?",
+    "keywords": ["transaction", "unit", "work", "sequence"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "coding",
-    "answer": "SELECT is used to retrieve data from a database table."
+    "max_score": 5,
+    "type": "theory",
+    "answer": "A Transaction is a single logical unit of work which accesses and possibly modifies the contents of a database."
   },
   {
     "id": 22,
-    "question": "What is WHERE clause?",
-    "keywords": ["WHERE"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is a Deadlock?",
+    "keywords": ["deadlock", "wait", "resources", "blocked"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "WHERE clause is used to filter records based on a condition."
+    "answer": "A Deadlock is a situation where two or more transactions are waiting indefinitely for one another to give up locks."
   },
   {
     "id": 23,
-    "question": "What is JOIN?",
-    "keywords": ["JOIN"],
+    "question": "Write a query to find the average salary of employees.",
+    "keywords": ["AVG", "average", "salary", "aggregate"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "JOIN is used to combine rows from two or more tables based on a related column."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT AVG(Salary) FROM Employees;"
   },
   {
     "id": 24,
-    "question": "What is INNER JOIN?",
-    "keywords": ["INNER JOIN"],
+    "question": "What is DDL?",
+    "keywords": ["DDL", "definition", "create", "alter"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "INNER JOIN returns only matching rows from both tables."
+    "answer": "DDL (Data Definition Language) includes commands like CREATE, ALTER, and DROP that define the database schema."
   },
   {
     "id": 25,
-    "question": "What is LEFT JOIN?",
-    "keywords": ["LEFT JOIN"],
+    "question": "What is DML?",
+    "keywords": ["DML", "manipulation", "insert", "update"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "LEFT JOIN returns all records from left table and matching records from right table."
+    "answer": "DML (Data Manipulation Language) includes commands like SELECT, INSERT, UPDATE, and DELETE that manage data."
   },
   {
     "id": 26,
-    "question": "What is RIGHT JOIN?",
-    "keywords": ["RIGHT JOIN"],
-    "difficulty": "easy",
+    "question": "Write a query to update the city to 'New York' for customer ID 1.",
+    "keywords": ["UPDATE", "SET", "WHERE", "customer"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "RIGHT JOIN returns all records from right table and matching records from left table."
+    "type": "query",
+    "answer": "UPDATE Customers SET City = 'New York' WHERE CustomerID = 1;"
   },
   {
     "id": 27,
-    "question": "What is FULL JOIN?",
-    "keywords": ["FULL JOIN"],
+    "question": "What is the difference between CHAR and VARCHAR?",
+    "keywords": ["CHAR", "VARCHAR", "fixed", "variable"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "FULL JOIN returns all records when there is a match in either table."
+    "answer": "CHAR is a fixed-length character data type, while VARCHAR is a variable-length character data type."
   },
   {
     "id": 28,
-    "question": "What is GROUP BY?",
-    "keywords": ["GROUP BY"],
+    "question": "What is an ER Diagram?",
+    "keywords": ["ER", "diagram", "entity", "relationship"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "GROUP BY groups rows that have the same values."
+    "answer": "An ER (Entity-Relationship) Diagram is a flowchart that illustrates how \"entities\" such as people, objects, or concepts relate to each other."
   },
   {
     "id": 29,
-    "question": "What is HAVING clause?",
-    "keywords": ["HAVING"],
-    "difficulty": "easy",
+    "question": "Write a query to delete all records from 'Logs' table older than 2020.",
+    "keywords": ["DELETE", "WHERE", "date", "logs"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "HAVING is used to filter grouped data."
+    "type": "query",
+    "answer": "DELETE FROM Logs WHERE Date < '2020-01-01';"
   },
   {
     "id": 30,
-    "question": "What is aggregate function?",
-    "keywords": ["aggregate function"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is SQL Injection?",
+    "keywords": ["injection", "security", "malicious", "code"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Aggregate functions perform calculations on multiple rows like COUNT, SUM, AVG."
+    "answer": "SQL Injection is a code injection technique where malicious SQL statements are inserted into an entry field for execution."
   },
-
   {
     "id": 31,
-    "question": "What is COUNT function?",
-    "keywords": ["COUNT"],
-    "difficulty": "easy",
+    "question": "What is a Composite Key?",
+    "keywords": ["composite", "key", "multiple", "columns"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "coding",
-    "answer": "COUNT returns the number of rows in a result set."
+    "type": "theory",
+    "answer": "A Composite Key is a candidate key that consists of two or more attributes (columns) that together uniquely identify a row."
   },
   {
     "id": 32,
-    "question": "What is transaction?",
-    "keywords": ["transaction"],
-    "difficulty": "easy",
+    "question": "Write a query using INNER JOIN to connect 'Orders' and 'Customers'.",
+    "keywords": ["INNER JOIN", "ON", "connect", "tables"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "A transaction is a sequence of operations performed as a single unit."
+    "type": "query",
+    "answer": "SELECT * FROM Orders INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;"
   },
   {
     "id": 33,
-    "question": "What are ACID properties?",
-    "keywords": ["ACID"],
-    "difficulty": "easy",
+    "question": "What is 2NF?",
+    "keywords": ["2NF", "partial", "dependency", "primary key"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "ACID stands for Atomicity, Consistency, Isolation, Durability."
+    "answer": "2NF requires the table to be in 1NF and have no partial dependencies (all non-key attributes depend on the full primary key)."
   },
   {
     "id": 34,
-    "question": "What is atomicity?",
-    "keywords": ["atomicity"],
-    "difficulty": "easy",
+    "question": "What is 3NF?",
+    "keywords": ["3NF", "transitive", "dependency", "non-key"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Atomicity ensures that a transaction is either fully completed or fully failed."
+    "answer": "3NF requires the table to be in 2NF and have no transitive dependencies (non-key attributes must not depend on other non-key attributes)."
   },
   {
     "id": 35,
-    "question": "What is consistency?",
-    "keywords": ["consistency"],
-    "difficulty": "easy",
+    "question": "Write a query to find the maximum salary in each department.",
+    "keywords": ["GROUP BY", "MAX", "department", "salary"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Consistency ensures database remains in a valid state after a transaction."
+    "type": "query",
+    "answer": "SELECT DepartmentID, MAX(Salary) FROM Employees GROUP BY DepartmentID;"
   },
   {
     "id": 36,
-    "question": "What is isolation?",
-    "keywords": ["isolation"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is a Cursor?",
+    "keywords": ["cursor", "row-by-row", "processing", "pointer"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Isolation ensures transactions do not affect each other."
+    "answer": "A Cursor is a database object used to retrieve, manipulate, and traverse a result set row by row."
   },
   {
     "id": 37,
-    "question": "What is durability?",
-    "keywords": ["durability"],
-    "difficulty": "easy",
+    "question": "What is Data Independence?",
+    "keywords": ["independence", "logical", "physical", "schema"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Durability ensures committed data is not lost even after failure."
+    "answer": "Data Independence is the capacity to change the schema at one level of a database system without having to change the schema at the next higher level."
   },
   {
     "id": 38,
-    "question": "What is deadlock?",
-    "keywords": ["deadlock"],
+    "question": "Write a query to get the current date.",
+    "keywords": ["GETDATE", "CURDATE", "SYSDATE", "time"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Deadlock occurs when two transactions wait for each other to release resources."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT GETDATE(); (SQL Server) or SELECT CURDATE(); (MySQL)"
   },
   {
     "id": 39,
-    "question": "What is indexing?",
-    "keywords": ["indexing"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is a Clustered Index?",
+    "keywords": ["clustered", "index", "physical", "order"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Indexing improves the speed of data retrieval."
+    "answer": "A Clustered Index determines the physical order of data in a table. A table can have only one clustered index."
   },
   {
     "id": 40,
-    "question": "What is a view?",
-    "keywords": ["view"],
-    "difficulty": "easy",
+    "question": "What is a Non-Clustered Index?",
+    "keywords": ["non-clustered", "index", "logical", "pointer"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A view is a virtual table created using SQL queries."
+    "answer": "A Non-Clustered Index is an index where the order of the rows does not match the physical order of the actual data. It contains pointers to the data."
   },
   {
     "id": 41,
-    "question": "What is a schema?",
-    "keywords": ["schema", "database structure"],
+    "question": "Write a query to drop a table named 'Temp'.",
+    "keywords": ["DROP", "TABLE", "delete", "schema"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A schema defines the structure of a database including tables, attributes, and relationships."
+    "max_score": 5,
+    "type": "query",
+    "answer": "DROP TABLE Temp;"
   },
   {
     "id": 42,
-    "question": "What is metadata?",
-    "keywords": ["metadata"],
-    "difficulty": "easy",
+    "question": "What is Relational Algebra?",
+    "keywords": ["relational", "algebra", "procedural", "query"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Metadata is data about data, such as table names, column names, and data types."
+    "answer": "Relational Algebra is a procedural query language used to query database tables using operators like Select, Project, Union, etc."
   },
   {
     "id": 43,
-    "question": "What is data independence?",
-    "keywords": ["data independence"],
-    "difficulty": "easy",
+    "question": "What is Relational Calculus?",
+    "keywords": ["relational", "calculus", "non-procedural", "declarative"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Data independence means changes in one level of database do not affect other levels."
+    "answer": "Relational Calculus is a non-procedural query language that describes what data to retrieve rather than how to retrieve it."
   },
   {
     "id": 44,
-    "question": "What are the types of data independence?",
-    "keywords": ["logical", "physical data independence"],
-    "difficulty": "easy",
+    "question": "Write a query using LEFT JOIN.",
+    "keywords": ["LEFT JOIN", "outer", "include", "null"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "The two types are logical data independence and physical data independence."
+    "type": "query",
+    "answer": "SELECT Customers.Name, Orders.OrderID FROM Customers LEFT JOIN Orders ON Customers.ID = Orders.CustomerID;"
   },
   {
     "id": 45,
-    "question": "What is ER model?",
-    "keywords": ["ER model"],
-    "difficulty": "easy",
+    "question": "What is the HAVING clause?",
+    "keywords": ["HAVING", "GROUP BY", "condition", "aggregate"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "ER model represents data using entities, attributes, and relationships."
+    "answer": "The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions. It filters groups."
   },
   {
     "id": 46,
-    "question": "What is an entity?",
-    "keywords": ["entity"],
+    "question": "What is DCL?",
+    "keywords": ["DCL", "control", "grant", "revoke"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "An entity is a real-world object that has an independent existence."
+    "answer": "DCL (Data Control Language) includes commands like GRANT and REVOKE which deal with rights, permissions, and other controls."
   },
   {
     "id": 47,
-    "question": "What is a relationship?",
-    "keywords": ["relationship"],
-    "difficulty": "easy",
+    "question": "Write a query to grant SELECT permission on 'Users' to 'Admin'.",
+    "keywords": ["GRANT", "SELECT", "permission", "user"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "A relationship shows how entities are connected to each other."
+    "type": "query",
+    "answer": "GRANT SELECT ON Users TO Admin;"
   },
   {
     "id": 48,
-    "question": "What is cardinality?",
-    "keywords": ["cardinality"],
+    "question": "What is TCL?",
+    "keywords": ["TCL", "transaction", "commit", "rollback"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Cardinality defines the number of entities related to another entity."
+    "answer": "TCL (Transaction Control Language) deals with transactions within the database. Examples: COMMIT, ROLLBACK, SAVEPOINT."
   },
   {
     "id": 49,
-    "question": "What are types of cardinality?",
-    "keywords": ["one-to-one", "one-to-many", "many-to-many"],
+    "question": "Write a query to rollback a transaction.",
+    "keywords": ["ROLLBACK", "undo", "transaction", "TCL"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "The types are one-to-one, one-to-many, and many-to-many."
+    "max_score": 5,
+    "type": "query",
+    "answer": "ROLLBACK;"
   },
   {
     "id": 50,
-    "question": "What is weak entity?",
-    "keywords": ["weak entity"],
-    "difficulty": "easy",
+    "question": "What is Data Dictionary?",
+    "keywords": ["data dictionary", "metadata", "repository", "definitions"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A weak entity cannot be uniquely identified without a related strong entity."
+    "answer": "A Data Dictionary is a centralized repository of information about data such as meaning, relationships to other data, origin, usage, and format."
   },
   {
     "id": 51,
-    "question": "What is integrity constraint?",
-    "keywords": ["integrity constraint"],
-    "difficulty": "easy",
+    "question": "What is a Candidate Key?",
+    "keywords": ["candidate", "key", "minimal", "superkey"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Integrity constraints ensure accuracy and consistency of data."
+    "answer": "A Candidate Key is a minimal superkey; a set of attributes that uniquely identify a tuple and for which no proper subset is a superkey."
   },
   {
     "id": 52,
-    "question": "What is domain constraint?",
-    "keywords": ["domain constraint"],
-    "difficulty": "easy",
+    "question": "Write a query to create an index on the 'Email' column.",
+    "keywords": ["CREATE", "INDEX", "speed", "search"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Domain constraint restricts the values that an attribute can take."
+    "type": "query",
+    "answer": "CREATE INDEX idx_email ON Users (Email);"
   },
   {
     "id": 53,
-    "question": "What is referential integrity?",
-    "keywords": ["referential integrity"],
+    "question": "What is Database Schema?",
+    "keywords": ["schema", "structure", "blueprint", "logical"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Referential integrity ensures a foreign key always refers to a valid primary key."
+    "answer": "A Database Schema is the skeleton structure that represents the logical view of the entire database."
   },
   {
     "id": 54,
-    "question": "What is NOT NULL constraint?",
-    "keywords": ["NOT NULL"],
-    "difficulty": "easy",
+    "question": "What is the difference between WHERE and HAVING?",
+    "keywords": ["WHERE", "HAVING", "filter", "aggregate"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "NOT NULL ensures a column cannot have empty values."
+    "answer": "WHERE filters rows before grouping, while HAVING filters groups after the GROUP BY clause."
   },
   {
     "id": 55,
-    "question": "What is UNIQUE constraint?",
-    "keywords": ["UNIQUE"],
+    "question": "Write a query to calculate the total sum of sales.",
+    "keywords": ["SUM", "sales", "total", "aggregate"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "UNIQUE ensures all values in a column are different."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT SUM(Amount) FROM Sales;"
   },
   {
     "id": 56,
-    "question": "What is CHECK constraint?",
-    "keywords": ["CHECK"],
-    "difficulty": "easy",
+    "question": "What is Atomicity?",
+    "keywords": ["atomicity", "all-or-nothing", "transaction", "ACID"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "CHECK ensures values satisfy a given condition."
+    "answer": "Atomicity ensures that all operations within a work unit are completed successfully; otherwise, the transaction is aborted at the point of failure."
   },
   {
     "id": 57,
-    "question": "What is DEFAULT constraint?",
-    "keywords": ["DEFAULT"],
-    "difficulty": "easy",
+    "question": "What is Consistency?",
+    "keywords": ["consistency", "rules", "validity", "ACID"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "DEFAULT assigns a default value if no value is provided."
+    "answer": "Consistency ensures that the database properly changes states upon a successfully committed transaction."
   },
   {
     "id": 58,
-    "question": "What is a trigger?",
-    "keywords": ["trigger"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A trigger is a procedure that automatically executes in response to database events."
+    "question": "Write a query to select the first 5 records.",
+    "keywords": ["LIMIT", "TOP", "first", "rows"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM TableName LIMIT 5; (MySQL) or SELECT TOP 5 * FROM TableName; (SQL Server)"
   },
   {
     "id": 59,
-    "question": "What is a stored procedure?",
-    "keywords": ["stored procedure"],
+    "question": "What is Isolation?",
+    "keywords": ["isolation", "concurrent", "independent", "ACID"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A stored procedure is a precompiled set of SQL statements stored in the database."
+    "answer": "Isolation enables transactions to operate independently of and transparently to each other."
   },
   {
     "id": 60,
-    "question": "What is a cursor?",
-    "keywords": ["cursor"],
+    "question": "What is Durability?",
+    "keywords": ["durability", "permanent", "saved", "ACID"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A cursor allows row-by-row processing of query results."
+    "answer": "Durability ensures that the result or effect of a committed transaction persists in case of a system failure."
   },
   {
     "id": 61,
-    "question": "What is TCL?",
-    "keywords": ["TCL"],
+    "question": "Write a query to find names starting with 'A'.",
+    "keywords": ["LIKE", "pattern", "start", "wildcard"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "TCL stands for Transaction Control Language."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Customers WHERE Name LIKE 'A%';"
   },
   {
     "id": 62,
-    "question": "What is COMMIT?",
-    "keywords": ["COMMIT"],
-    "difficulty": "easy",
+    "question": "What is Denormalization?",
+    "keywords": ["denormalization", "performance", "redundancy", "add"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "COMMIT saves all changes made by a transaction."
+    "answer": "Denormalization is the strategy of adding redundant data to a normalized database to improve read performance."
   },
   {
     "id": 63,
-    "question": "What is ROLLBACK?",
-    "keywords": ["ROLLBACK"],
-    "difficulty": "easy",
+    "question": "What is a Self Join?",
+    "keywords": ["self join", "same table", "relate", "compare"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "ROLLBACK undoes changes made by a transaction."
+    "answer": "A Self Join is a regular join, but the table is joined with itself."
   },
   {
     "id": 64,
-    "question": "What is SAVEPOINT?",
-    "keywords": ["SAVEPOINT"],
-    "difficulty": "easy",
+    "question": "Write a query using UNION.",
+    "keywords": ["UNION", "combine", "distinct", "sets"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "SAVEPOINT sets a point to which a transaction can be rolled back."
+    "type": "query",
+    "answer": "SELECT City FROM Customers UNION SELECT City FROM Suppliers;"
   },
   {
     "id": 65,
-    "question": "What is concurrency control?",
-    "keywords": ["concurrency control"],
+    "question": "What is the difference between UNION and UNION ALL?",
+    "keywords": ["UNION", "UNION ALL", "duplicates", "distinct"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Concurrency control manages simultaneous transactions safely."
+    "answer": "UNION removes duplicate records, whereas UNION ALL does not."
   },
   {
     "id": 66,
-    "question": "What is locking?",
-    "keywords": ["locking"],
+    "question": "What is NoSQL?",
+    "keywords": ["NoSQL", "non-relational", "unstructured", "flexible"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Locking prevents multiple transactions from accessing the same data at the same time."
+    "answer": "NoSQL allows referring to non-relational databases that provide a mechanism for storage and retrieval of data modeled in means other than tables."
   },
   {
     "id": 67,
-    "question": "What is shared lock?",
-    "keywords": ["shared lock"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A shared lock allows read access to multiple transactions."
+    "question": "Write a query to insert a new record.",
+    "keywords": ["INSERT INTO", "values", "add", "row"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "INSERT INTO Customers (Name, City) VALUES ('John', 'Paris');"
   },
   {
     "id": 68,
-    "question": "What is exclusive lock?",
-    "keywords": ["exclusive lock"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Vertical Partitioning?",
+    "keywords": ["vertical", "partitioning", "columns", "split"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "An exclusive lock allows only one transaction to write data."
+    "answer": "Vertical partitioning involves splitting a table into multiple tables containing fewer columns."
   },
   {
     "id": 69,
-    "question": "What is two-phase locking?",
-    "keywords": ["2PL"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Horizontal Partitioning?",
+    "keywords": ["horizontal", "partitioning", "sharding", "rows"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Two-phase locking ensures serializability by locking in two phases."
+    "answer": "Horizontal partitioning (sharding) involves splitting a table into multiple tables containing fewer rows."
   },
   {
     "id": 70,
-    "question": "What is serializability?",
-    "keywords": ["serializability"],
+    "question": "Write a query to rename a table.",
+    "keywords": ["RENAME", "ALTER", "table", "name"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Serializability ensures transactions execute without conflicts."
+    "type": "query",
+    "answer": "ALTER TABLE OldName RENAME TO NewName;"
   },
   {
     "id": 71,
-    "question": "What is recovery in DBMS?",
-    "keywords": ["recovery"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is a Check Constraint?",
+    "keywords": ["CHECK", "constraint", "validate", "condition"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Recovery restores database after failure."
+    "answer": "A Check constraint is used to limit the value range that can be placed in a column."
   },
   {
     "id": 72,
-    "question": "What is log-based recovery?",
-    "keywords": ["log based recovery"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is a Default Constraint?",
+    "keywords": ["DEFAULT", "constraint", "value", "automatic"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Log-based recovery uses logs to restore data after crash."
+    "answer": "A Default constraint is used to provide a default value for a column if no value is specified."
   },
   {
     "id": 73,
-    "question": "What is checkpoint?",
-    "keywords": ["checkpoint"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Checkpoint saves database state at a specific time."
+    "question": "Write a query to find null values.",
+    "keywords": ["IS NULL", "missing", "empty", "find"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Users WHERE Email IS NULL;"
   },
   {
     "id": 74,
-    "question": "What is view materialization?",
-    "keywords": ["materialized view"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is NULL in SQL?",
+    "keywords": ["NULL", "unknown", "missing", "value"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Materialized view stores the result physically."
+    "answer": "NULL represents a missing or unknown value. It is not equivalent to zero or a blank space."
   },
   {
     "id": 75,
-    "question": "What is denormalization?",
-    "keywords": ["denormalization"],
+    "question": "What is the Cartesian Product?",
+    "keywords": ["cartesian", "product", "cross join", "all pairs"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Denormalization adds redundancy to improve performance."
+    "answer": "Cartesian Product is the result of joining two tables without a condition, creating a set of all possible pairs of rows."
   },
   {
     "id": 76,
-    "question": "What is file organization?",
-    "keywords": ["file organization"],
+    "question": "Write a query for Cross Join.",
+    "keywords": ["CROSS JOIN", "cartesian", "all", "combinations"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "File organization defines how data is stored on disk."
+    "type": "query",
+    "answer": "SELECT * FROM Table1 CROSS JOIN Table2;"
   },
   {
     "id": 77,
-    "question": "What is sequential file organization?",
-    "keywords": ["sequential file"],
-    "difficulty": "easy",
+    "question": "What is Database Locking?",
+    "keywords": ["locking", "concurrency", "integrity", "access"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Data is stored one after another sequentially."
+    "answer": "Locking is a mechanism to ensure data integrity by preventing multiple users from modifying the same data simultaneously."
   },
   {
     "id": 78,
-    "question": "What is hashing?",
-    "keywords": ["hashing"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Optimistic Locking?",
+    "keywords": ["optimistic", "locking", "version", "conflict"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Hashing maps data to a fixed-size value for fast access."
+    "answer": "Optimistic Locking assumes conflicts are rare and checks for version changes only when attempting to update."
   },
   {
     "id": 79,
-    "question": "What is B-tree?",
-    "keywords": ["B-tree"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "B-tree is a balanced tree used for indexing."
+    "question": "Write a query to get the length of a string.",
+    "keywords": ["LEN", "LENGTH", "string", "size"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT LENGTH(Name) FROM Customers;"
   },
   {
     "id": 80,
-    "question": "What is B+ tree?",
-    "keywords": ["B+ tree"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Pessimistic Locking?",
+    "keywords": ["pessimistic", "locking", "wait", "prevent"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "B+ tree stores all data at leaf nodes."
+    "answer": "Pessimistic Locking locks the record as soon as it is retrieved for update, preventing others from accessing it."
   },
   {
     "id": 81,
-    "question": "What is OLTP?",
-    "keywords": ["OLTP"],
-    "difficulty": "easy",
+    "question": "What is a Subquery?",
+    "keywords": ["subquery", "nested", "inner", "select"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "OLTP handles daily transactional operations."
+    "answer": "A Subquery is a query nested inside another query such as SELECT, INSERT, UPDATE, or DELETE."
   },
   {
     "id": 82,
-    "question": "What is OLAP?",
-    "keywords": ["OLAP"],
-    "difficulty": "easy",
+    "question": "Write a query using a subquery.",
+    "keywords": ["subquery", "nested", "IN", "select"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "OLAP is used for data analysis and reporting."
+    "type": "query",
+    "answer": "SELECT * FROM Products WHERE Price > (SELECT AVG(Price) FROM Products);"
   },
   {
     "id": 83,
-    "question": "What is data warehouse?",
-    "keywords": ["data warehouse"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Correlated Subquery?",
+    "keywords": ["correlated", "subquery", "outer", "depend"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A data warehouse stores historical data for analysis."
+    "answer": "A Correlated Subquery is a subquery that uses values from the outer query."
   },
   {
     "id": 84,
-    "question": "What is star schema?",
-    "keywords": ["star schema"],
-    "difficulty": "easy",
+    "question": "What is referential integrity?",
+    "keywords": ["referential", "integrity", "foreign key", "consistency"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Star schema has one fact table connected to dimension tables."
+    "answer": "Referential integrity ensures that relationships between tables remain consistent, usually enforced via Foreign Keys."
   },
   {
     "id": 85,
-    "question": "What is snowflake schema?",
-    "keywords": ["snowflake schema"],
+    "question": "Write a query to concatenate two strings.",
+    "keywords": ["CONCAT", "string", "join", "text"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Snowflake schema is a normalized version of star schema."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT CONCAT(FirstName, ' ', LastName) FROM Employees;"
   },
   {
     "id": 86,
-    "question": "What is NoSQL?",
-    "keywords": ["NoSQL"],
-    "difficulty": "easy",
+    "question": "What is Data Mining?",
+    "keywords": ["mining", "patterns", "discovery", "analysis"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "NoSQL databases store unstructured or semi-structured data."
+    "answer": "Data Mining is the process of discovering patterns and knowledge from large amounts of data."
   },
   {
     "id": 87,
-    "question": "What is relational algebra?",
-    "keywords": ["relational algebra"],
-    "difficulty": "easy",
+    "question": "What is Data Warehousing?",
+    "keywords": ["warehousing", "storage", "historical", "OLAP"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Relational algebra is a procedural query language."
+    "answer": "Data Warehousing is the electronic storage of a large amount of information by a business, designed for query and analysis."
   },
   {
     "id": 88,
-    "question": "What is selection operation?",
-    "keywords": ["selection"],
+    "question": "Write a query using BETWEEN.",
+    "keywords": ["BETWEEN", "range", "filter", "interval"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Selection retrieves rows based on condition."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;"
   },
   {
     "id": 89,
-    "question": "What is projection operation?",
-    "keywords": ["projection"],
-    "difficulty": "easy",
+    "question": "What is OLTP?",
+    "keywords": ["OLTP", "transaction", "processing", "online"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Projection retrieves specific columns."
+    "answer": "OLTP (Online Transaction Processing) facilitates and manages transaction-oriented applications, typically for data entry and retrieval."
   },
   {
     "id": 90,
-    "question": "What is join operation?",
-    "keywords": ["relational join"],
-    "difficulty": "easy",
+    "question": "What is OLAP?",
+    "keywords": ["OLAP", "analytical", "processing", "multidimensional"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Join combines tuples from two relations."
+    "answer": "OLAP (Online Analytical Processing) performs multidimensional analysis of business data and provides the capability for complex calculations."
   },
   {
     "id": 91,
-    "question": "What is union operation?",
-    "keywords": ["union"],
+    "question": "Write a query using IN.",
+    "keywords": ["IN", "list", "multiple", "values"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Union combines results of two queries."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Customers WHERE City IN ('Paris', 'London');"
   },
   {
     "id": 92,
-    "question": "What is intersection?",
-    "keywords": ["intersection"],
-    "difficulty": "easy",
+    "question": "What is a Database Instance?",
+    "keywords": ["instance", "memory", "background", "process"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Intersection returns common records."
+    "answer": "A Database Instance is the software and memory structures that manage database files."
   },
   {
     "id": 93,
-    "question": "What is difference operation?",
-    "keywords": ["set difference"],
+    "question": "What is a Unique Constraint?",
+    "keywords": ["unique", "constraint", "duplicate", "distinct"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Difference returns records present in one table only."
+    "answer": "A Unique Constraint ensures that all values in a column are different."
   },
   {
     "id": 94,
-    "question": "What is Cartesian product?",
-    "keywords": ["cartesian product"],
-    "difficulty": "easy",
+    "question": "Write a query to remove a specific column.",
+    "keywords": ["ALTER", "DROP", "COLUMN", "remove"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Cartesian product combines every row of two tables."
+    "type": "query",
+    "answer": "ALTER TABLE Users DROP COLUMN Age;"
   },
   {
     "id": 95,
-    "question": "What is NULL value?",
-    "keywords": ["NULL"],
-    "difficulty": "easy",
+    "question": "What is Database Recovery?",
+    "keywords": ["recovery", "restore", "backup", "failure"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "NULL means no value or unknown value."
+    "answer": "Database Recovery is the process of restoring the database to a correct state in the event of a failure."
   },
   {
     "id": 96,
-    "question": "What is database security?",
-    "keywords": ["database security"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Write-Ahead Logging (WAL)?",
+    "keywords": ["WAL", "logging", "write", "reliability"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Database security protects data from unauthorized access."
+    "answer": "WAL is a standard method for ensuring data integrity where modifications are written to a log before they are applied to the database."
   },
   {
     "id": 97,
-    "question": "What is authorization?",
-    "keywords": ["authorization"],
-    "difficulty": "easy",
+    "question": "Write a query to change a column's data type.",
+    "keywords": ["ALTER", "MODIFY", "datatype", "change"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Authorization controls user access rights."
+    "type": "query",
+    "answer": "ALTER TABLE Users MODIFY COLUMN Name VARCHAR(100);"
   },
   {
     "id": 98,
-    "question": "What is authentication?",
-    "keywords": ["authentication"],
-    "difficulty": "easy",
+    "question": "What is a Temporary Table?",
+    "keywords": ["temporary", "table", "session", "store"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Authentication verifies user identity."
+    "answer": "A Temporary Table is a table that holds data only for the duration of a session or transaction."
   },
   {
     "id": 99,
-    "question": "What is cloud database?",
-    "keywords": ["cloud database"],
-    "difficulty": "easy",
+    "question": "What is a Sequence?",
+    "keywords": ["sequence", "generate", "numbers", "auto"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Cloud database is hosted on cloud platform."
+    "answer": "A Sequence is a user-defined schema-bound object that generates a sequence of numeric values."
   },
   {
     "id": 100,
-    "question": "What is DBMS vs RDBMS?",
-    "keywords": ["DBMS", "RDBMS"],
-    "difficulty": "easy",
+    "question": "Write a query to copy data from one table to another.",
+    "keywords": ["INSERT INTO", "SELECT", "copy", "transfer"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "RDBMS stores data in tables with relations, DBMS may not."
+    "type": "query",
+    "answer": "INSERT INTO Table2 SELECT * FROM Table1;"
   },
   {
     "id": 101,
-    "question": "What is a data model in DBMS?",
-    "keywords": ["data model"],
-    "difficulty": "easy",
+    "question": "What is Entity Integrity?",
+    "keywords": ["entity", "integrity", "primary key", "null"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A data model defines how data is stored, organized, and related in a database."
+    "answer": "Entity Integrity states that each row in a table must be uniquely identifiable (Primary Key cannot be NULL)."
   },
   {
     "id": 102,
-    "question": "What are the types of data models?",
-    "keywords": ["data models", "types"],
-    "difficulty": "easy",
+    "question": "What is Domain Integrity?",
+    "keywords": ["domain", "integrity", "type", "format"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Hierarchical, Network, Relational, Object-oriented, and ER models."
+    "answer": "Domain Integrity ensures that all data values in a column fall within the defined domain (type, format, range)."
   },
   {
     "id": 103,
-    "question": "What is a hierarchical database model?",
-    "keywords": ["hierarchical model"],
+    "question": "Write a query to lower case a string.",
+    "keywords": ["LOWER", "string", "case", "convert"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "It organizes data in a tree-like structure with parent-child relationships."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT LOWER(Name) FROM Customers;"
   },
   {
     "id": 104,
-    "question": "What is a network database model?",
-    "keywords": ["network model"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Query Optimization?",
+    "keywords": ["optimization", "performance", "execution", "plan"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "It allows many-to-many relationships between records using pointers."
+    "answer": "Query Optimization is the process of selecting the most efficient way to execute a SQL query."
   },
   {
     "id": 105,
-    "question": "What is an object-oriented database?",
-    "keywords": ["object oriented database"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is an Execution Plan?",
+    "keywords": ["execution", "plan", "steps", "cost"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "It stores data in the form of objects similar to object-oriented programming."
+    "answer": "An Execution Plan is a description of the operations the database engine will perform to execute a query."
   },
   {
     "id": 106,
-    "question": "What is a composite key?",
-    "keywords": ["composite key"],
+    "question": "Write a query to upper case a string.",
+    "keywords": ["UPPER", "string", "case", "convert"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A key made up of two or more attributes to uniquely identify a record."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT UPPER(Name) FROM Customers;"
   },
   {
     "id": 107,
-    "question": "What is an alternate key?",
-    "keywords": ["alternate key"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is the 3-Schema Architecture?",
+    "keywords": ["schema", "external", "conceptual", "internal"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Candidate keys that are not chosen as the primary key."
+    "answer": "The 3-Schema Architecture separates the database into External (User View), Conceptual (Logical), and Internal (Physical) levels."
   },
   {
     "id": 108,
-    "question": "What is entity integrity?",
-    "keywords": ["entity integrity"],
-    "difficulty": "easy",
+    "question": "What is a Weak Entity?",
+    "keywords": ["weak", "entity", "key", "dependence"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Entity integrity ensures that primary key values are not NULL."
+    "answer": "A Weak Entity is an entity that cannot be uniquely identified by its own attributes and depends on a strong entity."
   },
   {
     "id": 109,
-    "question": "What is functional dependency?",
-    "keywords": ["functional dependency"],
+    "question": "Write a query to trim whitespace.",
+    "keywords": ["TRIM", "string", "whitespace", "remove"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "It describes the relationship between attributes in a table."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT TRIM(Name) FROM Customers;"
   },
   {
     "id": 110,
-    "question": "What is full functional dependency?",
-    "keywords": ["full dependency"],
-    "difficulty": "easy",
+    "question": "What is Database Normalization vs Denormalization?",
+    "keywords": ["normalization", "denormalization", "compare", "strategy"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "An attribute depends on the entire primary key."
+    "answer": "Normalization organizes data to reduce redundancy, while Denormalization combines data to improve retrieval performance."
   },
-
   {
     "id": 111,
-    "question": "What is partial dependency?",
-    "keywords": ["partial dependency"],
-    "difficulty": "easy",
+    "question": "What is a Functional Dependency?",
+    "keywords": ["functional", "dependency", "attribute", "determine"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "An attribute depends on part of a composite key."
+    "answer": "Functional Dependency describes the relationship where the value of one attribute determines the value of another."
   },
   {
     "id": 112,
-    "question": "What is transitive dependency?",
-    "keywords": ["transitive dependency"],
+    "question": "Write a query to extract a substring.",
+    "keywords": ["SUBSTRING", "part", "string", "extract"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A non-key attribute depends on another non-key attribute."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT SUBSTRING(Name, 1, 3) FROM Customers;"
   },
   {
     "id": 113,
-    "question": "What is lossless decomposition?",
-    "keywords": ["lossless decomposition"],
+    "question": "What is a Compound Key?",
+    "keywords": ["compound", "key", "multiple", "fields"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Decomposition where no data is lost after splitting tables."
+    "answer": "A Compound Key is a key that consists of two or more attributes that uniquely identify a record."
   },
   {
     "id": 114,
-    "question": "What is lossy decomposition?",
-    "keywords": ["lossy decomposition"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Multivalued Dependency?",
+    "keywords": ["multivalued", "dependency", "4NF", "independent"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Decomposition where some data is lost after splitting tables."
+    "answer": "Multivalued Dependency occurs when two attributes in a table are independent of each other but both depend on a third attribute."
   },
   {
     "id": 115,
-    "question": "What is database instance?",
-    "keywords": ["database instance"],
-    "difficulty": "easy",
+    "question": "Write a query to check for existence.",
+    "keywords": ["EXISTS", "subquery", "check", "boolean"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "The actual data stored in a database at a particular time."
+    "type": "query",
+    "answer": "SELECT * FROM Suppliers WHERE EXISTS (SELECT * FROM Products WHERE Products.SupplierID = Suppliers.SupplierID);"
   },
   {
     "id": 116,
-    "question": "What is database schema change?",
-    "keywords": ["schema change"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is 4NF?",
+    "keywords": ["4NF", "multivalued", "dependency", "normal form"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Modification of database structure like tables or columns."
+    "answer": "4NF requires the table to be in BCNF and contain no multivalued dependencies."
   },
   {
     "id": 117,
-    "question": "What is vertical fragmentation?",
-    "keywords": ["vertical fragmentation"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is 5NF?",
+    "keywords": ["5NF", "join", "dependency", "PJNF"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Dividing a table by columns."
+    "answer": "5NF (Project-Join Normal Form) deals with cases where information can be reconstructed from smaller pieces of data that can be maintained with less redundancy."
   },
   {
     "id": 118,
-    "question": "What is horizontal fragmentation?",
-    "keywords": ["horizontal fragmentation"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Dividing a table by rows."
+    "question": "Write a query to replace text.",
+    "keywords": ["REPLACE", "string", "substitute", "text"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT REPLACE(Name, 'a', 'b') FROM Customers;"
   },
   {
     "id": 119,
-    "question": "What is distributed database?",
-    "keywords": ["distributed database"],
-    "difficulty": "easy",
+    "question": "What is a Recursive Relationship?",
+    "keywords": ["recursive", "relationship", "entity", "itself"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A database stored across multiple locations."
+    "answer": "A Recursive Relationship exists when an entity relates to itself (e.g., an Employee who is a Manager of other Employees)."
   },
   {
     "id": 120,
-    "question": "What is data replication?",
-    "keywords": ["data replication"],
-    "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Copying data to multiple databases for availability."
-  },
-
-  {
-    "id": 121,
-    "question": "What is query optimization?",
-    "keywords": ["query optimization"],
+    "question": "What is Cardinality?",
+    "keywords": ["cardinality", "relationship", "one-to-one", "many-to-many"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Improving query performance by choosing efficient execution plans."
+    "answer": "Cardinality refers to the number of entities to which another entity can be associated via a relationship set."
+  },
+  {
+    "id": 121,
+    "question": "Write a query to get current user.",
+    "keywords": ["USER", "current", "system", "who"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT USER();"
   },
   {
     "id": 122,
-    "question": "What is cost-based optimization?",
-    "keywords": ["cost based optimization"],
+    "question": "What is a Surrogate Key?",
+    "keywords": ["surrogate", "key", "artificial", "id"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Query optimization based on resource usage cost."
+    "answer": "A Surrogate Key is a unique identifier for a row in a table, not derived from application data (e.g., an auto-incrementing integer)."
   },
   {
     "id": 123,
-    "question": "What is query execution plan?",
-    "keywords": ["execution plan"],
-    "difficulty": "easy",
+    "question": "What is a Natural Key?",
+    "keywords": ["natural", "key", "business", "data"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Steps used by DBMS to execute a query."
+    "answer": "A Natural Key is a key formed of attributes that already exist in the real world (e.g., SSN, Email)."
   },
   {
     "id": 124,
-    "question": "What is a database buffer?",
-    "keywords": ["buffer"],
-    "difficulty": "easy",
+    "question": "Write a query to select random rows.",
+    "keywords": ["RAND", "NEWID", "random", "rows"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Temporary memory used to store data during processing."
+    "type": "query",
+    "answer": "SELECT * FROM Table ORDER BY RAND() LIMIT 1;"
   },
   {
     "id": 125,
-    "question": "What is buffer replacement policy?",
-    "keywords": ["buffer replacement"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Database Mirroring?",
+    "keywords": ["mirroring", "copy", "redundancy", "availability"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Decides which data page to remove from buffer memory."
+    "answer": "Database Mirroring is a strategy to increase data availability by maintaining two copies of a single database instance."
   },
   {
     "id": 126,
-    "question": "What is LRU policy?",
-    "keywords": ["LRU"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Database Replication?",
+    "keywords": ["replication", "distribute", "copy", "sync"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Least Recently Used page is removed first."
+    "answer": "Database Replication is the process of copying data from one database to another to ensure consistency and availability."
   },
   {
     "id": 127,
-    "question": "What is a deadlock detection method?",
-    "keywords": ["deadlock detection"],
+    "question": "Write a query using CASE statement.",
+    "keywords": ["CASE", "WHEN", "logic", "conditional"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Uses wait-for graph to detect deadlocks."
+    "type": "query",
+    "answer": "SELECT Name, CASE WHEN Age > 18 THEN 'Adult' ELSE 'Minor' END FROM People;"
   },
   {
     "id": 128,
-    "question": "What is timestamp ordering?",
-    "keywords": ["timestamp ordering"],
+    "question": "What is a Distributed Database?",
+    "keywords": ["distributed", "database", "network", "sites"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Concurrency control technique using transaction timestamps."
+    "answer": "A Distributed Database is a database that consists of two or more files located in different sites either on the same network or on entirely different networks."
   },
   {
     "id": 129,
-    "question": "What is optimistic concurrency control?",
-    "keywords": ["optimistic concurrency"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Two-Phase Locking (2PL)?",
+    "keywords": ["2PL", "locking", "phase", "concurrency"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Transactions execute without locking and validate later."
+    "answer": "2PL is a concurrency control method that guarantees serializability by requiring transactions to acquire locks in a growing phase and release them in a shrinking phase."
   },
   {
     "id": 130,
-    "question": "What is pessimistic concurrency control?",
-    "keywords": ["pessimistic concurrency"],
+    "question": "Write a query to cast data type.",
+    "keywords": ["CAST", "CONVERT", "type", "change"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Locks data before access to prevent conflicts."
+    "type": "query",
+    "answer": "SELECT CAST(Price AS INT) FROM Products;"
   },
-
   {
     "id": 131,
-    "question": "What is a shadow paging technique?",
-    "keywords": ["shadow paging"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Serializability?",
+    "keywords": ["serializability", "schedule", "transaction", "execution"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Recovery technique using shadow copies of pages."
+    "answer": "Serializability ensures that the result of concurrent execution of transactions is the same as if they were executed serially."
   },
   {
     "id": 132,
-    "question": "What is dirty read?",
-    "keywords": ["dirty read"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is the CAP Theorem?",
+    "keywords": ["CAP", "consistency", "availability", "partition"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Reading uncommitted data from another transaction."
+    "answer": "CAP Theorem states that a distributed data store can only provide two of the three guarantees: Consistency, Availability, and Partition Tolerance."
   },
   {
     "id": 133,
-    "question": "What is non-repeatable read?",
-    "keywords": ["non repeatable read"],
-    "difficulty": "easy",
+    "question": "Write a query using COALESCE.",
+    "keywords": ["COALESCE", "null", "first", "value"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Data changes between two reads in same transaction."
+    "type": "query",
+    "answer": "SELECT COALESCE(Email, 'No Email') FROM Users;"
   },
   {
     "id": 134,
-    "question": "What is phantom read?",
-    "keywords": ["phantom read"],
-    "difficulty": "easy",
+    "question": "What is Hashing in DBMS?",
+    "keywords": ["hashing", "index", "function", "location"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "New rows appear in repeated query execution."
+    "answer": "Hashing uses a mathematical function to calculate the direct location of a data record on disk."
   },
   {
     "id": 135,
-    "question": "What is isolation level?",
-    "keywords": ["isolation level"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is B-Tree?",
+    "keywords": ["B-Tree", "index", "balanced", "tree"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Defines degree of visibility between transactions."
+    "answer": "A B-Tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time."
   },
   {
     "id": 136,
-    "question": "What is READ COMMITTED isolation level?",
-    "keywords": ["read committed"],
-    "difficulty": "easy",
+    "question": "Write a query to find duplicates.",
+    "keywords": ["GROUP BY", "HAVING", "count", "duplicate"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Allows reading only committed data."
+    "type": "query",
+    "answer": "SELECT Name, COUNT(*) FROM Users GROUP BY Name HAVING COUNT(*) > 1;"
   },
   {
     "id": 137,
-    "question": "What is SERIALIZABLE isolation level?",
-    "keywords": ["serializable"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is an ER Attribute?",
+    "keywords": ["attribute", "property", "entity", "characteristic"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Highest isolation level ensuring full isolation."
+    "answer": "An Attribute is a property or characteristic of an entity (e.g., Name, Age)."
   },
   {
     "id": 138,
-    "question": "What is database auditing?",
-    "keywords": ["database auditing"],
-    "difficulty": "easy",
+    "question": "What is a Derived Attribute?",
+    "keywords": ["derived", "attribute", "calculated", "computed"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Tracking database activities for security."
+    "answer": "A Derived Attribute is an attribute whose value is calculated from other attributes (e.g., Age derived from DateOfBirth)."
   },
   {
     "id": 139,
-    "question": "What is data masking?",
-    "keywords": ["data masking"],
+    "question": "Write a query to round a number.",
+    "keywords": ["ROUND", "number", "decimal", "math"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Hiding sensitive data from users."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT ROUND(Price, 2) FROM Products;"
   },
   {
     "id": 140,
-    "question": "What is role-based access control?",
-    "keywords": ["RBAC"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is RAID?",
+    "keywords": ["RAID", "disk", "redundancy", "performance"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Access permissions assigned based on roles."
+    "answer": "RAID (Redundant Array of Independent Disks) is a data storage virtualization technology that combines multiple physical disk drive components into one or more logical units."
   },
-
   {
     "id": 141,
-    "question": "What is data migration?",
-    "keywords": ["data migration"],
-    "difficulty": "easy",
+    "question": "What is Database Security?",
+    "keywords": ["security", "protect", "unauthorized", "access"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Moving data from one database to another."
+    "answer": "Database Security covers all the tools and measures used to protect the database from unauthorized access and attacks."
   },
   {
     "id": 142,
-    "question": "What is schema migration?",
-    "keywords": ["schema migration"],
+    "question": "Write a query to find the remainder.",
+    "keywords": ["MOD", "remainder", "math", "division"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Updating database structure over time."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT MOD(10, 3);"
   },
   {
     "id": 143,
-    "question": "What is ETL process?",
-    "keywords": ["ETL"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is a Phantom Read?",
+    "keywords": ["phantom", "read", "isolation", "transaction"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Extract, Transform, Load process for data warehousing."
+    "answer": "Phantom Read occurs when a transaction retrieves a set of rows twice and new rows are inserted by another transaction in between."
   },
   {
     "id": 144,
-    "question": "What is data lake?",
-    "keywords": ["data lake"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is a Dirty Read?",
+    "keywords": ["dirty", "read", "uncommitted", "isolation"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Storage for raw structured and unstructured data."
+    "answer": "Dirty Read occurs when a transaction reads data that has been modified by another transaction but not yet committed."
   },
   {
     "id": 145,
-    "question": "What is column-oriented database?",
-    "keywords": ["column database"],
+    "question": "Write a query to show table structure.",
+    "keywords": ["DESCRIBE", "structure", "schema", "columns"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Stores data column-wise instead of row-wise."
+    "max_score": 5,
+    "type": "query",
+    "answer": "DESCRIBE TableName;"
   },
   {
     "id": 146,
-    "question": "What is row-oriented database?",
-    "keywords": ["row database"],
-    "difficulty": "easy",
+    "question": "What is Big Data?",
+    "keywords": ["big data", "volume", "velocity", "variety"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Stores data row-wise in tables."
+    "answer": "Big Data refers to datasets that are too large or complex for traditional data-processing application software to deal with."
   },
   {
     "id": 147,
-    "question": "What is in-memory database?",
-    "keywords": ["in memory database"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is MapReduce?",
+    "keywords": ["MapReduce", "processing", "distributed", "model"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Database that stores data in main memory."
+    "answer": "MapReduce is a programming model for processing and generating big data sets with a parallel, distributed algorithm."
   },
   {
     "id": 148,
-    "question": "What is database scalability?",
-    "keywords": ["scalability"],
-    "difficulty": "easy",
+    "question": "Write a query to revoke permissions.",
+    "keywords": ["REVOKE", "permission", "security", "access"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Ability to handle growing data and users."
+    "type": "query",
+    "answer": "REVOKE SELECT ON Users FROM Admin;"
   },
   {
     "id": 149,
-    "question": "What is sharding?",
-    "keywords": ["sharding"],
-    "difficulty": "easy",
+    "question": "What is ETL?",
+    "keywords": ["ETL", "extract", "transform", "load"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Dividing database into smaller pieces for performance."
+    "answer": "ETL stands for Extract, Transform, Load, a process used to copy data from one or more sources to a destination system."
   },
   {
     "id": 150,
-    "question": "What is CAP theorem?",
-    "keywords": ["CAP theorem"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Star Schema?",
+    "keywords": ["star", "schema", "fact", "dimension"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Consistency, Availability, Partition tolerance trade-off."
+    "answer": "Star Schema is a data warehouse schema where a central fact table is surrounded by dimension tables."
   },
   {
     "id": 151,
-    "question": "What is BASE property in DBMS?",
-    "keywords": ["BASE property"],
+    "question": "Write a query to create a database.",
+    "keywords": ["CREATE", "DATABASE", "new", "db"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "BASE stands for Basically Available, Soft state, Eventually consistent."
+    "max_score": 5,
+    "type": "query",
+    "answer": "CREATE DATABASE Shop;"
   },
   {
     "id": 152,
-    "question": "What is eventual consistency?",
-    "keywords": ["eventual consistency"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Snowflake Schema?",
+    "keywords": ["snowflake", "schema", "normalized", "dimension"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Data becomes consistent after some time in distributed databases."
+    "answer": "Snowflake Schema is a variation of the Star Schema where dimension tables are normalized into multiple related tables."
   },
   {
     "id": 153,
-    "question": "What is write-ahead logging?",
-    "keywords": ["WAL"],
+    "question": "What is Fact Table?",
+    "keywords": ["fact", "table", "measurements", "keys"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Logs are written before actual data changes are made."
+    "answer": "A Fact Table consists of the measurements, metrics or facts of a business process."
   },
   {
     "id": 154,
-    "question": "What is redo operation in recovery?",
-    "keywords": ["redo"],
+    "question": "Write a query to drop a database.",
+    "keywords": ["DROP", "DATABASE", "delete", "remove"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Redo reapplies committed transactions after a crash."
+    "max_score": 5,
+    "type": "query",
+    "answer": "DROP DATABASE Shop;"
   },
   {
     "id": 155,
-    "question": "What is undo operation in recovery?",
-    "keywords": ["undo"],
-    "difficulty": "easy",
+    "question": "What is Dimension Table?",
+    "keywords": ["dimension", "table", "attributes", "descriptive"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Undo reverses uncommitted transactions after a crash."
+    "answer": "A Dimension Table contains descriptive attributes (dimensions) related to fact data."
   },
   {
     "id": 156,
-    "question": "What is cascading rollback?",
-    "keywords": ["cascading rollback"],
+    "question": "What is Database Audit?",
+    "keywords": ["audit", "tracking", "log", "security"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Rollback of one transaction causes rollback of dependent transactions."
+    "answer": "Database Audit involves monitoring and recording user actions on the database for security and compliance."
   },
   {
     "id": 157,
-    "question": "What is strict two-phase locking?",
-    "keywords": ["strict 2PL"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Locks are released only after transaction commit or abort."
+    "question": "Write a query using NOT operator.",
+    "keywords": ["NOT", "negate", "condition", "filter"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT * FROM Customers WHERE NOT City = 'Paris';"
   },
   {
     "id": 158,
-    "question": "What is starvation in DBMS?",
-    "keywords": ["starvation"],
+    "question": "What is Relational Model?",
+    "keywords": ["relational", "model", "tables", "relations"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "A transaction waits indefinitely to get required resources."
+    "answer": "The Relational Model represents data as relations (tables) containing rows and columns."
   },
   {
     "id": 159,
-    "question": "What is livelock?",
-    "keywords": ["livelock"],
+    "question": "What is Tuple in DBMS?",
+    "keywords": ["tuple", "row", "record", "relation"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Transactions keep changing state but make no progress."
+    "answer": "A Tuple is a single row or record in a database table."
   },
   {
     "id": 160,
-    "question": "What is a data dictionary?",
-    "keywords": ["data dictionary"],
-    "difficulty": "easy",
+    "question": "Write a query using FULL OUTER JOIN.",
+    "keywords": ["FULL OUTER JOIN", "all", "match", "combine"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "A repository that stores metadata information."
+    "type": "query",
+    "answer": "SELECT * FROM T1 FULL OUTER JOIN T2 ON T1.ID = T2.ID;"
   },
-
   {
     "id": 161,
-    "question": "What is database catalog?",
-    "keywords": ["database catalog"],
-    "difficulty": "easy",
+    "question": "What is Degree of Relationship?",
+    "keywords": ["degree", "relationship", "entities", "count"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Catalog stores details about database objects."
+    "answer": "The Degree of a Relationship is the number of entity types that participate in the relationship."
   },
   {
     "id": 162,
-    "question": "What is implicit cursor?",
-    "keywords": ["implicit cursor"],
-    "difficulty": "easy",
+    "question": "What is Unary Relationship?",
+    "keywords": ["unary", "relationship", "single", "entity"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Cursor automatically created by DBMS for SQL queries."
+    "answer": "A Unary Relationship exists when a single entity type is related to itself."
   },
   {
     "id": 163,
-    "question": "What is explicit cursor?",
-    "keywords": ["explicit cursor"],
+    "question": "Write a query to find the minimum value.",
+    "keywords": ["MIN", "aggregate", "smallest", "value"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Cursor explicitly defined by the programmer."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT MIN(Price) FROM Products;"
   },
   {
     "id": 164,
-    "question": "What is database trigger timing?",
-    "keywords": ["trigger timing"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Binary Relationship?",
+    "keywords": ["binary", "relationship", "two", "entities"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Triggers can be fired BEFORE or AFTER an event."
+    "answer": "A Binary Relationship exists between two entity types."
   },
   {
     "id": 165,
-    "question": "What is row-level trigger?",
-    "keywords": ["row trigger"],
-    "difficulty": "easy",
+    "question": "What is Ternary Relationship?",
+    "keywords": ["ternary", "relationship", "three", "entities"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Trigger that fires for each affected row."
+    "answer": "A Ternary Relationship involves three entity types."
   },
   {
     "id": 166,
-    "question": "What is statement-level trigger?",
-    "keywords": ["statement trigger"],
-    "difficulty": "easy",
+    "question": "Write a query using GROUP_CONCAT (or STRING_AGG).",
+    "keywords": ["GROUP_CONCAT", "string", "aggregate", "list"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Trigger that fires once per SQL statement."
+    "type": "query",
+    "answer": "SELECT GROUP_CONCAT(Name) FROM Customers;"
   },
   {
     "id": 167,
-    "question": "What is database portability?",
-    "keywords": ["portability"],
+    "question": "What is Data Redundancy?",
+    "keywords": ["redundancy", "duplicate", "repetition", "storage"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Ability to move database across different systems."
+    "answer": "Data Redundancy occurs when the same piece of data is held in two separate places."
   },
   {
     "id": 168,
-    "question": "What is SQL injection?",
-    "keywords": ["SQL injection"],
-    "difficulty": "easy",
+    "question": "What is Data Inconsistency?",
+    "keywords": ["inconsistency", "conflict", "mismatch", "copies"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A security attack using malicious SQL queries."
+    "answer": "Data Inconsistency occurs when different versions of the same data exist in different places."
   },
   {
     "id": 169,
-    "question": "What is prepared statement?",
-    "keywords": ["prepared statement"],
-    "difficulty": "easy",
+    "question": "Write a query to alter column default value.",
+    "keywords": ["ALTER", "DEFAULT", "set", "column"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Precompiled SQL statement used for security and performance."
+    "type": "query",
+    "answer": "ALTER TABLE Users ALTER COLUMN Status SET DEFAULT 'Active';"
   },
   {
     "id": 170,
-    "question": "What is database backup?",
-    "keywords": ["database backup"],
-    "difficulty": "easy",
+    "question": "What is Query Processing?",
+    "keywords": ["query", "processing", "parsing", "translation"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Copy of database used for recovery purposes."
+    "answer": "Query Processing includes translation of high-level queries into low-level expressions that can be used at the physical level."
   },
-
   {
     "id": 171,
-    "question": "What is full backup?",
-    "keywords": ["full backup"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Cost-based Optimization?",
+    "keywords": ["cost", "optimization", "statistics", "efficient"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Complete copy of entire database."
+    "answer": "Cost-based Optimization uses statistics about the data to determine the most efficient execution plan based on estimated cost."
   },
   {
     "id": 172,
-    "question": "What is incremental backup?",
-    "keywords": ["incremental backup"],
-    "difficulty": "easy",
+    "question": "Write a query using RIGHT JOIN.",
+    "keywords": ["RIGHT JOIN", "outer", "match", "tables"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Backup of data changed since last backup."
+    "type": "query",
+    "answer": "SELECT * FROM T1 RIGHT JOIN T2 ON T1.ID = T2.ID;"
   },
   {
     "id": 173,
-    "question": "What is differential backup?",
-    "keywords": ["differential backup"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Heuristic Optimization?",
+    "keywords": ["heuristic", "optimization", "rules", "strategy"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Backup of data changed since last full backup."
+    "answer": "Heuristic Optimization uses rule-based approaches (like 'perform selections early') to improve query performance."
   },
   {
     "id": 174,
-    "question": "What is hot backup?",
-    "keywords": ["hot backup"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Materialized View?",
+    "keywords": ["materialized", "view", "stored", "physical"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Backup taken while database is running."
+    "answer": "A Materialized View is a view whose result set has been computed and stored physically."
   },
   {
     "id": 175,
-    "question": "What is cold backup?",
-    "keywords": ["cold backup"],
-    "difficulty": "easy",
+    "question": "Write a query to create a view.",
+    "keywords": ["CREATE", "VIEW", "virtual", "table"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Backup taken when database is shut down."
+    "type": "query",
+    "answer": "CREATE VIEW ActiveUsers AS SELECT * FROM Users WHERE Status = 'Active';"
   },
   {
     "id": 176,
-    "question": "What is database mirroring?",
-    "keywords": ["database mirroring"],
-    "difficulty": "easy",
+    "question": "What is Database Tuning?",
+    "keywords": ["tuning", "performance", "adjust", "optimize"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Maintaining an exact copy of database on another server."
+    "answer": "Database Tuning is the activity of optimizing a database's performance."
   },
   {
     "id": 177,
-    "question": "What is failover?",
-    "keywords": ["failover"],
-    "difficulty": "easy",
+    "question": "What is Latency?",
+    "keywords": ["latency", "delay", "time", "response"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Automatic switch to backup database when failure occurs."
+    "answer": "Latency is the delay between a user's request and the system's response."
   },
   {
     "id": 178,
-    "question": "What is database availability?",
-    "keywords": ["availability"],
-    "difficulty": "easy",
+    "question": "Write a query using INTERSECT.",
+    "keywords": ["INTERSECT", "common", "rows", "set"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Ensuring database is accessible when required."
+    "type": "query",
+    "answer": "SELECT ID FROM T1 INTERSECT SELECT ID FROM T2;"
   },
   {
     "id": 179,
-    "question": "What is database consistency checking?",
-    "keywords": ["consistency check"],
+    "question": "What is Throughput?",
+    "keywords": ["throughput", "rate", "transactions", "per second"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Ensures database follows integrity rules."
+    "answer": "Throughput is the number of transactions a system can process in a given amount of time."
   },
   {
     "id": 180,
-    "question": "What is database tuning?",
-    "keywords": ["database tuning"],
-    "difficulty": "easy",
+    "question": "What is Scalability?",
+    "keywords": ["scalability", "growth", "handle", "load"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Optimizing database performance."
+    "answer": "Scalability is the capability of a system to handle a growing amount of work."
   },
-
   {
     "id": 181,
-    "question": "What is query cache?",
-    "keywords": ["query cache"],
-    "difficulty": "easy",
+    "question": "Write a query using EXCEPT (or MINUS).",
+    "keywords": ["EXCEPT", "MINUS", "difference", "set"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Stores query results for faster execution."
+    "type": "query",
+    "answer": "SELECT ID FROM T1 EXCEPT SELECT ID FROM T2;"
   },
   {
     "id": 182,
-    "question": "What is index clustering?",
-    "keywords": ["clustered index"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is a Log File?",
+    "keywords": ["log", "file", "record", "transactions"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Determines physical order of data in table."
+    "answer": "A Log File records all changes made to the database to facilitate recovery."
   },
   {
     "id": 183,
-    "question": "What is non-clustered index?",
-    "keywords": ["non clustered index"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Checkpoint?",
+    "keywords": ["checkpoint", "save", "sync", "recovery"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Index stored separately from actual data."
+    "answer": "A Checkpoint is a point in time where all dirty pages in memory are written to the disk."
   },
   {
     "id": 184,
-    "question": "What is bitmap index?",
-    "keywords": ["bitmap index"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Index using bitmaps for low-cardinality columns."
+    "question": "Write a query to use AS alias.",
+    "keywords": ["AS", "alias", "rename", "temporary"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT Name AS CustomerName FROM Customers;"
   },
   {
     "id": 185,
-    "question": "What is hash index?",
-    "keywords": ["hash index"],
+    "question": "What is Data Migration?",
+    "keywords": ["migration", "move", "transfer", "system"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Index based on hash function."
+    "answer": "Data Migration is the process of selecting, preparing, extracting, and transforming data and permanently transferring it from one computer storage system to another."
   },
   {
     "id": 186,
-    "question": "What is database compression?",
-    "keywords": ["compression"],
-    "difficulty": "easy",
+    "question": "What is Data Scrubbing?",
+    "keywords": ["scrubbing", "cleaning", "error", "correct"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Reducing storage space used by database."
+    "answer": "Data Scrubbing (Cleansing) is the process of detecting and correcting (or removing) corrupt or inaccurate records."
   },
   {
     "id": 187,
-    "question": "What is query rewriting?",
-    "keywords": ["query rewriting"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Transforming query into more efficient form."
+    "question": "Write a query to find current time.",
+    "keywords": ["CURRENT_TIME", "now", "time", "clock"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "query",
+    "answer": "SELECT CURRENT_TIME;"
   },
   {
     "id": 188,
-    "question": "What is materialized query?",
-    "keywords": ["materialized query"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is Metadata?",
+    "keywords": ["metadata", "data about data", "description", "info"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Precomputed query result stored physically."
+    "answer": "Metadata is data that describes other data."
   },
   {
     "id": 189,
-    "question": "What is data lineage?",
-    "keywords": ["data lineage"],
-    "difficulty": "easy",
+    "question": "What is OODBMS?",
+    "keywords": ["OODBMS", "object", "oriented", "database"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Tracking data origin and transformations."
+    "answer": "OODBMS (Object-Oriented Database Management System) is a database management system that supports the creation and modeling of data as objects."
   },
   {
     "id": 190,
-    "question": "What is data governance?",
-    "keywords": ["data governance"],
-    "difficulty": "easy",
+    "question": "Write a query to select distinct counts.",
+    "keywords": ["COUNT", "DISTINCT", "unique", "aggregate"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Managing data quality, security, and policies."
+    "type": "query",
+    "answer": "SELECT COUNT(DISTINCT City) FROM Customers;"
   },
-
   {
     "id": 191,
-    "question": "What is multi-version concurrency control?",
-    "keywords": ["MVCC"],
+    "question": "What is ORDBMS?",
+    "keywords": ["ORDBMS", "object-relational", "hybrid", "model"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Maintains multiple versions of data for concurrency."
+    "answer": "ORDBMS is a DBMS similar to a relational database, but with an object-oriented database model: objects, classes and inheritance."
   },
   {
     "id": 192,
-    "question": "What is snapshot isolation?",
-    "keywords": ["snapshot isolation"],
+    "question": "What is Row-Level Locking?",
+    "keywords": ["row", "locking", "granularity", "concurrency"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Transactions read a consistent snapshot of data."
+    "answer": "Row-Level Locking locks only the specific rows being accessed, allowing other users to access other rows in the same table."
   },
   {
     "id": 193,
-    "question": "What is database federation?",
-    "keywords": ["database federation"],
-    "difficulty": "easy",
+    "question": "Write a query to rename a column.",
+    "keywords": ["ALTER", "RENAME", "column", "change"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Combining multiple databases into one logical unit."
+    "type": "query",
+    "answer": "ALTER TABLE Users RENAME COLUMN OldName TO NewName;"
   },
   {
     "id": 194,
-    "question": "What is polyglot persistence?",
-    "keywords": ["polyglot persistence"],
-    "difficulty": "easy",
+    "question": "What is Table-Level Locking?",
+    "keywords": ["table", "locking", "granularity", "block"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Using different databases for different needs."
+    "answer": "Table-Level Locking locks the entire table, preventing other users from accessing any part of it."
   },
   {
     "id": 195,
-    "question": "What is graph database?",
-    "keywords": ["graph database"],
-    "difficulty": "easy",
-    "max_score": 10,
+    "question": "What is Page-Level Locking?",
+    "keywords": ["page", "locking", "memory", "block"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Database designed to store graph data structures."
+    "answer": "Page-Level Locking locks a specific memory page (which may contain multiple rows)."
   },
   {
     "id": 196,
-    "question": "What is document database?",
-    "keywords": ["document database"],
+    "question": "Write a query to show all databases.",
+    "keywords": ["SHOW", "databases", "list", "schema"],
     "difficulty": "easy",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Database that stores data in document format like JSON."
+    "max_score": 5,
+    "type": "query",
+    "answer": "SHOW DATABASES;"
   },
   {
     "id": 197,
-    "question": "What is key-value store?",
-    "keywords": ["key value store"],
-    "difficulty": "easy",
+    "question": "What is File System vs DBMS?",
+    "keywords": ["file system", "dbms", "redundancy", "security"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Stores data as key-value pairs."
+    "answer": "A File System stores data in files with less security and high redundancy, whereas DBMS provides organized storage, security, and data integrity."
   },
   {
     "id": 198,
-    "question": "What is column-family store?",
-    "keywords": ["column family"],
-    "difficulty": "easy",
+    "question": "What is Data Abstraction?",
+    "keywords": ["abstraction", "hide", "details", "levels"],
+    "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Stores data in column families instead of tables."
+    "answer": "Data Abstraction is the process of hiding certain details of how data is stored and managed."
   },
   {
     "id": 199,
-    "question": "What is database elasticity?",
-    "keywords": ["elasticity"],
-    "difficulty": "easy",
+    "question": "Write a query to optimize a table.",
+    "keywords": ["OPTIMIZE", "table", "performance", "defragment"],
+    "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Automatic scaling of database resources."
+    "type": "query",
+    "answer": "OPTIMIZE TABLE Users;"
   },
   {
     "id": 200,
-    "question": "What is serverless database?",
-    "keywords": ["serverless database"],
+    "question": "What is a Query Language?",
+    "keywords": ["query", "language", "request", "data"],
     "difficulty": "easy",
-    "max_score": 10,
+    "max_score": 5,
     "type": "theory",
-    "answer": "Cloud database with automatic infrastructure management."
+    "answer": "A Query Language is a computer language used to make queries in databases and information systems."
   }
 ]
-
-
-  
-
-
-
-
-
