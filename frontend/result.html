@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Audit | MockPrep Pro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6366f1; --primary-glow: rgba(99, 102, 241, 0.4);
@@ -14,29 +14,19 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; overflow-x: hidden; padding-bottom: 80px; }
+        #matrixBg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.12; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
 
-        /* --- MATRIX ANIMATION --- */
-        #codeCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; z-index: 1; position: relative; }
-
-        /* --- HERO SCORE SECTION --- */
-        .hero-section {
-            display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; margin-bottom: 4rem;
-            animation: fadeIn 1s ease-out;
-        }
-
+        /* --- DASHBOARD HERO --- */
+        .hero-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; margin-bottom: 4rem; }
         .overall-card {
             background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border);
-            border-radius: 32px; padding: 3rem; text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 32px; padding: 3rem; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-
-        .score-num { font-size: 5.5rem; font-weight: 800; color: #fff; letter-spacing: -4px; transition: 2s ease-out; }
-        .verdict-box { min-height: 3.5em; margin-top: 1rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--primary); }
-
-        /* --- METRICS BAR --- */
+        .score-num { font-size: 5.5rem; font-weight: 800; color: #fff; letter-spacing: -4px; }
+        
+        /* --- METRICS GRID --- */
         .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
         .m-box { background: var(--glass); border: 1px solid var(--border); padding: 1.5rem; border-radius: 20px; backdrop-filter: blur(10px); }
         .m-header { display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px; }
@@ -47,11 +37,10 @@
         .audit-card {
             background: var(--glass); border: 1px solid var(--border); border-radius: 28px;
             padding: 2.5rem; margin-bottom: 2.5rem; backdrop-filter: blur(20px);
-            opacity: 0; transform: translateY(30px); /* Setup for staggered entrance */
+            animation: slideUp 0.6s ease-out both;
         }
-
-        .matrix-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
-        .matrix-title { font-size: 1.2rem; font-weight: 800; }
+        .matrix-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .matrix-title { font-size: 1.2rem; font-weight: 800; max-width: 75%; }
 
         .pane-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .pane-label { font-size: 0.65rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
@@ -60,194 +49,181 @@
             padding: 1.5rem; border-radius: 18px; font-size: 0.95rem; min-height: 120px; color: #cbd5e1;
         }
 
-        /* --- KEYWORD BADGES --- */
-        .keyword-section { margin-top: 2rem; }
-        .kw-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-        .kw-pill {
-            padding: 6px 14px; border-radius: 8px; font-size: 0.75rem; font-weight: 700;
-            border: 1px solid transparent; font-family: 'Fira Code', monospace;
-            display: flex; align-items: center; gap: 6px;
-        }
-        .kw-hit { background: rgba(16, 185, 129, 0.1); color: var(--success); border-color: var(--success); box-shadow: 0 0 10px rgba(16, 185, 129, 0.1); }
-        .kw-miss { background: rgba(244, 63, 94, 0.05); color: var(--danger); border-color: rgba(244, 63, 94, 0.2); opacity: 0.5; }
-
-        /* --- BUTTONS --- */
-        .btn-row { display: flex; justify-content: center; gap: 1.5rem; margin-top: 4rem; }
-        .btn { padding: 18px 40px; border-radius: 16px; font-weight: 800; text-decoration: none; transition: 0.4s; text-transform: uppercase; }
-        .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 30px var(--primary-glow); }
-        .btn:hover { transform: translateY(-4px); filter: brightness(1.1); box-shadow: 0 15px 40px var(--primary-glow); }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUpIn { 
-            to { opacity: 1; transform: translateY(0); }
+        /* --- PILLS & BADGES --- */
+        .kw-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
+        .pill { padding: 6px 14px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; font-family: 'Fira Code', monospace; display: flex; align-items: center; gap: 6px; border: 1px solid transparent; }
+        .kw-hit { background: rgba(16, 185, 129, 0.1); color: var(--success); border-color: var(--success); }
+        .kw-miss { background: rgba(244, 63, 94, 0.1); color: var(--danger); border-color: var(--danger); opacity: 0.6; }
+        .kw-title { background: rgba(255, 255, 255, 0.05); color: var(--text-dim); border-color: var(--border); opacity: 0.4; }
+        
+        .metrics-pill {
+            margin-top: 20px; padding: 10px 18px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--primary);
+            font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;
         }
 
+        .btn-primary { background: var(--primary); color: white; padding: 18px 45px; border-radius: 16px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.4s; text-transform: uppercase; }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 40px var(--primary-glow); }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 850px) { .hero-section, .pane-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <canvas id="codeCanvas"></canvas>
+    <canvas id="matrixBg"></canvas>
 
     <div class="container">
         <section class="hero-section">
             <div class="overall-card">
-                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px; margin-bottom: 5px;">NEURAL_AUDIT_RESULT</div>
+                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px;">INTELLIGENCE_REPORT</div>
                 <div class="score-num" id="mainScore">0%</div>
-                <div id="statusTag" style="font-weight: 800; text-transform: uppercase; color: var(--primary);">Processing session...</div>
-                <div class="verdict-box" id="verdict"></div>
+                <div id="statusTag" style="font-weight: 800; text-transform: uppercase;">CALIBRATING...</div>
+                <div id="verdict" style="font-family: 'Fira Code'; font-size: 0.8rem; color: var(--primary); margin-top: 15px;"></div>
             </div>
 
             <div class="m-grid">
                 <div class="m-box">
-                    <div class="m-header"><span>Logic Accuracy</span><span id="techVal">0%</span></div>
+                    <div class="m-header"><span>Technical Logic</span><span id="techVal">0%</span></div>
                     <div class="m-bar"><div id="techBar" class="m-fill" style="background: var(--primary)"></div></div>
                 </div>
                 <div class="m-box">
-                    <div class="m-header"><span>Keyword Density</span><span id="keyVal">0%</span></div>
-                    <div class="m-bar"><div id="keyBar" class="m-fill" style="background: var(--success)"></div></div>
+                    <div class="m-header"><span>Posture & Gestures</span><span id="posVal">0%</span></div>
+                    <div class="m-bar"><div id="posBar" class="m-fill" style="background: var(--success)"></div></div>
                 </div>
                 <div class="m-box">
-                    <div class="m-header"><span>Semantic Match</span><span id="semVal">0%</span></div>
-                    <div class="m-bar"><div id="semBar" class="m-fill" style="background: var(--warning)"></div></div>
+                    <div class="m-header"><span>Confidence Level</span><span id="confVal">0%</span></div>
+                    <div class="m-bar"><div id="confBar" class="m-fill" style="background: var(--warning)"></div></div>
                 </div>
                 <div class="m-box">
-                    <div class="m-header"><span>Articulation</span><span id="commVal">0%</span></div>
-                    <div class="m-bar"><div id="commBar" class="m-fill" style="background: var(--danger)"></div></div>
+                    <div class="m-header"><span>Semantic Sync</span><span id="semVal">0%</span></div>
+                    <div class="m-bar"><div id="semBar" class="m-fill" style="background: var(--danger)"></div></div>
                 </div>
             </div>
         </section>
 
-        <h2 style="margin-bottom: 2rem; font-weight: 800; font-size: 1.8rem;">Technical <span style="color:var(--primary)">Deep-Dive</span> Comparison</h2>
-        
-        <div id="auditList"></div>
+        <h2 style="margin-bottom: 2rem; font-weight: 800;">Question <span style="color: var(--primary)">Audit</span> Comparison</h2>
+        <div id="auditContainer"></div>
 
-        <div class="btn-row">
-            <a href="selection.html" class="btn btn-primary">Start New Session_</a>
-            <a href="main.html" class="btn" style="border: 1px solid var(--border); color: var(--text-dim);">Close Report</a>
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="selection.html" class="btn-primary">New Simulation_</a>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const rawData = sessionStorage.getItem('interview_results');
-            if (!rawData) { window.location.href = 'main.html'; return; }
-            const results = JSON.parse(rawData);
-            
-            renderAudit(results);
+            const raw = sessionStorage.getItem('interview_results');
+            if (!raw) { window.location.href = 'main.html'; return; }
+            const data = JSON.parse(raw);
+            evaluateNeural(data);
             initMatrix();
         });
 
-        function renderAudit(results) {
-            const list = document.getElementById('auditList');
-            let grandTotal = 0;
+        function evaluateNeural(results) {
+            const container = document.getElementById('auditContainer');
+            let totalLogic = 0;
+            let totalPosture = 0;
 
             results.forEach((res, i) => {
-                // Pre-process user answer for stemming
-                const cleanInput = (res.userAnswer || "").toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, " ");
-                const userWords = cleanInput.split(/\s+/);
-                const keywords = res.keywords || [];
-                const expected = res.expected || "Neural Reference Logic not provided.";
+                const questionText = res.question.toLowerCase();
+                const userText = (res.userAnswer || "").toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, " ");
+                const userWords = userText.split(/\s+/);
+                const rawKeywords = res.keywords || [];
+                const expected = res.expected || "Reference logic unavailable.";
+
+                // Filter keywords already in the question
+                const filteredKeywords = rawKeywords.filter(k => !questionText.includes(k.toLowerCase()));
+                const questionKeywords = rawKeywords.filter(k => questionText.includes(k.toLowerCase()));
 
                 let found = [];
                 let missed = [];
 
-                // --- SMART KEYWORD ROOT MATCHING ---
-                keywords.forEach(kw => {
-                    const lowKW = kw.toLowerCase();
-                    const root = lowKW.substring(0, Math.min(lowKW.length, 5)); // Root logic (e.g., "organ")
+                // Repetition check (anti-cheat)
+                const qWords = questionText.split(/\s+/).filter(w => w.length > 3);
+                const matchCount = userWords.filter(w => qWords.includes(w)).length;
+                const repetitionRatio = userWords.length > 0 ? matchCount / userWords.length : 0;
 
-                    const matched = userWords.some(w => w.startsWith(root) || lowKW.includes(w));
+                // Technical Match Logic
+                if (repetitionRatio < 0.75 && userText.trim().length > 5) {
+                    filteredKeywords.forEach(kw => {
+                        const lowKW = kw.toLowerCase();
+                        const root = lowKW.substring(0, Math.min(lowKW.length, 5));
+                        if (userWords.some(w => w.startsWith(root) || lowKW.includes(w))) found.push(kw);
+                        else missed.push(kw);
+                    });
+                } else { missed = filteredKeywords; }
 
-                    if (matched && cleanInput.trim().length > 0) found.push(kw);
-                    else missed.push(kw);
-                });
+                const itemLogicScore = filteredKeywords.length > 0 ? Math.round((found.length / filteredKeywords.length) * 100) : 75;
+                totalLogic += itemLogicScore;
+                totalPosture += (res.postureScore || 0);
 
-                // Calculate individual score
-                const matchScore = keywords.length > 0 ? Math.round((found.length / keywords.length) * 100) : 100;
-                grandTotal += matchScore;
-
-                // Create audit card
+                // Create Card HTML
                 const card = document.createElement('div');
                 card.className = 'audit-card';
-                card.style.animation = `slideUpIn 0.8s ease-out forwards ${i * 0.2}s`;
-                
+                card.style.animationDelay = `${i * 0.15}s`;
                 card.innerHTML = `
                     <div class="matrix-header">
                         <div class="matrix-title">${i + 1}. ${res.question}</div>
-                        <div style="font-family:'Fira Code'; font-weight:700; color:var(--primary); font-size:0.9rem;">${matchScore}% SYNC</div>
+                        <div style="font-family:'Fira Code'; font-weight:700; color:${itemLogicScore > 50 ? 'var(--success)' : 'var(--danger)'}">${itemLogicScore}% SYNC</div>
                     </div>
                     <div class="pane-grid">
                         <div class="pane">
                             <span class="pane-label">● Candidate Response</span>
-                            <div class="pane-content">${res.userAnswer === "SKIPPED" ? '<span style="color:var(--danger)">NO_INPUT_DETECTED</span>' : res.userAnswer}</div>
+                            <div class="pane-content">${res.userAnswer === "SKIPPED" ? '[BYPASSED]' : res.userAnswer}</div>
                         </div>
                         <div class="pane">
-                            <span class="pane-label">● Neural Expert Logic</span>
-                            <div class="pane-content" style="color:var(--success); border-color: rgba(16, 185, 129, 0.2);">${expected}</div>
+                            <span class="pane-label">● Expert Neural logic</span>
+                            <div class="pane-content" style="color:var(--success)">${expected}</div>
                         </div>
                     </div>
-                    <div class="keyword-section">
-                        <span class="pane-label">● Neural Target Analysis (Keywords)</span>
-                        <div class="kw-container">
-                            ${found.map(k => `<span class="kw-pill kw-hit">✓ ${k}</span>`).join('')}
-                            ${missed.map(k => `<span class="kw-pill kw-miss">✗ ${k}</span>`).join('')}
-                        </div>
+                    <div class="kw-container">
+                        ${found.map(k => `<span class="pill kw-hit">✓ ${k}</span>`).join('')}
+                        ${missed.map(k => `<span class="pill kw-miss">✗ ${k}</span>`).join('')}
+                        ${questionKeywords.map(k => `<span class="pill kw-title">PROMPT: ${k}</span>`).join('')}
+                    </div>
+                    <div class="metrics-pill" style="border-color: ${res.postureScore > 75 ? 'var(--success)' : 'var(--danger)'}">
+                        <span style="color: var(--text-dim)">CAMERA-BASED POSTURE & BEHAVIORAL AUDIT:</span> 
+                        <span style="color: white; font-weight: 800;">${res.postureScore}% COMPLIANCE</span>
                     </div>
                 `;
-                list.appendChild(card);
+                container.appendChild(card);
             });
 
-            // --- FINAL SCORE CALCULATIONS ---
-            const finalPercent = Math.round(grandTotal / results.length);
-            
-            // Staggered UI update
-            setTimeout(() => {
-                animateCounter(finalPercent);
-                updateMetric('tech', finalPercent);
-                updateMetric('key', Math.min(100, finalPercent + 5));
-                updateMetric('sem', finalPercent);
-                updateMetric('comm', Math.max(10, finalPercent - 10));
-                setVerdict(finalPercent);
-            }, 500);
+            // Final Averages
+            const count = results.length;
+            const avgLogic = Math.round(totalLogic / count);
+            const avgPos = Math.round(totalPosture / count);
+            const final = Math.round((avgLogic * 0.6) + (avgPos * 0.4));
+
+            animateDashboard(final, avgLogic, avgPos);
         }
 
-        function animateCounter(target) {
-            let count = 0;
+        function animateDashboard(final, logic, posture) {
+            let curr = 0;
             const el = document.getElementById('mainScore');
-            const interval = setInterval(() => {
-                if(count >= target) {
-                    clearInterval(interval);
-                    el.innerText = target + "%";
-                } else {
-                    count++;
-                    el.innerText = count + "%";
-                }
+            const timer = setInterval(() => {
+                if (curr >= final) clearInterval(timer);
+                else { curr++; el.innerText = curr + "%"; }
             }, 20);
-        }
 
-        function updateMetric(id, val) {
-            document.getElementById(`${id}Val`).innerText = val + "%";
-            document.getElementById(`${id}Bar`).style.width = val + "%";
-        }
+            // Update Bars
+            document.getElementById('techVal').innerText = logic + "%";
+            document.getElementById('techBar').style.width = logic + "%";
+            document.getElementById('posVal').innerText = posture + "%";
+            document.getElementById('posBar').style.width = posture + "%";
+            document.getElementById('confVal').innerText = Math.round((logic + posture) / 2) + "%";
+            document.getElementById('confBar').style.width = Math.round((logic + posture) / 2) + "%";
+            document.getElementById('semVal').innerText = logic + "%";
+            document.getElementById('semBar').style.width = logic + "%";
 
-        function setVerdict(score) {
             const tag = document.getElementById('statusTag');
-            const box = document.getElementById('verdict');
-            let text = "";
-
-            if (score >= 85) { tag.innerText = "Elite Integration"; tag.style.color = "var(--success)"; text = "Neural patterns show industrial-grade precision. Logic is perfectly aligned with expert reference nodes."; }
-            else if (score >= 60) { tag.innerText = "Core Competent"; tag.style.color = "var(--warning)"; text = "Solid technical foundation. Minor semantic gaps detected. Review 'Neural Target' misses for optimization."; }
-            else { tag.innerText = "Re-Sync Required"; tag.style.color = "var(--danger)"; text = "Significant technical logic drift. We recommend studying the Expert Solution panes and attempting a new session."; }
-
-            let i = 0;
-            const type = () => { if(i < text.length) { box.innerHTML += text.charAt(i++); setTimeout(type, 30); } };
-            type();
+            if (final >= 80) { tag.innerText = "Elite Sync Level"; tag.style.color = "var(--success)"; }
+            else if (final >= 50) { tag.innerText = "Qualified Match"; tag.style.color = "var(--warning)"; }
+            else { tag.innerText = "Re-Sync Required"; tag.style.color = "var(--danger)"; }
         }
 
         function initMatrix() {
-            const canvas = document.getElementById('codeCanvas');
-            const ctx = canvas.getContext('2d');
+            const canvas = document.getElementById('matrixBg'), ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth; canvas.height = window.innerHeight;
             const drops = Array(Math.floor(canvas.width/16)).fill(1);
             setInterval(() => {
