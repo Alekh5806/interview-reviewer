@@ -1,1802 +1,1802 @@
 [
   {
     "id": 1,
-    "question": "What is the difference between JDK, JRE, and JVM?",
-    "keywords": ["JDK", "JRE", "JVM", "environment", "kit"],
+    "question": "What is the primary purpose of the JVM?",
+    "keywords": ["bytecode", "execution", "platform-independence"],
     "difficulty": "easy",
-    "max_score": 5,
+    "max_score": 10,
     "type": "theory",
-    "answer": "JDK is the development kit required to write and compile Java programs. JRE is the runtime environment required to run Java applications. JVM is the virtual machine that executes Java bytecode."
+    "answer": "An engine that provides a runtime environment to drive the code execution and ensures the application runs on any device."
   },
   {
     "id": 2,
-    "question": "What is the output of the following code?\n\npublic class Main {\n    public static void main(String[] args) {\n        String s1 = \"Hello\";\n        String s2 = new String(\"Hello\");\n        System.out.println(s1 == s2);\n    }\n}",
-    "keywords": ["string", "pool", "memory", "reference", "false"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "The output is 'false' because s1 refers to the constant pool object, while s2 refers to a new object in the heap memory."
+    "question": "Which data type is used to store a single 16-bit Unicode character?",
+    "keywords": ["primitive", "text", "symbol"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "The char primitive stores individual letters or symbols."
   },
   {
     "id": 3,
-    "question": "Explain the concept of Polymorphism in Java.",
-    "keywords": ["polymorphism", "overloading", "overriding", "forms"],
+    "question": "Predict the output: System.out.println(10 + 20 + \"Java\");",
+    "keywords": ["concatenation", "string", "precedence"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Polymorphism allows objects to be treated as instances of their parent class. It is achieved through method overloading (compile-time) and method overriding (runtime)."
+    "type": "code",
+    "answer": "30Java"
   },
   {
     "id": 4,
-    "question": "What is a Marker Interface?",
-    "keywords": ["marker", "interface", "empty", "serialization"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What concept allows a child class to provide a specific implementation of a method already defined in its parent?",
+    "keywords": ["runtime", "dynamic", "polymorphism"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Marker Interface is an interface with no methods or fields (e.g., Serializable, Cloneable) used to signal the JVM to perform specific operations on objects."
+    "answer": "Method overriding facilitates runtime polymorphism by redefining behavior."
   },
   {
     "id": 5,
-    "question": "Write a Java method to check if a string is a palindrome.",
-    "keywords": ["palindrome", "string", "reverse", "check"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "public boolean isPalindrome(String str) { return new StringBuilder(str).reverse().toString().equals(str); }"
+    "question": "Identify the access modifier that makes a member visible only within the same class.",
+    "keywords": ["encapsulation", "scope", "restriction"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "Private restricts visibility to the defining type."
   },
   {
     "id": 6,
-    "question": "What is the purpose of the 'transient' keyword?",
-    "keywords": ["transient", "serialization", "ignore", "variable"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "The transient keyword is used to indicate that a field should not be serialized when the object is converted to a byte stream."
+    "question": "What is the output of: int[] a = {1,2}; System.out.println(a[2]);",
+    "keywords": ["exception", "array", "bounds"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "ArrayIndexOutOfBoundsException"
   },
   {
     "id": 7,
-    "question": "Difference between ArrayList and LinkedList?",
-    "keywords": ["ArrayList", "LinkedList", "array", "doubly", "access"],
+    "question": "Which keyword is used to explicitly throw an exception from a method or block of code?",
+    "keywords": ["error", "handling", "manual"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "ArrayList uses a dynamic array and is faster for accessing elements. LinkedList uses a doubly linked list and is faster for inserting or deleting elements."
+    "answer": "Throw triggers a specific error event manually."
   },
   {
     "id": 8,
-    "question": "What happens if you try to put a key into a HashMap that already exists?",
-    "keywords": ["HashMap", "key", "overwrite", "value", "duplicate"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Does Java support multiple inheritance through classes?",
+    "keywords": ["diamond-problem", "structure", "design"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "If a duplicate key is inserted into a HashMap, the old value associated with that key is replaced (overwritten) by the new value."
+    "answer": "No, it avoids ambiguity (diamond problem) by restricting a type to a single direct superclass."
   },
   {
     "id": 9,
-    "question": "What is the output of this code?\n\nint x = 5;\nSystem.out.println(x++ + ++x);",
-    "keywords": ["increment", "operator", "output", "12"],
+    "question": "What comes after the 'try' block if no 'catch' block is present?",
+    "keywords": ["cleanup", "execution", "mandatory"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "The output is 12. x++ returns 5 (then x becomes 6), and ++x increments x to 7 and returns 7. So, 5 + 7 = 12."
+    "type": "theory",
+    "answer": "Finally ensures code execution regardless of errors."
   },
   {
     "id": 10,
-    "question": "Explain the 'final' keyword in Java.",
-    "keywords": ["final", "variable", "method", "class", "constant"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "Final variables cannot be reassigned (constant). Final methods cannot be overridden. Final classes cannot be subclassed (extended)."
+    "question": "Predict output: String s1 = \"Hello\"; String s2 = new String(\"Hello\"); System.out.println(s1 == s2);",
+    "keywords": ["memory", "pool", "reference"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 11,
-    "question": "What is the difference between '==' and '.equals()'?",
-    "keywords": ["equality", "reference", "value", "comparison"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which collection implementation stores elements in key-value pairs and does not guarantee order?",
+    "keywords": ["map", "hashing", "lookup"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "'==' compares object references (memory address), whereas .equals() compares the actual content or value of the objects."
+    "answer": "HashMap utilizes hashing for efficient retrieval without sorting."
   },
   {
     "id": 12,
-    "question": "How do you create an immutable class in Java?",
-    "keywords": ["immutable", "final", "private", "setter"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What is the default value of a boolean instance variable?",
+    "keywords": ["initialization", "field", "state"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Declare the class final, make all fields private and final, provide no setter methods, and initialize fields via the constructor."
+    "answer": "False is assigned automatically if not initialized."
   },
   {
     "id": 13,
-    "question": "Code to swap two numbers without a third variable.",
-    "keywords": ["swap", "variable", "logic", "arithmetic"],
+    "question": "Which interface must be implemented to create a thread using the 'run' method?",
+    "keywords": ["concurrency", "execution", "task"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "a = a + b; b = a - b; a = a - b;"
+    "type": "theory",
+    "answer": "Runnable defines a task that can be executed concurrently."
   },
   {
     "id": 14,
-    "question": "What is the difference between Checked and Unchecked exceptions?",
-    "keywords": ["checked", "unchecked", "exception", "compiler", "runtime"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Checked exceptions (e.g., IOException) are checked at compile-time. Unchecked exceptions (e.g., NullPointerException) occur at runtime."
+    "question": "What is the output: System.out.println(Math.min(Double.MIN_VALUE, 0.0d));",
+    "keywords": ["floating-point", "precision", "constants"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "code",
+    "answer": "0.0"
   },
   {
     "id": 15,
-    "question": "What is the significance of the 'volatile' keyword?",
-    "keywords": ["volatile", "thread", "memory", "visibility"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Name the mechanism that converts a primitive type into its corresponding wrapper class automatically.",
+    "keywords": ["conversion", "utility", "syntax-sugar"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Volatile guarantees visibility of changes to variables across threads. It ensures the variable is read from main memory, not the CPU cache."
+    "answer": "Autoboxing handles the automatic transition to objects."
   },
   {
     "id": 16,
-    "question": "What does System.gc() do?",
-    "keywords": ["garbage", "collection", "JVM", "memory"],
+    "question": "Which keyword prevents a variable from being reassigned?",
+    "keywords": ["constant", "immutable", "modifier"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "System.gc() suggests to the JVM that it should run the Garbage Collector to reclaim unused memory, though execution is not guaranteed."
+    "answer": "Final ensures the value or reference remains constant."
   },
   {
     "id": 17,
-    "question": "Write a Singleton class implementation.",
-    "keywords": ["singleton", "instance", "private", "static"],
+    "question": "What is the return type of the hashCode() method?",
+    "keywords": ["integer", "identification", "bucket"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "class Singleton { private static Singleton instance; private Singleton(){} public static Singleton getInstance(){ if(instance==null){ instance = new Singleton(); } return instance; } }"
+    "type": "theory",
+    "answer": "Int provides a numerical representation for bucketing."
   },
   {
     "id": 18,
-    "question": "What is the Diamond Problem in Java?",
-    "keywords": ["diamond", "inheritance", "multiple", "ambiguity"],
+    "question": "Predict output: int x = 5; System.out.println(x++ + ++x);",
+    "keywords": ["increment", "operators", "arithmetic"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "The Diamond Problem is an ambiguity that arises in multiple inheritance when two parent classes define the same method. Java avoids this by not supporting multiple inheritance of classes."
+    "type": "code",
+    "answer": "12"
   },
   {
     "id": 19,
-    "question": "Explain 'public static void main(String[] args)'.",
-    "keywords": ["public", "static", "void", "main", "entry"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which stream operation is used to accumulate elements into a single result?",
+    "keywords": ["functional", "aggregation", "collection"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "Public means accessible everywhere. Static allows calling without an object. Void means no return value. Main is the entry point. String[] args stores command line arguments."
+    "answer": "Reduce combines values iteratively."
   },
   {
     "id": 20,
-    "question": "What will be the output?\n\nString s = \"Java\";\ns.concat(\" SE 8\");\nSystem.out.println(s);",
-    "keywords": ["string", "immutable", "concat", "Java"],
+    "question": "What type of variable is shared among all instances of a class?",
+    "keywords": ["global", "memory-efficiency", "class-level"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "The output is 'Java' because String objects are immutable. The concat() method returns a new string which is ignored here."
+    "type": "theory",
+    "answer": "Static creates a single copy for the entire type."
   },
   {
     "id": 21,
-    "question": "What is the purpose of the 'super' keyword?",
-    "keywords": ["super", "parent", "constructor", "method"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Identify the marker interface used to indicate that an object can be converted to a byte stream.",
+    "keywords": ["persistence", "io", "network"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "The 'super' keyword is used to refer to the immediate parent class object, access parent methods, or call the parent class constructor."
+    "answer": "Serializable allows persistence via IO streams."
   },
   {
     "id": 22,
-    "question": "Difference between StringBuffer and StringBuilder?",
-    "keywords": ["StringBuffer", "StringBuilder", "synchronized", "thread-safe", "performance"],
+    "question": "Output check: System.out.println(\"Java\" + 10 + 20);",
+    "keywords": ["string", "concatenation", "evaluation-order"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "StringBuffer is synchronized and thread-safe but slower. StringBuilder is not synchronized (not thread-safe) but faster."
+    "type": "code",
+    "answer": "Java1020"
   },
   {
     "id": 23,
-    "question": "What is a Functional Interface?",
-    "keywords": ["functional", "interface", "lambda", "abstract"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which method is called by the garbage collector before an object is destroyed?",
+    "keywords": ["cleanup", "memory-management", "legacy"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "A Functional Interface is an interface that contains exactly one abstract method. It can be implemented using Lambda expressions."
+    "answer": "Finalize gives a last chance for cleanup operations."
   },
   {
     "id": 24,
-    "question": "Write a Lambda expression to sort a list of strings.",
-    "keywords": ["lambda", "sort", "list", "collections"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "Collections.sort(list, (s1, s2) -> s1.compareTo(s2));"
+    "question": "What is the implicit return type of a constructor?",
+    "keywords": ["instantiation", "void", "object-creation"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "It returns the class instance reference implicitly."
   },
   {
     "id": 25,
-    "question": "What is the difference between Interface and Abstract Class?",
-    "keywords": ["interface", "abstract", "implementation", "inheritance"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Abstract classes can have state (fields) and constructors, whereas Interfaces cannot (until Java 8/9 updates). A class can implement multiple interfaces but extend only one abstract class."
+    "question": "Predict output: boolean b = false; if(b = true) System.out.println(\"A\"); else System.out.println(\"B\");",
+    "keywords": ["assignment", "conditional", "boolean-logic"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "code",
+    "answer": "A"
   },
   {
     "id": 26,
-    "question": "What is Autoboxing and Unboxing?",
-    "keywords": ["autoboxing", "unboxing", "primitive", "wrapper"],
+    "question": "Which package is imported automatically in every Java program?",
+    "keywords": ["core", "library", "default"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Autoboxing is the automatic conversion of primitives to wrapper classes (e.g., int to Integer). Unboxing is converting wrappers back to primitives."
+    "answer": "Java.lang provides fundamental classes implicitly."
   },
   {
     "id": 27,
-    "question": "What is the output?\n\ntry {\n  return 1;\n} finally {\n  return 2;\n}",
-    "keywords": ["try", "finally", "return", "override"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "code",
-    "answer": "The output is 2. The finally block is always executed, and its return statement overrides the return value from the try block."
+    "question": "What is the size of a float variable in bytes?",
+    "keywords": ["memory", "storage", "precision"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "4 bytes are allocated."
   },
   {
     "id": 28,
-    "question": "What is Dependency Injection in Spring?",
-    "keywords": ["dependency", "injection", "spring", "IOC", "coupling"],
+    "question": "Which design pattern is implemented by the Singleton class?",
+    "keywords": ["creation", "architecture", "unique"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Dependency Injection is a design pattern where the control of creating and supplying dependencies is inverted to a framework (IoC container) to reduce coupling."
+    "answer": "Creational pattern ensures only one instance exists."
   },
   {
     "id": 29,
-    "question": "How do you create a Thread in Java?",
-    "keywords": ["thread", "runnable", "extend", "implement"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Can an abstract class have a constructor?",
+    "keywords": ["initialization", "inheritance", "structure"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "You can create a Thread by extending the 'Thread' class or implementing the 'Runnable' interface."
+    "answer": "Yes, it is used by subclasses during instantiation."
   },
   {
     "id": 30,
-    "question": "Write code to iterate over a Map using entrySet.",
-    "keywords": ["map", "iteration", "entrySet", "loop"],
+    "question": "Output of: int i = 10; while(i++ < 10) System.out.println(i);",
+    "keywords": ["loops", "post-increment", "logic"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "for (Map.Entry<K, V> entry : map.entrySet()) { System.out.println(entry.getKey() + \": \" + entry.getValue()); }"
+    "answer": "No Output"
   },
   {
     "id": 31,
-    "question": "What is the difference between 'throw' and 'throws'?",
-    "keywords": ["throw", "throws", "exception", "declaration"],
+    "question": "Which keyword solves the ambiguity when a local variable has the same name as an instance variable?",
+    "keywords": ["reference", "shadowing", "context"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "'throw' is used to explicitly throw an exception within a method. 'throws' is used in the method signature to declare that the method might throw exceptions."
+    "answer": "This refers to the current object explicitly."
   },
   {
     "id": 32,
-    "question": "What is a Deadlock?",
-    "keywords": ["deadlock", "thread", "block", "waiting"],
+    "question": "What kind of exception is 'NullPointerException'?",
+    "keywords": ["runtime", "compiler", "checking"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Deadlock is a situation where two or more threads are blocked forever, each waiting for the other to release a resource."
+    "answer": "Unchecked exception occurs during execution."
   },
   {
     "id": 33,
-    "question": "What is the Stream API in Java 8?",
-    "keywords": ["stream", "API", "Java8", "functional", "process"],
+    "question": "Which Set implementation maintains insertion order?",
+    "keywords": ["collections", "sorting", "sequence"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Stream API is a feature for processing sequences of elements (collections) using functional operations like map, filter, and reduce."
+    "answer": "LinkedHashSet preserves the sequence of addition."
   },
   {
     "id": 34,
-    "question": "Code to filter even numbers from a list using Streams.",
-    "keywords": ["stream", "filter", "even", "list"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Output check: System.out.println('j' + 'a' + 'v' + 'a');",
+    "keywords": ["ascii", "char-arithmetic", "sum"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "code",
-    "answer": "List<Integer> evens = numbers.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());"
+    "answer": "418"
   },
   {
     "id": 35,
-    "question": "What is the default value of a boolean variable in Java?",
-    "keywords": ["boolean", "default", "false", "variable"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What feature introduced in Java 8 allows passing functionality as a method argument?",
+    "keywords": ["functional-programming", "closure", "concise"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "The default value of a boolean instance variable is 'false'."
+    "answer": "Lambda expressions enable functional coding styles."
   },
   {
     "id": 36,
-    "question": "What is the purpose of the 'synchronized' keyword?",
-    "keywords": ["synchronized", "lock", "thread", "safety"],
+    "question": "Can we override a static method?",
+    "keywords": ["hiding", "inheritance", "polymorphism"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Synchronized is used to control access to shared resources by multiple threads, preventing data inconsistency by allowing only one thread to execute at a time."
+    "answer": "No, it results in method hiding instead."
   },
   {
     "id": 37,
-    "question": "Can we override a static method?",
-    "keywords": ["static", "override", "hiding", "method"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which String method removes leading and trailing whitespace?",
+    "keywords": ["formatting", "text-processing", "cleaning"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "No, static methods cannot be overridden. If a subclass defines a static method with the same signature, it is called Method Hiding."
+    "answer": "Trim or strip eliminates surrounding spaces."
   },
   {
     "id": 38,
-    "question": "Code to find the factorial of a number using recursion.",
-    "keywords": ["factorial", "recursion", "math", "method"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Predict output: int[] arr = {1, 2, 3}; for(int i : arr) { if(i == 2) continue; System.out.print(i); }",
+    "keywords": ["loops", "control-flow", "iteration"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "public int factorial(int n) { return (n <= 1) ? 1 : n * factorial(n - 1); }"
+    "answer": "13"
   },
   {
     "id": 39,
-    "question": "What is a ClassLoader?",
-    "keywords": ["classloader", "jvm", "load", "runtime"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What is the parent class of all classes in Java?",
+    "keywords": ["hierarchy", "root", "inheritance"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A ClassLoader is part of the JRE that dynamically loads Java classes into the JVM during runtime."
+    "answer": "Object is the root of the hierarchy."
   },
   {
     "id": 40,
-    "question": "What is the difference between HashSet and TreeSet?",
-    "keywords": ["HashSet", "TreeSet", "order", "sorted", "performance"],
+    "question": "Which operator is used to check the type of an object at runtime?",
+    "keywords": ["casting", "verification", "boolean"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "HashSet stores elements in a hash table and is unordered. TreeSet stores elements in a sorted tree structure (Red-Black tree) and is ordered."
+    "answer": "Instanceof verifies the specific class compatibility."
   },
   {
     "id": 41,
-    "question": "What is the result of 10 >> 1?",
-    "keywords": ["bitwise", "shift", "operator", "binary"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "The result is 5. '>>' is a signed right shift operator. 10 in binary is 1010, shifting right by 1 gives 0101, which is 5."
+    "question": "What is the complexity of searching in a balanced TreeMap?",
+    "keywords": ["performance", "big-o", "data-structures"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "O(log n) time is required."
   },
   {
     "id": 42,
-    "question": "What is the purpose of 'this' keyword?",
-    "keywords": ["this", "current", "instance", "reference"],
+    "question": "Output check: System.out.println(10 % 3);",
+    "keywords": ["operators", "remainder", "arithmetic"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "'this' refers to the current object instance. It is used to access class variables, constructors, or methods within the class."
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 43,
-    "question": "What is the Reflection API?",
-    "keywords": ["reflection", "inspect", "modify", "runtime"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which loop is guaranteed to execute at least once?",
+    "keywords": ["iteration", "control-flow", "conditions"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Reflection API allows a program to inspect and modify the behavior of classes, methods, and interfaces at runtime, even private ones."
+    "answer": "Do-while runs the block before checking conditions."
   },
   {
     "id": 44,
-    "question": "Write a program to reverse an array.",
-    "keywords": ["array", "reverse", "loop", "swap"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "for(int i=0; i<arr.length/2; i++){ int temp = arr[i]; arr[i] = arr[arr.length-1-i]; arr[arr.length-1-i] = temp; }"
+    "question": "Does the 'finally' block run if System.exit() is called in 'try'?",
+    "keywords": ["termination", "jvm", "execution-flow"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "No, the JVM terminates immediately."
   },
   {
     "id": 45,
-    "question": "What is Serialization?",
-    "keywords": ["serialization", "byte", "stream", "save"],
+    "question": "Predict output: String s = \"Java\"; s.concat(\"SE\"); System.out.println(s);",
+    "keywords": ["immutability", "string-pool", "methods"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Serialization is the process of converting an object's state into a byte stream so it can be saved to a file or sent over a network."
+    "type": "code",
+    "answer": "Java"
   },
   {
     "id": 46,
-    "question": "Difference between Comparator and Comparable?",
-    "keywords": ["Comparator", "Comparable", "sort", "interface"],
+    "question": "Which visibility modifier is the default if none is specified?",
+    "keywords": ["package-private", "access", "scope"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Comparable provides a 'compareTo' method for natural ordering. Comparator provides a 'compare' method for custom ordering."
+    "answer": "Package-private restricts access to the local folder."
   },
   {
     "id": 47,
-    "question": "What is the output of 'System.out.println(1.0/0.0);'?",
-    "keywords": ["infinity", "double", "division", "zero"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "The output is 'Infinity'. Floating-point division by zero does not throw an exception in Java; it returns Infinity."
+    "question": "What is the purpose of the 'transient' keyword?",
+    "keywords": ["serialization", "persistence", "exclusion"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "It excludes fields from being serialized."
   },
   {
     "id": 48,
-    "question": "What is 'try-with-resources'?",
-    "keywords": ["try", "resources", "autocloseable", "java7"],
+    "question": "Predict output: int x = 0; System.out.println(x = 5);",
+    "keywords": ["assignment", "expressions", "print"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Try-with-resources is a statement that automatically closes resources (like streams/files) that implement AutoCloseable when the block finishes."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 49,
-    "question": "What is Method Overloading?",
-    "keywords": ["overloading", "method", "signature", "parameters"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What data structure does the Stack class implement?",
+    "keywords": ["lifo", "collection", "legacy"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Method Overloading occurs when a class has multiple methods with the same name but different parameter lists (signatures)."
+    "answer": "LIFO (Last In First Out) order is used."
   },
   {
     "id": 50,
-    "question": "How to convert a String to an Integer?",
-    "keywords": ["string", "integer", "parse", "convert"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "int num = Integer.parseInt(\"123\"); or Integer num = Integer.valueOf(\"123\");"
+    "question": "Which functional interface accepts one argument and returns a boolean?",
+    "keywords": ["lambda", "streams", "filtering"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Predicate is used for conditional checks."
   },
   {
     "id": 51,
-    "question": "What is an Enum in Java?",
-    "keywords": ["enum", "constant", "type", "fixed"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "An Enum is a special data type used to define a collection of constants (e.g., days of the week, colors)."
+    "question": "What is the result of 15 >> 2?",
+    "keywords": ["bitwise", "shift", "binary"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "3"
   },
   {
     "id": 52,
-    "question": "What is the 'default' method in an interface?",
-    "keywords": ["default", "interface", "method", "java8"],
+    "question": "Which area of memory stores objects and arrays?",
+    "keywords": ["allocation", "garbage-collection", "runtime"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A default method is a method in an interface that has a body. It allows adding new functionality to interfaces without breaking existing implementations."
+    "answer": "The Heap is the dynamic storage area."
   },
   {
     "id": 53,
-    "question": "Code to remove duplicates from an ArrayList.",
-    "keywords": ["duplicate", "ArrayList", "Set", "remove"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict the output: System.out.println(\"5\" + 3 + 2);",
+    "keywords": ["concatenation", "string", "order"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "List<String> listWithoutDuplicates = new ArrayList<>(new HashSet<>(originalList));"
+    "answer": "532"
   },
   {
     "id": 54,
-    "question": "What is the 'break' statement used for?",
-    "keywords": ["break", "loop", "switch", "exit"],
+    "question": "Which interface represents a collection that does not allow duplicate elements?",
+    "keywords": ["uniqueness", "group", "distinct"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The 'break' statement is used to terminate a loop or switch statement immediately and transfer control to the code following the block."
+    "answer": "Set ensures all items are distinct."
   },
   {
     "id": 55,
-    "question": "What is Type Casting?",
-    "keywords": ["casting", "type", "conversion", "implicit"],
+    "question": "What is the size of a double variable?",
+    "keywords": ["bits", "precision", "storage"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Type Casting is converting a variable of one data type into another. It can be Implicit (Widening) or Explicit (Narrowing)."
+    "answer": "64 bits are reserved."
   },
   {
     "id": 56,
-    "question": "What is the output of 'Math.abs(-10)'?",
-    "keywords": ["math", "absolute", "value", "negative"],
+    "question": "What is the output: int x=5; System.out.println(x > 2 ? \"A\" : \"B\");",
+    "keywords": ["ternary", "conditional", "operator"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "The output is 10. Math.abs returns the absolute (positive) value of the argument."
+    "answer": "A"
   },
   {
     "id": 57,
-    "question": "What is a Constructor?",
-    "keywords": ["constructor", "initialize", "object", "method"],
+    "question": "Which keyword is used to access members of the superclass?",
+    "keywords": ["inheritance", "parent", "reference"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "A Constructor is a special block of code initialized when an object is created. It has the same name as the class and no return type."
+    "answer": "Super facilitates access to the ancestor type."
   },
   {
     "id": 58,
-    "question": "Explain the Spring Boot @SpringBootApplication annotation.",
-    "keywords": ["springboot", "annotation", "configuration", "auto"],
+    "question": "Can a constructor be made final?",
+    "keywords": ["modifiers", "instantiation", "overriding"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "It is a convenience annotation that combines @Configuration, @EnableAutoConfiguration, and @ComponentScan."
+    "answer": "No, because they are not inherited."
   },
   {
     "id": 59,
-    "question": "Write a recursive function to calculate Fibonacci series.",
-    "keywords": ["fibonacci", "recursion", "series", "math"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict output: System.out.println(Math.abs(-10));",
+    "keywords": ["mathematics", "utility", "absolute"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "public int fib(int n) { if(n<=1) return n; return fib(n-1) + fib(n-2); }"
+    "answer": "10"
   },
   {
     "id": 60,
-    "question": "What is the 'instanceof' operator?",
-    "keywords": ["instanceof", "check", "type", "object"],
+    "question": "What is the default value of an object reference?",
+    "keywords": ["initialization", "variable", "class"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The 'instanceof' operator is used to test whether an object is an instance of a specific class or implements an interface."
+    "answer": "Null is assigned if not instantiated."
   },
   {
     "id": 61,
-    "question": "What is the Heap Memory?",
-    "keywords": ["heap", "memory", "objects", "allocation"],
+    "question": "Which exception is thrown when dividing an integer by zero?",
+    "keywords": ["arithmetic", "error", "math"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Heap memory is the runtime data area where all class instances and arrays are allocated."
+    "answer": "ArithmeticException signals illegal calculation."
   },
   {
     "id": 62,
-    "question": "What is a Wrapper Class?",
-    "keywords": ["wrapper", "primitive", "object", "convert"],
+    "question": "What is the output: String s = \" Hello \"; System.out.println(s.length());",
+    "keywords": ["size", "characters", "whitespace"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Wrapper classes provide a way to use primitive data types (int, char, etc.) as objects (Integer, Character, etc.)."
+    "type": "code",
+    "answer": "7"
   },
   {
     "id": 63,
-    "question": "How to create a custom Exception?",
-    "keywords": ["exception", "custom", "extend", "class"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "class MyException extends Exception { public MyException(String s) { super(s); } }"
+    "question": "Which keyword allows a method to modify the state of an object passed as an argument?",
+    "keywords": ["reference", "pass-by-value", "parameter"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "None, Java always copies the value of the variable."
   },
   {
     "id": 64,
-    "question": "What is the difference between Process and Thread?",
-    "keywords": ["process", "thread", "memory", "execution"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "A Process is an executing program with its own memory space. A Thread is a lightweight unit of execution within a process that shares memory."
+    "question": "What is the output: for(int i=0; i<3; i++) System.out.print(i + \" \");",
+    "keywords": ["loops", "sequence", "iteration"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "0 1 2 "
   },
   {
     "id": 65,
-    "question": "What is the Optional class?",
-    "keywords": ["optional", "null", "java8", "container"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which wrapper class is associated with the primitive type 'char'?",
+    "keywords": ["boxing", "object", "utility"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Optional is a container object used to contain not-null objects. It helps to avoid NullPointerException."
+    "answer": "Character provides object utility for symbols."
   },
   {
     "id": 66,
-    "question": "Code to merge two lists.",
-    "keywords": ["merge", "list", "addAll", "collection"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Predict output: System.out.println(String.join(\"-\", \"A\", \"B\", \"C\"));",
+    "keywords": ["delimiter", "concatenation", "utility"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "list1.addAll(list2);"
+    "answer": "A-B-C"
   },
   {
     "id": 67,
-    "question": "What is 'System.out'?",
-    "keywords": ["system", "out", "printstream", "static"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What concept enables a single interface to have multiple implementations?",
+    "keywords": ["abstraction", "polymorphism", "flexibility"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "'out' is a static final field in the System class of type PrintStream, used to output data to the console."
+    "answer": "Polymorphism allows many forms."
   },
   {
     "id": 68,
-    "question": "What is the 'continue' statement?",
-    "keywords": ["continue", "loop", "skip", "iteration"],
+    "question": "Which access modifier allows visibility to the world?",
+    "keywords": ["global", "scope", "permission"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "'continue' skips the current iteration of a loop and proceeds to the next iteration."
+    "answer": "Public opens access to all classes."
   },
   {
     "id": 69,
-    "question": "What is the Java Classpath?",
-    "keywords": ["classpath", "environment", "path", "classes"],
+    "question": "Output check: System.out.println(10 == 10.0);",
+    "keywords": ["comparison", "types", "promotion"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Classpath is a parameter that tells the JVM or compiler where to look for user-defined classes and packages."
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 70,
-    "question": "Code to check if a number is prime.",
-    "keywords": ["prime", "number", "check", "math"],
+    "question": "What is the purpose of the 'synchronized' keyword?",
+    "keywords": ["concurrency", "threads", "safety"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "boolean isPrime(int n) { if (n<=1) return false; for(int i=2;i*i<=n;i++) if(n%i==0) return false; return true; }"
+    "type": "theory",
+    "answer": "Locks a resource to prevent data inconsistency."
   },
   {
     "id": 71,
-    "question": "What is Encapsulation?",
-    "keywords": ["encapsulation", "wrapping", "data", "hiding"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which method stops the execution of the current thread for a specified time?",
+    "keywords": ["pause", "delay", "concurrency"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Encapsulation is the mechanism of wrapping data (variables) and code (methods) together as a single unit, usually hiding implementation details."
+    "answer": "Sleep temporarily halts operations."
   },
   {
     "id": 72,
-    "question": "What is the difference between 'set' and 'list'?",
-    "keywords": ["set", "list", "duplicate", "order"],
+    "question": "Predict output: int[] a = {10, 20, 30}; System.out.println(a.length);",
+    "keywords": ["arrays", "properties", "size"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "List is an ordered collection that allows duplicates. Set is an unordered collection that does not allow duplicates."
+    "type": "code",
+    "answer": "3"
   },
   {
     "id": 73,
-    "question": "What is Hibernate?",
-    "keywords": ["hibernate", "orm", "database", "framework"],
+    "question": "Which collection allows efficient retrieval of elements from both ends?",
+    "keywords": ["deque", "queue", "double-ended"],
     "difficulty": "hard",
     "max_score": 15,
     "type": "theory",
-    "answer": "Hibernate is an Object-Relational Mapping (ORM) framework that maps Java classes to database tables."
+    "answer": "ArrayDeque supports insertion and removal at head and tail."
   },
   {
     "id": 74,
-    "question": "How to handle multiple exceptions?",
-    "keywords": ["exception", "catch", "multiple", "block"],
+    "question": "Output check: System.out.println(\"Java\".substring(1, 3));",
+    "keywords": ["slicing", "string-manipulation", "index"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "try { ... } catch (IOException | SQLException e) { ... }"
+    "answer": "av"
   },
   {
     "id": 75,
-    "question": "What is a 'package' in Java?",
-    "keywords": ["package", "namespace", "group", "folder"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the superclass of all Exception classes?",
+    "keywords": ["throwable", "hierarchy", "error-handling"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A package is a namespace that organizes a set of related classes and interfaces, helping to prevent naming conflicts."
+    "answer": "Throwable is the root of problems."
   },
   {
     "id": 76,
-    "question": "What is JIT Compiler?",
-    "keywords": ["jit", "compiler", "performance", "bytecode"],
+    "question": "Which keyword imports static members of a class?",
+    "keywords": ["syntax", "convenience", "access"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "JIT (Just-In-Time) Compiler is part of the JVM that compiles bytecode into native machine code at runtime to improve performance."
+    "answer": "Import static brings fields directly into scope."
   },
   {
     "id": 77,
-    "question": "Code to get current date and time in Java 8.",
-    "keywords": ["date", "time", "localdatetime", "now"],
+    "question": "Predict output: System.out.println(10 / 3);",
+    "keywords": ["integer-division", "truncation", "arithmetic"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "LocalDateTime now = LocalDateTime.now();"
+    "answer": "3"
   },
   {
     "id": 78,
-    "question": "What is Abstract Method?",
-    "keywords": ["abstract", "method", "body", "implementation"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Does a 'switch' statement support String type?",
+    "keywords": ["conditions", "features", "versions"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "An abstract method is a method that is declared without an implementation (without braces) and must be overridden by subclasses."
+    "answer": "Yes, starting from version 7."
   },
   {
     "id": 79,
-    "question": "What is the 'super' class of all classes?",
-    "keywords": ["object", "class", "root", "hierarchy"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the default value of a local variable?",
+    "keywords": ["scope", "initialization", "method"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "The 'Object' class is the root class of the Java class hierarchy."
+    "answer": "There is no automatic assignment; it must be defined."
   },
   {
     "id": 80,
-    "question": "How to count occurrences of a character in a String?",
-    "keywords": ["count", "char", "string", "loop"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Output check: System.out.println(true && false);",
+    "keywords": ["boolean", "logic", "and-operator"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "long count = str.chars().filter(ch -> ch == 'a').count();"
+    "answer": "False"
   },
   {
     "id": 81,
-    "question": "What is the Transient keyword used for?",
-    "keywords": ["transient", "serialization", "variable", "save"],
+    "question": "Which interface is used for sorting objects by their natural order?",
+    "keywords": ["comparison", "collections", "ordering"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "It prevents a variable from being serialized. The variable's value will not be persisted."
+    "answer": "Comparable defines the standard sorting logic."
   },
   {
     "id": 82,
-    "question": "What is Thread Safety?",
-    "keywords": ["thread", "safe", "concurrency", "race"],
+    "question": "Predict output: int x=1; switch(x){ case 1: System.out.print(\"1\"); case 2: System.out.print(\"2\"); }",
+    "keywords": ["fall-through", "flow-control", "break"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Thread safety means that a method or class functions correctly when accessed by multiple threads simultaneously."
+    "type": "code",
+    "answer": "12"
   },
   {
     "id": 83,
-    "question": "What is the output of '\"abc\".equals(\"ABC\")'?",
-    "keywords": ["string", "equals", "case", "false"],
+    "question": "What is the return type of the 'main' method?",
+    "keywords": ["entry-point", "syntax", "structure"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "The output is 'false' because equals() is case-sensitive."
+    "type": "theory",
+    "answer": "Void indicates no value is sent back."
   },
   {
     "id": 84,
-    "question": "What is the Observer Design Pattern?",
-    "keywords": ["observer", "pattern", "notify", "change"],
+    "question": "Which operator is used for bitwise XOR?",
+    "keywords": ["binary", "logic", "symbol"],
     "difficulty": "hard",
     "max_score": 15,
     "type": "theory",
-    "answer": "Observer pattern defines a one-to-many dependency where one object (Subject) notifies all its dependents (Observers) of any state change."
+    "answer": "The caret (^) symbol performs the exclusive OR."
   },
   {
     "id": 85,
-    "question": "How to make a List read-only?",
-    "keywords": ["list", "immutable", "unmodifiable", "collection"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Output check: System.out.println(\"Hello\".replace('l', 'w'));",
+    "keywords": ["substitution", "string", "modification"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "List<String> readOnly = Collections.unmodifiableList(list);"
+    "answer": "Hewwo"
   },
   {
     "id": 86,
-    "question": "What is 'Association' in Java?",
-    "keywords": ["association", "relationship", "object", "has-a"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What implies that a method cannot be overridden?",
+    "keywords": ["modifier", "inheritance", "restriction"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Association is a 'has-a' relationship between two classes where one class uses or interacts with another."
+    "answer": "Final prevents modification in subclasses."
   },
   {
     "id": 87,
-    "question": "What is Aggregation?",
-    "keywords": ["aggregation", "weak", "association", "independent"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which package contains the Scanner class?",
+    "keywords": ["input", "library", "utility"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Aggregation is a weak form of association where the child object can exist independently of the parent object."
+    "answer": "Java.util houses the input parser."
   },
   {
     "id": 88,
-    "question": "What is Composition?",
-    "keywords": ["composition", "strong", "association", "dependent"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Composition is a strong form of association where the child object cannot exist without the parent object."
+    "question": "Predict output: int a=5, b=5; System.out.println(++a == b++);",
+    "keywords": ["increment", "precedence", "comparison"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 89,
-    "question": "Code to generate a random number.",
-    "keywords": ["random", "math", "number", "generate"],
+    "question": "What defines a contract that a class must follow?",
+    "keywords": ["abstraction", "implementation", "design"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int random = (int)(Math.random() * 100);"
+    "type": "theory",
+    "answer": "Interface specifies required methods without body."
   },
   {
     "id": 90,
-    "question": "What is the 'native' keyword?",
-    "keywords": ["native", "method", "platform", "jni"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Can a class implement multiple interfaces?",
+    "keywords": ["inheritance", "flexibility", "structure"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "The native keyword marks a method that is implemented in a language other than Java (like C/C++)."
+    "answer": "Yes, it supports multiple types of behavior."
   },
   {
     "id": 91,
-    "question": "What is a 'Daemon Thread'?",
-    "keywords": ["daemon", "thread", "background", "service"],
+    "question": "Output check: System.out.println(String.valueOf(100) + 50);",
+    "keywords": ["conversion", "concatenation", "types"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "A Daemon Thread is a low-priority thread that runs in the background to perform tasks like garbage collection."
+    "type": "code",
+    "answer": "10050"
   },
   {
     "id": 92,
-    "question": "How to split a String by space?",
-    "keywords": ["split", "string", "array", "regex"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "String[] parts = str.split(\" \");"
+    "question": "Which stream method eliminates duplicate elements?",
+    "keywords": ["filtering", "collections", "unique"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Distinct filters out repetitions."
   },
   {
     "id": 93,
-    "question": "What is the difference between Array and ArrayList?",
-    "keywords": ["array", "ArrayList", "size", "fixed", "dynamic"],
+    "question": "What annotation marks a method as replacing a parent method?",
+    "keywords": ["metadata", "compiler-check", "inheritance"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Array has a fixed size. ArrayList is dynamic and can resize itself."
+    "answer": "@Override confirms the relationship."
   },
   {
     "id": 94,
-    "question": "What is Spring MVC?",
-    "keywords": ["spring", "mvc", "web", "framework"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Spring MVC is a framework for building web applications using the Model-View-Controller design pattern."
+    "question": "Predict output: System.out.println(Math.pow(2, 3));",
+    "keywords": ["exponent", "math", "double"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "8.0"
   },
   {
     "id": 95,
-    "question": "What is the output of 'String.join(\"-\", \"A\", \"B\")'?",
-    "keywords": ["join", "string", "delimiter", "concat"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "The output is 'A-B'."
+    "question": "Which data structure implements a FIFO order?",
+    "keywords": ["queue", "order", "processing"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Queue processes First In First Out."
   },
   {
     "id": 96,
-    "question": "What is a 'Copy Constructor'?",
-    "keywords": ["copy", "constructor", "clone", "object"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Is 'String' a primitive type?",
+    "keywords": ["types", "classification", "object"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A Copy Constructor is a constructor that creates a new object using an existing object of the same class."
+    "answer": "No, it is a reference class."
   },
   {
     "id": 97,
-    "question": "What is the default value of an int?",
-    "keywords": ["default", "int", "zero", "0"],
+    "question": "Output check: System.out.println(10 > 5 && 5 > 10);",
+    "keywords": ["logic", "boolean", "operators"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "The default value of an int instance variable is 0."
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 98,
-    "question": "Code to read input from console.",
-    "keywords": ["scanner", "input", "console", "read"],
+    "question": "What is the purpose of the 'break' statement?",
+    "keywords": ["control-flow", "loops", "termination"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "Scanner sc = new Scanner(System.in); String input = sc.nextLine();"
+    "type": "theory",
+    "answer": "Exits the current loop or switch block immediately."
   },
   {
     "id": 99,
-    "question": "What is the Factory Design Pattern?",
-    "keywords": ["factory", "pattern", "create", "object"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which functional interface accepts two arguments and returns a result?",
+    "keywords": ["lambda", "function", "inputs"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Factory Pattern allows creating objects without specifying the exact class of object that will be created, using a factory method."
+    "answer": "BiFunction takes a pair of inputs."
   },
   {
     "id": 100,
-    "question": "What is 'Binding' in Java?",
-    "keywords": ["binding", "static", "dynamic", "link"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Binding is the link between a method call and the method definition. It can be Static (early) or Dynamic (late)."
+    "question": "Predict output: int[] a = {1}; System.out.println(a[0]);",
+    "keywords": ["indexing", "access", "array"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 101,
-    "question": "What is the purpose of 'assert' keyword?",
-    "keywords": ["assert", "debugging", "test", "assumption"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which operator is used to perform a logical NOT operation?",
+    "keywords": ["boolean", "inversion", "symbol"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "The assert keyword is used during debugging to verify that an assumption is true. If false, it throws an AssertionError."
+    "answer": "The exclamation mark (!) reverses the truth value."
   },
   {
     "id": 102,
-    "question": "How to convert an array to a List?",
-    "keywords": ["convert", "array", "list", "asList"],
+    "question": "Predict output: System.out.println(10 == 10 && 20 != 20);",
+    "keywords": ["logic", "evaluation", "and-condition"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "List<String> list = Arrays.asList(array);"
+    "answer": "False"
   },
   {
     "id": 103,
-    "question": "What is a Static Block?",
-    "keywords": ["static", "block", "initialize", "class"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the parent class of all Errors and Exceptions?",
+    "keywords": ["hierarchy", "root", "handling"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Static Block is a block of code executed when the class is loaded into memory, used to initialize static variables."
+    "answer": "Throwable is the superclass for all problems."
   },
   {
     "id": 104,
-    "question": "Difference between 'wait()' and 'sleep()'?",
-    "keywords": ["wait", "sleep", "thread", "lock"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which keyword defines a constant variable in Java?",
+    "keywords": ["immutability", "modifier", "syntax"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Wait releases the lock on the object. Sleep does not release the lock. Wait is from Object class, Sleep is from Thread class."
+    "answer": "Final prevents reassignment after initialization."
   },
   {
     "id": 105,
-    "question": "Code to find the length of a string.",
-    "keywords": ["length", "string", "method", "size"],
+    "question": "Output check: int x = 10; System.out.println(x += 5);",
+    "keywords": ["assignment", "arithmetic", "compound"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "int len = str.length();"
+    "answer": "15"
   },
   {
     "id": 106,
-    "question": "What is Method Hiding?",
-    "keywords": ["hiding", "method", "static", "inheritance"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What mechanism allows multiple methods to have the same name but different parameters?",
+    "keywords": ["polymorphism", "signature", "compile-time"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Method Hiding occurs when a child class defines a static method with the same signature as a static method in the parent class."
+    "answer": "Overloading enables distinct signatures for the same identifier."
   },
   {
     "id": 107,
-    "question": "What is the 'var' keyword in Java 10+?",
-    "keywords": ["var", "inference", "type", "local"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which method returns the length of an array?",
+    "keywords": ["property", "size", "collection"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "'var' allows local variable type inference, meaning the compiler infers the type of the variable from the initializer."
+    "answer": "The length field provides the count of elements."
   },
   {
     "id": 108,
-    "question": "How to check if an array contains a value?",
-    "keywords": ["array", "check", "contains", "loop"],
+    "question": "Predict output: String s = null; System.out.println(s);",
+    "keywords": ["reference", "printing", "value"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "boolean found = Arrays.asList(arr).contains(value);"
+    "answer": "null"
   },
   {
     "id": 109,
-    "question": "What is 'Garbage Collection'?",
-    "keywords": ["garbage", "collection", "memory", "automatic"],
+    "question": "Which collection stores elements in a First-In-First-Out manner?",
+    "keywords": ["queue", "ordering", "processing"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Garbage Collection is the process of automatically reclaiming memory occupied by objects that are no longer reachable."
+    "answer": "Queue maintains FIFO sequence."
   },
   {
     "id": 110,
-    "question": "What is a 'nested class'?",
-    "keywords": ["nested", "class", "inner", "static"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the size of a 'long' primitive?",
+    "keywords": ["bits", "storage", "data-type"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "A nested class is a class defined within another class. It can be static or non-static (inner class)."
+    "answer": "64 bits are allocated."
   },
   {
     "id": 111,
-    "question": "Code to find max value in an integer array.",
-    "keywords": ["max", "array", "find", "loop"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Output check: System.out.println(Math.max(5, 10));",
+    "keywords": ["comparison", "utility", "math"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "int max = Arrays.stream(arr).max().getAsInt();"
+    "answer": "10"
   },
   {
     "id": 112,
-    "question": "What is 'Pass by Value'?",
-    "keywords": ["pass", "value", "reference", "method"],
+    "question": "Which keyword is used to explicitly call a constructor from another constructor?",
+    "keywords": ["chaining", "instantiation", "reference"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Java is always 'Pass by Value'. It passes a copy of the value (or a copy of the reference) to the method."
+    "answer": "This() invokes another initializer within the same class."
   },
   {
     "id": 113,
-    "question": "What is the 'Action' of a Thread?",
-    "keywords": ["thread", "action", "run", "start"],
+    "question": "Does the 'Set' interface allow duplicate values?",
+    "keywords": ["uniqueness", "collection", "integrity"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "The action of a thread is defined in its run() method."
+    "answer": "No, it enforces distinct elements only."
   },
   {
     "id": 114,
-    "question": "How to implement multiple inheritance in Java?",
-    "keywords": ["inheritance", "multiple", "interface", "implement"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Multiple inheritance is implemented in Java using Interfaces. A class can implement multiple interfaces."
+    "question": "Predict output: System.out.println(\"abc\".toUpperCase());",
+    "keywords": ["string", "formatting", "case"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "ABC"
   },
   {
     "id": 115,
-    "question": "Code to check if a list is empty.",
-    "keywords": ["list", "empty", "check", "isEmpty"],
+    "question": "What is the default value of an 'int' instance variable?",
+    "keywords": ["initialization", "fields", "number"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "boolean empty = list.isEmpty();"
+    "type": "theory",
+    "answer": "Zero is assigned automatically."
   },
   {
     "id": 116,
-    "question": "What is the 'Iterator' interface?",
-    "keywords": ["iterator", "loop", "collection", "traverse"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which operator checks for object equality in memory?",
+    "keywords": ["reference", "comparison", "logic"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Iterator is an interface used to traverse elements in a collection sequentially."
+    "answer": "The == symbol compares address locations."
   },
   {
     "id": 117,
-    "question": "What is 'Covariant Return Type'?",
-    "keywords": ["covariant", "return", "override", "type"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Covariant return type allows an overriding method to return a subclass of the return type declared in the overridden method."
+    "question": "Output check: int i=5; do{ System.out.print(i); i++; }while(i<5);",
+    "keywords": ["loops", "execution", "condition"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 118,
-    "question": "What is the use of '@Override' annotation?",
-    "keywords": ["annotation", "override", "compiler", "check"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What is the purpose of the 'volatile' keyword?",
+    "keywords": ["concurrency", "memory", "threads"],
+    "difficulty": "hard",
+    "max_score": 15,
     "type": "theory",
-    "answer": "It instructs the compiler to check that the method is actually overriding a method from a parent class or interface."
+    "answer": "Ensures a variable is read directly from main memory."
   },
   {
     "id": 119,
-    "question": "Code to format a date.",
-    "keywords": ["date", "format", "SimpleDateFormat", "string"],
+    "question": "Which method is used to start a thread execution?",
+    "keywords": ["concurrency", "process", "lifecycle"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd\"); String date = sdf.format(new Date());"
+    "type": "theory",
+    "answer": "Start() begins the concurrent task."
   },
   {
     "id": 120,
-    "question": "What is 'BlockingQueue'?",
-    "keywords": ["queue", "blocking", "thread", "wait"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "BlockingQueue is a queue that blocks the thread if it tries to dequeue from an empty queue or enqueue to a full queue."
+    "question": "Predict output: System.out.println(10 / 0);",
+    "keywords": ["error", "math", "runtime"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "code",
+    "answer": "ArithmeticException"
   },
   {
     "id": 121,
-    "question": "What is 'Double-Checked Locking'?",
-    "keywords": ["locking", "singleton", "thread", "safe"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What feature enables reading inputs from the console easily?",
+    "keywords": ["io", "utility", "parsing"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "It is a pattern used to reduce the overhead of acquiring a lock by testing the locking criterion (e.g., if object is null) before acquiring the lock."
+    "answer": "Scanner simplifies input reading."
   },
   {
     "id": 122,
-    "question": "Code to replace characters in a string.",
-    "keywords": ["replace", "string", "char", "method"],
+    "question": "Which access modifier is the most restrictive?",
+    "keywords": ["encapsulation", "visibility", "scope"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "String newStr = str.replace('a', 'b');"
+    "type": "theory",
+    "answer": "Private limits access to the defining class only."
   },
   {
     "id": 123,
-    "question": "What is the 'PermGen' space?",
-    "keywords": ["permgen", "memory", "metaspace", "java8"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "PermGen (Permanent Generation) was a memory area to store class metadata. It was replaced by Metaspace in Java 8."
+    "question": "Output check: String s = \"Java\"; System.out.println(s.charAt(0));",
+    "keywords": ["index", "text", "retrieval"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "J"
   },
   {
     "id": 124,
-    "question": "What is 'Race Condition'?",
-    "keywords": ["race", "condition", "thread", "error"],
+    "question": "Can an interface contain a constructor?",
+    "keywords": ["instantiation", "structure", "restriction"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Race condition occurs when two or more threads access shared data and try to change it at the same time, leading to unpredictable results."
+    "answer": "No, because it cannot be instantiated directly."
   },
   {
     "id": 125,
-    "question": "What is the 'Arrays' class?",
-    "keywords": ["arrays", "utility", "static", "helper"],
+    "question": "What is the result of 10 % 2?",
+    "keywords": ["modulus", "remainder", "arithmetic"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "The Arrays class contains static methods for manipulating arrays (like sorting and searching)."
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 126,
-    "question": "Code to iterate a map using lambda.",
-    "keywords": ["map", "lambda", "forEach", "iterate"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "map.forEach((k, v) -> System.out.println(k + \":\" + v));"
+    "question": "Which keyword creates a new object?",
+    "keywords": ["instantiation", "memory", "allocation"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "New triggers memory allocation for an instance."
   },
   {
     "id": 127,
-    "question": "What is 'Externalization'?",
-    "keywords": ["externalization", "serialization", "custom", "control"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Is 'ArrayList' synchronized?",
+    "keywords": ["collections", "concurrency", "safety"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Externalization allows custom logic for serialization and deserialization by implementing the Externalizable interface."
+    "answer": "No, it is not thread-safe by default."
   },
   {
     "id": 128,
-    "question": "What is 'AtomicInteger'?",
-    "keywords": ["atomic", "integer", "thread", "safe"],
+    "question": "Predict output: System.out.println(3 + 4 + \"5\");",
+    "keywords": ["concatenation", "precedence", "types"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "AtomicInteger is a class that provides atomic operations on int values, ensuring thread safety without explicit synchronization."
+    "type": "code",
+    "answer": "75"
   },
   {
     "id": 129,
-    "question": "Code to read a file line by line.",
-    "keywords": ["file", "read", "line", "Files"],
+    "question": "What is the default value of a 'boolean' local variable?",
+    "keywords": ["scope", "initialization", "safety"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "List<String> lines = Files.readAllLines(Paths.get(\"file.txt\"));"
+    "type": "theory",
+    "answer": "Local variables have no default assignment."
   },
   {
     "id": 130,
-    "question": "What is the 'Stack' class?",
-    "keywords": ["stack", "LIFO", "push", "pop"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Which method converts a String to an int?",
+    "keywords": ["parsing", "utility", "wrapper"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Stack is a legacy collection class representing a Last-In-First-Out (LIFO) stack of objects."
+    "answer": "Integer.parseInt performs the conversion."
   },
   {
     "id": 131,
-    "question": "What is 'Method Reference'?",
-    "keywords": ["method", "reference", "double-colon", "lambda"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Method Reference (::) is a shorthand notation of a lambda expression to call a method."
+    "question": "Output check: int[] a = {1, 2}; System.out.println(a[1]);",
+    "keywords": ["array", "access", "index"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "2"
   },
   {
     "id": 132,
-    "question": "Code to convert String to lower case.",
-    "keywords": ["lower", "case", "string", "convert"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "String lower = str.toLowerCase();"
+    "question": "What keyword implies that a variable acts as a class-wide constant?",
+    "keywords": ["modifiers", "static", "final"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Static final creates a shared constant."
   },
   {
     "id": 133,
-    "question": "What is 'Dependency Injection' types?",
-    "keywords": ["constructor", "setter", "field", "injection"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which loop is best when the number of iterations is known?",
+    "keywords": ["control-flow", "structure", "counting"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "The main types of DI are Constructor Injection, Setter Injection, and Field Injection."
+    "answer": "For loop is ideal for counted iterations."
   },
   {
     "id": 134,
-    "question": "What is 'Spring Boot Starter'?",
-    "keywords": ["starter", "dependency", "pom", "springboot"],
+    "question": "Predict output: System.out.println(\"Java\".equals(\"java\"));",
+    "keywords": ["comparison", "case-sensitivity", "string"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Starters are a set of convenient dependency descriptors to include in your application to setup projects quickly."
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 135,
-    "question": "Code to concatenate two strings.",
-    "keywords": ["concat", "string", "plus", "combine"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "String s = s1 + s2;"
+    "question": "What is the purpose of 'super()' in a constructor?",
+    "keywords": ["inheritance", "initialization", "parent"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Calls the constructor of the parent class."
   },
   {
     "id": 136,
-    "question": "What is 'Object Cloning'?",
-    "keywords": ["cloning", "copy", "object", "clone"],
+    "question": "Which exception is checked at compile time?",
+    "keywords": ["handling", "types", "compiler"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Object cloning is creating an exact copy of an object using the clone() method."
+    "answer": "Checked exceptions like IOException must be handled."
   },
   {
     "id": 137,
-    "question": "What is 'Shallow Copy'?",
-    "keywords": ["shallow", "copy", "reference", "clone"],
+    "question": "Output check: System.out.println(10 << 1);",
+    "keywords": ["bitwise", "shift", "multiplication"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Shallow copy creates a new object but copies the reference of nested objects, not the objects themselves."
+    "type": "code",
+    "answer": "20"
   },
   {
     "id": 138,
-    "question": "What is 'Deep Copy'?",
-    "keywords": ["deep", "copy", "new", "clone"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Can abstract classes be instantiated?",
+    "keywords": ["abstraction", "objects", "creation"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Deep copy creates a new object and recursively creates copies of all nested objects."
+    "answer": "No, direct object creation is forbidden."
   },
   {
     "id": 139,
-    "question": "Code to get absolute value.",
-    "keywords": ["abs", "math", "value", "positive"],
+    "question": "Which package is the 'List' interface part of?",
+    "keywords": ["library", "collections", "import"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "int val = Math.abs(-5);"
+    "type": "theory",
+    "answer": "Java.util contains the collection framework."
   },
   {
     "id": 140,
-    "question": "What is 'fail-fast' iterator?",
-    "keywords": ["fail-fast", "iterator", "exception", "concurrent"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Fail-fast iterators throw ConcurrentModificationException if the collection is modified while iterating."
+    "question": "Predict output: System.out.println(Math.sqrt(16));",
+    "keywords": ["math", "calculation", "double"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "4.0"
   },
   {
     "id": 141,
-    "question": "What is 'fail-safe' iterator?",
-    "keywords": ["fail-safe", "iterator", "concurrent", "copy"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the return type of 'equals()' method?",
+    "keywords": ["comparison", "logic", "signature"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Fail-safe iterators work on a clone of the collection and do not throw exceptions if modified during iteration."
+    "answer": "Boolean indicates true or false."
   },
   {
     "id": 142,
-    "question": "What is 'IdentityHashMap'?",
-    "keywords": ["identity", "map", "reference", "equality"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which operator performs a short-circuit OR?",
+    "keywords": ["logic", "evaluation", "optimization"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "IdentityHashMap uses reference equality (==) instead of object equality (equals) when comparing keys."
+    "answer": "The double pipe (||) stops if the first condition is true."
   },
   {
     "id": 143,
-    "question": "Code to join thread.",
-    "keywords": ["join", "thread", "wait", "completion"],
+    "question": "Output check: System.out.println(10 == 10 || 10/0 == 0);",
+    "keywords": ["short-circuit", "logic", "error-avoidance"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "code",
-    "answer": "t1.join();"
+    "answer": "True"
   },
   {
     "id": 144,
-    "question": "What is 'WeakReference'?",
-    "keywords": ["weak", "reference", "garbage", "collection"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What allows a class to hide its data?",
+    "keywords": ["encapsulation", "security", "design"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A WeakReference allows the referenced object to be garbage collected when it is no longer strongly reachable."
+    "answer": "Private modifiers implement data hiding."
   },
   {
     "id": 145,
-    "question": "What is 'PhantomReference'?",
-    "keywords": ["phantom", "reference", "gc", "queue"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which class is thread-safe: StringBuilder or StringBuffer?",
+    "keywords": ["concurrency", "text", "performance"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "PhantomReference is used to schedule post-mortem cleanup actions after the object has been finalized."
+    "answer": "StringBuffer is synchronized."
   },
   {
     "id": 146,
-    "question": "Code to sleep a thread.",
-    "keywords": ["sleep", "thread", "pause", "time"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Predict output: int x=0; for(; x<2; x++); System.out.println(x);",
+    "keywords": ["loops", "scope", "increment"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "Thread.sleep(1000);"
+    "answer": "2"
   },
   {
     "id": 147,
-    "question": "What is 'ThreadPool'?",
-    "keywords": ["pool", "thread", "executor", "reuse"],
+    "question": "What is the purpose of the 'default' keyword in an interface?",
+    "keywords": ["methods", "java-8", "implementation"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A ThreadPool is a collection of pre-initialized threads that can be reused to execute tasks."
+    "answer": "Provides a method body to avoid breaking implementations."
   },
   {
     "id": 148,
-    "question": "What is 'ExecutorService'?",
-    "keywords": ["executor", "service", "framework", "concurrency"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which primitive type has the smallest size?",
+    "keywords": ["data-types", "storage", "memory"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "ExecutorService is a framework for asynchronous task execution that manages a pool of threads."
+    "answer": "Byte uses only 8 bits."
   },
   {
     "id": 149,
-    "question": "Code to sort array.",
-    "keywords": ["sort", "array", "method", "order"],
+    "question": "Output check: System.out.println(\"A\" + 'B');",
+    "keywords": ["concatenation", "types", "string"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "Arrays.sort(arr);"
+    "answer": "AB"
   },
   {
     "id": 150,
-    "question": "What is 'Future' interface?",
-    "keywords": ["future", "async", "result", "computation"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What keyword is used to leave a method immediately?",
+    "keywords": ["flow", "exit", "output"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Future represents the result of an asynchronous computation."
+    "answer": "Return sends control back to the caller."
   },
   {
     "id": 151,
-    "question": "What is 'Callable'?",
-    "keywords": ["callable", "thread", "return", "exception"],
+    "question": "Which map implementation allows null keys?",
+    "keywords": ["collections", "hashing", "constraints"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Callable is like Runnable but can return a result and throw a checked exception."
+    "answer": "HashMap permits a single null key."
   },
   {
     "id": 152,
-    "question": "Code to get substring.",
-    "keywords": ["substring", "string", "part", "extract"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Predict output: System.out.println(true ^ true);",
+    "keywords": ["xor", "logic", "boolean"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "String sub = str.substring(0, 5);"
+    "answer": "False"
   },
   {
     "id": 153,
-    "question": "What is 'CompletableFuture'?",
-    "keywords": ["completable", "future", "async", "callback"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What is the size of a char?",
+    "keywords": ["memory", "bytes", "unicode"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "CompletableFuture is an enhancement of Future that supports manual completion and callback chaining."
+    "answer": "It occupies 2 bytes."
   },
   {
     "id": 154,
-    "question": "What is 'ForkJoinPool'?",
-    "keywords": ["fork", "join", "pool", "parallel"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "Which stream method transforms elements?",
+    "keywords": ["functional", "mapping", "conversion"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "ForkJoinPool is an executor service for running tasks that can be broken recursively into smaller subtasks."
+    "answer": "Map applies a function to each item."
   },
   {
     "id": 155,
-    "question": "Code to check equality of two arrays.",
-    "keywords": ["equals", "array", "check", "compare"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Output check: String s = \"123\"; int i = Integer.parseInt(s); System.out.println(i+1);",
+    "keywords": ["parsing", "arithmetic", "conversion"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "boolean eq = Arrays.equals(arr1, arr2);"
+    "answer": "124"
   },
   {
     "id": 156,
-    "question": "What is 'Lambda Expression'?",
-    "keywords": ["lambda", "anonymous", "function", "concise"],
+    "question": "What is the result of calling run() directly on a Thread object?",
+    "keywords": ["concurrency", "execution", "mistake"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "A lambda expression is a concise way to represent an anonymous function that can be passed as an argument."
+    "answer": "It executes sequentially in the current thread."
   },
   {
     "id": 157,
-    "question": "What is 'Predicate' interface?",
-    "keywords": ["predicate", "boolean", "test", "functional"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which keyword is used to declare an enumeration?",
+    "keywords": ["types", "constants", "definition"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Predicate is a functional interface that takes an argument and returns a boolean."
+    "answer": "Enum defines a fixed set of constants."
   },
   {
     "id": 158,
-    "question": "Code to convert List to Stream.",
-    "keywords": ["stream", "list", "convert", "api"],
+    "question": "Predict output: System.out.println(10 > 20 ? 1 : 2);",
+    "keywords": ["ternary", "conditional", "flow"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "Stream<String> stream = list.stream();"
+    "answer": "2"
   },
   {
     "id": 159,
-    "question": "What is 'Consumer' interface?",
-    "keywords": ["consumer", "accept", "void", "functional"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Can we overload the main method?",
+    "keywords": ["methods", "signature", "execution"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Consumer is a functional interface that takes an argument and returns no result (void)."
+    "answer": "Yes, but the JVM only calls the standard signature."
   },
   {
     "id": 160,
-    "question": "What is 'Supplier' interface?",
-    "keywords": ["supplier", "get", "return", "functional"],
+    "question": "What is the output: int x=5; System.out.println(x--);",
+    "keywords": ["post-decrement", "order", "variable"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Supplier is a functional interface that takes no arguments and returns a result."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 161,
-    "question": "Code to trim string.",
-    "keywords": ["trim", "string", "whitespace", "remove"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "String trimmed = str.trim();"
+    "question": "Which operator is used to create a stream from a collection?",
+    "keywords": ["java-8", "processing", "utility"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Stream() initiates the flow."
   },
   {
     "id": 162,
-    "question": "What is 'Function' interface?",
-    "keywords": ["function", "apply", "transform", "map"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Function is a functional interface that takes one argument and produces a result."
+    "question": "Output check: System.out.println(\"Hello\".startsWith(\"He\"));",
+    "keywords": ["string", "validation", "prefix"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "True"
   },
   {
     "id": 163,
-    "question": "What is 'Stream.map()'?",
-    "keywords": ["map", "stream", "transform", "function"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What kind of variable persists its value across all instances?",
+    "keywords": ["memory", "static", "shared"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Map is an intermediate operation that transforms elements in a stream using a function."
+    "answer": "Static variables are shared class-wide."
   },
   {
     "id": 164,
-    "question": "Code to find min value.",
-    "keywords": ["min", "math", "value", "find"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "int min = Math.min(a, b);"
+    "question": "Which method wakes up a single waiting thread?",
+    "keywords": ["concurrency", "signaling", "monitor"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Notify alerts one waiter."
   },
   {
     "id": 165,
-    "question": "What is 'Stream.filter()'?",
-    "keywords": ["filter", "stream", "predicate", "select"],
+    "question": "Predict output: System.out.println(1 + 2 + \"3\" + 4 + 5);",
+    "keywords": ["concatenation", "precedence", "order"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "Filter is an intermediate operation that selects elements based on a predicate."
+    "type": "code",
+    "answer": "3345"
   },
   {
     "id": 166,
-    "question": "What is 'Stream.reduce()'?",
-    "keywords": ["reduce", "stream", "aggregate", "combine"],
-    "difficulty": "hard",
-    "max_score": 15,
+    "question": "What ensures a block of code runs only when a lock is held?",
+    "keywords": ["concurrency", "synchronization", "safety"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "Reduce is a terminal operation that combines elements of a stream into a single result."
+    "answer": "Synchronized blocks enforce mutual exclusion."
   },
   {
     "id": 167,
-    "question": "Code to check if string starts with prefix.",
-    "keywords": ["startsWith", "string", "prefix", "check"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "boolean b = str.startsWith(\"pre\");"
+    "question": "Which collection cannot contain null values?",
+    "keywords": ["hashtable", "constraints", "legacy"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Hashtable forbids nulls entirely."
   },
   {
     "id": 168,
-    "question": "What is 'Parallel Stream'?",
-    "keywords": ["parallel", "stream", "concurrent", "multi-core"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Parallel Stream is a stream that processes elements concurrently using multiple threads."
+    "question": "Output check: System.out.println(\" abc \".trim());",
+    "keywords": ["whitespace", "formatting", "cleaning"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "abc"
   },
   {
     "id": 169,
-    "question": "What is 'RestController'?",
-    "keywords": ["rest", "controller", "web", "json"],
+    "question": "What happens if you divide a double by zero?",
+    "keywords": ["floating-point", "infinity", "error"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "RestController is a Spring annotation that combines @Controller and @ResponseBody."
+    "answer": "It results in Infinity."
   },
   {
     "id": 170,
-    "question": "Code to replace all occurrences.",
-    "keywords": ["replaceAll", "string", "regex", "all"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Predict output: int[] a = {1, 2, 3}; System.out.println(a.length);",
+    "keywords": ["property", "size", "array"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "code",
-    "answer": "String s = str.replaceAll(\"a\", \"b\");"
+    "answer": "3"
   },
   {
     "id": 171,
-    "question": "What is 'Spring Boot Actuator'?",
-    "keywords": ["actuator", "monitor", "health", "metrics"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which keyword marks a class that cannot be subclassed?",
+    "keywords": ["inheritance", "restriction", "modifier"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Actuator provides production-ready features like health checks and metrics monitoring for Spring Boot apps."
+    "answer": "Final prevents extension."
   },
   {
     "id": 172,
-    "question": "What is 'JPA'?",
-    "keywords": ["jpa", "persistence", "api", "standard"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "JPA (Java Persistence API) is a specification for managing relational data in Java."
+    "question": "Output check: System.out.println(10 != 10);",
+    "keywords": ["inequality", "boolean", "logic"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "False"
   },
   {
     "id": 173,
-    "question": "Code to create a new file.",
-    "keywords": ["file", "create", "new", "io"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "code",
-    "answer": "File f = new File(\"a.txt\"); f.createNewFile();"
+    "question": "What design pattern is used by 'System.out'?",
+    "keywords": ["singleton", "static", "instance"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "theory",
+    "answer": "Singleton ensures one global access point."
   },
   {
     "id": 174,
-    "question": "What is 'Entity' in JPA?",
-    "keywords": ["entity", "table", "database", "map"],
+    "question": "Predict output: for(int i=0; i<5; i+=2) System.out.print(i);",
+    "keywords": ["loops", "increment", "step"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "theory",
-    "answer": "An Entity is a lightweight persistence domain object representing a table in a relational database."
+    "type": "code",
+    "answer": "024"
   },
   {
     "id": 175,
-    "question": "What is '@Autowired'?",
-    "keywords": ["autowired", "dependency", "injection", "spring"],
+    "question": "Which interface represents a function that returns nothing?",
+    "keywords": ["consumer", "functional", "void"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Autowired is an annotation used for automatic dependency injection."
+    "answer": "Consumer accepts input but returns void."
   },
   {
     "id": 176,
-    "question": "Code to get string bytes.",
-    "keywords": ["bytes", "string", "array", "encode"],
+    "question": "Output check: System.out.println(\"Java\".indexOf('a'));",
+    "keywords": ["search", "string", "position"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "byte[] b = str.getBytes();"
+    "answer": "1"
   },
   {
     "id": 177,
-    "question": "What is 'Bean' in Spring?",
-    "keywords": ["bean", "object", "managed", "spring"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "What enables a subclass to be treated as its parent class?",
+    "keywords": ["upcasting", "polymorphism", "reference"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "theory",
-    "answer": "A Bean is an object that is instantiated, assembled, and managed by the Spring IoC container."
+    "answer": "Upcasting allows generalized reference."
   },
   {
     "id": 178,
-    "question": "What is 'Scope' of a Bean?",
-    "keywords": ["scope", "singleton", "prototype", "bean"],
-    "difficulty": "medium",
-    "max_score": 10,
-    "type": "theory",
-    "answer": "Scope defines the lifecycle and visibility of a bean (e.g., singleton, prototype)."
+    "question": "Predict output: int x=10; if(x>5) System.out.print(\"A\"); else System.out.print(\"B\");",
+    "keywords": ["conditional", "flow", "if-else"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "A"
   },
   {
     "id": 179,
-    "question": "Code to compare two strings ignoring case.",
-    "keywords": ["compare", "ignore", "case", "string"],
+    "question": "Which package is automatically imported?",
+    "keywords": ["java.lang", "default", "core"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "code",
-    "answer": "boolean eq = s1.equalsIgnoreCase(s2);"
+    "type": "theory",
+    "answer": "Java.lang is available implicitly."
   },
   {
     "id": 180,
-    "question": "What is 'AOP'?",
-    "keywords": ["aop", "aspect", "cross-cutting", "logging"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "AOP (Aspect-Oriented Programming) allows separating cross-cutting concerns (like logging) from business logic."
+    "question": "Output check: System.out.println(Math.min(10, 20));",
+    "keywords": ["utility", "comparison", "math"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "10"
   },
   {
     "id": 181,
-    "question": "What is 'Maven'?",
-    "keywords": ["maven", "build", "tool", "dependency"],
+    "question": "What is the scope of a variable defined inside a method?",
+    "keywords": ["local", "visibility", "function"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "Maven is a build automation tool used primarily for Java projects to manage dependencies and build lifecycle."
+    "answer": "Local scope restricts it to the block."
   },
   {
     "id": 182,
-    "question": "Code to find index of char.",
-    "keywords": ["index", "char", "find", "string"],
-    "difficulty": "easy",
-    "max_score": 5,
+    "question": "Predict output: System.out.println(\"Hello\".replace(\"l\", \"\"));",
+    "keywords": ["removal", "string", "modification"],
+    "difficulty": "medium",
+    "max_score": 10,
     "type": "code",
-    "answer": "int idx = str.indexOf('a');"
+    "answer": "Heo"
   },
   {
     "id": 183,
-    "question": "What is 'Gradle'?",
-    "keywords": ["gradle", "build", "tool", "groovy"],
+    "question": "Which interface allows an object to be the target of a 'foreach' loop?",
+    "keywords": ["iterator", "traversal", "loop"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "Gradle is a build automation tool that uses a Groovy-based DSL."
+    "answer": "Iterable enables enhanced for-loop usage."
   },
   {
     "id": 184,
-    "question": "What is 'Log4j'?",
-    "keywords": ["log4j", "logging", "library", "debug"],
+    "question": "Output check: int i=0; System.out.println(i++);",
+    "keywords": ["post-increment", "output", "variable"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "Log4j is a popular logging utility for Java."
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 185,
-    "question": "Code to parse double.",
-    "keywords": ["double", "parse", "convert", "string"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "double d = Double.parseDouble(\"3.14\");"
+    "question": "What is the base class for all collections?",
+    "keywords": ["framework", "hierarchy", "root"],
+    "difficulty": "medium",
+    "max_score": 10,
+    "type": "theory",
+    "answer": "Collection interface is the root for groups."
   },
   {
     "id": 186,
-    "question": "What is 'JUnit'?",
-    "keywords": ["junit", "testing", "framework", "unit"],
+    "question": "Predict output: System.out.println((int) 5.9);",
+    "keywords": ["casting", "truncation", "double"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "JUnit is a unit testing framework for Java."
+    "type": "code",
+    "answer": "5"
   },
   {
     "id": 187,
-    "question": "What is 'Mocking'?",
-    "keywords": ["mock", "test", "fake", "simulate"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "Which keyword defines a subclass?",
+    "keywords": ["inheritance", "hierarchy", "syntax"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Mocking is creating objects that simulate the behavior of real objects for testing purposes."
+    "answer": "Extends establishes the relationship."
   },
   {
     "id": 188,
-    "question": "Code to throw exception.",
-    "keywords": ["throw", "exception", "error", "new"],
+    "question": "Output check: System.out.println(true || false);",
+    "keywords": ["logic", "or-operator", "boolean"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "throw new RuntimeException(\"Error\");"
+    "answer": "True"
   },
   {
     "id": 189,
-    "question": "What is 'DTO'?",
-    "keywords": ["dto", "transfer", "object", "data"],
+    "question": "What type of reference can hold any object?",
+    "keywords": ["polymorphism", "root", "universal"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "theory",
-    "answer": "DTO (Data Transfer Object) is an object used to carry data between processes."
+    "answer": "Object type can store any class instance."
   },
   {
     "id": 190,
-    "question": "What is 'DAO'?",
-    "keywords": ["dao", "access", "object", "database"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "theory",
-    "answer": "DAO (Data Access Object) is a pattern that provides an abstract interface to some type of database or other persistence mechanism."
+    "question": "Predict output: System.out.println(10 & 1);",
+    "keywords": ["bitwise", "and", "binary"],
+    "difficulty": "hard",
+    "max_score": 15,
+    "type": "code",
+    "answer": "0"
   },
   {
     "id": 191,
-    "question": "Code to wait for thread.",
-    "keywords": ["wait", "notify", "thread", "sync"],
+    "question": "Which exception indicates a requested class is not found?",
+    "keywords": ["loading", "runtime", "error"],
     "difficulty": "medium",
     "max_score": 10,
-    "type": "code",
-    "answer": "synchronized(obj) { obj.wait(); }"
+    "type": "theory",
+    "answer": "ClassNotFoundException occurs during dynamic loading."
   },
   {
     "id": 192,
-    "question": "What is 'JSON'?",
-    "keywords": ["json", "format", "data", "interchange"],
+    "question": "Output check: System.out.println(String.valueOf(true));",
+    "keywords": ["conversion", "string", "boolean"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "JSON (JavaScript Object Notation) is a lightweight data-interchange format."
+    "type": "code",
+    "answer": "true"
   },
   {
     "id": 193,
-    "question": "What is 'Jackson'?",
-    "keywords": ["jackson", "json", "library", "parse"],
-    "difficulty": "medium",
-    "max_score": 10,
+    "question": "What is the size of a float?",
+    "keywords": ["storage", "bits", "precision"],
+    "difficulty": "easy",
+    "max_score": 5,
     "type": "theory",
-    "answer": "Jackson is a library for processing JSON in Java (serializing/deserializing)."
+    "answer": "32 bits are used."
   },
   {
     "id": 194,
-    "question": "Code to print array.",
-    "keywords": ["print", "array", "string", "arrays"],
+    "question": "Predict output: int x=5; System.out.println(x > 0 && x < 10);",
+    "keywords": ["range", "logic", "check"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "System.out.println(Arrays.toString(arr));"
+    "answer": "True"
   },
   {
     "id": 195,
-    "question": "What is 'WAR' file?",
-    "keywords": ["war", "archive", "web", "deploy"],
+    "question": "Which method calls the garbage collector explicitly?",
+    "keywords": ["memory", "cleanup", "suggestion"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "WAR (Web Application Resource) is a file format used to distribute a collection of JAR files, JSPs, servlets, and XML files for web apps."
+    "answer": "System.gc() suggests cleanup execution."
   },
   {
     "id": 196,
-    "question": "What is 'JAR' file?",
-    "keywords": ["jar", "archive", "java", "library"],
+    "question": "Output check: System.out.println(10 % 3);",
+    "keywords": ["remainder", "math", "operator"],
     "difficulty": "easy",
     "max_score": 5,
-    "type": "theory",
-    "answer": "JAR (Java ARchive) is a file format used to aggregate many Java class files and associated metadata into one file."
+    "type": "code",
+    "answer": "1"
   },
   {
     "id": 197,
-    "question": "Code to check for null.",
-    "keywords": ["null", "check", "if", "object"],
-    "difficulty": "easy",
-    "max_score": 5,
-    "type": "code",
-    "answer": "if (obj == null) { ... }"
-  },
-  {
-    "id": 198,
-    "question": "What is 'Microservices'?",
-    "keywords": ["microservices", "architecture", "small", "independent"],
-    "difficulty": "hard",
-    "max_score": 15,
-    "type": "theory",
-    "answer": "Microservices is an architectural style that structures an application as a collection of loosely coupled services."
-  },
-  {
-    "id": 199,
-    "question": "What is 'REST'?",
-    "keywords": ["rest", "api", "http", "stateless"],
+    "question": "What feature allows methods to accept a variable number of arguments?",
+    "keywords": ["varargs", "syntax", "flexibility"],
     "difficulty": "medium",
     "max_score": 10,
     "type": "theory",
-    "answer": "REST (Representational State Transfer) is an architectural style for providing standards between computer systems on the web."
+    "answer": "Varargs (...) enables flexible inputs."
   },
   {
-    "id": 200,
-    "question": "Code to convert int to String.",
-    "keywords": ["convert", "int", "string", "valueOf"],
+    "id": 198,
+    "question": "Predict output: System.out.println(\"Java\".toLowerCase());",
+    "keywords": ["formatting", "case", "string"],
     "difficulty": "easy",
     "max_score": 5,
     "type": "code",
-    "answer": "String s = String.valueOf(10);"
+    "answer": "java"
+  },
+  {
+    "id": 199,
+    "question": "Which keyword is used to handle exceptions?",
+    "keywords": ["blocks", "safety", "error"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "theory",
+    "answer": "Catch captures the thrown error object."
+  },
+  {
+    "id": 200,
+    "question": "Output check: System.out.println(1 == 1);",
+    "keywords": ["equality", "boolean", "test"],
+    "difficulty": "easy",
+    "max_score": 5,
+    "type": "code",
+    "answer": "True"
   }
 ]
