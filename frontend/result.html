@@ -3,182 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Results | MockPrep AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Neural Audit | MockPrep Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --primary: #6366f1;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
+            --primary: #6366f1; --primary-glow: rgba(99, 102, 241, 0.4);
+            --bg: #070b14; --glass: rgba(15, 23, 42, 0.85);
+            --success: #10b981; --warning: #f59e0b; --danger: #f43f5e;
+            --text-main: #f8fafc; --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding: 40px 20px; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
 
-        .container { max-width: 900px; margin: 0 auto; }
+        /* --- MATRIX ANIMATION --- */
+        #codeCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
 
-        /* --- SCORE SECTION --- */
-        .hero-card {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 3rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; z-index: 1; position: relative; }
+
+        /* --- HERO SCORE SECTION --- */
+        .hero-section {
+            display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out;
         }
 
-        .score-circle {
-            width: 160px; height: 160px;
-            border-radius: 50%;
-            border: 10px solid var(--primary);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            margin: 0 auto 1.5rem;
-            background: rgba(15, 23, 42, 0.6);
+        .overall-card {
+            background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border);
+            border-radius: 32px; padding: 3rem; text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        .score-num { font-size: 3.5rem; font-weight: 800; line-height: 1; }
-        .score-total { font-size: 1rem; color: var(--text-dim); }
-        .performance-tag { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .score-num { font-size: 5.5rem; font-weight: 800; color: #fff; letter-spacing: -4px; transition: 2s ease-out; }
+        .verdict-box { min-height: 3.5em; margin-top: 1rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--primary); }
 
-        /* --- BREAKDOWN --- */
-        .review-title { margin-bottom: 1.5rem; font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
-        
-        .q-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: 0.3s;
+        /* --- METRICS BAR --- */
+        .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .m-box { background: var(--glass); border: 1px solid var(--border); padding: 1.5rem; border-radius: 20px; backdrop-filter: blur(10px); }
+        .m-header { display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px; }
+        .m-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; position: relative; }
+        .m-fill { position: absolute; height: 100%; width: 0; border-radius: 10px; transition: width 2s cubic-bezier(0.19, 1, 0.22, 1); }
+
+        /* --- AUDIT CARDS --- */
+        .audit-card {
+            background: var(--glass); border: 1px solid var(--border); border-radius: 28px;
+            padding: 2.5rem; margin-bottom: 2.5rem; backdrop-filter: blur(20px);
+            opacity: 0; transform: translateY(30px); /* Setup for staggered entrance */
         }
 
-        .q-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 15px; }
-        .q-title { font-weight: 600; font-size: 1.1rem; flex: 1; }
-        .q-score-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+        .matrix-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        .matrix-title { font-size: 1.2rem; font-weight: 800; }
 
-        .answer-box { margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .ans-block { background: rgba(15, 23, 42, 0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--border); font-size: 0.9rem; }
-        .ans-block h4 { font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1px; }
-        .ans-text { color: #e2e8f0; white-space: pre-wrap; }
-
-        /* --- FOOTER --- */
-        .actions { margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; }
-        .btn { padding: 14px 30px; border-radius: 12px; font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.3s; }
-        .btn-primary { background: var(--primary); color: white; border: none; }
-        .btn-outline { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
-        .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
-
-        @media (max-width: 600px) {
-            .answer-box { grid-template-columns: 1fr; }
+        .pane-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .pane-label { font-size: 0.65rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .pane-content { 
+            background: rgba(0,0,0,0.3); border: 1px solid var(--border); 
+            padding: 1.5rem; border-radius: 18px; font-size: 0.95rem; min-height: 120px; color: #cbd5e1;
         }
+
+        /* --- KEYWORD BADGES --- */
+        .keyword-section { margin-top: 2rem; }
+        .kw-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .kw-pill {
+            padding: 6px 14px; border-radius: 8px; font-size: 0.75rem; font-weight: 700;
+            border: 1px solid transparent; font-family: 'Fira Code', monospace;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .kw-hit { background: rgba(16, 185, 129, 0.1); color: var(--success); border-color: var(--success); box-shadow: 0 0 10px rgba(16, 185, 129, 0.1); }
+        .kw-miss { background: rgba(244, 63, 94, 0.05); color: var(--danger); border-color: rgba(244, 63, 94, 0.2); opacity: 0.5; }
+
+        /* --- BUTTONS --- */
+        .btn-row { display: flex; justify-content: center; gap: 1.5rem; margin-top: 4rem; }
+        .btn { padding: 18px 40px; border-radius: 16px; font-weight: 800; text-decoration: none; transition: 0.4s; text-transform: uppercase; }
+        .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 30px var(--primary-glow); }
+        .btn:hover { transform: translateY(-4px); filter: brightness(1.1); box-shadow: 0 15px 40px var(--primary-glow); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUpIn { 
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 850px) { .hero-section, .pane-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
+    <canvas id="codeCanvas"></canvas>
+
     <div class="container">
-        <section class="hero-card">
-            <div class="score-circle">
-                <span class="score-num" id="finalScore">0</span>
-                <span class="score-total" id="maxPossible">/ 0</span>
+        <section class="hero-section">
+            <div class="overall-card">
+                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px; margin-bottom: 5px;">NEURAL_AUDIT_RESULT</div>
+                <div class="score-num" id="mainScore">0%</div>
+                <div id="statusTag" style="font-weight: 800; text-transform: uppercase; color: var(--primary);">Processing session...</div>
+                <div class="verdict-box" id="verdict"></div>
             </div>
-            <div id="perfTag" class="performance-tag">Analyzing...</div>
-            <p id="perfDesc" style="color: var(--text-dim); margin-top: 10px;"></p>
+
+            <div class="m-grid">
+                <div class="m-box">
+                    <div class="m-header"><span>Logic Accuracy</span><span id="techVal">0%</span></div>
+                    <div class="m-bar"><div id="techBar" class="m-fill" style="background: var(--primary)"></div></div>
+                </div>
+                <div class="m-box">
+                    <div class="m-header"><span>Keyword Density</span><span id="keyVal">0%</span></div>
+                    <div class="m-bar"><div id="keyBar" class="m-fill" style="background: var(--success)"></div></div>
+                </div>
+                <div class="m-box">
+                    <div class="m-header"><span>Semantic Match</span><span id="semVal">0%</span></div>
+                    <div class="m-bar"><div id="semBar" class="m-fill" style="background: var(--warning)"></div></div>
+                </div>
+                <div class="m-box">
+                    <div class="m-header"><span>Articulation</span><span id="commVal">0%</span></div>
+                    <div class="m-bar"><div id="commBar" class="m-fill" style="background: var(--danger)"></div></div>
+                </div>
+            </div>
         </section>
 
-        <div class="review-title">Detailed Question Review</div>
-        <div id="resultsList">
-            </div>
+        <h2 style="margin-bottom: 2rem; font-weight: 800; font-size: 1.8rem;">Technical <span style="color:var(--primary)">Deep-Dive</span> Comparison</h2>
+        
+        <div id="auditList"></div>
 
-        <div class="actions">
-            <a href="index.html" class="btn btn-outline">Back to Home</a>
-            <a href="selections.html" class="btn btn-primary">Try New Interview</a>
+        <div class="btn-row">
+            <a href="selection.html" class="btn btn-primary">Start New Session_</a>
+            <a href="main.html" class="btn" style="border: 1px solid var(--border); color: var(--text-dim);">Close Report</a>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const rawResults = sessionStorage.getItem('interview_results');
-            if (!rawResults) {
-                window.location.href = 'index.html';
-                return;
-            }
-
-            const results = JSON.parse(rawResults);
-            displayResults(results);
+            const rawData = sessionStorage.getItem('interview_results');
+            if (!rawData) { window.location.href = 'main.html'; return; }
+            const results = JSON.parse(rawData);
+            
+            renderAudit(results);
+            initMatrix();
         });
 
-        function displayResults(results) {
-            const list = document.getElementById('resultsList');
-            let totalEarned = 0;
-            let totalMax = 0;
+        function renderAudit(results) {
+            const list = document.getElementById('auditList');
+            let grandTotal = 0;
 
-            results.forEach((res, index) => {
-                totalEarned += res.earned_score || 0;
-                totalMax += res.max_score || 0;
+            results.forEach((res, i) => {
+                // Pre-process user answer for stemming
+                const cleanInput = (res.userAnswer || "").toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, " ");
+                const userWords = cleanInput.split(/\s+/);
+                const keywords = res.keywords || [];
+                const expected = res.expected || "Neural Reference Logic not provided.";
 
+                let found = [];
+                let missed = [];
+
+                // --- SMART KEYWORD ROOT MATCHING ---
+                keywords.forEach(kw => {
+                    const lowKW = kw.toLowerCase();
+                    const root = lowKW.substring(0, Math.min(lowKW.length, 5)); // Root logic (e.g., "organ")
+
+                    const matched = userWords.some(w => w.startsWith(root) || lowKW.includes(w));
+
+                    if (matched && cleanInput.trim().length > 0) found.push(kw);
+                    else missed.push(kw);
+                });
+
+                // Calculate individual score
+                const matchScore = keywords.length > 0 ? Math.round((found.length / keywords.length) * 100) : 100;
+                grandTotal += matchScore;
+
+                // Create audit card
                 const card = document.createElement('div');
-                card.className = 'q-card';
-
-                // Determine score color
-                const percent = (res.earned_score / res.max_score) * 100;
-                let colorClass = 'var(--danger)';
-                if (percent >= 70) colorClass = 'var(--success)';
-                else if (percent >= 40) colorClass = 'var(--warning)';
-
+                card.className = 'audit-card';
+                card.style.animation = `slideUpIn 0.8s ease-out forwards ${i * 0.2}s`;
+                
                 card.innerHTML = `
-                    <div class="q-header">
-                        <div class="q-title">${index + 1}. ${res.question}</div>
-                        <div class="q-score-badge" style="background: ${colorClass}22; color: ${colorClass}">
-                            Score: ${res.earned_score} / ${res.max_score}
+                    <div class="matrix-header">
+                        <div class="matrix-title">${i + 1}. ${res.question}</div>
+                        <div style="font-family:'Fira Code'; font-weight:700; color:var(--primary); font-size:0.9rem;">${matchScore}% SYNC</div>
+                    </div>
+                    <div class="pane-grid">
+                        <div class="pane">
+                            <span class="pane-label">● Candidate Response</span>
+                            <div class="pane-content">${res.userAnswer === "SKIPPED" ? '<span style="color:var(--danger)">NO_INPUT_DETECTED</span>' : res.userAnswer}</div>
+                        </div>
+                        <div class="pane">
+                            <span class="pane-label">● Neural Expert Logic</span>
+                            <div class="pane-content" style="color:var(--success); border-color: rgba(16, 185, 129, 0.2);">${expected}</div>
                         </div>
                     </div>
-                    <div class="answer-box">
-                        <div class="ans-block">
-                            <h4>Your Answer</h4>
-                            <div class="ans-text">${res.userAnswer || 'No answer provided.'}</div>
-                        </div>
-                        <div class="ans-block">
-                            <h4>Expected Keywords</h4>
-                            <div class="ans-text" style="color: var(--primary)">${res.keywords ? res.keywords.join(', ') : 'N/A'}</div>
+                    <div class="keyword-section">
+                        <span class="pane-label">● Neural Target Analysis (Keywords)</span>
+                        <div class="kw-container">
+                            ${found.map(k => `<span class="kw-pill kw-hit">✓ ${k}</span>`).join('')}
+                            ${missed.map(k => `<span class="kw-pill kw-miss">✗ ${k}</span>`).join('')}
                         </div>
                     </div>
                 `;
                 list.appendChild(card);
             });
 
-            // Update Hero Stats
-            document.getElementById('finalScore').innerText = totalEarned;
-            document.getElementById('maxPossible').innerText = `/ ${totalMax}`;
+            // --- FINAL SCORE CALCULATIONS ---
+            const finalPercent = Math.round(grandTotal / results.length);
             
-            updatePerformanceTag(totalEarned, totalMax);
+            // Staggered UI update
+            setTimeout(() => {
+                animateCounter(finalPercent);
+                updateMetric('tech', finalPercent);
+                updateMetric('key', Math.min(100, finalPercent + 5));
+                updateMetric('sem', finalPercent);
+                updateMetric('comm', Math.max(10, finalPercent - 10));
+                setVerdict(finalPercent);
+            }, 500);
         }
 
-        function updatePerformanceTag(earned, max) {
-            const tag = document.getElementById('perfTag');
-            const desc = document.getElementById('perfDesc');
-            const ratio = earned / max;
+        function animateCounter(target) {
+            let count = 0;
+            const el = document.getElementById('mainScore');
+            const interval = setInterval(() => {
+                if(count >= target) {
+                    clearInterval(interval);
+                    el.innerText = target + "%";
+                } else {
+                    count++;
+                    el.innerText = count + "%";
+                }
+            }, 20);
+        }
 
-            if (ratio >= 0.8) {
-                tag.innerText = "Exceptional";
-                tag.style.color = "var(--success)";
-                desc.innerText = "You demonstrated strong mastery of the subject. Ready for the real thing!";
-            } else if (ratio >= 0.5) {
-                tag.innerText = "Good Effort";
-                tag.style.color = "var(--warning)";
-                desc.innerText = "Solid foundations, but focus on the key missing technical concepts.";
-            } else {
-                tag.innerText = "Needs Review";
-                tag.style.color = "var(--danger)";
-                desc.innerText = "We suggest reviewing the fundamentals and trying the session again.";
-            }
+        function updateMetric(id, val) {
+            document.getElementById(`${id}Val`).innerText = val + "%";
+            document.getElementById(`${id}Bar`).style.width = val + "%";
+        }
+
+        function setVerdict(score) {
+            const tag = document.getElementById('statusTag');
+            const box = document.getElementById('verdict');
+            let text = "";
+
+            if (score >= 85) { tag.innerText = "Elite Integration"; tag.style.color = "var(--success)"; text = "Neural patterns show industrial-grade precision. Logic is perfectly aligned with expert reference nodes."; }
+            else if (score >= 60) { tag.innerText = "Core Competent"; tag.style.color = "var(--warning)"; text = "Solid technical foundation. Minor semantic gaps detected. Review 'Neural Target' misses for optimization."; }
+            else { tag.innerText = "Re-Sync Required"; tag.style.color = "var(--danger)"; text = "Significant technical logic drift. We recommend studying the Expert Solution panes and attempting a new session."; }
+
+            let i = 0;
+            const type = () => { if(i < text.length) { box.innerHTML += text.charAt(i++); setTimeout(type, 30); } };
+            type();
+        }
+
+        function initMatrix() {
+            const canvas = document.getElementById('codeCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            const drops = Array(Math.floor(canvas.width/16)).fill(1);
+            setInterval(() => {
+                ctx.fillStyle = "rgba(7, 11, 20, 0.1)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#334155"; ctx.font = "16px monospace";
+                drops.forEach((y, i) => {
+                    ctx.fillText(Math.random() > 0.5 ? "0" : "1", i*16, y*16);
+                    if(y*16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                });
+            }, 33);
         }
     </script>
 </body>

@@ -19,102 +19,84 @@
             --bg-body: #020617; --bg-card: #0f172a; --primary: #6366f1;
             --accent: #10b981; --danger: #f43f5e; --text-main: #f8fafc;
             --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.06);
-            --neon-glow: rgba(99, 102, 241, 0.3);
+            --neon-glow: rgba(99, 102, 241, 0.4);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-body); color: var(--text-main); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
 
-        /* --- SLEEK HEADER --- */
         header {
             height: 60px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem;
             z-index: 100;
         }
-        .status-badge { color: var(--accent); font-size: 0.75rem; font-weight: 800; display: flex; align-items: center; gap: 10px; letter-spacing: 1px; }
-        .status-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: blink 1.5s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
         .progress-container { width: 45%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; }
-        #progressBar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--primary), #818cf8); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        #progressBar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--primary), #818cf8); transition: 0.6s; }
 
-        .timer-box { font-family: 'Fira Code', monospace; font-weight: 700; font-size: 1.1rem; color: var(--text-dim); transition: color 0.3s; }
-        .timer-low { color: var(--danger) !important; animation: pulse-red 1s infinite; }
-        @keyframes pulse-red { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .timer-box { font-family: 'Fira Code', monospace; font-weight: 700; color: var(--text-dim); font-size: 1.1rem; }
 
-        /* --- LAYOUT GRID --- */
         main { display: grid; grid-template-columns: 460px 1fr; flex: 1; overflow: hidden; }
 
-        .question-panel { background: var(--bg-card); border-right: 1px solid var(--border); padding: 3.5rem 3rem; overflow-y: auto; position: relative; }
-        .q-meta { display: flex; gap: 10px; margin-bottom: 1.5rem; }
-        .badge { padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; border: 1px solid var(--border); color: var(--text-dim); }
-        .badge-type { background: var(--primary); border: none; color: white; box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2); }
+        .question-panel { background: var(--bg-card); border-right: 1px solid var(--border); padding: 3.5rem 3rem; overflow-y: auto; }
+        .badge { padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; border: 1px solid var(--border); color: var(--text-dim); margin-right: 5px;}
+        .badge-type { background: var(--primary); border: none; color: white; }
 
-        .question-text h2 { font-size: 1.7rem; margin-bottom: 1.5rem; line-height: 1.3; font-weight: 800; background: linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .question-description { color: var(--text-dim); line-height: 1.8; font-size: 1rem; }
+        .question-text h2 { font-size: 1.7rem; margin-bottom: 1.5rem; font-weight: 800; color: #fff; background: linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .workspace-panel { padding: 1.5rem; display: flex; flex-direction: column; background: #070b14; position: relative; }
         
         .editor-container {
             flex: 1; background: rgba(30, 41, 59, 0.2); border-radius: 24px; border: 1px solid var(--border);
             display: flex; flex-direction: column; overflow: hidden; backdrop-filter: blur(20px);
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
         }
-        .editor-header { 
-            background: rgba(30, 41, 59, 0.4); padding: 18px 28px; display: flex; justify-content: space-between; 
-            align-items: center; border-bottom: 1px solid var(--border);
-        }
+        .editor-header { background: rgba(30, 41, 59, 0.4); padding: 18px 28px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
 
-        /* --- AUDIO UI --- */
-        .audio-controls { display: none; align-items: center; gap: 20px; }
-        #visualizer { width: 140px; height: 35px; border-radius: 6px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); }
+        .audio-section { display: none; align-items: center; gap: 15px; }
+        #userVisualizer { width: 120px; height: 40px; display: none; }
         
-        .btn-mic { 
-            padding: 8px 18px; border-radius: 10px; border: none; cursor: pointer; 
-            font-size: 0.75rem; font-weight: 800; transition: 0.3s; text-transform: uppercase;
-        }
-        .btn-mic.start { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); }
-        .btn-mic.stop { background: var(--danger); color: white; box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2); }
+        .btn-mic { padding: 8px 18px; border-radius: 10px; border: none; cursor: pointer; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; transition: 0.3s; }
+        .btn-mic.start { background: var(--accent); color: white; }
+        .btn-mic.stop { background: var(--danger); color: white; }
 
-        textarea { 
-            flex: 1; background: transparent; border: none; color: #e2e8f0; padding: 35px; 
-            font-size: 1.15rem; resize: none; outline: none; line-height: 1.7; 
+        textarea { flex: 1; background: transparent; border: none; color: #e2e8f0; padding: 35px; font-size: 1.15rem; resize: none; outline: none; line-height: 1.7; }
+
+        /* --- SMOOTH RIPPLE ENGINE --- */
+        .avatar-wrapper {
+            position: absolute; bottom: 80px; right: 40px;
+            width: 260px; height: 260px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .ripple-container { position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+        .ripple { position: absolute; border: 2px solid var(--primary); border-radius: 50%; opacity: 0; width: 220px; height: 220px; }
+        .speaking .ripple { animation: smoothRipple 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32); }
+        .speaking .ripple:nth-child(2) { animation-delay: 0.6s; }
+        .speaking .ripple:nth-child(3) { animation-delay: 1.2s; }
+
+        @keyframes smoothRipple {
+            0% { transform: scale(1); opacity: 0.8; border-width: 4px; }
+            100% { transform: scale(1.6); opacity: 0; border-width: 1px; }
         }
 
-        /* --- PERSONA & AVATAR --- */
-        .avatar-container {
-            position: absolute; bottom: 80px; right: 40px; width: 240px; height: 240px;
-            border-radius: 50%; border: 3px solid var(--primary);
-            overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 20px var(--neon-glow);
-            background: #000; transition: 0.5s;
+        .avatar-box {
+            width: 220px; height: 220px;
+            border-radius: 50%; border: 4px solid var(--bg-body);
+            overflow: hidden; background: #000; position: relative; z-index: 5;
+            box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 20px var(--neon-glow);
         }
         .avatar-img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .mouth-overlay {
-            position: absolute; bottom: 33%; left: 50%; transform: translateX(-50%);
-            width: 32px; height: 4px; background: #2b1111; border-radius: 50%;
-            opacity: 0; border-bottom: 2px solid #ff7373;
-        }
-        .speaking .mouth-overlay { opacity: 1; animation: speakMorph 0.1s infinite alternate; }
-        @keyframes speakMorph {
-            0% { height: 4px; transform: translateX(-50%) scaleX(1); }
-            100% { height: 18px; border-radius: 20% 20% 50% 50%; transform: translateX(-50%) scaleX(1.1); }
-        }
 
-        /* --- ACTION BAR --- */
         .action-bar { height: 90px; background: var(--bg-card); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; }
-        .btn { padding: 14px 35px; border-radius: 14px; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; font-size: 1rem; }
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3); }
-        .btn-primary:disabled { opacity: 0.2; cursor: not-allowed; transform: none !important; }
-        .btn:hover:not(:disabled) { transform: translateY(-4px) scale(1.02); filter: brightness(1.1); }
-        .btn:active { transform: translateY(-1px); }
+        .btn { padding: 14px 35px; border-radius: 14px; font-weight: 700; cursor: pointer; border: none; font-size: 1rem; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:disabled { opacity: 0.15; cursor: not-allowed; filter: grayscale(1); }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="status-badge"><div class="status-dot"></div> NEURAL INTERFACE LIVE</div>
+        <div style="font-weight: 800; color: var(--accent); font-size: 0.8rem; letter-spacing: 1px;">● NEURAL FEED</div>
         <div class="progress-container"><div id="progressBar"></div></div>
         <div id="timer" class="timer-box">08:00</div>
     </header>
@@ -122,41 +104,43 @@
     <main>
         <section class="question-panel">
             <div class="q-meta">
-                <span id="qNum" class="badge">Challenge 01</span>
-                <span id="qType" class="badge badge-type">Neural Logic</span>
+                <span id="qNum" class="badge">01</span>
+                <span id="qType" class="badge badge-type">Assessment</span>
             </div>
             <div class="question-text">
-                <h2 id="qTitle">Synthesizing Session...</h2>
-                <div id="qDesc" class="question-description">Please wait. Calibrating interviewer persona and track data.</div>
+                <h2 id="qTitle">Synthesizing...</h2>
+                <div id="qDesc" style="color: var(--text-dim); line-height: 1.6;">Interfacing track data...</div>
             </div>
         </section>
 
         <section class="workspace-panel">
             <div class="editor-container">
                 <div class="editor-header">
-                    <span id="workspaceLabel" style="font-size: 0.8rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Awaiting Input</span>
-                    <div class="audio-controls" id="audioSection">
-                        <canvas id="visualizer"></canvas>
-                        <div class="mic-btn-group">
-                            <button id="startBtn" class="btn-mic start" onclick="toggleMic(true)">Start Mic</button>
-                            <button id="stopBtn" class="btn-mic stop" onclick="toggleMic(false)" style="display:none;">Stop Mic</button>
-                        </div>
+                    <span id="workspaceLabel" style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Command Console</span>
+                    <div class="audio-section" id="audioSection">
+                        <canvas id="userVisualizer"></canvas>
+                        <button id="startBtn" class="btn-mic start" onclick="toggleMic(true)">Start Mic</button>
+                        <button id="stopBtn" class="btn-mic stop" onclick="toggleMic(false)" style="display:none;">Stop Mic</button>
                     </div>
                 </div>
-                <textarea id="answerArea" oninput="validateAnswer()" placeholder="The interviewer will begin speaking shortly..."></textarea>
+                <textarea id="answerArea" oninput="validate()" placeholder="Interviewer is speaking..."></textarea>
             </div>
 
-            <div class="avatar-container" id="avatarBox">
-                <img id="avatarImg" class="avatar-img" src="" alt="Interviewer">
-                <div class="mouth-overlay"></div>
+            <div class="avatar-wrapper" id="avatarContainer">
+                <div class="ripple-container">
+                    <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+                </div>
+                <div class="avatar-box">
+                    <img id="avatarImg" class="avatar-img" src="" alt="AI">
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="action-bar">
-        <button class="btn" style="background:transparent; color:var(--text-dim); border:1px solid var(--border)" onclick="confirmExit()">Quit Session</button>
+        <button class="btn" style="background:transparent; color:var(--text-dim); border:1px solid var(--border)" onclick="confirmExit()">Abort</button>
         <div style="display:flex; gap:1.5rem">
-            <button class="btn" style="background:transparent; color:white; border:1px solid var(--border)" onclick="handleSkip()">Skip Step</button>
+            <button class="btn" style="background:transparent; color:white; border:1px solid var(--border)" onclick="handleSkip()">Skip</button>
             <button class="btn btn-primary" id="submitBtn" onclick="handleSubmit()" disabled>Submit Response</button>
         </div>
     </footer>
@@ -164,8 +148,8 @@
     <script>
         const state = {
             questions: [], currentIndex: 0, responses: [], 
-            timer: 480, // 👈 REDUCED BY 120s (8 Minutes Total)
-            subject: localStorage.getItem("session_subject"),
+            timer: 480, 
+            subject: localStorage.getItem("session_subject") || "python",
             persona: localStorage.getItem("session_persona") || "Lady",
             isRecording: false
         };
@@ -173,14 +157,15 @@
         const synth = window.speechSynthesis;
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         let recognition = SpeechRecognition ? new SpeechRecognition() : null;
-        
         let audioCtx, analyser, dataArray, canvas, canvasCtx, stream;
 
+        // --- 🧠 1. INITIALIZATION ---
         document.addEventListener("DOMContentLoaded", () => {
             initSession();
             updateAvatar();
-            startTimer();
-            initCanvas();
+            startTimer(); // Starts immediately on load
+            canvas = document.getElementById('userVisualizer');
+            canvasCtx = canvas.getContext('2d');
         });
 
         async function initSession() {
@@ -188,170 +173,153 @@
                 const res = await fetch(`http://localhost:5000/api/question-set?subject=${state.subject}`);
                 const data = await res.json();
                 state.questions = data.sort(() => 0.5 - Math.random()).slice(0, 10);
-                renderQuestion();
-            } catch (e) { document.getElementById('qTitle').innerText = "System Connectivity Error"; }
+            } catch (e) {
+                state.questions = [{id: 1, question: "What is a data structure?", keywords: ["organizing", "storing", "efficiently"], answer: "A data structure is a way of organizing and storing data so it can be accessed and modified efficiently.", type: "theory"}];
+            }
+            // Trigger first question render
+            renderQuestion();
         }
 
         function updateAvatar() {
-            const img = document.getElementById('avatarImg');
-            img.src = state.persona === 'Lady' 
+            document.getElementById('avatarImg').src = state.persona === 'Lady' 
                 ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600"
                 : "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600";
         }
 
+        // --- 🗣️ 2. SPEECH ENGINE ---
         function renderQuestion() {
             const q = state.questions[state.currentIndex];
-            const area = document.getElementById('answerArea');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            toggleMic(false); 
-            area.value = ""; 
-            submitBtn.disabled = true;
-            
-            document.getElementById('qNum').innerText = `Challenge ${state.currentIndex + 1}`;
+            toggleMic(false);
+            document.getElementById('answerArea').value = "";
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('qNum').innerText = `Step 0${state.currentIndex + 1}`;
             document.getElementById('qTitle').innerText = q.question;
             document.getElementById('progressBar').style.width = `${((state.currentIndex + 1)/state.questions.length)*100}%`;
             
-            const isCoding = q.type.toLowerCase() === 'coding';
-            document.getElementById('avatarBox').style.display = isCoding ? 'none' : 'block';
-            document.getElementById('audioSection').style.display = isCoding ? 'none' : 'flex';
-            area.style.fontFamily = isCoding ? "'Fira Code', monospace" : "'Inter', sans-serif";
-            area.placeholder = isCoding ? "// Write high-performance code here..." : "Interviewer is dictating...";
+            const isTheory = q.type.toLowerCase() === 'theory';
+            document.getElementById('avatarContainer').style.display = isTheory ? 'flex' : 'none';
+            document.getElementById('audioSection').style.display = isTheory ? 'flex' : 'none';
 
-            if(!isCoding) speakConfident(q.question);
-        }
-
-        function speakConfident(text) {
-            synth.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            const voices = synth.getVoices();
-            utterance.voice = voices.find(v => v.name.includes(state.persona === 'Lady' ? 'Female' : 'Male') && v.name.includes("Google")) || voices[0];
-            utterance.pitch = (state.persona === 'Sir') ? 0.75 : 0.85; 
-            utterance.rate = 0.92;
-
-            const avatar = document.getElementById('avatarBox');
-            utterance.onboundary = (e) => {
-                if(e.name === 'word') {
-                    avatar.classList.add('speaking');
-                    setTimeout(() => avatar.classList.remove('speaking'), 85); 
+            if(isTheory) {
+                // Wait for voices to be ready
+                if (synth.getVoices().length > 0) {
+                    setTimeout(() => speak(q.question), 800);
+                } else {
+                    synth.onvoiceschanged = () => setTimeout(() => speak(q.question), 800);
                 }
-            };
-            utterance.onend = () => {
-                avatar.classList.remove('speaking');
-                document.getElementById('answerArea').placeholder = "Speak now or type your response...";
-            };
-            synth.speak(utterance);
+            }
         }
 
+        function speak(text) {
+            synth.cancel();
+            const msg = new SpeechSynthesisUtterance(text);
+            const voices = synth.getVoices();
+            msg.voice = voices.find(v => v.name.includes(state.persona === 'Lady' ? 'Female' : 'Male')) || voices[0];
+            msg.pitch = state.persona === 'Sir' ? 0.75 : 0.85;
+            
+            const box = document.getElementById('avatarContainer');
+            msg.onstart = () => box.classList.add('speaking');
+            msg.onend = () => box.classList.remove('speaking');
+            synth.speak(msg);
+        }
+
+        // --- 🎙️ 3. MIC & GRAPH LOGIC ---
         async function toggleMic(on) {
+            const visualizer = document.getElementById('userVisualizer');
             if (on) {
                 try {
+                    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    if (audioCtx.state === 'suspended') await audioCtx.resume();
                     stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                    startVisualizer(stream);
+                    analyser = audioCtx.createAnalyser();
+                    const source = audioCtx.createMediaStreamSource(stream);
+                    source.connect(analyser);
                     if (recognition) {
                         recognition.start();
                         recognition.onresult = (e) => {
                             let t = '';
                             for (let i = e.resultIndex; i < e.results.length; i++) t += e.results[i][0].transcript;
                             document.getElementById('answerArea').value = t;
-                            validateAnswer();
+                            validate();
                         };
                     }
                     state.isRecording = true;
                     document.getElementById('startBtn').style.display = 'none';
                     document.getElementById('stopBtn').style.display = 'block';
-                } catch (err) { alert("Mic Access Required."); }
+                    visualizer.style.display = 'block';
+                    draw();
+                } catch (err) { alert("Mic required."); }
             } else {
                 if (stream) stream.getTracks().forEach(t => t.stop());
                 if (recognition) recognition.stop();
                 state.isRecording = false;
                 document.getElementById('startBtn').style.display = 'block';
                 document.getElementById('stopBtn').style.display = 'none';
+                visualizer.style.display = 'none';
             }
-        }
-
-        function initCanvas() {
-            canvas = document.getElementById('visualizer');
-            canvasCtx = canvas.getContext('2d');
-        }
-
-        function startVisualizer(stream) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            analyser = audioCtx.createAnalyser();
-            const source = audioCtx.createMediaStreamSource(stream);
-            source.connect(analyser);
-            analyser.fftSize = 64;
-            dataArray = new Uint8Array(analyser.frequencyBinCount);
-            draw();
         }
 
         function draw() {
             if (!state.isRecording) return;
             requestAnimationFrame(draw);
+            analyser.fftSize = 64;
+            const dataArray = new Uint8Array(analyser.frequencyBinCount);
             analyser.getByteFrequencyData(dataArray);
             canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-            const barWidth = (canvas.width / dataArray.length) * 2;
-            let x = 0;
-            for (let i = 0; i < dataArray.length; i++) {
-                const barHeight = dataArray[i] / 4;
-                const gradient = canvasCtx.createLinearGradient(0, 0, 0, canvas.height);
-                gradient.addColorStop(0, '#6366f1');
-                gradient.addColorStop(1, '#a5b4fc');
-                canvasCtx.fillStyle = gradient;
-                canvasCtx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-                x += barWidth + 2;
+            const centerX = canvas.width / 2;
+            for (let i = 0; i < dataArray.length / 2; i++) {
+                const barHeight = (dataArray[i] / 255) * canvas.height;
+                canvasCtx.fillStyle = '#6366f1';
+                canvasCtx.fillRect(centerX + (i * 7), (canvas.height - barHeight)/2, 4, barHeight);
+                canvasCtx.fillRect(centerX - (i * 7), (canvas.height - barHeight)/2, 4, barHeight);
             }
         }
 
-        function validateAnswer() {
-            const val = document.getElementById('answerArea').value.trim();
-            document.getElementById('submitBtn').disabled = val.length < 8;
+        function validate() {
+            document.getElementById('submitBtn').disabled = document.getElementById('answerArea').value.trim().length < 8;
         }
 
         function handleSubmit() {
             const q = state.questions[state.currentIndex];
-            state.responses.push({
-                question: q.question, userAnswer: document.getElementById('answerArea').value, 
-                earned_score: 1, max_score: q.max_score
+            state.responses.push({ 
+                question: q.question, 
+                userAnswer: document.getElementById('answerArea').value,
+                keywords: q.keywords,
+                expected: q.answer
             });
-            if (state.currentIndex < state.questions.length - 1) {
-                state.currentIndex++; renderQuestion();
-            } else {
-                completeSession();
+            if (state.currentIndex < state.questions.length - 1) { 
+                state.currentIndex++; 
+                renderQuestion(); 
+            } else { 
+                finish(); 
             }
         }
 
         function handleSkip() { 
-            state.responses.push({ userAnswer: "SKIPPED", earned_score: 0 });
-            if (state.currentIndex < state.questions.length - 1) {
-                state.currentIndex++; renderQuestion();
-            } else {
-                completeSession();
-            }
+            const q = state.questions[state.currentIndex];
+            state.responses.push({ userAnswer: "SKIPPED", question: q.question, keywords: q.keywords, expected: q.answer });
+            if (state.currentIndex < state.questions.length - 1) { state.currentIndex++; renderQuestion(); }
+            else { finish(); }
         }
 
         function startTimer() {
-            const el = document.getElementById('timer');
-            const interval = setInterval(() => {
-                state.timer--;
-                let m = Math.floor(state.timer/60), s = state.timer%60;
-                el.innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
-                
-                if(state.timer <= 60) el.classList.add('timer-low');
-                
-                if(state.timer <= 0) {
-                    clearInterval(interval);
-                    completeSession();
+            setInterval(() => {
+                if(state.timer > 0) {
+                    state.timer--;
+                    let m = Math.floor(state.timer/60), s = state.timer%60;
+                    document.getElementById('timer').innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
+                } else {
+                    finish();
                 }
             }, 1000);
         }
 
-        function completeSession() {
+        function finish() {
             sessionStorage.setItem("interview_results", JSON.stringify(state.responses));
             window.location.href = "result.html";
         }
 
-        function confirmExit() { if(confirm("Terminate Neural Session? Data will be purged.")) window.location.href = "main.html"; }
+        function confirmExit() { if(confirm("End Session?")) window.location.href = "main.html"; }
     </script>
 </body>
 </html>
