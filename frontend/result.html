@@ -1,74 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Audit | MockPrep Pro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1; --primary-glow: rgba(99, 102, 241, 0.4);
-            --bg: #070b14; --glass: rgba(15, 23, 42, 0.85);
-            --success: #10b981; --warning: #f59e0b; --danger: #f43f5e;
-            --text-main: #f8fafc; --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.08);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --bg: #070b14;
+            --glass: rgba(15, 23, 42, 0.85);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #f43f5e;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; overflow-x: hidden; padding-bottom: 80px; }
-        #matrixBg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.12; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        #matrixBg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.12;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
 
         /* --- DASHBOARD HERO --- */
-        .hero-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; margin-bottom: 4rem; }
-        .overall-card {
-            background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border);
-            border-radius: 32px; padding: 3rem; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
-        .score-num { font-size: 5.5rem; font-weight: 800; color: #fff; letter-spacing: -4px; }
-        
+
+        .overall-card {
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .score-num {
+            font-size: 5.5rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -4px;
+        }
+
         /* --- METRICS GRID --- */
-        .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-        .m-box { background: var(--glass); border: 1px solid var(--border); padding: 1.5rem; border-radius: 20px; backdrop-filter: blur(10px); }
-        .m-header { display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px; }
-        .m-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; position: relative; }
-        .m-fill { position: absolute; height: 100%; width: 0; border-radius: 10px; transition: width 2s cubic-bezier(0.19, 1, 0.22, 1); }
+        .m-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .m-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .m-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .m-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .m-fill {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            border-radius: 10px;
+            transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
 
         /* --- AUDIT CARDS --- */
         .audit-card {
-            background: var(--glass); border: 1px solid var(--border); border-radius: 28px;
-            padding: 2.5rem; margin-bottom: 2.5rem; backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(20px);
             animation: slideUp 0.6s ease-out both;
         }
-        .matrix-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
-        .matrix-title { font-size: 1.2rem; font-weight: 800; max-width: 75%; }
 
-        .pane-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .pane-label { font-size: 0.65rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
-        .pane-content { 
-            background: rgba(0,0,0,0.3); border: 1px solid var(--border); 
-            padding: 1.5rem; border-radius: 18px; font-size: 0.95rem; min-height: 120px; color: #cbd5e1;
+        .matrix-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .matrix-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            max-width: 75%;
+        }
+
+        .pane-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .pane-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pane-content {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            min-height: 120px;
+            color: #cbd5e1;
         }
 
         /* --- PILLS & BADGES --- */
-        .kw-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
-        .pill { padding: 6px 14px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; font-family: 'Fira Code', monospace; display: flex; align-items: center; gap: 6px; border: 1px solid transparent; }
-        .kw-hit { background: rgba(16, 185, 129, 0.1); color: var(--success); border-color: var(--success); }
-        .kw-miss { background: rgba(244, 63, 94, 0.1); color: var(--danger); border-color: var(--danger); opacity: 0.6; }
-        .kw-title { background: rgba(255, 255, 255, 0.05); color: var(--text-dim); border-color: var(--border); opacity: 0.4; }
-        
-        .metrics-pill {
-            margin-top: 20px; padding: 10px 18px; border-radius: 12px;
-            background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--primary);
-            font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;
+        .kw-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
         }
 
-        .btn-primary { background: var(--primary); color: white; padding: 18px 45px; border-radius: 16px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.4s; text-transform: uppercase; }
-        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 40px var(--primary-glow); }
+        .pill {
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            font-family: 'Fira Code', monospace;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
 
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 850px) { .hero-section, .pane-grid { grid-template-columns: 1fr; } }
+        .kw-hit {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .kw-miss {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--danger);
+            border-color: var(--danger);
+            opacity: 0.6;
+        }
+
+        .metrics-pill {
+            margin-top: 20px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px var(--primary-glow);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 850px) {
+
+            .hero-section,
+            .pane-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <canvas id="matrixBg"></canvas>
@@ -76,37 +267,46 @@
     <div class="container">
         <section class="hero-section">
             <div class="overall-card">
-                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px;">INTELLIGENCE_REPORT</div>
+                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px;">
+                    INTELLIGENCE_AUDIT</div>
                 <div class="score-num" id="mainScore">0%</div>
                 <div id="statusTag" style="font-weight: 800; text-transform: uppercase;">CALIBRATING...</div>
-                <div id="verdict" style="font-family: 'Fira Code'; font-size: 0.8rem; color: var(--primary); margin-top: 15px;"></div>
             </div>
 
             <div class="m-grid">
                 <div class="m-box">
-                    <div class="m-header"><span>Technical Logic</span><span id="techVal">0%</span></div>
-                    <div class="m-bar"><div id="techBar" class="m-fill" style="background: var(--primary)"></div></div>
+                    <div class="m-header"><span>Technical Sync</span><span id="techVal">0%</span></div>
+                    <div class="m-bar">
+                        <div id="techBar" class="m-fill" style="background: var(--primary)"></div>
+                    </div>
                 </div>
                 <div class="m-box">
-                    <div class="m-header"><span>Posture & Gestures</span><span id="posVal">0%</span></div>
-                    <div class="m-bar"><div id="posBar" class="m-fill" style="background: var(--success)"></div></div>
+                    <div class="m-header"><span>Posture Compliance</span><span id="posVal">0%</span></div>
+                    <div class="m-bar">
+                        <div id="posBar" class="m-fill" style="background: var(--success)"></div>
+                    </div>
                 </div>
                 <div class="m-box">
                     <div class="m-header"><span>Confidence Level</span><span id="confVal">0%</span></div>
-                    <div class="m-bar"><div id="confBar" class="m-fill" style="background: var(--warning)"></div></div>
+                    <div class="m-bar">
+                        <div id="confBar" class="m-fill" style="background: var(--warning)"></div>
+                    </div>
                 </div>
                 <div class="m-box">
-                    <div class="m-header"><span>Semantic Sync</span><span id="semVal">0%</span></div>
-                    <div class="m-bar"><div id="semBar" class="m-fill" style="background: var(--danger)"></div></div>
+                    <div class="m-header"><span>Concept Density</span><span id="denVal">0%</span></div>
+                    <div class="m-bar">
+                        <div id="denBar" class="m-fill" style="background: var(--danger)"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <h2 style="margin-bottom: 2rem; font-weight: 800;">Question <span style="color: var(--primary)">Audit</span> Comparison</h2>
+        <h2 style="margin-bottom: 2rem; font-weight: 800;">Question <span style="color: var(--primary)">Deep-Dive</span>
+        </h2>
         <div id="auditContainer"></div>
 
         <div style="text-align: center; margin-top: 4rem;">
-            <a href="selection.html" class="btn-primary">New Simulation_</a>
+            <a href="selection.html" class="btn-primary">New Session_</a>
         </div>
     </div>
 
@@ -115,56 +315,55 @@
             const raw = sessionStorage.getItem('interview_results');
             if (!raw) { window.location.href = 'main.html'; return; }
             const data = JSON.parse(raw);
-            evaluateNeural(data);
+            processAudit(data);
             initMatrix();
         });
 
-        function evaluateNeural(results) {
+        function processAudit(results) {
             const container = document.getElementById('auditContainer');
             let totalLogic = 0;
             let totalPosture = 0;
 
             results.forEach((res, i) => {
-                const questionText = res.question.toLowerCase();
-                const userText = (res.userAnswer || "").toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, " ");
-                const userWords = userText.split(/\s+/);
-                const rawKeywords = res.keywords || [];
-                const expected = res.expected || "Reference logic unavailable.";
+                const userAnswer = (res.userAnswer || "").toLowerCase().trim();
+                const qText = res.question.toLowerCase();
+                const keywords = res.keywords || [];
 
-                // Filter keywords already in the question
-                const filteredKeywords = rawKeywords.filter(k => !questionText.includes(k.toLowerCase()));
-                const questionKeywords = rawKeywords.filter(k => questionText.includes(k.toLowerCase()));
+                // 1. Garbage Guard: Instant 0 if unrelated text or answer is too short
+                const garbageTriggers = ["dont want", "dont know", "the job", "anyway", "ignore"];
+                const isGarbage = garbageTriggers.some(t => userAnswer.includes(t)) || userAnswer.split(" ").length < 3;
 
-                let found = [];
-                let missed = [];
+                // 2. Echo Filtering: Ignore keywords from the question prompt
+                const techKWs = keywords.filter(k => !qText.includes(k.toLowerCase()));
+                const finalKWs = techKWs.length > 0 ? techKWs : keywords;
 
-                // Repetition check (anti-cheat)
-                const qWords = questionText.split(/\s+/).filter(w => w.length > 3);
-                const matchCount = userWords.filter(w => qWords.includes(w)).length;
-                const repetitionRatio = userWords.length > 0 ? matchCount / userWords.length : 0;
+                let found = [], missed = [];
 
-                // Technical Match Logic
-                if (repetitionRatio < 0.75 && userText.trim().length > 5) {
-                    filteredKeywords.forEach(kw => {
-                        const lowKW = kw.toLowerCase();
-                        const root = lowKW.substring(0, Math.min(lowKW.length, 5));
-                        if (userWords.some(w => w.startsWith(root) || lowKW.includes(w))) found.push(kw);
+                if (!isGarbage) {
+                    finalKWs.forEach(kw => {
+                        // 3. Stemming Matching: 'organiz' root matches 'organize' or 'organizing'
+                        const root = kw.toLowerCase().substring(0, 5);
+                        const isMatched = userAnswer.split(/\s+/).some(word => word.startsWith(root));
+
+                        if (isMatched) found.push(kw);
                         else missed.push(kw);
                     });
-                } else { missed = filteredKeywords; }
+                } else {
+                    missed = finalKWs;
+                }
 
-                const itemLogicScore = filteredKeywords.length > 0 ? Math.round((found.length / filteredKeywords.length) * 100) : 75;
+                const itemLogicScore = isGarbage ? 0 : Math.round((found.length / finalKWs.length) * 100);
                 totalLogic += itemLogicScore;
                 totalPosture += (res.postureScore || 0);
 
-                // Create Card HTML
+                // --- DYNAMIC CARD RENDERING ---
                 const card = document.createElement('div');
                 card.className = 'audit-card';
                 card.style.animationDelay = `${i * 0.15}s`;
                 card.innerHTML = `
                     <div class="matrix-header">
                         <div class="matrix-title">${i + 1}. ${res.question}</div>
-                        <div style="font-family:'Fira Code'; font-weight:700; color:${itemLogicScore > 50 ? 'var(--success)' : 'var(--danger)'}">${itemLogicScore}% SYNC</div>
+                        <div style="color:var(--primary); font-weight:700;">${itemLogicScore}% SYNC</div>
                     </div>
                     <div class="pane-grid">
                         <div class="pane">
@@ -172,70 +371,67 @@
                             <div class="pane-content">${res.userAnswer === "SKIPPED" ? '[BYPASSED]' : res.userAnswer}</div>
                         </div>
                         <div class="pane">
-                            <span class="pane-label">● Expert Neural logic</span>
-                            <div class="pane-content" style="color:var(--success)">${expected}</div>
+                            <span class="pane-label">● Neural Reference</span>
+                            <div class="pane-content" style="color:var(--success)">${res.expected}</div>
                         </div>
                     </div>
                     <div class="kw-container">
                         ${found.map(k => `<span class="pill kw-hit">✓ ${k}</span>`).join('')}
                         ${missed.map(k => `<span class="pill kw-miss">✗ ${k}</span>`).join('')}
-                        ${questionKeywords.map(k => `<span class="pill kw-title">PROMPT: ${k}</span>`).join('')}
                     </div>
                     <div class="metrics-pill" style="border-color: ${res.postureScore > 75 ? 'var(--success)' : 'var(--danger)'}">
-                        <span style="color: var(--text-dim)">CAMERA-BASED POSTURE & BEHAVIORAL AUDIT:</span> 
-                        <span style="color: white; font-weight: 800;">${res.postureScore}% COMPLIANCE</span>
+                        <span>BEHAVIORAL AUDIT:</span> <span style="color: white; font-weight: 800;">${res.postureScore}% COMPLIANCE</span>
                     </div>
                 `;
                 container.appendChild(card);
             });
 
-            // Final Averages
-            const count = results.length;
-            const avgLogic = Math.round(totalLogic / count);
-            const avgPos = Math.round(totalPosture / count);
-            const final = Math.round((avgLogic * 0.6) + (avgPos * 0.4));
-
-            animateDashboard(final, avgLogic, avgPos);
+            // Final Totals
+            const avgLogic = Math.round(totalLogic / results.length);
+            const avgPos = Math.round(totalPosture / results.length);
+            animateDashboard(avgLogic, avgPos);
         }
 
-        function animateDashboard(final, logic, posture) {
+        function animateDashboard(avgLogic, avgPos) {
+            const finalOverall = Math.round((avgLogic * 0.7) + (avgPos * 0.3));
             let curr = 0;
             const el = document.getElementById('mainScore');
             const timer = setInterval(() => {
-                if (curr >= final) clearInterval(timer);
+                if (curr >= finalOverall) clearInterval(timer);
                 else { curr++; el.innerText = curr + "%"; }
             }, 20);
 
-            // Update Bars
-            document.getElementById('techVal').innerText = logic + "%";
-            document.getElementById('techBar').style.width = logic + "%";
-            document.getElementById('posVal').innerText = posture + "%";
-            document.getElementById('posBar').style.width = posture + "%";
-            document.getElementById('confVal').innerText = Math.round((logic + posture) / 2) + "%";
-            document.getElementById('confBar').style.width = Math.round((logic + posture) / 2) + "%";
-            document.getElementById('semVal').innerText = logic + "%";
-            document.getElementById('semBar').style.width = logic + "%";
+            // Update Progress Bars
+            document.getElementById('techVal').innerText = avgLogic + "%";
+            document.getElementById('techBar').style.width = avgLogic + "%";
+            document.getElementById('posVal').innerText = avgPos + "%";
+            document.getElementById('posBar').style.width = avgPos + "%";
+            document.getElementById('confVal').innerText = Math.round((avgLogic + avgPos) / 2) + "%";
+            document.getElementById('confBar').style.width = Math.round((avgLogic + avgPos) / 2) + "%";
+            document.getElementById('denVal').innerText = Math.max(0, avgLogic - 10) + "%";
+            document.getElementById('denBar').style.width = Math.max(0, avgLogic - 10) + "%";
 
             const tag = document.getElementById('statusTag');
-            if (final >= 80) { tag.innerText = "Elite Sync Level"; tag.style.color = "var(--success)"; }
-            else if (final >= 50) { tag.innerText = "Qualified Match"; tag.style.color = "var(--warning)"; }
-            else { tag.innerText = "Re-Sync Required"; tag.style.color = "var(--danger)"; }
+            if (finalOverall >= 80) { tag.innerText = "Elite Sync Level"; tag.style.color = "var(--success)"; }
+            else if (finalOverall >= 50) { tag.innerText = "Qualified Match"; tag.style.color = "var(--warning)"; }
+            else { tag.innerText = "Sync Failure"; tag.style.color = "var(--danger)"; }
         }
 
         function initMatrix() {
             const canvas = document.getElementById('matrixBg'), ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-            const drops = Array(Math.floor(canvas.width/16)).fill(1);
+            const drops = Array(Math.floor(canvas.width / 16)).fill(1);
             setInterval(() => {
                 ctx.fillStyle = "rgba(7, 11, 20, 0.1)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = "#334155"; ctx.font = "16px monospace";
                 drops.forEach((y, i) => {
-                    ctx.fillText(Math.random() > 0.5 ? "0" : "1", i*16, y*16);
-                    if(y*16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    ctx.fillText(Math.random() > 0.5 ? "0" : "1", i * 16, y * 16);
+                    if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
                     drops[i]++;
                 });
             }, 33);
         }
     </script>
 </body>
+
 </html>
