@@ -1,90 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Session | MockPrep Pro</title>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
 
     <script>
-        (function() {
+        (function () {
             if (sessionStorage.getItem('isLoggedIn') !== 'true') {
                 window.location.href = "login.html";
             }
         })();
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --bg-body: #020617; --bg-card: #0f172a; --primary: #6366f1;
-            --accent: #10b981; --danger: #f43f5e; --text-main: #f8fafc;
-            --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.08);
+            --bg-body: #020617;
+            --bg-card: #0f172a;
+            --primary: #6366f1;
+            --accent: #10b981;
+            --danger: #f43f5e;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
             --neon-glow: rgba(99, 102, 241, 0.4);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
-        #matrixBg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.12; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #matrixBg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.12;
+        }
 
         /* --- TERMINAL REDIRECT LOCK --- */
         #terminalOverlay {
-            position: fixed; inset: 0; background: var(--bg-body); z-index: 10000;
-            display: none; flex-direction: column; align-items: center; justify-content: center;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-body);
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        header { height: 60px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; z-index: 100; }
-        .progress-container { width: 40%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; }
-        #progressBar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--primary), #818cf8); transition: 0.6s; }
+        header {
+            height: 60px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+            z-index: 100;
+        }
 
-        main { display: grid; grid-template-columns: 460px 1fr; flex: 1; overflow: hidden; }
-        
+        .progress-container {
+            width: 40%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        #progressBar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #818cf8);
+            transition: 0.6s;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            flex: 1;
+            overflow: hidden;
+        }
+
         /* --- CAMERA & QUESTION PANEL --- */
-        .left-panel { background: rgba(15, 23, 42, 0.7); border-right: 1px solid var(--border); padding: 2rem; overflow-y: auto; backdrop-filter: blur(10px); }
-        .camera-box { width: 100%; height: 260px; background: #000; border-radius: 24px; border: 1px solid var(--border); overflow: hidden; position: relative; margin-bottom: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        #userCam { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
-        
-        .pose-overlay { position: absolute; top: 15px; left: 15px; padding: 6px 14px; border-radius: 100px; font-size: 0.65rem; font-weight: 800; background: rgba(0,0,0,0.7); display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); }
-        .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-        .dot.warning { background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+        .left-panel {
+            background: rgba(15, 23, 42, 0.7);
+            border-right: 1px solid var(--border);
+            padding: 2rem;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .camera-box {
+            width: 100%;
+            height: 260px;
+            background: #000;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        #userCam {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scaleX(-1);
+        }
+
+        .pose-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .dot.warning {
+            background: var(--danger);
+            box-shadow: 0 0 10px var(--danger);
+        }
 
         /* --- RESPONSE WORKSPACE --- */
-        .workspace-panel { padding: 1.5rem; display: flex; flex-direction: column; background: #070b14; position: relative; }
-        .editor-container { flex: 1; background: rgba(30, 41, 59, 0.2); border-radius: 28px; border: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; backdrop-filter: blur(20px); }
-        .editor-header { background: rgba(30, 41, 59, 0.4); padding: 18px 28px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
-        #userVisualizer { width: 120px; height: 40px; display: none; }
-        textarea { flex: 1; background: transparent; border: none; color: #e2e8f0; padding: 35px; font-size: 1.15rem; resize: none; outline: none; line-height: 1.7; }
+        .workspace-panel {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            background: #070b14;
+            position: relative;
+        }
+
+        .editor-container {
+            flex: 1;
+            background: rgba(30, 41, 59, 0.2);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .editor-header {
+            background: rgba(30, 41, 59, 0.4);
+            padding: 18px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #userVisualizer {
+            width: 120px;
+            height: 40px;
+            display: none;
+        }
+
+        textarea {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #e2e8f0;
+            padding: 35px;
+            font-size: 1.15rem;
+            resize: none;
+            outline: none;
+            line-height: 1.7;
+        }
 
         /* --- AI AVATAR RIPPLES --- */
-        .avatar-wrapper { position: absolute; bottom: 80px; right: 40px; width: 240px; height: 240px; display: flex; align-items: center; justify-content: center; }
-        .ripple-container { position: absolute; width: 100%; height: 100%; pointer-events: none; }
-        .ripple { position: absolute; border: 2px solid var(--primary); border-radius: 50%; opacity: 0; width: 200px; height: 200px; left: 20px; top: 20px; }
-        .speaking .ripple { animation: smoothRipple 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32); }
-        @keyframes smoothRipple { 0% { transform: scale(1); opacity: 0.8; border-width: 4px; } 100% { transform: scale(1.6); opacity: 0; border-width: 1px; } }
+        .avatar-wrapper {
+            position: absolute;
+            bottom: 80px;
+            right: 40px;
+            width: 240px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        .avatar-box { width: 200px; height: 200px; border-radius: 50%; border: 4px solid var(--bg-body); overflow: hidden; z-index: 5; box-shadow: 0 0 40px rgba(0,0,0,0.6); }
-        .avatar-img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .action-bar { height: 90px; background: var(--bg-card); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; z-index: 100; }
-        .btn { padding: 14px 35px; border-radius: 14px; font-weight: 800; cursor: pointer; border: none; transition: 0.3s; }
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 20px var(--primary-glow); }
-        .btn-primary:disabled { opacity: 0.2; cursor: not-allowed; }
+        .ripple-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .ripple {
+            position: absolute;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            width: 200px;
+            height: 200px;
+            left: 20px;
+            top: 20px;
+        }
+
+        .speaking .ripple {
+            animation: smoothRipple 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+        }
+
+        @keyframes smoothRipple {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+                border-width: 4px;
+            }
+
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+                border-width: 1px;
+            }
+        }
+
+        .avatar-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid var(--bg-body);
+            overflow: hidden;
+            z-index: 5;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .action-bar {
+            height: 90px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4rem;
+            z-index: 100;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            border-radius: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 20px var(--primary-glow);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
     </style>
 </head>
+
 <body>
 
     <div id="terminalOverlay">
-        <div style="font-family: 'Fira Code'; color: var(--primary); font-size: 1.5rem; margin-bottom: 20px;">[ SESSION_COMPLETE ]</div>
+        <div style="font-family: 'Fira Code'; color: var(--primary); font-size: 1.5rem; margin-bottom: 20px;">[
+            SESSION_COMPLETE ]</div>
         <p style="color: var(--text-dim);">Analyzing Behavior and Logic Patterns...</p>
     </div>
 
     <canvas id="matrixBg"></canvas>
 
     <header>
-        <div style="font-weight: 800; color: var(--accent); font-size: 0.75rem; letter-spacing: 2px;">● NEURAL FEED_ACTIVE</div>
-        <div class="progress-container"><div id="progressBar"></div></div>
+        <div style="font-weight: 800; color: var(--accent); font-size: 0.75rem; letter-spacing: 2px;">● NEURAL
+            FEED_ACTIVE</div>
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
         <div id="timer" style="font-family: 'Fira Code'; font-weight: 700;">08:00</div>
     </header>
 
@@ -92,12 +327,17 @@
         <section class="left-panel">
             <div class="camera-box">
                 <video id="userCam" autoplay playsinline muted></video>
-                <div class="pose-overlay"><div id="poseDot" class="dot"></div><span id="poseLabel">MONITORING...</span></div>
+                <div class="pose-overlay">
+                    <div id="poseDot" class="dot"></div><span id="poseLabel">MONITORING...</span>
+                </div>
             </div>
             <div class="question-content">
-                <div style="margin-bottom: 10px;"><span id="qNum" class="badge" style="background:rgba(255,255,255,0.05); color:var(--text-dim); padding: 4px 10px; border-radius: 6px; font-size: 0.7rem;">STEP 01</span></div>
+                <div style="margin-bottom: 10px;"><span id="qNum" class="badge"
+                        style="background:rgba(255,255,255,0.05); color:var(--text-dim); padding: 4px 10px; border-radius: 6px; font-size: 0.7rem;">STEP
+                        01</span></div>
                 <h2 id="qTitle" style="margin-bottom: 1rem; font-weight: 800;">Initiating...</h2>
-                <p id="qDesc" style="color: var(--text-dim); font-size: 0.9rem; line-height: 1.6;">Maintain posture and clear articulation for high scores.</p>
+                <p id="qDesc" style="color: var(--text-dim); font-size: 0.9rem; line-height: 1.6;">Maintain posture and
+                    clear articulation for high scores.</p>
             </div>
         </section>
 
@@ -107,23 +347,32 @@
                     <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim);">COMMAND CONSOLE</span>
                     <div style="display:flex; align-items:center; gap:15px;">
                         <canvas id="userVisualizer"></canvas>
-                        <button id="startBtn" class="btn" style="background:var(--accent); color:white; font-size:0.7rem; padding: 8px 16px;" onclick="toggleMic(true)">Start Mic</button>
-                        <button id="stopBtn" class="btn" style="background:var(--danger); color:white; font-size:0.7rem; padding: 8px 16px; display:none;" onclick="toggleMic(false)">Stop Mic</button>
+                        <button id="startBtn" class="btn"
+                            style="background:var(--accent); color:white; font-size:0.7rem; padding: 8px 16px;"
+                            onclick="toggleMic(true)">Start Mic</button>
+                        <button id="stopBtn" class="btn"
+                            style="background:var(--danger); color:white; font-size:0.7rem; padding: 8px 16px; display:none;"
+                            onclick="toggleMic(false)">Stop Mic</button>
                     </div>
                 </div>
                 <textarea id="answerArea" oninput="validate()" placeholder="Interviewer is speaking..."></textarea>
             </div>
             <div class="avatar-wrapper" id="avatarContainer">
-                <div class="ripple-container"><div class="ripple"></div><div class="ripple"></div></div>
+                <div class="ripple-container">
+                    <div class="ripple"></div>
+                    <div class="ripple"></div>
+                </div>
                 <div class="avatar-box"><img id="avatarImg" class="avatar-img" src="" alt="AI"></div>
             </div>
         </section>
     </main>
 
     <footer class="action-bar">
-        <button class="btn" style="background:transparent; color:var(--text-dim); border:1px solid var(--border)" onclick="confirmExit()">Abort Session</button>
+        <button class="btn" style="background:transparent; color:var(--text-dim); border:1px solid var(--border)"
+            onclick="confirmExit()">Abort Session</button>
         <div style="display:flex; gap:1.5rem">
-            <button class="btn" style="background:transparent; color:white; border:1px solid var(--border)" onclick="handleSkip()">Skip</button>
+            <button class="btn" style="background:transparent; color:white; border:1px solid var(--border)"
+                onclick="handleSkip()">Skip</button>
             <button class="btn btn-primary" id="submitBtn" onclick="handleSubmit()" disabled>Submit Response</button>
         </div>
     </footer>
@@ -160,7 +409,7 @@
             initMatrix(); updateAvatar(); initSession(); startTimer();
             canvas = document.getElementById('userVisualizer'); canvasCtx = canvas.getContext('2d');
             const camVideo = document.getElementById('userCam');
-            camera = new Camera(camVideo, { onFrame: async () => { if(!state.isSessionDead) await pose.send({image: camVideo}); }, width: 640, height: 480 });
+            camera = new Camera(camVideo, { onFrame: async () => { if (!state.isSessionDead) await pose.send({ image: camVideo }); }, width: 640, height: 480 });
             camera.start();
         });
 
@@ -170,7 +419,7 @@
                 const data = await res.json();
                 state.questions = data.sort(() => 0.5 - Math.random()).slice(0, 10);
             } catch (e) {
-                state.questions = [{question: "Explain data structures.", keywords: ["organizing", "storing"], answer: "A way to organize and store data.", type: "theory"}];
+                state.questions = [{ question: "Explain data structures.", keywords: ["organizing", "storing"], answer: "A way to organize and store data.", type: "theory" }];
             }
             renderQuestion();
         }
@@ -181,11 +430,11 @@
             toggleMic(false);
             document.getElementById('answerArea').value = "";
             document.getElementById('submitBtn').disabled = true;
-            document.getElementById('qNum').innerText = `STEP 0${state.currentIndex+1}`;
+            document.getElementById('qNum').innerText = `STEP 0${state.currentIndex + 1}`;
             document.getElementById('qTitle').innerText = q.question;
-            document.getElementById('progressBar').style.width = `${((state.currentIndex+1)/state.questions.length)*100}%`;
+            document.getElementById('progressBar').style.width = `${((state.currentIndex + 1) / state.questions.length) * 100}%`;
             state.currentPostureScore = 100;
-            if(q.type.toLowerCase() === 'theory') speak(q.question);
+            if (q.type.toLowerCase() === 'theory') speak(q.question);
         }
 
         function handleSubmit() {
@@ -195,7 +444,7 @@
                 question: q.question, userAnswer: document.getElementById('answerArea').value,
                 keywords: q.keywords, expected: q.answer, postureScore: Math.round(state.currentPostureScore)
             });
-            
+
             // Loop Guard: Check if index is at the final question (9 for 10 q's)
             if (state.currentIndex >= state.questions.length - 1) {
                 finalizeAndRedirect();
@@ -216,7 +465,7 @@
         function finalizeAndRedirect() {
             state.isSessionDead = true; // Kills frame processing immediately
             document.getElementById('terminalOverlay').style.display = 'flex';
-            
+
             // hardware shutdown
             synth.cancel();
             if (camera) camera.stop();
@@ -228,7 +477,7 @@
             state.currentIndex = -1;
 
             sessionStorage.setItem("interview_results", JSON.stringify(state.responses));
-            
+
             // Force history replace redirect
             setTimeout(() => {
                 window.location.replace("result.html");
@@ -267,19 +516,20 @@
             if (!state.isRecording || state.isSessionDead) return;
             requestAnimationFrame(draw); analyser.fftSize = 64; const data = new Uint8Array(analyser.frequencyBinCount); analyser.getByteFrequencyData(data);
             canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < data.length/2; i++) {
-                const barH = (data[i]/255) * canvas.height; canvasCtx.fillStyle = '#6366f1';
-                canvasCtx.fillRect(canvas.width/2 + (i*7), (canvas.height-barH)/2, 4, barH);
-                canvasCtx.fillRect(canvas.width/2 - (i*7), (canvas.height-barH)/2, 4, barH);
+            for (let i = 0; i < data.length / 2; i++) {
+                const barH = (data[i] / 255) * canvas.height; canvasCtx.fillStyle = '#6366f1';
+                canvasCtx.fillRect(canvas.width / 2 + (i * 7), (canvas.height - barH) / 2, 4, barH);
+                canvasCtx.fillRect(canvas.width / 2 - (i * 7), (canvas.height - barH) / 2, 4, barH);
             }
         }
 
-        function speak(text) { if(state.isSessionDead) return; synth.cancel(); const msg = new SpeechSynthesisUtterance(text); const voices = synth.getVoices(); msg.voice = voices.find(v => v.name.includes(state.persona === 'Lady' ? 'Female' : 'Male')) || voices[0]; const box = document.getElementById('avatarContainer'); msg.onstart = () => box.classList.add('speaking'); msg.onend = () => box.classList.remove('speaking'); synth.speak(msg); }
+        function speak(text) { if (state.isSessionDead) return; synth.cancel(); const msg = new SpeechSynthesisUtterance(text); const voices = synth.getVoices(); msg.voice = voices.find(v => v.name.includes(state.persona === 'Lady' ? 'Female' : 'Male')) || voices[0]; const box = document.getElementById('avatarContainer'); msg.onstart = () => box.classList.add('speaking'); msg.onend = () => box.classList.remove('speaking'); synth.speak(msg); }
         function validate() { document.getElementById('submitBtn').disabled = document.getElementById('answerArea').value.trim().length < 8; }
-        function startTimer() { timerInterval = setInterval(() => { if(!state.isSessionDead) { state.timer--; let m = Math.floor(state.timer/60), s = state.timer%60; document.getElementById('timer').innerText = `${m}:${s < 10 ? '0' : ''}${s}`; if(state.timer <= 0) finalizeAndRedirect(); } }, 1000); }
+        function startTimer() { timerInterval = setInterval(() => { if (!state.isSessionDead) { state.timer--; let m = Math.floor(state.timer / 60), s = state.timer % 60; document.getElementById('timer').innerText = `${m}:${s < 10 ? '0' : ''}${s}`; if (state.timer <= 0) finalizeAndRedirect(); } }, 1000); }
         function updateAvatar() { document.getElementById('avatarImg').src = state.persona === 'Lady' ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" : "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600"; }
-        function initMatrix() { const c = document.getElementById('matrixBg'), ctx = c.getContext('2d'); c.width = window.innerWidth; c.height = window.innerHeight; const drops = Array(Math.floor(c.width/16)).fill(1); setInterval(() => { ctx.fillStyle = "rgba(2, 6, 23, 0.1)"; ctx.fillRect(0, 0, c.width, c.height); ctx.fillStyle = "#334155"; drops.forEach((y, i) => { ctx.fillText(Math.random() > 0.5 ? "0" : "1", i*16, y*16); if(y*16 > c.height && Math.random() > 0.975) drops[i] = 0; drops[i]++; }); }, 33); }
-        function confirmExit() { if(confirm("Terminate Session? Data will be lost.")) window.location.href = "main.html"; }
+        function initMatrix() { const c = document.getElementById('matrixBg'), ctx = c.getContext('2d'); c.width = window.innerWidth; c.height = window.innerHeight; const drops = Array(Math.floor(c.width / 16)).fill(1); setInterval(() => { ctx.fillStyle = "rgba(2, 6, 23, 0.1)"; ctx.fillRect(0, 0, c.width, c.height); ctx.fillStyle = "#334155"; drops.forEach((y, i) => { ctx.fillText(Math.random() > 0.5 ? "0" : "1", i * 16, y * 16); if (y * 16 > c.height && Math.random() > 0.975) drops[i] = 0; drops[i]++; }); }, 33); }
+        function confirmExit() { if (confirm("Terminate Session? Data will be lost.")) window.location.href = "main.html"; }
     </script>
 </body>
+
 </html>

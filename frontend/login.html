@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication | MockPrep AI Pro</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --primary: #6366f1;
             --primary-glow: rgba(99, 102, 241, 0.5);
-            --bg-dark: #070b14;
+            --bg-dark: #020617;
             --glass: rgba(15, 23, 42, 0.8);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-main: #f8fafc;
@@ -19,7 +22,12 @@
             --error: #fb7185;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -32,44 +40,41 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* --- MATRIX BACKGROUND --- */
         #codeCanvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.12;
         }
 
-        /* --- LOGIN CARD WITH ENHANCED GLOW --- */
         .login-card {
             background: var(--glass);
             backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
             padding: 3.5rem 3rem;
-            border-radius: 24px;
+            border-radius: 28px;
             width: 90%;
             max-width: 460px;
             text-align: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Enhanced Neon Glow on Hover */
-        .login-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 0 30px 2px rgba(99, 102, 241, 0.25), 
-                        0 30px 60px -12px rgba(0, 0, 0, 0.8);
-        }
-
         @keyframes cardEntrance {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* --- BLINKING BRAND BADGE --- */
         .logo-badge {
             display: inline-flex;
             align-items: center;
@@ -79,19 +84,28 @@
             padding: 6px 16px;
             border-radius: 20px;
             margin-bottom: 1.5rem;
-            animation: badgePulse 2s infinite ease-in-out; /* Blinking Animation */
+            animation: badgePulse 2s infinite ease-in-out;
         }
 
         @keyframes badgePulse {
-            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0px var(--primary-glow); }
-            50% { opacity: 0.6; transform: scale(0.98); box-shadow: 0 0 10px var(--primary-glow); }
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0px var(--primary-glow);
+            }
+
+            50% {
+                transform: scale(0.98);
+                box-shadow: 0 0 15px var(--primary-glow);
+            }
         }
 
         .logo-badge span {
             font-family: 'Fira Code', monospace;
             color: var(--primary);
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
 
@@ -109,66 +123,43 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- TYPEWRITER --- */
         .typing-container {
             font-family: 'Fira Code', monospace;
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             min-height: 1.5em;
             margin-bottom: 2.5rem;
         }
-        
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1em;
-            background-color: var(--primary);
-            animation: cursorBlink 1s infinite;
-            margin-left: 4px;
-            vertical-align: middle;
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.5rem;
         }
 
-        /* --- FORM ELEMENTS --- */
-        .form-group { text-align: left; margin-bottom: 1.5rem; }
-        label { 
-            display: block; 
-            font-size: 0.75rem; 
-            font-weight: 600; 
-            margin-bottom: 8px; 
-            color: var(--text-dim); 
+        label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dim);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: 'Fira Code', monospace;
+            letter-spacing: 1.5px;
         }
-
-        .input-wrapper { position: relative; }
 
         input {
             width: 100%;
             padding: 14px 16px;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             color: white;
             font-size: 1rem;
-            transition: all 0.2s ease;
+            transition: 0.2s;
         }
 
         input:focus {
             border-color: var(--primary);
-            background: rgba(99, 102, 241, 0.05);
             box-shadow: 0 0 0 4px var(--primary-glow);
-        }
-
-        .toggle-btn {
-            position: absolute;
-            right: 14px; top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-dim);
-            font-size: 0.7rem;
-            font-weight: 700;
-            cursor: pointer;
-            user-select: none;
         }
 
         .btn-login {
@@ -179,7 +170,7 @@
             border: none;
             border-radius: 12px;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
             transition: 0.3s;
             margin-top: 1rem;
@@ -191,14 +182,14 @@
         }
 
         .btn-login:hover {
-            filter: brightness(1.1);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 25px var(--primary-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--primary-glow);
         }
 
         .loader {
-            width: 18px; height: 18px;
-            border: 2px solid rgba(255,255,255,0.3);
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-top-color: #fff;
             border-radius: 50%;
             display: none;
@@ -207,17 +198,16 @@
 
         #error-msg {
             color: var(--error);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin-top: 1.5rem;
             font-family: 'Fira Code', monospace;
             display: none;
-            padding: 10px;
+            padding: 12px;
             background: rgba(251, 113, 133, 0.1);
             border-radius: 8px;
             border: 1px solid rgba(251, 113, 133, 0.2);
         }
 
-        /* --- ACCESS GRANTED OVERLAY --- */
         #success-overlay {
             position: fixed;
             inset: 0;
@@ -230,85 +220,91 @@
             font-family: 'Fira Code', monospace;
         }
 
-        @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-8px); }
-            75% { transform: translateX(8px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-8px);
+            }
+
+            75% {
+                transform: translateX(8px);
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
     <canvas id="codeCanvas"></canvas>
 
     <div class="login-card" id="loginCard">
         <div class="logo-badge">
-            <span>● MOCKPREP AI PRO</span>
+            <span>● NEURAL GATEWAY</span>
         </div>
-        
+
         <h1>Crack the <span class="gradient-text">Interview</span></h1>
-        
+
         <div class="typing-container">
-            <span id="typewriter"></span><span class="cursor"></span>
+            <span id="typewriter"></span><span class="cursor" style="color: var(--primary);">|</span>
         </div>
 
         <form onsubmit="handleLogin(event)">
             <div class="form-group">
-                <label>Student ID</label>
-                <input type="text" id="username" placeholder="Enter username" required autocomplete="off">
+                <label>Enrollment Number</label>
+                <input type="text" id="enrollment" placeholder="Username" required autocomplete="off">
             </div>
 
             <div class="form-group">
-                <label>Access Code</label>
-                <div class="input-wrapper">
-                    <input type="password" id="password" placeholder="••••" required>
-                    <span class="toggle-btn" onclick="togglePass()">SHOW</span>
-                </div>
+                <label>Date of Birth (DDMMYYYY)</label>
+                <input type="password" id="dob" placeholder="Password" required>
             </div>
 
             <button type="submit" class="btn-login" id="loginBtn">
-                <span id="btnText">Initialize Session</span>
+                <span id="btnText">INITIALIZE_SESSION</span>
                 <div class="loader" id="loader"></div>
             </button>
 
-            <div id="error-msg">[ACCESS_DENIED]: INVALID_CREDENTIALS</div>
+            <div id="error-msg"></div>
         </form>
     </div>
 
     <div id="success-overlay">
-        <div style="color: var(--primary); font-weight: 800; font-size: 1.5rem; letter-spacing: 4px;">ACCESS GRANTED</div>
-        <div style="color: var(--text-dim); margin-top: 12px; font-size: 0.8rem; text-transform: uppercase;">Initializing Neural Interface...</div>
+        <div style="color: var(--primary); font-weight: 800; font-size: 1.5rem; letter-spacing: 4px;">ACCESS GRANTED
+        </div>
+        <div style="color: var(--text-dim); margin-top: 12px; font-size: 0.8rem; text-transform: uppercase;">
+            Synchronizing Neural Track...</div>
     </div>
 
     <script>
         // --- 1. TYPEWRITER ENGINE ---
-        const phrases = [
-            "AI-powered mock interviews.",
-            "Practice Python, Java, & DS.",
-            "Dynamic track for DBMS.",
-            "Real-time lip-sync simulation."
-        ];
-        let phraseIdx = 0, charIdx = 0, isDeleting = false;
-        const typeWriterEl = document.getElementById('typewriter');
+        const phrases = ["Validating enrollment data...", "Interfacing with records...", "MockPrep AI Ready.", "Authentication required."];
+        let pIdx = 0, cIdx = 0, isDeleting = false;
+        const typeEl = document.getElementById('typewriter');
 
         function type() {
-            const current = phrases[phraseIdx];
-            typeWriterEl.innerText = isDeleting ? current.substring(0, charIdx--) : current.substring(0, charIdx++);
-            
+            const current = phrases[pIdx];
+            typeEl.innerText = isDeleting ? current.substring(0, cIdx--) : current.substring(0, cIdx++);
             let speed = isDeleting ? 40 : 70;
-            if (!isDeleting && charIdx === current.length + 1) { speed = 1500; isDeleting = true; }
-            else if (isDeleting && charIdx === 0) { isDeleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; speed = 500; }
-            
+            if (!isDeleting && cIdx === current.length + 1) { speed = 2000; isDeleting = true; }
+            else if (isDeleting && cIdx === 0) { isDeleting = false; pIdx = (pIdx + 1) % phrases.length; speed = 500; }
             setTimeout(type, speed);
         }
 
-        // --- 2. AUTH LOGIC ---
-        function handleLogin(e) {
+        // --- 2. BACKEND API INTEGRATION ---
+        async function handleLogin(e) {
             e.preventDefault();
-            const u = document.getElementById('username').value;
-            const p = document.getElementById('password').value;
+            const enrollment = document.getElementById('enrollment').value;
+            const password = document.getElementById('dob').value;
             const btnText = document.getElementById('btnText');
             const loader = document.getElementById('loader');
             const error = document.getElementById('error-msg');
@@ -319,45 +315,51 @@
             loader.style.display = 'block';
             error.style.display = 'none';
 
-            setTimeout(() => {
-                if (u === "sem4" && p === "sem4") {
+            try {
+                // Request to Flask Server
+                const response = await fetch('http://127.0.0.1:5000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ enrollment, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
                     sessionStorage.setItem('isLoggedIn', 'true');
+                    sessionStorage.setItem('userEnrollment', enrollment);
                     overlay.style.display = 'flex';
-                    setTimeout(() => { window.location.href = 'main.html'; }, 1500);
+                    setTimeout(() => { window.location.href = 'selection.html'; }, 1500);
                 } else {
-                    btnText.style.display = 'block';
-                    loader.style.display = 'none';
-                    error.style.display = 'block';
-                    card.style.animation = 'none';
-                    void card.offsetWidth;
-                    card.style.animation = 'shake 0.4s';
+                    throw new Error(data.message || "Session Initialization Failed");
                 }
-            }, 1000);
+            } catch (err) {
+                btnText.style.display = 'block';
+                loader.style.display = 'none';
+                error.innerText = `[ACCESS_DENIED]: ${err.message.toUpperCase()}`;
+                error.style.display = 'block';
+                card.style.animation = 'none';
+                void card.offsetWidth;
+                card.style.animation = 'shake 0.4s';
+            }
         }
 
-        function togglePass() {
-            const p = document.getElementById('password');
-            const b = document.querySelector('.toggle-btn');
-            p.type = p.type === 'password' ? 'text' : 'password';
-            b.innerText = p.type === 'password' ? 'SHOW' : 'HIDE';
-        }
-
-        // --- 3. MATRIX ENGINE ---
+        // --- 3. MATRIX BACKGROUND ---
         const canvas = document.getElementById('codeCanvas');
         const ctx = canvas.getContext('2d');
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         window.addEventListener('resize', resize);
         resize();
 
-        const chars = "0101<>{}[]/;".split("");
+        const chars = "01".split("");
         const fontSize = 16;
         const columns = canvas.width / fontSize;
         const drops = Array(Math.floor(columns)).fill(1);
 
         function draw() {
-            ctx.fillStyle = "rgba(7, 11, 20, 0.15)";
+            ctx.fillStyle = "rgba(2, 6, 23, 0.15)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#334155"; 
+            ctx.fillStyle = "#1e293b";
             ctx.font = fontSize + "px 'Fira Code'";
             for (let i = 0; i < drops.length; i++) {
                 const char = chars[Math.floor(Math.random() * chars.length)];
@@ -370,4 +372,5 @@
         type();
     </script>
 </body>
+
 </html>

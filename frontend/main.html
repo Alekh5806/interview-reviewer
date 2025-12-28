@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MockPrep Pro | Neural Interview Simulation</title>
-    
+
     <script>
         // --- AUTH GUARD ---
-        (function() {
+        (function () {
             if (sessionStorage.getItem('isLoggedIn') !== 'true') {
                 window.location.href = 'login.html';
             }
         })();
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --primary: #6366f1;
@@ -27,7 +30,11 @@
             --text-dim: #94a3b8;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -44,8 +51,10 @@
         /* --- MATRIX BACKGROUND --- */
         #codeCanvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
             opacity: 0.2;
         }
@@ -53,7 +62,9 @@
         /* --- TOP NAVIGATION --- */
         nav {
             position: absolute;
-            top: 0; left: 0; width: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
             padding: 2rem 3rem;
             display: flex;
             justify-content: space-between;
@@ -72,14 +83,27 @@
         }
 
         .pulse-dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             background: var(--primary);
             border-radius: 50%;
             box-shadow: 0 0 10px var(--primary);
             animation: dotPulse 2s infinite;
         }
 
-        @keyframes dotPulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        @keyframes dotPulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
 
         .btn-logout {
             background: rgba(255, 255, 255, 0.03);
@@ -91,7 +115,11 @@
             font-size: 0.8rem;
             transition: 0.3s;
         }
-        .btn-logout:hover { border-color: var(--danger); color: #ef4444; }
+
+        .btn-logout:hover {
+            border-color: var(--danger);
+            color: #ef4444;
+        }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -103,7 +131,7 @@
 
         .badge-elite {
             display: inline-block;
-            background: linear-gradient(90deg, rgba(99,102,241,0.1), rgba(16,185,129,0.1));
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
             border: 1px solid var(--glass-border);
             padding: 6px 16px;
             border-radius: 100px;
@@ -154,9 +182,23 @@
             backdrop-filter: blur(10px);
             transition: 0.3s;
         }
-        .feat-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .feat-card h3 { font-size: 0.9rem; margin-bottom: 8px; color: #fff; }
-        .feat-card p { font-size: 0.75rem; color: var(--text-dim); line-height: 1.5; }
+
+        .feat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .feat-card h3 {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .feat-card p {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
 
         /* --- CTA --- */
         .btn-main {
@@ -171,7 +213,7 @@
             display: inline-block;
             transition: 0.4s;
             box-shadow: 0 0 30px var(--primary-glow);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             overflow: hidden;
         }
 
@@ -191,11 +233,18 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .features-preview { grid-template-columns: 1fr; padding: 0 2rem; }
+            h1 {
+                font-size: 3rem;
+            }
+
+            .features-preview {
+                grid-template-columns: 1fr;
+                padding: 0 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <canvas id="codeCanvas"></canvas>
@@ -234,11 +283,11 @@
                 <p>Optimized modules for Python, Java, DS, and DBMS tracks.</p>
             </div>
         </div>
-        
+
         <a href="selection.html" class="btn-main">INITIALIZE SIMULATION</a>
     </main>
 
-    
+
 
     <script>
         // --- TYPEWRITER CONFIG ---
@@ -294,4 +343,5 @@
         }
     </script>
 </body>
+
 </html>
