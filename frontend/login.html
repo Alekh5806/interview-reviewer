@@ -188,6 +188,42 @@
             color: var(--primary);
         }
 
+        /* --- NEW ANIMATION STYLES --- */
+
+/* The class we will add using JavaScript when clicked */
+.eye-toggle.cyber-glitch {
+    animation: glitch-effect 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* The Keyframes: Jitter, Scale, and Color Flash */
+@keyframes glitch-effect {
+    0% {
+        transform: scale(1) rotate(0deg);
+        color: var(--text-dim);
+        filter: drop-shadow(0 0 0 transparent);
+    }
+    20% {
+        transform: scale(0.8) skew(20deg); /* Distort */
+        color: #06b6d4; /* Cyan Flash */
+    }
+    40% {
+        transform: scale(1.1) rotate(180deg);
+        color: #f43f5e; /* Pink/Error Flash */
+        filter: drop-shadow(0 0 8px #f43f5e); /* Glow */
+    }
+    60% {
+        transform: scale(0.9) skew(-20deg); /* Distort other way */
+        color: #06b6d4; /* Cyan Flash */
+    }
+    80% {
+        transform: scale(1.05) rotate(360deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        color: var(--primary); /* Land on your primary color */
+    }
+}
+
         .btn-login {
             width: 100%;
             padding: 16px;
@@ -323,20 +359,34 @@
 
     <script>
         // --- 1. PASSWORD TOGGLE ---
-        function togglePassword() {
-            const passwordInput = document.getElementById('dob');
-            const eyeIcon = document.getElementById('eyeIcon');
+// --- 1. PASSWORD TOGGLE (WITH CYBER EFFECT) ---
+function togglePassword() {
+    const passwordInput = document.getElementById('dob');
+    const eyeIcon = document.getElementById('eyeIcon');
+    const toggleBtn = document.querySelector('.eye-toggle');
 
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                // Change to Eye Off Icon
-                eyeIcon.innerHTML = '<line x1="1" y1="1" x2="23" y2="23"></line><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>';
-            } else {
-                passwordInput.type = 'password';
-                // Change back to Eye Icon
-                eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
-            }
+    // 1. Trigger the animation class
+    toggleBtn.classList.add('cyber-glitch');
+
+    // 2. Wait 200ms (halfway through animation) to swap the icon/text
+    // This hides the instant "switch" behind the glitch visual
+    setTimeout(() => {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            // Switch to "Eye Off" (Slashed)
+            eyeIcon.innerHTML = '<line x1="1" y1="1" x2="23" y2="23"></line><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>';
+        } else {
+            passwordInput.type = 'password';
+            // Switch back to "Eye On" (Normal)
+            eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
         }
+    }, 200);
+
+    // 3. Remove the class after animation ends so we can click it again
+    setTimeout(() => {
+        toggleBtn.classList.remove('cyber-glitch');
+    }, 400);
+}
 
         // --- 2. TYPEWRITER ENGINE ---
         const phrases = ["Validating enrollment data...", "Interfacing with records...", "MockPrep AI Ready.", "Authentication required."];
