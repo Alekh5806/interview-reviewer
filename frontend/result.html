@@ -1,272 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Audit | MockPrep Pro</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-glow: rgba(99, 102, 241, 0.4);
-            --bg: #070b14;
-            --glass: rgba(15, 23, 42, 0.85);
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #f43f5e;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.08);
+            --primary: #6366f1; --primary-glow: rgba(99, 102, 241, 0.4);
+            --bg: #070b14; --glass: rgba(15, 23, 42, 0.85);
+            --success: #10b981; --warning: #f59e0b; --danger: #f43f5e;
+            --text-main: #f8fafc; --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.08);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-            padding-bottom: 80px;
-        }
-
-        #matrixBg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.12;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; overflow-x: hidden; padding-bottom: 80px; }
+        #matrixBg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.12; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
 
         /* --- DASHBOARD HERO --- */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
+        .hero-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; margin-bottom: 4rem; }
         .overall-card {
-            background: var(--glass);
-            backdrop-filter: blur(25px);
-            border: 1px solid var(--border);
-            border-radius: 32px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border);
+            border-radius: 32px; padding: 3rem; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-
-        .score-num {
-            font-size: 5.5rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -4px;
-        }
-
+        .score-num { font-size: 5.5rem; font-weight: 800; color: #fff; letter-spacing: -4px; }
+        
         /* --- METRICS GRID --- */
-        .m-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-
-        .m-box {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .m-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .m-bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .m-fill {
-            position: absolute;
-            height: 100%;
-            width: 0;
-            border-radius: 10px;
-            transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+        .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .m-box { background: var(--glass); border: 1px solid var(--border); padding: 1.5rem; border-radius: 20px; backdrop-filter: blur(10px); }
+        .m-header { display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px; }
+        .m-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; position: relative; }
+        .m-fill { position: absolute; height: 100%; width: 0; border-radius: 10px; transition: width 2s cubic-bezier(0.19, 1, 0.22, 1); }
 
         /* --- AUDIT CARDS --- */
         .audit-card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            backdrop-filter: blur(20px);
+            background: var(--glass); border: 1px solid var(--border); border-radius: 28px;
+            padding: 2.5rem; margin-bottom: 2.5rem; backdrop-filter: blur(20px);
             animation: slideUp 0.6s ease-out both;
         }
+        .matrix-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .matrix-title { font-size: 1.2rem; font-weight: 800; max-width: 75%; }
 
-        .matrix-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .matrix-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            max-width: 75%;
-        }
-
-        .pane-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .pane-label {
-            font-size: 0.65rem;
-            font-weight: 800;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .pane-content {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 18px;
-            font-size: 0.95rem;
-            min-height: 120px;
-            color: #cbd5e1;
+        .pane-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .pane-label { font-size: 0.65rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .pane-content { 
+            background: rgba(0,0,0,0.3); border: 1px solid var(--border); 
+            padding: 1.5rem; border-radius: 18px; font-size: 0.95rem; min-height: 120px; color: #cbd5e1;
         }
 
         /* --- PILLS & BADGES --- */
-        .kw-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 1rem;
-        }
-
-        .pill {
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            font-family: 'Fira Code', monospace;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            border: 1px solid transparent;
-        }
-
-        .kw-hit {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success);
-            border-color: var(--success);
-        }
-
-        .kw-miss {
-            background: rgba(244, 63, 94, 0.1);
-            color: var(--danger);
-            border-color: var(--danger);
-            opacity: 0.6;
-        }
-
-        .kw-title {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-dim);
-            border-color: var(--border);
-            opacity: 0.4;
-        }
-
+        .kw-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
+        .pill { padding: 6px 14px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; font-family: 'Fira Code', monospace; display: flex; align-items: center; gap: 6px; border: 1px solid transparent; }
+        .kw-hit { background: rgba(16, 185, 129, 0.1); color: var(--success); border-color: var(--success); }
+        .kw-miss { background: rgba(244, 63, 94, 0.1); color: var(--danger); border-color: var(--danger); opacity: 0.6; }
+        .kw-title { background: rgba(255, 255, 255, 0.05); color: var(--text-dim); border-color: var(--border); opacity: 0.4; }
+        
         .metrics-pill {
-            margin-top: 20px;
-            padding: 10px 18px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 4px solid var(--primary);
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            margin-top: 20px; padding: 10px 18px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--primary);
+            font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            padding: 18px 45px;
-            border-radius: 16px;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.4s;
-            text-transform: uppercase;
-        }
+        .btn-primary { background: var(--primary); color: white; padding: 18px 45px; border-radius: 16px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.4s; text-transform: uppercase; }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 40px var(--primary-glow); }
 
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px var(--primary-glow);
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 850px) {
-
-            .hero-section,
-            .pane-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 850px) { .hero-section, .pane-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
-
 <body>
 
     <canvas id="matrixBg"></canvas>
@@ -274,44 +76,33 @@
     <div class="container">
         <section class="hero-section">
             <div class="overall-card">
-                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px;">
-                    INTELLIGENCE_REPORT</div>
+                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-dim); letter-spacing: 3px;">INTELLIGENCE_REPORT</div>
                 <div class="score-num" id="mainScore">0%</div>
                 <div id="statusTag" style="font-weight: 800; text-transform: uppercase;">CALIBRATING...</div>
-                <div id="verdict"
-                    style="font-family: 'Fira Code'; font-size: 0.8rem; color: var(--primary); margin-top: 15px;"></div>
+                <div id="verdict" style="font-family: 'Fira Code'; font-size: 0.8rem; color: var(--primary); margin-top: 15px;"></div>
             </div>
 
             <div class="m-grid">
                 <div class="m-box">
                     <div class="m-header"><span>Technical Logic</span><span id="techVal">0%</span></div>
-                    <div class="m-bar">
-                        <div id="techBar" class="m-fill" style="background: var(--primary)"></div>
-                    </div>
+                    <div class="m-bar"><div id="techBar" class="m-fill" style="background: var(--primary)"></div></div>
                 </div>
                 <div class="m-box">
                     <div class="m-header"><span>Posture & Gestures</span><span id="posVal">0%</span></div>
-                    <div class="m-bar">
-                        <div id="posBar" class="m-fill" style="background: var(--success)"></div>
-                    </div>
+                    <div class="m-bar"><div id="posBar" class="m-fill" style="background: var(--success)"></div></div>
                 </div>
                 <div class="m-box">
                     <div class="m-header"><span>Confidence Level</span><span id="confVal">0%</span></div>
-                    <div class="m-bar">
-                        <div id="confBar" class="m-fill" style="background: var(--warning)"></div>
-                    </div>
+                    <div class="m-bar"><div id="confBar" class="m-fill" style="background: var(--warning)"></div></div>
                 </div>
                 <div class="m-box">
                     <div class="m-header"><span>Semantic Sync</span><span id="semVal">0%</span></div>
-                    <div class="m-bar">
-                        <div id="semBar" class="m-fill" style="background: var(--danger)"></div>
-                    </div>
+                    <div class="m-bar"><div id="semBar" class="m-fill" style="background: var(--danger)"></div></div>
                 </div>
             </div>
         </section>
 
-        <h2 style="margin-bottom: 2rem; font-weight: 800;">Question <span style="color: var(--primary)">Audit</span>
-            Comparison</h2>
+        <h2 style="margin-bottom: 2rem; font-weight: 800;">Question <span style="color: var(--primary)">Audit</span> Comparison</h2>
         <div id="auditContainer"></div>
 
         <div style="text-align: center; margin-top: 4rem;">
@@ -434,18 +225,17 @@
         function initMatrix() {
             const canvas = document.getElementById('matrixBg'), ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-            const drops = Array(Math.floor(canvas.width / 16)).fill(1);
+            const drops = Array(Math.floor(canvas.width/16)).fill(1);
             setInterval(() => {
                 ctx.fillStyle = "rgba(7, 11, 20, 0.1)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = "#334155"; ctx.font = "16px monospace";
                 drops.forEach((y, i) => {
-                    ctx.fillText(Math.random() > 0.5 ? "0" : "1", i * 16, y * 16);
-                    if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    ctx.fillText(Math.random() > 0.5 ? "0" : "1", i*16, y*16);
+                    if(y*16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
                     drops[i]++;
                 });
             }, 33);
         }
     </script>
 </body>
-
 </html>
